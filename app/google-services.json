@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "963276759254",
+    "firebase_url": "https://carinhadeanjo-3a638.firebaseio.com",
+    "project_id": "carinhadeanjo-3a638",
+    "storage_bucket": "carinhadeanjo-3a638.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:963276759254:android:873ff148ea4a241c7aa977",
+        "android_client_info": {
+          "package_name": "com.example.carinhadeanjo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "963276759254-pfklhtnj4jnlu0bki8o6q0nmnsv5gmnn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD55gn09ShU_3qfwzqrFyQcgL0aaIiQe6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "963276759254-pfklhtnj4jnlu0bki8o6q0nmnsv5gmnn.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "963276759254-jcr1g8iru1g1ike618if2qhheq7l1oqh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "gabrielvilarouca.carinha"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

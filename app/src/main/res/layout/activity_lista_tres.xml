@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fontFamily="@font/quicksand_light"
+    tools:context=".lista_tres">
+
+    <ImageView
+        android:id="@+id/imageView28"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.5"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fundo_colorido" />
+
+    <ImageView
+        android:id="@+id/imageView27"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/borda_foto" />
+
+    <ImageView
+        android:id="@+id/imageView25"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_sem_letra" />
+
+    <TextView
+        android:id="@+id/aluno_agenda3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/quicksand"
+        android:gravity="center"
+        android:text="Carregando..."
+        android:textColor="#000000"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView27" />
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="410dp"
+        android:layout_height="594dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView21"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@color/cardview_dark_background"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/agenda"
+                style="@style/Widget.AppCompat.TextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:paddingTop="20sp"
+                android:paddingBottom="10sp"
+                android:text="AGENDA"
+                android:textColor="#000000"
+                android:textSize="35sp" />
+
+            <TextView
+                android:id="@+id/falta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:paddingTop="1sp"
+                android:paddingBottom="20sp"
+                android:text="Carregando..."
+                android:textColor="#0D32D6"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/periodo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00FFFFFF"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:paddingTop="10sp"
+                android:paddingBottom="10sp"
+                android:text="PERÍODO PARCIAL"
+                android:textColor="#FF864C"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/atividade_de_sala"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:paddingTop="25sp"
+                android:paddingBottom="10sp"
+                android:text="Atividade de sala:"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/atvs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:paddingTop="1sp"
+                android:paddingBottom="20sp"
+                android:text="Carregando..."
+                android:textColor="#0D32D6"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/as_atividades_de_sala"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:paddingTop="25sp"
+                android:paddingBottom="10sp"
+                android:text="As atividades de sala:"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/atvs2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:paddingTop="1sp"
+                android:paddingBottom="20sp"
+                android:text="Carregando..."
+                android:textColor="#0D32D6"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/comportamentoo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:paddingTop="25sp"
+                android:paddingBottom="10sp"
+                android:text="Comportamento:"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/comportamento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:paddingTop="1sp"
+                android:paddingBottom="20sp"
+                android:text="Carregando..."
+                android:textColor="#0D32D6"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/dever_de_casa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:paddingTop="25sp"
+                android:paddingBottom="10sp"
+                android:text="Dever de casa:"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/dever"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:paddingTop="1sp"
+                android:paddingBottom="20sp"
+                android:text="Carregando..."
+                android:textColor="#0D32D6"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/avisos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:paddingTop="25sp"
+                android:paddingBottom="10sp"
+                android:text="Aviso:"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/aviso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:paddingTop="1sp"
+                android:paddingBottom="20sp"
+                android:text="Carregando..."
+                android:textColor="#0D32D6"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/saude"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:paddingTop="10sp"
+                android:paddingBottom="10sp"
+                android:text="Saúde:"
+                android:textColor="#FF864C"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/medicação"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:paddingTop="25sp"
+                android:paddingBottom="10sp"
+                android:text="Medicação"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/iremedio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:paddingTop="1sp"
+                android:paddingBottom="20sp"
+                android:text="Carregando..."
+                android:textColor="#0D32D6"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/idosagem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:paddingTop="1sp"
+                android:paddingBottom="20sp"
+                android:text="Carregando..."
+                android:textColor="#0D32D6"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/ihorario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:paddingTop="1sp"
+                android:paddingBottom="20sp"
+                android:text="Carregando..."
+                android:textColor="#0D32D6"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/apresent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:paddingTop="25sp"
+                android:paddingBottom="10sp"
+                android:text="Aprensentou:"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/apresentou"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:paddingTop="1sp"
+                android:paddingBottom="20sp"
+                android:text="Carregando..."
+                android:textColor="#0D32D6"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/integral"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:paddingTop="10sp"
+                android:paddingBottom="10sp"
+                android:text="PERÍODO INTEGRAL"
+                android:textColor="#FF864C"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/lanche_mat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:paddingTop="25sp"
+                android:paddingBottom="10sp"
+                android:text="Lanche Matutino:"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/ilanchematutino"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:paddingTop="1sp"
+                android:paddingBottom="20sp"
+                android:text="Carregando..."
+                android:textColor="#0D32D6"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/Almoço"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:paddingTop="25sp"
+                android:paddingBottom="10sp"
+                android:text="Almoço:"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/ialmoço"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:paddingTop="1sp"
+                android:paddingBottom="20sp"
+                android:text="Carregando..."
+                android:textColor="#0D32D6"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/lanche_vesp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:paddingTop="25sp"
+                android:paddingBottom="10sp"
+                android:text="Lanche Vespertino:"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/ilanchevespertino"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:paddingTop="1sp"
+                android:paddingBottom="20sp"
+                android:text="Carregando..."
+                android:textColor="#0D32D6"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/jantar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:paddingTop="25sp"
+                android:paddingBottom="10sp"
+                android:text="Jantar:"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/ijanta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:paddingTop="1sp"
+                android:paddingBottom="20sp"
+                android:text="Carregando..."
+                android:textColor="#0D32D6"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/comp_integral"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:paddingTop="25sp"
+                android:paddingBottom="10sp"
+                android:text="Comportamento no Integral:"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/icomportamento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:paddingTop="1sp"
+                android:paddingBottom="20sp"
+                android:text="Carregando..."
+                android:textColor="#0D32D6"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/aspec_fisio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:paddingTop="25sp"
+                android:paddingBottom="10sp"
+                android:text="Aspecto Fisiológico:"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/isono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:paddingTop="1sp"
+                android:paddingBottom="20sp"
+                android:text="Carregando..."
+                android:textColor="#0D32D6"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/f_providenciar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:paddingTop="25sp"
+                android:paddingBottom="10sp"
+                android:text="Favor Providenciar:"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/iprovidenciar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:paddingTop="1sp"
+                android:paddingBottom="20sp"
+                android:text="Carregando..."
+                android:textColor="#0D32D6"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/atv_rotina"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:paddingTop="25sp"
+                android:paddingBottom="10sp"
+                android:text="Atividades de Rotina:"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/iatv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:paddingTop="1sp"
+                android:paddingBottom="20sp"
+                android:text="Carregando..."
+                android:textColor="#0D32D6"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/obsvervacao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:paddingTop="25sp"
+                android:paddingBottom="10sp"
+                android:text="Observação:"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/obs3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:paddingTop="1sp"
+                android:paddingBottom="20sp"
+                android:text="Carregando..."
+                android:textColor="#0D32D6"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/ciente"
+                style="@android:style/Widget.Material.Light.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button"
+                android:fontFamily="@font/quicksand_bold"
+                android:paddingTop="10sp"
+                android:paddingBottom="10sp"
+                android:text="Estou Ciente!"
+                android:textColor="#1512E6"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
