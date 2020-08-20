@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/quicksand_bold"
             android:gravity="center"
-            android:text="Atividades de Sala"
+            android:text="ATIVIDADE DE SALA!"
             android:textColor="#FF9800"
             android:textSize="24sp" />
 
