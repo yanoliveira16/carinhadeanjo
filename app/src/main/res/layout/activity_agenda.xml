@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".agenda">
 
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="305dp"
+        tools:layout_editor_absoluteY="41dp" />
+
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="412dp"
@@ -14,6 +22,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
     </ScrollView>
 
     <ImageView
@@ -67,5 +80,13 @@
             android:textColor="#FF9800"
             android:textSize="24sp" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="35dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
