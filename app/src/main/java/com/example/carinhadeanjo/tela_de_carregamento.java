@@ -74,6 +74,8 @@ public class tela_de_carregamento extends AppCompatActivity {
                     public void onDataChange(DataSnapshot dataSnapshot) {
 
                         tturma = dataSnapshot.getValue(String.class);
+                        Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
+                        startActivity(intent);
 
                     }
 

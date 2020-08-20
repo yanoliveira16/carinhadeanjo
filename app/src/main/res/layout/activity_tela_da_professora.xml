@@ -55,8 +55,9 @@
         android:id="@+id/textView23"
         android:layout_width="20dp"
         android:layout_height="50dp"
-        tools:layout_editor_absoluteX="195dp"
-        tools:layout_editor_absoluteY="681dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:visibility="invisible" />
 
     <Button
@@ -66,11 +67,12 @@
         android:layout_height="50dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/alunos"
+        android:onClick="lista_um_click"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textView23" />
 
     <TextView
-        android:id="@+id/aluno2"
+        android:id="@+id/turma2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/quicksand_light"
@@ -82,7 +84,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView30" />
 
     <TextView
-        android:id="@+id/turma2"
+        android:id="@+id/nome_prof"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/quicksand_light"
@@ -91,7 +93,7 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aluno2" />
+        app:layout_constraintTop_toBottomOf="@+id/turma2" />
 
     <ImageView
         android:id="@+id/imageView30"
@@ -115,10 +117,17 @@
         app:srcCompat="@drawable/logo_sem_letra" />
 
     <ListView
-        android:layout_width="350dp"
-        android:layout_height="420dp"
+        android:id="@+id/listview_prof"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/textView23"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/turma2" />
+        app:layout_constraintTop_toBottomOf="@+id/nome_prof" />
 </androidx.constraintlayout.widget.ConstraintLayout>
