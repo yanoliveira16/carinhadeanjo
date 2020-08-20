@@ -55,6 +55,12 @@ public class tela_do_aluno extends AppCompatActivity {
                    // feed.add(key);
                     feed.add(value);
                     listView = findViewById(R.id.listView);
+                    GradientDrawable gd = new GradientDrawable();
+                    gd.setShape(GradientDrawable.RECTANGLE);
+                    gd.setStroke(5, Color.argb(100, 0,0,0)); // border width and color
+                    //gd.setCornerRadius(80.50f);
+                    gd.setCornerRadius(150);
+                    listView.setBackground(gd);
                     listView.setAdapter(arrayAdapter);
                 }
             }
@@ -64,11 +70,7 @@ public class tela_do_aluno extends AppCompatActivity {
             }
         });
         arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, feed);
-        GradientDrawable gd = new GradientDrawable();
-        gd.setShape(GradientDrawable.RECTANGLE);
-        gd.setStroke(5, Color.argb(100, 0,0,0)); // border width and color
-        gd.setCornerRadius(70.50f);
-        listView.setBackground(gd);
+
     }
 
     public void lista_um_click(View view){
