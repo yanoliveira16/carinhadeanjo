@@ -59,7 +59,7 @@ public class tela_do_aluno extends AppCompatActivity {
                     gd.setShape(GradientDrawable.RECTANGLE);
                     gd.setStroke(5, Color.argb(100, 0,0,0)); // border width and color
                     //gd.setCornerRadius(80.50f);
-                    gd.setCornerRadius(150);
+                    gd.setCornerRadius(80);
                     listView.setBackground(gd);
                     listView.setAdapter(arrayAdapter);
                 }
