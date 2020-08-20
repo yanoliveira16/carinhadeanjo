@@ -71,8 +71,8 @@ public class tela_da_professora extends AppCompatActivity {
         }
 
 
-    public void lista_um_click(View view){
-        Intent intent = new Intent(getBaseContext(), lista_um.class);
+    public void tela_de_alunosClick (View view){
+        Intent intent = new Intent(getBaseContext(), tela_de_alunos.class);
         startActivity(intent);
     }
 }
