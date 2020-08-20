@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".lista_tres"></activity>
+        <activity android:name=".tela_da_professora"></activity>
+        <activity android:name=".lista_tres" />
         <activity android:name=".lista_dois" />
         <activity android:name=".lista_um" />
         <activity android:name=".agenda" />
