@@ -66,6 +66,18 @@
             android:text="Atividades de Sala"
             android:textColor="#FF9800"
             android:textSize="24sp" />
+
+        <Switch
+            android:id="@+id/s1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Português" />
+
+        <Switch
+            android:id="@+id/s2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Literatura" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
