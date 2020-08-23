@@ -37,15 +37,22 @@ public class tela_de_alunos extends AppCompatActivity {
 
 
 
-        myRef.child(login_or_register.id).child("Creche I").child("P2-1").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef.child(login_or_register.id).child(tela_de_carregamento.tturma).child("P2-1").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     String key = snapshot.getKey();
-                    // String value=snapshot.getValue().toString();
-                    feed.add(key);
-                    //feed.add(value);
+                    // String key= snapshot.getKey();
+                    String value=snapshot.getValue().toString();
+                    // feed.add(key);
+                    feed.add(value);
                     listView_alunos = findViewById(R.id.listView_alunos);
+                    GradientDrawable gd = new GradientDrawable();
+                    gd.setShape(GradientDrawable.RECTANGLE);
+                    gd.setStroke(5, Color.argb(100, 0,0,0)); // border width and color
+                    //gd.setCornerRadius(80.50f);
+                    gd.setCornerRadius(150);
+                    listView_alunos.setBackground(gd);
                     listView_alunos.setAdapter(arrayAdapter);
                 }
             }

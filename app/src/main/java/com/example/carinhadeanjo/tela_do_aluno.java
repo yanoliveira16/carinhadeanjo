@@ -45,7 +45,7 @@ public class tela_do_aluno extends AppCompatActivity {
         final TextView a2 = (TextView) findViewById(R.id.turma);
         a2.setText(tela_de_carregamento.tturma+" - "+tela_de_carregamento.nnomePai);
 
-        myRef.child("Creche I").child("feed").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef.child(tela_de_carregamento.tturma).child("feed").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot:dataSnapshot.getChildren())
