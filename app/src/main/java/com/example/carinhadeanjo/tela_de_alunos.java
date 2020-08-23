@@ -44,8 +44,8 @@ public class tela_de_alunos extends AppCompatActivity {
                     String key = snapshot.getKey();
                     // String key= snapshot.getKey();
                     String value=snapshot.getValue().toString();
-                    // feed.add(key);
-                    feed.add(value);
+                    feed.add(key);
+                    //feed.add(value);
                     listView_alunos = findViewById(R.id.listView_alunos);
                     GradientDrawable gd = new GradientDrawable();
                     gd.setShape(GradientDrawable.RECTANGLE);
