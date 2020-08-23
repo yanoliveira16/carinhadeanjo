@@ -37,7 +37,7 @@ public class tela_de_alunos extends AppCompatActivity {
 
 
 
-        myRef.child(login_or_register.id).child(tela_de_carregamento.tturma).child("P2-1").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef.child(tela_de_carregamento.tturma).child("P2-1").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
