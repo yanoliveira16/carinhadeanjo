@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/imageView14"
-        android:layout_width="407dp"
-        android:layout_height="595dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,243 +20,652 @@
         android:id="@+id/nome_aluno_agenda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
         android:fontFamily="@font/quicksand_light"
         android:text="Carregando..."
         android:textColor="#000000"
         android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView17"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView17" />
+
+    <TextView
+        android:id="@+id/nova_agenda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/quicksand_bold"
+        android:gravity="center"
+        android:text="NOVA AGENDA"
+        android:textColor="#FF864C"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nome_aluno_agenda" />
 
     <ImageView
         android:id="@+id/imageView17"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/nome_aluno_agenda"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo_sem_letra" />
 
     <ScrollView
-        android:layout_width="404dp"
-        android:layout_height="599dp"
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView14"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageView14"
-        app:layout_constraintTop_toTopOf="@+id/imageView14">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nova_agenda">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:id="@+id/linearLayout">
+
+            <Switch
+                android:id="@+id/s"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="enviar"
+                android:text="FALTA"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="179dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
 
             <TextView
                 android:id="@+id/textView20"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
                 android:text="Atividades de Sala"
-                android:textColor="#FF9800"
-                android:textSize="24sp" />
+                android:textColor="#000000"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_editor_absoluteY="206dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
 
             <Switch
                 android:id="@+id/s1"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="enviar"
-                android:text="Português" />
+                android:text="Português"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="240dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
 
             <Switch
                 android:id="@+id/s2"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Linguagem" />
+                android:text="Linguagem"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="267dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
 
             <Switch
                 android:id="@+id/s3"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Matemática" />
+                android:text="Matemática"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="295dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
 
             <Switch
                 android:id="@+id/s4"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="enviar"
-                android:text="Ciências" />
+                android:text="Ciências"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="322dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
 
             <Switch
                 android:id="@+id/s5"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Outro" />
-
-            <Switch
-                android:id="@+id/s6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Geografia" />
-
-            <Switch
-                android:id="@+id/s8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="enviar"
-                android:text="Natureza e Sociedade" />
-
-            <Switch
-                android:id="@+id/s7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="enviar"
-                android:text="História" />
-
-            <Switch
-                android:id="@+id/s9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Judo" />
-
-            <Switch
-                android:id="@+id/s20"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="enviar"
-                android:text="Português" />
-
-            <Switch
-                android:id="@+id/s16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="enviar"
-                android:text="Parque" />
-
-            <Switch
-                android:id="@+id/s29"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Literatura" />
-
-            <Switch
-                android:id="@+id/s28"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Literatura" />
-
-            <Switch
-                android:id="@+id/s15"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Coordenação Motora" />
-
-            <Switch
-                android:id="@+id/s22"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Literatura" />
-
-            <Switch
-                android:id="@+id/s14"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Recreação Dirigida" />
+                android:text="Outro"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="349dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
 
             <EditText
                 android:id="@+id/outro_texto"
                 style="@style/Base.Widget.MaterialComponents.TextInputEditText"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                tools:layout_conversion_absoluteHeight="38dp"
+                tools:layout_editor_absoluteY="376dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <Switch
+                android:id="@+id/s6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Geografia"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="414dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <Switch
+                android:id="@+id/s7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="enviar"
+                android:text="História"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="441dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <Switch
+                android:id="@+id/s8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="enviar"
+                android:text="Natureza e Sociedade"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="468dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <Switch
+                android:id="@+id/s9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Judo"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="495dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
 
             <Switch
                 android:id="@+id/s10"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ballet" />
+                android:text="Ballet"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="522dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
 
             <Switch
                 android:id="@+id/s11"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="enviar"
-                android:text="Inglês" />
-
-            <Switch
-                android:id="@+id/s26"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Literatura" />
+                android:text="Inglês"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="549dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
 
             <Switch
                 android:id="@+id/s12"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="enviar"
-                android:text="Música" />
-
-            <Switch
-                android:id="@+id/s27"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="enviar"
-                android:text="Português" />
-
-            <Switch
-                android:id="@+id/s21"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Literatura" />
-
-            <Switch
-                android:id="@+id/s19"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Cozinha Experimental" />
+                android:text="Música"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="577dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
 
             <Switch
                 android:id="@+id/s13"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="enviar"
-                android:text="Teatro" />
+                android:text="Teatro"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="604dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <Switch
+                android:id="@+id/s14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recreação Dirigida"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="631dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <Switch
+                android:id="@+id/s15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Coordenação Motora"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="658dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <Switch
+                android:id="@+id/s16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="enviar"
+                android:text="Parque"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="685dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
 
             <Switch
                 android:id="@+id/s17"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="enviar"
-                android:text="Brinquedoteca" />
-
-            <Switch
-                android:id="@+id/s23"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="enviar"
-                android:text="Português" />
-
-            <Switch
-                android:id="@+id/s25"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Literatura" />
+                android:text="Brinquedoteca"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="712dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
 
             <Switch
                 android:id="@+id/s18"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Educação Artística" />
+                android:text="Educação Artística"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="739dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <Switch
+                android:id="@+id/s19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cozinha Experimental"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="767dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <Switch
+                android:id="@+id/s20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="enviar"
+                android:text="Hora da novidade"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="794dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <Switch
+                android:id="@+id/s21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jogos"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="821dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <Switch
+                android:id="@+id/s22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Videoteca"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="848dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <Switch
+                android:id="@+id/s23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="enviar"
+                android:text="Contação de História"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="875dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <TextView
+                android:id="@+id/traço0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="---------"
+                android:textSize="30sp"
+                tools:layout_conversion_absoluteHeight="43dp"
+                tools:layout_editor_absoluteY="902dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <TextView
+                android:id="@+id/atvs_sala"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="As atividades de sala:"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_editor_absoluteY="945dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
 
             <Switch
                 android:id="@+id/s24"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="enviar"
-                android:text="Português" />
+                android:text="Realizou com facilidade"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="980dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <Switch
+                android:id="@+id/s25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Realizou com dificuldade"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="1007dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <TextView
+                android:id="@+id/traço2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="---------"
+                android:textSize="30sp"
+                tools:layout_conversion_absoluteHeight="43dp"
+                tools:layout_editor_absoluteY="1034dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <TextView
+                android:id="@+id/comp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="Comportamento:"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_editor_absoluteY="1077dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <Switch
+                android:id="@+id/s26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tranquilo"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="1111dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <Switch
+                android:id="@+id/s27"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="enviar"
+                android:text="Obediente"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="1139dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <Switch
+                android:id="@+id/s28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Conversou muito"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="1166dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <Switch
+                android:id="@+id/s29"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Irritado"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="1193dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <TextView
+                android:id="@+id/traço3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="---------"
+                android:textSize="30sp"
+                tools:layout_conversion_absoluteHeight="43dp"
+                tools:layout_editor_absoluteY="1220dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <TextView
+                android:id="@+id/dever"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="Dever"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_editor_absoluteY="1263dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <Switch
+                android:id="@+id/s30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Em folha"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="1297dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <Switch
+                android:id="@+id/s31"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="enviar"
+                android:text="No caderno"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="1325dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <Switch
+                android:id="@+id/s32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="De:"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="1352dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <Switch
+                android:id="@+id/s33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No Livro"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="1379dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <Switch
+                android:id="@+id/s34"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="De:"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="1406dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <Switch
+                android:id="@+id/s35"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Página"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="1433dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <TextView
+                android:id="@+id/traço4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="---------"
+                android:textSize="30sp"
+                tools:layout_conversion_absoluteHeight="43dp"
+                tools:layout_editor_absoluteY="1460dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <TextView
+                android:id="@+id/aviso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="Aviso:"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_editor_absoluteY="1503dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <EditText
+                android:id="@+id/avisos"
+                style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                tools:layout_conversion_absoluteHeight="38dp"
+                tools:layout_editor_absoluteY="1538dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <TextView
+                android:id="@+id/traço5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="------------------"
+                android:textSize="30sp"
+                tools:layout_conversion_absoluteHeight="43dp"
+                tools:layout_editor_absoluteY="1575dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <TextView
+                android:id="@+id/dever3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="Saúde"
+                android:textColor="#FF864C"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_editor_absoluteY="1619dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <TextView
+                android:id="@+id/med"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="Medicação"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_editor_absoluteY="1653dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <Switch
+                android:id="@+id/imed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sim"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_editor_absoluteY="1687dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rémedio"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_editor_absoluteY="1714dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="198dp" />
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Name"
+                tools:layout_conversion_absoluteHeight="45dp"
+                tools:layout_editor_absoluteY="1733dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
         </LinearLayout>
     </ScrollView>
 

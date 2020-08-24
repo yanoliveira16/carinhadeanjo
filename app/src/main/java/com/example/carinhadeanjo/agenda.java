@@ -36,7 +36,7 @@ public class agenda extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agenda);
 
-        final TextView a1 = (TextView) findViewById(R.id.nome_aluno_agenda);
+        TextView a1 = (TextView) findViewById(R.id.nome_aluno_agenda);
         a1.setText(tela_de_carregamento.nnomeAluno);
 
     }
@@ -173,26 +173,16 @@ public class agenda extends AppCompatActivity {
         s24 = findViewById(R.id.s24);
         s25 = findViewById(R.id.s25);
 
-        s24.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        s25.setChecked(false);
-                    }
-                });
-        s25.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        s24.setChecked(false);
-                    }
-                });
 
-        if (s24.isChecked() == true) {
+        if (s24.isChecked()==true) s25.setChecked(false);{
             atvs2 = "Realizou com facilidade";
-        } else if (s25.isChecked() == true) {
+        }
+
+        if (s25.isChecked()==true)   s24.setChecked(false); {
+
             atvs2 = "Realizou com dificuldade";
         }
+
     }
         String comportamento = "";
         Switch s26;
