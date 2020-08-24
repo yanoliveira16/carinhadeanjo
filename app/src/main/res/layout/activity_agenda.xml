@@ -77,6 +77,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="fill"
+                android:fontFamily="@font/quicksand_medium"
                 android:onClick="enviar"
                 android:text="FALTA"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -90,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:text="Atividades de Sala"
+                android:text="Atividades de Sala:"
                 android:textColor="#000000"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="34dp"
@@ -102,6 +103,7 @@
                 android:id="@+id/s1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:fontFamily="@font/quicksand_medium"
                 android:onClick="enviar"
                 android:text="Português"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -113,6 +115,7 @@
                 android:id="@+id/s2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:text="Linguagem"
                 tools:layout_conversion_absoluteHeight="27dp"
                 tools:layout_conversion_absoluteWidth="407dp"
@@ -123,6 +126,7 @@
                 android:id="@+id/s3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:text="Matemática"
                 tools:layout_conversion_absoluteHeight="27dp"
                 tools:layout_conversion_absoluteWidth="407dp"
@@ -133,6 +137,7 @@
                 android:id="@+id/s4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:onClick="enviar"
                 android:text="Ciências"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -144,6 +149,7 @@
                 android:id="@+id/s5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:text="Outro"
                 tools:layout_conversion_absoluteHeight="27dp"
                 tools:layout_conversion_absoluteWidth="407dp"
@@ -156,6 +162,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:fontFamily="@font/quicksand_medium"
                 android:inputType="textPersonName"
                 tools:layout_conversion_absoluteHeight="38dp"
                 tools:layout_conversion_absoluteWidth="407dp"
@@ -166,6 +173,7 @@
                 android:id="@+id/s6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:text="Geografia"
                 tools:layout_conversion_absoluteHeight="27dp"
                 tools:layout_conversion_absoluteWidth="407dp"
@@ -176,6 +184,7 @@
                 android:id="@+id/s7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:onClick="enviar"
                 android:text="História"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -187,6 +196,7 @@
                 android:id="@+id/s8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:onClick="enviar"
                 android:text="Natureza e Sociedade"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -198,6 +208,7 @@
                 android:id="@+id/s9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:text="Judo"
                 tools:layout_conversion_absoluteHeight="27dp"
                 tools:layout_conversion_absoluteWidth="407dp"
@@ -208,6 +219,7 @@
                 android:id="@+id/s10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:text="Ballet"
                 tools:layout_conversion_absoluteHeight="27dp"
                 tools:layout_conversion_absoluteWidth="407dp"
@@ -218,6 +230,7 @@
                 android:id="@+id/s11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:onClick="enviar"
                 android:text="Inglês"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -229,6 +242,7 @@
                 android:id="@+id/s12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:onClick="enviar"
                 android:text="Música"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -240,6 +254,7 @@
                 android:id="@+id/s13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:onClick="enviar"
                 android:text="Teatro"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -251,6 +266,7 @@
                 android:id="@+id/s14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:text="Recreação Dirigida"
                 tools:layout_conversion_absoluteHeight="27dp"
                 tools:layout_conversion_absoluteWidth="407dp"
@@ -261,6 +277,7 @@
                 android:id="@+id/s15"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:text="Coordenação Motora"
                 tools:layout_conversion_absoluteHeight="27dp"
                 tools:layout_conversion_absoluteWidth="407dp"
@@ -271,6 +288,7 @@
                 android:id="@+id/s16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:onClick="enviar"
                 android:text="Parque"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -282,6 +300,7 @@
                 android:id="@+id/s17"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:onClick="enviar"
                 android:text="Brinquedoteca"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -293,6 +312,7 @@
                 android:id="@+id/s18"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:text="Educação Artística"
                 tools:layout_conversion_absoluteHeight="27dp"
                 tools:layout_conversion_absoluteWidth="407dp"
@@ -303,6 +323,7 @@
                 android:id="@+id/s19"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:text="Cozinha Experimental"
                 tools:layout_conversion_absoluteHeight="27dp"
                 tools:layout_conversion_absoluteWidth="407dp"
@@ -313,6 +334,7 @@
                 android:id="@+id/s20"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:onClick="enviar"
                 android:text="Hora da novidade"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -324,6 +346,7 @@
                 android:id="@+id/s21"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:text="Jogos"
                 tools:layout_conversion_absoluteHeight="27dp"
                 tools:layout_conversion_absoluteWidth="407dp"
@@ -334,6 +357,7 @@
                 android:id="@+id/s22"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:text="Videoteca"
                 tools:layout_conversion_absoluteHeight="27dp"
                 tools:layout_conversion_absoluteWidth="407dp"
@@ -344,6 +368,7 @@
                 android:id="@+id/s23"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:onClick="enviar"
                 android:text="Contação de História"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -355,7 +380,7 @@
                 android:id="@+id/traço0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+                android:fontFamily="@font/quicksand_medium"
                 android:gravity="center"
                 android:text="---------"
                 android:textSize="30sp"
@@ -382,6 +407,7 @@
                 android:id="@+id/s24"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:onClick="enviar"
                 android:text="Realizou com facilidade"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -393,6 +419,7 @@
                 android:id="@+id/s25"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:text="Realizou com dificuldade"
                 tools:layout_conversion_absoluteHeight="27dp"
                 tools:layout_conversion_absoluteWidth="407dp"
@@ -403,7 +430,7 @@
                 android:id="@+id/traço2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+                android:fontFamily="@font/quicksand_medium"
                 android:gravity="center"
                 android:text="---------"
                 android:textSize="30sp"
@@ -430,6 +457,7 @@
                 android:id="@+id/s26"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:text="Tranquilo"
                 tools:layout_conversion_absoluteHeight="27dp"
                 tools:layout_conversion_absoluteWidth="407dp"
@@ -440,6 +468,7 @@
                 android:id="@+id/s27"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:onClick="enviar"
                 android:text="Obediente"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -451,6 +480,7 @@
                 android:id="@+id/s28"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:text="Conversou muito"
                 tools:layout_conversion_absoluteHeight="27dp"
                 tools:layout_conversion_absoluteWidth="407dp"
@@ -461,6 +491,7 @@
                 android:id="@+id/s29"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:text="Irritado"
                 tools:layout_conversion_absoluteHeight="27dp"
                 tools:layout_conversion_absoluteWidth="407dp"
@@ -471,7 +502,7 @@
                 android:id="@+id/traço3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+                android:fontFamily="@font/quicksand_medium"
                 android:gravity="center"
                 android:text="---------"
                 android:textSize="30sp"
@@ -486,7 +517,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:text="Dever"
+                android:text="Dever:"
                 android:textColor="#000000"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="34dp"
@@ -498,6 +529,7 @@
                 android:id="@+id/s30"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:text="Em folha"
                 tools:layout_conversion_absoluteHeight="27dp"
                 tools:layout_conversion_absoluteWidth="407dp"
@@ -508,6 +540,7 @@
                 android:id="@+id/s31"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:onClick="enviar"
                 android:text="No caderno"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -519,6 +552,7 @@
                 android:id="@+id/s32"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:text="De:"
                 tools:layout_conversion_absoluteHeight="27dp"
                 tools:layout_conversion_absoluteWidth="407dp"
@@ -529,6 +563,7 @@
                 android:id="@+id/s33"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:text="No Livro"
                 tools:layout_conversion_absoluteHeight="27dp"
                 tools:layout_conversion_absoluteWidth="407dp"
@@ -539,6 +574,7 @@
                 android:id="@+id/s34"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:text="De:"
                 tools:layout_conversion_absoluteHeight="27dp"
                 tools:layout_conversion_absoluteWidth="407dp"
@@ -549,6 +585,7 @@
                 android:id="@+id/s35"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:text="Página"
                 tools:layout_conversion_absoluteHeight="27dp"
                 tools:layout_conversion_absoluteWidth="407dp"
@@ -559,7 +596,7 @@
                 android:id="@+id/traço4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+                android:fontFamily="@font/quicksand_medium"
                 android:gravity="center"
                 android:text="---------"
                 android:textSize="30sp"
@@ -588,6 +625,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:fontFamily="@font/quicksand_medium"
                 android:inputType="textPersonName"
                 tools:layout_conversion_absoluteHeight="38dp"
                 tools:layout_conversion_absoluteWidth="407dp"
@@ -598,7 +636,7 @@
                 android:id="@+id/traço5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+                android:fontFamily="@font/quicksand_medium"
                 android:gravity="center"
                 android:text="------------------"
                 android:textSize="30sp"
@@ -608,7 +646,7 @@
                 tools:layout_editor_absoluteY="1575dp" />
 
             <TextView
-                android:id="@+id/dever3"
+                android:id="@+id/saude"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
@@ -627,7 +665,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:text="Medicação"
+                android:text="Medicação:"
                 android:textColor="#000000"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="34dp"
@@ -639,6 +677,7 @@
                 android:id="@+id/imed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
                 android:text="Sim"
                 tools:layout_conversion_absoluteHeight="27dp"
                 tools:layout_conversion_absoluteWidth="407dp"
@@ -646,16 +685,789 @@
                 tools:layout_editor_absoluteY="1687dp" />
 
             <TextView
-                android:id="@+id/textView22"
+                android:id="@+id/remedio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="iremedio" />
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:text="Rémedio:"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1653dp" />
+
+            <EditText
+                android:id="@+id/iremedio2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/dosagem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:text="Dosagem:"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1653dp" />
+
+            <EditText
+                android:id="@+id/idosagem2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textPersonName" />
 
             <TextView
                 android:id="@+id/ihorario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Horário" />
+                android:layout_weight="50"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:text="Horário:"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/ihorario2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/traço"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:text="---------"
+                android:textSize="30sp"
+                tools:layout_conversion_absoluteHeight="43dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1575dp" />
+
+            <TextView
+                android:id="@+id/apresen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="Apresentou:"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1503dp" />
+
+            <Switch
+                android:id="@+id/s36"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Coriza"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1297dp" />
+
+            <Switch
+                android:id="@+id/s37"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:onClick="enviar"
+                android:text="Tosse"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1325dp" />
+
+            <Switch
+                android:id="@+id/s38"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Vômito"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1352dp" />
+
+            <Switch
+                android:id="@+id/s39"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Febre"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1379dp" />
+
+            <TextView
+                android:id="@+id/traço6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:text="------------------"
+                android:textSize="30sp"
+                tools:layout_conversion_absoluteHeight="43dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1575dp" />
+
+            <TextView
+                android:id="@+id/saude2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="Período Integral"
+                android:textColor="#FF864C"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1619dp" />
+
+            <TextView
+                android:id="@+id/traço7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:text="---------"
+                android:textSize="30sp"
+                tools:layout_conversion_absoluteHeight="43dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1575dp" />
+
+            <TextView
+                android:id="@+id/almoço"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="Almoço:"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1503dp" />
+
+            <Switch
+                android:id="@+id/s40"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Comeu bem"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1297dp" />
+
+            <Switch
+                android:id="@+id/s41"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:onClick="enviar"
+                android:text="Comeu pouco"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1325dp" />
+
+            <Switch
+                android:id="@+id/s42"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Não comeu"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1352dp" />
+
+            <TextView
+                android:id="@+id/traço8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:text="---------"
+                android:textSize="30sp"
+                tools:layout_conversion_absoluteHeight="43dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1575dp" />
+
+            <TextView
+                android:id="@+id/lanche_vesp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="Lanche Vespertino:"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1503dp" />
+
+            <Switch
+                android:id="@+id/s43"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Comeu bem"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1297dp" />
+
+            <Switch
+                android:id="@+id/s44"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:onClick="enviar"
+                android:text="Comeu pouco"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1325dp" />
+
+            <Switch
+                android:id="@+id/s45"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Não comeu"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1352dp" />
+
+            <TextView
+                android:id="@+id/traço9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:text="---------"
+                android:textSize="30sp"
+                tools:layout_conversion_absoluteHeight="43dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1575dp" />
+
+            <TextView
+                android:id="@+id/jantar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="Jantar:"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1503dp" />
+
+            <Switch
+                android:id="@+id/s46"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Comeu bem"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1297dp" />
+
+            <Switch
+                android:id="@+id/s47"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:onClick="enviar"
+                android:text="Comeu pouco"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1325dp" />
+
+            <Switch
+                android:id="@+id/s48"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Não comeu"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1352dp" />
+
+            <TextView
+                android:id="@+id/traço10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:text="---------"
+                android:textSize="30sp"
+                tools:layout_conversion_absoluteHeight="43dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1575dp" />
+
+            <TextView
+                android:id="@+id/asp_fis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="Aspecto Fisiológico:"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1503dp" />
+
+            <Switch
+                android:id="@+id/s49"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Não dormiu"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1297dp" />
+
+            <Switch
+                android:id="@+id/s50"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:onClick="enviar"
+                android:text="Evacuação anormal"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1325dp" />
+
+            <Switch
+                android:id="@+id/s51"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Urinou pouco ou nada"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1352dp" />
+
+            <Switch
+                android:id="@+id/s52"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Tomou pouca água"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1297dp" />
+
+            <Switch
+                android:id="@+id/s53"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Não tomou banho"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1352dp" />
+
+            <TextView
+                android:id="@+id/traço11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:text="---------"
+                android:textSize="30sp"
+                tools:layout_conversion_absoluteHeight="43dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1575dp" />
+
+            <TextView
+                android:id="@+id/comp_int"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="Comportamento Int:"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1503dp" />
+
+            <Switch
+                android:id="@+id/s54"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Tranquilo"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1297dp" />
+
+            <Switch
+                android:id="@+id/s55"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:onClick="enviar"
+                android:text="Obediente"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1325dp" />
+
+            <Switch
+                android:id="@+id/s56"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Irritado"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1352dp" />
+
+            <TextView
+                android:id="@+id/traço12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:text="---------"
+                android:textSize="30sp"
+                tools:layout_conversion_absoluteHeight="43dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1575dp" />
+
+            <TextView
+                android:id="@+id/prov"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="Favor Providenciar:"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1503dp" />
+
+            <Switch
+                android:id="@+id/s57"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Não dormiu"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1297dp" />
+
+            <Switch
+                android:id="@+id/s58"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Lençol"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1325dp" />
+
+            <Switch
+                android:id="@+id/s59"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Fralda"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1352dp" />
+
+            <Switch
+                android:id="@+id/s60"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Tomou pouca água"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1297dp" />
+
+            <Switch
+                android:id="@+id/s61"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Shampoo"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1352dp" />
+
+            <Switch
+                android:id="@+id/s62"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Condicionador"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1297dp" />
+
+            <Switch
+                android:id="@+id/s63"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:onClick="enviar"
+                android:text="Colônia"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1325dp" />
+
+            <Switch
+                android:id="@+id/s64"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Lenço Umidecido"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1352dp" />
+
+            <TextView
+                android:id="@+id/traço13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:text="---------"
+                android:textSize="30sp"
+                tools:layout_conversion_absoluteHeight="43dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1575dp" />
+
+            <TextView
+                android:id="@+id/atv_rot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="Atividades de rotina:"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1503dp" />
+
+            <Switch
+                android:id="@+id/s65"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Psicomotricidade"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1297dp" />
+
+            <Switch
+                android:id="@+id/s66"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Recreação"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1325dp" />
+
+            <Switch
+                android:id="@+id/s67"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Hora da leitura"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1352dp" />
+
+            <Switch
+                android:id="@+id/s68"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Jogos"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1297dp" />
+
+            <Switch
+                android:id="@+id/s69"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Arte"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1352dp" />
+
+            <Switch
+                android:id="@+id/s70"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Musicalização"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1297dp" />
+
+            <Switch
+                android:id="@+id/s71"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:onClick="enviar"
+                android:text="Colônia"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1325dp" />
+
+            <TextView
+                android:id="@+id/traço14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:text="---------"
+                android:textSize="30sp"
+                tools:layout_conversion_absoluteHeight="43dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1575dp" />
+
+            <TextView
+                android:id="@+id/observaçao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="Observação:"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1503dp" />
+
+            <EditText
+                android:id="@+id/obs2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/traço15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:text="------------------"
+                android:textSize="30sp"
+                tools:layout_conversion_absoluteHeight="43dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1575dp" />
+
+            <TextView
+                android:id="@+id/saude3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="Verifique tudo antes de enviar!"
+                android:textColor="#FF864C"
+                android:textSize="20sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1619dp" />
+
+            <Button
+                android:id="@+id/pronto"
+                style="@android:style/Widget.DeviceDefault.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button"
+                android:fontFamily="@font/quicksand_bold"
+                android:paddingTop="10sp"
+                android:paddingBottom="10sp"
+                android:text="PRONTO"
+                android:textColor="#1512E6"
+                android:textSize="20sp" />
 
         </LinearLayout>
     </ScrollView>
