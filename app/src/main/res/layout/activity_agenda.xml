@@ -161,6 +161,7 @@
                 style="@style/Base.Widget.MaterialComponents.TextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#FFFFFF"
                 android:ems="10"
                 android:fontFamily="@font/quicksand_medium"
                 android:inputType="textPersonName"
@@ -624,6 +625,7 @@
                 style="@style/Base.Widget.MaterialComponents.TextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#FFFFFF"
                 android:ems="10"
                 android:fontFamily="@font/quicksand_medium"
                 android:inputType="textPersonName"
@@ -702,6 +704,7 @@
                 android:id="@+id/iremedio2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="#FFFFFF"
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="textPersonName" />
@@ -724,6 +727,7 @@
                 android:id="@+id/idosagem2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="#FFFFFF"
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="textPersonName" />
@@ -743,6 +747,7 @@
                 android:id="@+id/ihorario2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="#FFFFFF"
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="textPersonName" />
@@ -1425,6 +1430,7 @@
                 android:id="@+id/obs2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="#FFFFFF"
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="textPersonName" />
