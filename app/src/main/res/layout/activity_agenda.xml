@@ -6,16 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".agenda">
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="412dp"
-        android:layout_height="596dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-    </ScrollView>
-
     <ImageView
         android:id="@+id/imageView14"
         android:layout_width="407dp"
@@ -51,36 +41,223 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo_sem_letra" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+    <ScrollView
+        android:layout_width="404dp"
+        android:layout_height="599dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="135dp">
+        app:layout_constraintStart_toStartOf="@+id/imageView14"
+        app:layout_constraintTop_toTopOf="@+id/imageView14">
 
-        <TextView
-            android:id="@+id/textView20"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/quicksand_bold"
-            android:gravity="center"
-            android:text="Atividades de Sala"
-            android:textColor="#FF9800"
-            android:textSize="24sp" />
+            android:orientation="vertical">
 
-        <Switch
-            android:id="@+id/s1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="enviar"
-            android:text="Português" />
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="Atividades de Sala"
+                android:textColor="#FF9800"
+                android:textSize="24sp" />
 
-        <Switch
-            android:id="@+id/s2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Literatura" />
-    </LinearLayout>
+            <Switch
+                android:id="@+id/s1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="enviar"
+                android:text="Português" />
+
+            <Switch
+                android:id="@+id/s2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Linguagem" />
+
+            <Switch
+                android:id="@+id/s3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Matemática" />
+
+            <Switch
+                android:id="@+id/s4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="enviar"
+                android:text="Ciências" />
+
+            <Switch
+                android:id="@+id/s5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Outro" />
+
+            <Switch
+                android:id="@+id/s6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Geografia" />
+
+            <Switch
+                android:id="@+id/s8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="enviar"
+                android:text="Natureza e Sociedade" />
+
+            <Switch
+                android:id="@+id/s7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="enviar"
+                android:text="História" />
+
+            <Switch
+                android:id="@+id/s9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Judo" />
+
+            <Switch
+                android:id="@+id/s20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="enviar"
+                android:text="Português" />
+
+            <Switch
+                android:id="@+id/s16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="enviar"
+                android:text="Parque" />
+
+            <Switch
+                android:id="@+id/s29"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Literatura" />
+
+            <Switch
+                android:id="@+id/s28"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Literatura" />
+
+            <Switch
+                android:id="@+id/s15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Coordenação Motora" />
+
+            <Switch
+                android:id="@+id/s22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Literatura" />
+
+            <Switch
+                android:id="@+id/s14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Recreação Dirigida" />
+
+            <EditText
+                android:id="@+id/outro_texto"
+                style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <Switch
+                android:id="@+id/s10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ballet" />
+
+            <Switch
+                android:id="@+id/s11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="enviar"
+                android:text="Inglês" />
+
+            <Switch
+                android:id="@+id/s26"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Literatura" />
+
+            <Switch
+                android:id="@+id/s12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="enviar"
+                android:text="Música" />
+
+            <Switch
+                android:id="@+id/s27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="enviar"
+                android:text="Português" />
+
+            <Switch
+                android:id="@+id/s21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Literatura" />
+
+            <Switch
+                android:id="@+id/s19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cozinha Experimental" />
+
+            <Switch
+                android:id="@+id/s13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="enviar"
+                android:text="Teatro" />
+
+            <Switch
+                android:id="@+id/s17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="enviar"
+                android:text="Brinquedoteca" />
+
+            <Switch
+                android:id="@+id/s23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="enviar"
+                android:text="Português" />
+
+            <Switch
+                android:id="@+id/s25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Literatura" />
+
+            <Switch
+                android:id="@+id/s18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Educação Artística" />
+
+            <Switch
+                android:id="@+id/s24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="enviar"
+                android:text="Português" />
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
