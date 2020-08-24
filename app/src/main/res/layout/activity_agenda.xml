@@ -27,7 +27,7 @@
         app:srcCompat="@drawable/fundotres" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/nome_aluno_agenda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/quicksand_light"
@@ -55,6 +55,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="135dp">
 
         <TextView
