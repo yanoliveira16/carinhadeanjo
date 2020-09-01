@@ -74,7 +74,7 @@ public class tela_de_alunos extends AppCompatActivity {
                                     long arg3) {
                 // TODO Auto-generated method stub
                 onClick3 = (String) lv.getItemAtPosition(arg2);
-                Intent intent = new Intent(getBaseContext(), agenda.class);
+                Intent intent = new Intent(getBaseContext(), tela_do_aluno_prof.class);
                 startActivity(intent);
 
             }
