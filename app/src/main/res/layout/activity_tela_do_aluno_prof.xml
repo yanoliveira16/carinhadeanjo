@@ -35,7 +35,7 @@
         android:layout_height="50dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/book"
-        android:onClick="tela_de_alunosClick"
+        android:onClick="agenda_click"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textView19" />
 

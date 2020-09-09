@@ -2,11 +2,15 @@ package com.example.carinhadeanjo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -27,6 +31,12 @@ public class tela_do_aluno_prof extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_do_aluno_prof);
+
+        TextView a1 = (TextView) findViewById(R.id.turma3);
+        a1.setText(tela_de_carregamento.tturma);
+
+        TextView a2 = (TextView) findViewById(R.id.nome_prof2);
+        a2.setText(tela_de_carregamento.nnomeProfe);
 
 
         myRef.child(tela_de_carregamento.tturma).child(tela_de_alunos.onClick3).child("P2-1").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -55,5 +65,11 @@ public class tela_do_aluno_prof extends AppCompatActivity {
             }
         });
 
+
+        }
+
+    public void agenda_click (View view){
+        Intent intent = new Intent(getBaseContext(), agenda.class);
+        startActivity(intent);
     }
 }
