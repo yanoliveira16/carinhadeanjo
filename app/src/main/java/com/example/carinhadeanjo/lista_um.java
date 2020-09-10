@@ -44,36 +44,59 @@ public class lista_um extends AppCompatActivity {
         View aa=findViewById(R.id.add);
         if (tela_do_aluno_prof.prof.contains("prof2")==true){
          aa.setVisibility(View.VISIBLE);
+            myRef.child(tela_do_aluno_prof.id_aluno).child("Agenda").addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        String key = snapshot.getKey();
+                        // String value=snapshot.getValue().toString();
+                        feed.add(key);
+                        //feed.add(value);
+                        listView2 = findViewById(R.id.listview2);
+                        GradientDrawable gd = new GradientDrawable();
+                        gd.setShape(GradientDrawable.RECTANGLE);
+                        gd.setStroke(5, Color.argb(100, 0, 0, 0)); // border width and color
+                        gd.setCornerRadius(60.40f);
+                        listView2.setBackground(gd);
+                        listView2.setAdapter(arrayAdapter);
+                    }
+                }
+
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                }
+            });
         }else {
             aa.setVisibility(View.INVISIBLE);
+            myRef.child(login_or_register.id).child("Agenda").addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        String key = snapshot.getKey();
+                        // String value=snapshot.getValue().toString();
+                        feed.add(key);
+                        //feed.add(value);
+                        listView2 = findViewById(R.id.listview2);
+                        GradientDrawable gd = new GradientDrawable();
+                        gd.setShape(GradientDrawable.RECTANGLE);
+                        gd.setStroke(5, Color.argb(100, 0, 0, 0)); // border width and color
+                        gd.setCornerRadius(60.40f);
+                        listView2.setBackground(gd);
+                        listView2.setAdapter(arrayAdapter);
+                    }
+                }
+
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                }
+            });
         }
 
         final TextView a1 = (TextView) findViewById(R.id.aluno_agenda);
         a1.setText(tela_de_carregamento.nnomeAluno);
 
-        myRef.child(login_or_register.id).child("Agenda").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    String key = snapshot.getKey();
-                    // String value=snapshot.getValue().toString();
-                    feed.add(key);
-                    //feed.add(value);
-                    listView2 = findViewById(R.id.listview2);
-                    GradientDrawable gd = new GradientDrawable();
-                    gd.setShape(GradientDrawable.RECTANGLE);
-                    gd.setStroke(5, Color.argb(100, 0, 0, 0)); // border width and color
-                    gd.setCornerRadius(60.40f);
-                    listView2.setBackground(gd);
-                    listView2.setAdapter(arrayAdapter);
-                }
-            }
-
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-            }
-        });
         arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, feed);
         final ListView lv=(ListView)findViewById(R.id.listview2);
 

@@ -19,10 +19,17 @@ import com.google.firebase.database.ValueEventListener;
 public class lista_tres extends AppCompatActivity {
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     DatabaseReference myRef2 = database.child("P3");
+    String uid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ArrayAdapter<String> arrayAdapter;
+
+        if (tela_do_aluno_prof.prof.contains("prof2")==true){
+            uid = tela_do_aluno_prof.id_aluno;
+        }else{
+            uid = login_or_register.id;
+        }
 
 
         setContentView(R.layout.activity_lista_tres);
@@ -37,7 +44,7 @@ public class lista_tres extends AppCompatActivity {
             gd.setStroke(5, Color.argb(100, 0, 0, 0)); // border width and color
             gd.setCornerRadius(60.40f);
 
-        myRef2.child(login_or_register.id).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("falta").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("falta").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -49,7 +56,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        myRef2.child(login_or_register.id).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("atvs").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("atvs").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -69,7 +76,7 @@ public class lista_tres extends AppCompatActivity {
             }
         });
 
-        myRef2.child(login_or_register.id).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("atvs2").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("atvs2").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -88,7 +95,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        myRef2.child(login_or_register.id).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("comportamento").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("comportamento").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -107,7 +114,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        myRef2.child(login_or_register.id).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("dever").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("dever").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -126,7 +133,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        myRef2.child(login_or_register.id).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("aviso").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("aviso").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -145,7 +152,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        myRef2.child(login_or_register.id).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("imedicacao").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("imedicacao").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -164,7 +171,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        myRef2.child(login_or_register.id).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("iremedio").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("iremedio").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -182,7 +189,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        myRef2.child(login_or_register.id).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("idosagem").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("idosagem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -201,7 +208,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        myRef2.child(login_or_register.id).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("ihorario").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("ihorario").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -220,7 +227,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        myRef2.child(login_or_register.id).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("apresentou").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("apresentou").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -240,7 +247,7 @@ public class lista_tres extends AppCompatActivity {
         });
 
 
-        myRef2.child(login_or_register.id).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("ilanchematutino").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("ilanchematutino").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -259,7 +266,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        myRef2.child(login_or_register.id).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("ialmoço").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("ialmoço").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -278,7 +285,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        myRef2.child(login_or_register.id).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("ilanchevespertino").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("ilanchevespertino").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -297,7 +304,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        myRef2.child(login_or_register.id).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("ijanta").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("ijanta").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -316,7 +323,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        myRef2.child(login_or_register.id).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("icomportamento").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("icomportamento").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -335,7 +342,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-       myRef2.child(login_or_register.id).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("isono").addListenerForSingleValueEvent(new ValueEventListener() {
+       myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("isono").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -354,7 +361,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
        });
-        myRef2.child(login_or_register.id).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("iprovidenciar").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("iprovidenciar").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -373,7 +380,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        myRef2.child(login_or_register.id).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("iatv").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("iatv").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -392,7 +399,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        myRef2.child(login_or_register.id).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("obs3").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("obs3").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);

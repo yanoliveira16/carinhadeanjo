@@ -45,31 +45,58 @@ public class lista_dois extends AppCompatActivity {
         a1.setText(tela_de_carregamento.nnomeAluno);
 
 
-
-
-        myRef.child(login_or_register.id).child("Agenda").child(lista_um.onClick).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    String key = snapshot.getKey();
-                    // String value=snapshot.getValue().toString();
-                    feed.add(key);
-                    //feed.add(value);
-                    listView3 = findViewById(R.id.listView3);
-                    GradientDrawable gd = new GradientDrawable();
-                    gd.setShape(GradientDrawable.RECTANGLE);
-                    gd.setStroke(5, Color.argb(100, 0, 0, 0)); // border width and color
-                    gd.setCornerRadius(60.40f);
-                    listView3.setBackground(gd);
-                    listView3.setAdapter(arrayAdapter);
+        View aa=findViewById(R.id.add1);
+        if (tela_do_aluno_prof.prof.contains("prof2")==true){
+            aa.setVisibility(View.VISIBLE);
+            myRef.child(tela_do_aluno_prof.id_aluno).child("Agenda").child(lista_um.onClick).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        String key = snapshot.getKey();
+                        // String value=snapshot.getValue().toString();
+                        feed.add(key);
+                        //feed.add(value);
+                        listView3 = findViewById(R.id.listView3);
+                        GradientDrawable gd = new GradientDrawable();
+                        gd.setShape(GradientDrawable.RECTANGLE);
+                        gd.setStroke(5, Color.argb(100, 0, 0, 0)); // border width and color
+                        gd.setCornerRadius(60.40f);
+                        listView3.setBackground(gd);
+                        listView3.setAdapter(arrayAdapter);
+                    }
                 }
-            }
 
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-            }
-        });
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                }
+            });
+        }else {
+            aa.setVisibility(View.INVISIBLE);
+            myRef.child(login_or_register.id).child("Agenda").child(lista_um.onClick).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        String key = snapshot.getKey();
+                        // String value=snapshot.getValue().toString();
+                        feed.add(key);
+                        //feed.add(value);
+                        listView3 = findViewById(R.id.listView3);
+                        GradientDrawable gd = new GradientDrawable();
+                        gd.setShape(GradientDrawable.RECTANGLE);
+                        gd.setStroke(5, Color.argb(100, 0, 0, 0)); // border width and color
+                        gd.setCornerRadius(60.40f);
+                        listView3.setBackground(gd);
+                        listView3.setAdapter(arrayAdapter);
+                    }
+                }
+
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                }
+            });
+        }
 
 
 
@@ -126,5 +153,11 @@ public class lista_dois extends AppCompatActivity {
         }
 
         return str;
+    }
+
+    public void add_click_dois (View view){
+        Intent intent = new Intent(getBaseContext(), agenda.class);
+        startActivity(intent);
+
     }
 }
