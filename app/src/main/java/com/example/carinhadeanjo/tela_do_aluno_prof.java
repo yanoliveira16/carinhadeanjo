@@ -25,9 +25,12 @@ public class tela_do_aluno_prof extends AppCompatActivity {
     ArrayAdapter<String> arrayAdapter;
     ListView listView_alunos;
     public static  String onClick3;
+    public static String prof;
+
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     DatabaseReference myRef = database.child("P2");
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_do_aluno_prof);
@@ -36,7 +39,7 @@ public class tela_do_aluno_prof extends AppCompatActivity {
         a1.setText(tela_de_carregamento.tturma);
 
         TextView a2 = (TextView) findViewById(R.id.nome_prof2);
-        a2.setText(tela_de_carregamento.nnomeProfe);
+        a2.setText(tela_de_alunos.onClick3);
 
 
         myRef.child(tela_de_carregamento.tturma).child(tela_de_alunos.onClick3).child("P2-1").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -66,10 +69,18 @@ public class tela_do_aluno_prof extends AppCompatActivity {
         });
 
 
+
         }
 
+
+
     public void agenda_click (View view){
-        Intent intent = new Intent(getBaseContext(), agenda.class);
+        prof = "prof2";
+        Intent intent = new Intent(getBaseContext(), lista_um.class);
         startActivity(intent);
+
     }
+
+
+
 }

@@ -39,6 +39,15 @@ public class lista_um extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lista_um);
 
+
+
+        View aa=findViewById(R.id.add);
+        if (tela_do_aluno_prof.prof.contains("prof2")==true){
+         aa.setVisibility(View.VISIBLE);
+        }else {
+            aa.setVisibility(View.INVISIBLE);
+        }
+
         final TextView a1 = (TextView) findViewById(R.id.aluno_agenda);
         a1.setText(tela_de_carregamento.nnomeAluno);
 
@@ -84,6 +93,12 @@ public class lista_um extends AppCompatActivity {
 
 
     }
+    public void add_click (View view){
+        Intent intent = new Intent(getBaseContext(), agenda.class);
+        startActivity(intent);
+
+    }
+
 }
 
 

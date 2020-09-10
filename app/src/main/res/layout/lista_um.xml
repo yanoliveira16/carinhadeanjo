@@ -7,13 +7,14 @@
     tools:context=".lista_um">
 
     <Button
-        android:id="@+id/sair3"
+        android:id="@+id/add"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/add"
+        android:onClick="add_click"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
