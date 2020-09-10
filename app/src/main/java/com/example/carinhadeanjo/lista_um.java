@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,10 +40,10 @@ public class lista_um extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lista_um);
 
-
-
         View aa=findViewById(R.id.add);
         if (tela_do_aluno_prof.prof.contains("prof2")==true){
+            ImageView myImage = (ImageView) findViewById(R.id.imageView18);
+            myImage.setImageBitmap(tela_do_aluno_prof.getRoundedCornerBitmap(tela_do_aluno_prof.my_image,400));
          aa.setVisibility(View.VISIBLE);
             myRef.child(tela_do_aluno_prof.id_aluno).child("Agenda").addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override

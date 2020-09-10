@@ -3,6 +3,7 @@ package com.example.carinhadeanjo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,6 +37,8 @@ public class lista_dois extends AppCompatActivity {
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     DatabaseReference myRef = database.child("P3");
 
+    public static Bitmap my_image2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +51,9 @@ public class lista_dois extends AppCompatActivity {
 
         View aa=findViewById(R.id.add1);
         if (tela_do_aluno_prof.prof.contains("prof2")==true){
+            my_image2 = tela_do_aluno_prof.getRoundedCornerBitmap(tela_do_aluno_prof.my_image,400);
+            ImageView myImage = (ImageView) findViewById(R.id.imageView23);
+            myImage.setImageBitmap(my_image2);
             aa.setVisibility(View.VISIBLE);
             myRef.child(tela_do_aluno_prof.id_aluno).child("Agenda").child(lista_um.onClick).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override

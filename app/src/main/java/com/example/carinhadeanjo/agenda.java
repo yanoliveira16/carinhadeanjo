@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -35,6 +36,9 @@ public class agenda extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agenda);
+
+        ImageView myImage = (ImageView) findViewById(R.id.imageView17);
+        myImage.setImageBitmap(tela_do_aluno_prof.getRoundedCornerBitmap(tela_do_aluno_prof.my_image,400));
 
         TextView a1 = (TextView) findViewById(R.id.nome_aluno_agenda);
         a1.setText(tela_de_alunos.onClick3);

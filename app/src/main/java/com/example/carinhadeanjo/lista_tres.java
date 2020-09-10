@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -20,10 +21,10 @@ public class lista_tres extends AppCompatActivity {
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     DatabaseReference myRef2 = database.child("P3");
     String uid;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ArrayAdapter<String> arrayAdapter;
 
         if (tela_do_aluno_prof.prof.contains("prof2")==true){
             uid = tela_do_aluno_prof.id_aluno;
@@ -38,7 +39,7 @@ public class lista_tres extends AppCompatActivity {
 
 
             final TextView a1 = (TextView) findViewById(R.id.aluno_agenda3);
-            a1.setText(tela_de_carregamento.nnomeAluno + " \n " + lista_dois.onClick2 + " \n ");
+            a1.setText(tela_de_alunos.onClick3 + " \n " + lista_dois.onClick2 + " \n ");
             GradientDrawable gd = new GradientDrawable();
             gd.setShape(GradientDrawable.RECTANGLE);
             gd.setStroke(5, Color.argb(100, 0, 0, 0)); // border width and color
@@ -421,8 +422,12 @@ public class lista_tres extends AppCompatActivity {
 
 
 
+        chamarfoto();
+        }
 
-
+        public void chamarfoto(){
+            ImageView myImage2 = (ImageView) findViewById(R.id.profile_foto);
+            myImage2.setImageBitmap(lista_dois.my_image2);
         }
     }
 
