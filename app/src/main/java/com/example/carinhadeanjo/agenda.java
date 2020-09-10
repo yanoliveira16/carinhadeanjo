@@ -37,7 +37,7 @@ public class agenda extends AppCompatActivity {
         setContentView(R.layout.activity_agenda);
 
         TextView a1 = (TextView) findViewById(R.id.nome_aluno_agenda);
-        a1.setText(tela_de_carregamento.nnomeAluno);
+        a1.setText(tela_de_alunos.onClick3);
 
     }
 

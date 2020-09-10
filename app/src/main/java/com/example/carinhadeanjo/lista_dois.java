@@ -42,7 +42,7 @@ public class lista_dois extends AppCompatActivity {
         setContentView(R.layout.activity_lista_dois);
 
         final TextView a1 = (TextView) findViewById(R.id.aluno_agenda2);
-        a1.setText(tela_de_carregamento.nnomeAluno);
+        a1.setText(tela_de_alunos.onClick3);
 
 
         View aa=findViewById(R.id.add1);

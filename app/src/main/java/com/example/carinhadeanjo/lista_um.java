@@ -95,7 +95,7 @@ public class lista_um extends AppCompatActivity {
         }
 
         final TextView a1 = (TextView) findViewById(R.id.aluno_agenda);
-        a1.setText(tela_de_carregamento.nnomeAluno);
+        a1.setText(tela_de_alunos.onClick3);
 
         arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, feed);
         final ListView lv=(ListView)findViewById(R.id.listview2);
