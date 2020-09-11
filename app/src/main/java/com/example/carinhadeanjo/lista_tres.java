@@ -235,9 +235,11 @@ public class lista_tres extends AppCompatActivity {
                     ViewGroup parent2 = (ViewGroup) aa.getParent();
                     parent2.removeView(aa);
                     s2 = false;
+                    verificar_saude();
                 }
                 s2 = true;
                 a11.setText(nn);
+                verificar_saude();
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -377,12 +379,11 @@ public class lista_tres extends AppCompatActivity {
                 String nn = dataSnapshot.getValue(String.class);
                 final TextView a17 = (TextView) findViewById(R.id.iatv);
                 if (nn.equals("")){
-                    a17.setPadding(0,-1,0,-20);
-                    a17.setActivated(false);
                     View aa=findViewById(R.id.atv_rotina);
-                    aa.setPadding(0,-25,0,-10);
-                    a17.setVisibility(View.INVISIBLE);
-                    aa.setVisibility(View.INVISIBLE);
+                    ViewGroup parent = (ViewGroup) a17.getParent();
+                    parent.removeView(a17);
+                    ViewGroup parent2 = (ViewGroup) aa.getParent();
+                    parent2.removeView(aa);
                 }
                 a17.setText(nn);
             }
@@ -396,12 +397,11 @@ public class lista_tres extends AppCompatActivity {
                 String nn = dataSnapshot.getValue(String.class);
                 final TextView a18 = (TextView) findViewById(R.id.obs3);
                 if (nn.equals("")){
-                    a18.setPadding(0,-1,0,-20);
-                    a18.setActivated(false);
                     View aa=findViewById(R.id.obsvervacao);
-                    aa.setPadding(0,-25,0,-10);
-                    a18.setVisibility(View.INVISIBLE);
-                    aa.setVisibility(View.INVISIBLE);
+                    ViewGroup parent = (ViewGroup) a18.getParent();
+                    parent.removeView(a18);
+                    ViewGroup parent2 = (ViewGroup) aa.getParent();
+                    parent2.removeView(aa);
                 }
                 a18.setText(nn);
             }
@@ -410,7 +410,6 @@ public class lista_tres extends AppCompatActivity {
             }
         });
 
-        verificar_saude();
         chamarfoto();
         }
 
