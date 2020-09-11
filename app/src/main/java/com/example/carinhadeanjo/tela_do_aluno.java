@@ -18,6 +18,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 
+import android.renderscript.Element;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
@@ -26,6 +27,7 @@ import android.widget.ListView;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import android.widget.TextView;
 import android.widget.Toast;
@@ -68,10 +70,12 @@ public class tela_do_aluno extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot:dataSnapshot.getChildren())
                 {
-                   // String key= snapshot.getKey();
+                    String key= snapshot.getKey();
                     String value=snapshot.getValue().toString();
                    // feed.add(key);
-                    feed.add(value);
+                    if (key.contains("serve")==false){
+                        feed.add(value);
+                    }
                     listView = findViewById(R.id.listView);
                     GradientDrawable gd = new GradientDrawable();
                     gd.setShape(GradientDrawable.RECTANGLE);
@@ -88,6 +92,8 @@ public class tela_do_aluno extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
+        //ArrayList<Element> tempElements = new ArrayList<Element>(feed);
+        //Collections.reverse(tempElements);
         arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, feed);
     }
 
@@ -107,6 +113,9 @@ public class tela_do_aluno extends AppCompatActivity {
 
                     View a2=findViewById(R.id.kkkl2);
                     a2.setVisibility(View.INVISIBLE);
+
+                    View a3=findViewById(R.id.sair);
+                    a3.setVisibility(View.VISIBLE);
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override

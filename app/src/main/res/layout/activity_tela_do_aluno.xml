@@ -70,6 +70,7 @@
         android:layout_marginTop="15dp"
         android:background="@drawable/close"
         android:onClick="sair_click3"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -133,7 +134,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fundo_colorido" />
+        app:srcCompat="@drawable/fundodois" />
 
     <ProgressBar
         android:id="@+id/kkkl2"
