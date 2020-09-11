@@ -19,6 +19,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 
 import android.renderscript.Element;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
@@ -27,7 +28,10 @@ import android.widget.ListView;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
+import java.util.stream.Stream;
 
 import android.widget.TextView;
 import android.widget.Toast;
@@ -73,8 +77,10 @@ public class tela_do_aluno extends AppCompatActivity {
                     String key= snapshot.getKey();
                     String value=snapshot.getValue().toString();
                    // feed.add(key);
-                    if (key.contains("serve")==false){
+                    Log.d("FEED", "key: " + key.contains("profe") +"| aa: "+key.contains("aln") + " "+ key.contains(login_or_register.id));
+                    if (key.contains("profe")==false || key.contains("aln")==true && key.contains(login_or_register.id)==true){
                         feed.add(value);
+                        Log.d("FEED 2", "ENTROU: "+ value);
                     }
                     listView = findViewById(R.id.listView);
                     GradientDrawable gd = new GradientDrawable();
@@ -84,16 +90,17 @@ public class tela_do_aluno extends AppCompatActivity {
                     gd.setCornerRadius(80);
                     listView.setBackground(gd);
                     listView.setAdapter(arrayAdapter);
-                    ppp();
                 }
+                Collections.sort(feed);
+                Collections.reverse(feed);
+                ppp();
+                //Log.d("FEED", "feed: " + feed +"| aa: "+arrayAdapter);
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        //ArrayList<Element> tempElements = new ArrayList<Element>(feed);
-        //Collections.reverse(tempElements);
         arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, feed);
     }
 
@@ -193,6 +200,7 @@ public class tela_do_aluno extends AppCompatActivity {
 
 
         }
+
 
 
 
