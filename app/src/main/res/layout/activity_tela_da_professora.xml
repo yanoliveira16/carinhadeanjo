@@ -38,6 +38,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"
         android:background="@drawable/close"
+        android:onClick="sair_click2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

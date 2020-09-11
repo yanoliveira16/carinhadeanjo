@@ -82,6 +82,7 @@ public class entra extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = mAuth.getCurrentUser();
+                            login_or_register.id =user.getUid();
                                 Intent intent = new Intent(getBaseContext(), tela_de_carregamento.class);
                                 startActivity(intent);
                             // updateUI(user);

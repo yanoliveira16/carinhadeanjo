@@ -47,7 +47,6 @@ import java.util.ArrayList;
 
 public class tela_do_aluno_prof extends AppCompatActivity {
 
-    public static String prof;
     public static String id_aluno;
 
     private StorageReference mStorageRef;
@@ -128,7 +127,6 @@ public class tela_do_aluno_prof extends AppCompatActivity {
 
 
     public void agenda_click (View view){
-        prof = "prof2";
         Intent intent = new Intent(getBaseContext(), lista_um.class);
         startActivity(intent);
 

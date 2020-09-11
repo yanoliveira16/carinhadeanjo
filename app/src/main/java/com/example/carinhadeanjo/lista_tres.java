@@ -7,6 +7,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -22,24 +23,29 @@ public class lista_tres extends AppCompatActivity {
     DatabaseReference myRef2 = database.child("P3");
     String uid;
 
+    boolean s1 = false;
+    boolean s2 = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (tela_do_aluno_prof.prof.contains("prof2")==true){
+        setContentView(R.layout.activity_lista_tres);
+
+        if (tela_de_carregamento.qual.contains("1")==true){
             uid = tela_do_aluno_prof.id_aluno;
+            final TextView a1 = (TextView) findViewById(R.id.aluno_agenda3);
+            a1.setText(tela_de_alunos.onClick3 + " \n " + lista_dois.onClick2);
         }else{
             uid = login_or_register.id;
+            final TextView a2 = (TextView) findViewById(R.id.aluno_agenda3);
+            a2.setText(tela_de_carregamento.nnomeAluno + " \n " + lista_dois.onClick2);
         }
 
 
-        setContentView(R.layout.activity_lista_tres);
 
 
 
-
-            final TextView a1 = (TextView) findViewById(R.id.aluno_agenda3);
-            a1.setText(tela_de_alunos.onClick3 + " \n " + lista_dois.onClick2 + " \n ");
             GradientDrawable gd = new GradientDrawable();
             gd.setShape(GradientDrawable.RECTANGLE);
             gd.setStroke(5, Color.argb(100, 0, 0, 0)); // border width and color
@@ -66,9 +72,10 @@ public class lista_tres extends AppCompatActivity {
                     a2.setPadding(0,-1,0,-20);
                     a2.setActivated(false);
                     View aa=findViewById(R.id.atividade_de_sala);
-                    aa.setPadding(0,-25,0,-10);
-                    a2.setVisibility(View.INVISIBLE);
-                    aa.setVisibility(View.INVISIBLE);
+                    ViewGroup parent = (ViewGroup) a2.getParent();
+                    parent.removeView(a2);
+                    ViewGroup parent2 = (ViewGroup) aa.getParent();
+                    parent2.removeView(aa);
                 }
                 a2.setText(nn);
             }
@@ -86,9 +93,10 @@ public class lista_tres extends AppCompatActivity {
                     a3.setPadding(0,-1,0,-20);
                     a3.setActivated(false);
                     View aa=findViewById(R.id.as_atividades_de_sala);
-                    aa.setPadding(0,-25,0,-10);
-                    a3.setVisibility(View.INVISIBLE);
-                    aa.setVisibility(View.INVISIBLE);
+                    ViewGroup parent = (ViewGroup) a3.getParent();
+                    parent.removeView(a3);
+                    ViewGroup parent2 = (ViewGroup) aa.getParent();
+                    parent2.removeView(aa);
                 }
                 a3.setText(nn);
             }
@@ -103,11 +111,10 @@ public class lista_tres extends AppCompatActivity {
                 final TextView a4 = (TextView) findViewById(R.id.comportamento);
                 if (nn.equals("")){
                     View aa=findViewById(R.id.comportamentoo);
-                    aa.setPadding(0,-25,0,-10);
-                    a4.setActivated(false);
-                    a4.setPadding(0,-1,0,-20);
-                    a4.setVisibility(View.INVISIBLE);
-                    aa.setVisibility(View.INVISIBLE);
+                    ViewGroup parent = (ViewGroup) a4.getParent();
+                    parent.removeView(a4);
+                    ViewGroup parent2 = (ViewGroup) aa.getParent();
+                    parent2.removeView(aa);
                 }
                 a4.setText(nn);
             }
@@ -122,11 +129,10 @@ public class lista_tres extends AppCompatActivity {
                 final TextView a5 = (TextView) findViewById(R.id.dever);
                 if (nn.equals("")){
                     View aa=findViewById(R.id.dever_de_casa);
-                    aa.setPadding(0,-25,0,-10);
-                    a5.setActivated(false);
-                    a5.setPadding(0,-1,0,-20);
-                    a5.setVisibility(View.INVISIBLE);
-                    aa.setVisibility(View.INVISIBLE);
+                    ViewGroup parent = (ViewGroup) a5.getParent();
+                    parent.removeView(a5);
+                    ViewGroup parent2 = (ViewGroup) aa.getParent();
+                    parent2.removeView(aa);
                 }
                 a5.setText(nn);
             }
@@ -140,12 +146,11 @@ public class lista_tres extends AppCompatActivity {
                 String nn = dataSnapshot.getValue(String.class);
                 final TextView a6 = (TextView) findViewById(R.id.aviso);
                 if (nn.equals("")){
-                    a6.setPadding(0,-1,0,-20);
-                    a6.setActivated(false);
                     View aa=findViewById(R.id.avisos);
-                    aa.setPadding(0,-25,0,-10);
-                    a6.setVisibility(View.INVISIBLE);
-                    aa.setVisibility(View.INVISIBLE);
+                    ViewGroup parent = (ViewGroup) a6.getParent();
+                    parent.removeView(a6);
+                    ViewGroup parent2 = (ViewGroup) aa.getParent();
+                    parent2.removeView(aa);
                 }
                 a6.setText(nn);
             }
@@ -157,16 +162,13 @@ public class lista_tres extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
-                final TextView a7 = (TextView) findViewById(R.id.medicação);
                 if (nn.equals("")){
-                    a7.setPadding(0,-1,0,-20);
-                    a7.setActivated(false);
                     View aa=findViewById(R.id.medicação);
-                    aa.setPadding(0,-25,0,-10);
-                    a7.setVisibility(View.INVISIBLE);
-                    aa.setVisibility(View.INVISIBLE);
+                    ViewGroup parent2 = (ViewGroup) aa.getParent();
+                    parent2.removeView(aa);
+                    s1 = false;
                 }
-                a7.setText(nn);
+                s1 = true;
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -178,13 +180,11 @@ public class lista_tres extends AppCompatActivity {
                 String nn = dataSnapshot.getValue(String.class);
                 final TextView a8 = (TextView) findViewById(R.id.iremedio);
                 if (nn.equals("")){
-                    a8.setPadding(0,-1,0,-20);
-                    a8.setActivated(false);
-                    View aa=findViewById(R.id.iremedio);
-                    aa.setPadding(0,-25,0,-10);
-                    a8.setVisibility(View.INVISIBLE);
-                    aa.setVisibility(View.INVISIBLE);
+                    ViewGroup parent = (ViewGroup) a8.getParent();
+                    parent.removeView(a8);
                 }
+                s1 = true;
+                a8.setText(nn);
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -196,13 +196,11 @@ public class lista_tres extends AppCompatActivity {
                 String nn = dataSnapshot.getValue(String.class);
                 final TextView a9 = (TextView) findViewById(R.id.idosagem);
                 if (nn.equals("")){
-                    a9.setPadding(0,-1,0,-20);
-                    a9.setActivated(false);
                     View aa=findViewById(R.id.idosagem);
-                    aa.setPadding(0,-25,0,-10);
-                    a9.setVisibility(View.INVISIBLE);
-                    aa.setVisibility(View.INVISIBLE);
+                    ViewGroup parent = (ViewGroup) a9.getParent();
+                    parent.removeView(a9);
                 }
+                s1 = true;
                 a9.setText(nn);
             }
             @Override
@@ -215,13 +213,11 @@ public class lista_tres extends AppCompatActivity {
                 String nn = dataSnapshot.getValue(String.class);
                 final TextView a10 = (TextView) findViewById(R.id.ihorario);
                 if (nn.equals("")){
-                    a10.setPadding(0,-1,0,-20);
-                    a10.setActivated(false);
                     View aa=findViewById(R.id.ihorario);
-                    aa.setPadding(0,-25,0,-10);
-                    a10.setVisibility(View.INVISIBLE);
-                    aa.setVisibility(View.INVISIBLE);
+                    ViewGroup parent = (ViewGroup) a10.getParent();
+                    parent.removeView(a10);
                 }
+                s1 = true;
                 a10.setText(nn);
             }
             @Override
@@ -233,13 +229,14 @@ public class lista_tres extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
                 final TextView a11 = (TextView) findViewById(R.id.apresentou); if (nn.equals("")){
-                    a11.setPadding(0,-1,0,-20);
-                    a11.setActivated(false);
                     View aa=findViewById(R.id.apresent);
-                    aa.setPadding(0,-25,0,-10);
-                    a11.setVisibility(View.INVISIBLE);
-                    aa.setVisibility(View.INVISIBLE);
+                    ViewGroup parent = (ViewGroup) a11.getParent();
+                    parent.removeView(a11);
+                    ViewGroup parent2 = (ViewGroup) aa.getParent();
+                    parent2.removeView(aa);
+                    s2 = false;
                 }
+                s2 = true;
                 a11.setText(nn);
             }
             @Override
@@ -254,12 +251,11 @@ public class lista_tres extends AppCompatActivity {
                 String nn = dataSnapshot.getValue(String.class);
                 final TextView a11 = (TextView) findViewById(R.id.ilanchematutino);
                 if (nn.equals("")){
-                    a11.setPadding(0,-1,0,-20);
-                    a11.setActivated(false);
                     View aa=findViewById(R.id.lanche_mat);
-                    aa.setPadding(0,-25,0,-10);
-                    a11.setVisibility(View.INVISIBLE);
-                    aa.setVisibility(View.INVISIBLE);
+                    ViewGroup parent = (ViewGroup) a11.getParent();
+                    parent.removeView(a11);
+                    ViewGroup parent2 = (ViewGroup) aa.getParent();
+                    parent2.removeView(aa);
                 }
                 a11.setText(nn);
             }
@@ -273,12 +269,11 @@ public class lista_tres extends AppCompatActivity {
                 String nn = dataSnapshot.getValue(String.class);
                 final TextView a12 = (TextView) findViewById(R.id.ialmoço);
                 if (nn.equals("")){
-                    a12.setPadding(0,-1,0,-20);
-                    a12.setActivated(false);
                     View aa=findViewById(R.id.Almoço);
-                    aa.setPadding(0,-25,0,-10);
-                    a12.setVisibility(View.INVISIBLE);
-                    aa.setVisibility(View.INVISIBLE);
+                    ViewGroup parent = (ViewGroup) a12.getParent();
+                    parent.removeView(a12);
+                    ViewGroup parent2 = (ViewGroup) aa.getParent();
+                    parent2.removeView(aa);
                 }
                 a12.setText(nn);
             }
@@ -292,12 +287,11 @@ public class lista_tres extends AppCompatActivity {
                 String nn = dataSnapshot.getValue(String.class);
                 final TextView a13 = (TextView) findViewById(R.id.ilanchevespertino);
                 if (nn.equals("")){
-                    a13.setPadding(0,-1,0,-20);
-                    a13.setActivated(false);
                     View aa=findViewById(R.id.lanche_vesp);
-                    aa.setPadding(0,-25,0,-10);
-                    a13.setVisibility(View.INVISIBLE);
-                    aa.setVisibility(View.INVISIBLE);
+                    ViewGroup parent = (ViewGroup) a13.getParent();
+                    parent.removeView(a13);
+                    ViewGroup parent2 = (ViewGroup) aa.getParent();
+                    parent2.removeView(aa);
                 }
                 a13.setText(nn);
             }
@@ -311,12 +305,11 @@ public class lista_tres extends AppCompatActivity {
                 String nn = dataSnapshot.getValue(String.class);
                 final TextView a14 = (TextView) findViewById(R.id.ijanta);
                 if (nn.equals("")){
-                    a14.setPadding(0,-1,0,-20);
-                    a14.setActivated(false);
                     View aa=findViewById(R.id.jantar);
-                    aa.setPadding(0,-25,0,-10);
-                    a14.setVisibility(View.INVISIBLE);
-                    aa.setVisibility(View.INVISIBLE);
+                    ViewGroup parent = (ViewGroup) a14.getParent();
+                    parent.removeView(a14);
+                    ViewGroup parent2 = (ViewGroup) aa.getParent();
+                    parent2.removeView(aa);
                 }
                 a14.setText(nn);
             }
@@ -330,12 +323,11 @@ public class lista_tres extends AppCompatActivity {
                 String nn = dataSnapshot.getValue(String.class);
                 final TextView a15 = (TextView) findViewById(R.id.icomportamento);
                 if (nn.equals("")){
-                    a15.setPadding(0,-1,0,-20);
-                    a15.setActivated(false);
                     View aa=findViewById(R.id.comp_integral);
-                    aa.setPadding(0,-25,0,-10);
-                    a15.setVisibility(View.INVISIBLE);
-                    aa.setVisibility(View.INVISIBLE);
+                    ViewGroup parent = (ViewGroup) a15.getParent();
+                    parent.removeView(a15);
+                    ViewGroup parent2 = (ViewGroup) aa.getParent();
+                    parent2.removeView(aa);
                 }
                 a15.setText(nn);
             }
@@ -349,12 +341,11 @@ public class lista_tres extends AppCompatActivity {
                 String nn = dataSnapshot.getValue(String.class);
                 final TextView a15 = (TextView) findViewById(R.id.isono);
                 if (nn.equals("")){
-                    a15.setPadding(0,-1,0,-20);
-                    a15.setActivated(false);
                     View aa=findViewById(R.id.aspec_fisio);
-                    aa.setPadding(0,-25,0,-10);
-                    a15.setVisibility(View.INVISIBLE);
-                    aa.setVisibility(View.INVISIBLE);
+                    ViewGroup parent = (ViewGroup) a15.getParent();
+                    parent.removeView(a15);
+                    ViewGroup parent2 = (ViewGroup) aa.getParent();
+                    parent2.removeView(aa);
                 }
                 a15.setText(nn);
             }
@@ -368,12 +359,11 @@ public class lista_tres extends AppCompatActivity {
                 String nn = dataSnapshot.getValue(String.class);
                 final TextView a16 = (TextView) findViewById(R.id.iprovidenciar);
                 if (nn.equals("")){
-                    a16.setPadding(0,-1,0,-20);
-                    a16.setActivated(false);
                     View aa=findViewById(R.id.f_providenciar);
-                    aa.setPadding(0,-25,0,-10);
-                    a16.setVisibility(View.INVISIBLE);
-                    aa.setVisibility(View.INVISIBLE);
+                    ViewGroup parent = (ViewGroup) a16.getParent();
+                    parent.removeView(a16);
+                    ViewGroup parent2 = (ViewGroup) aa.getParent();
+                    parent2.removeView(aa);
                 }
                 a16.setText(nn);
             }
@@ -420,9 +410,16 @@ public class lista_tres extends AppCompatActivity {
             }
         });
 
-
-
+        verificar_saude();
         chamarfoto();
+        }
+
+        public void verificar_saude(){
+            if (s1 == false && s2 == false){
+                View aa=findViewById(R.id.saude);
+                ViewGroup parent = (ViewGroup) aa.getParent();
+                parent.removeView(aa);
+            }
         }
 
         public void chamarfoto(){
