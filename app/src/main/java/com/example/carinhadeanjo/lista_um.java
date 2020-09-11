@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,10 +40,12 @@ public class lista_um extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lista_um);
 
-
-
         View aa=findViewById(R.id.add);
-        if (tela_do_aluno_prof.prof.contains("prof2")==true){
+        final TextView a1 = (TextView) findViewById(R.id.aluno_agenda);
+        if (tela_de_carregamento.qual.contains("1")==true){
+            a1.setText(tela_de_alunos.onClick3);
+            ImageView myImage = (ImageView) findViewById(R.id.imageView18);
+            myImage.setImageBitmap(tela_do_aluno_prof.getRoundedCornerBitmap(tela_do_aluno_prof.my_image,400));
          aa.setVisibility(View.VISIBLE);
             myRef.child(tela_do_aluno_prof.id_aluno).child("Agenda").addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
@@ -68,6 +71,9 @@ public class lista_um extends AppCompatActivity {
                 }
             });
         }else {
+            a1.setText(tela_de_carregamento.nnomeAluno);
+            ImageView myImage = (ImageView) findViewById(R.id.imageView18);
+            myImage.setImageBitmap(tela_do_aluno_prof.getRoundedCornerBitmap(tela_do_aluno.my_image3,400));
             aa.setVisibility(View.INVISIBLE);
             myRef.child(login_or_register.id).child("Agenda").addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
@@ -93,9 +99,6 @@ public class lista_um extends AppCompatActivity {
                 }
             });
         }
-
-        final TextView a1 = (TextView) findViewById(R.id.aluno_agenda);
-        a1.setText(tela_de_carregamento.nnomeAluno);
 
         arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, feed);
         final ListView lv=(ListView)findViewById(R.id.listview2);

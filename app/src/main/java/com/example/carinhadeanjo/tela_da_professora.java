@@ -1,7 +1,9 @@
 package com.example.carinhadeanjo;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
@@ -56,7 +58,7 @@ public class tela_da_professora extends AppCompatActivity {
                         gd.setShape(GradientDrawable.RECTANGLE);
                         gd.setStroke(5, Color.argb(100, 0,0,0)); // border width and color
                         //gd.setCornerRadius(80.50f);
-                        gd.setCornerRadius(150);
+                        gd.setCornerRadius(100);
                         listview_prof.setBackground(gd);
                         listview_prof.setAdapter(arrayAdapter);
                     }
@@ -69,6 +71,42 @@ public class tela_da_professora extends AppCompatActivity {
             arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, feed);
 
         }
+
+    public void sair_click2(View view) {
+        sairDaqui();
+    }
+
+    @Override
+    public void onBackPressed(){
+        sairDaqui();
+    }
+
+    public void sairDaqui(){
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(tela_da_professora.this);
+        builder1.setMessage("TEM CERTEZA QUE DESEJA SAIR?");
+        builder1.setCancelable(true);
+
+        builder1.setPositiveButton(
+                "SAIR",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        FirebaseAuth.getInstance().signOut();
+                        Intent intent = new Intent(getBaseContext(), login_or_register.class);
+                        startActivity(intent);
+                    }
+                });
+
+        builder1.setNegativeButton(
+                "CANCELAR",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
+    }
 
 
     public void tela_de_alunosClick (View view){
