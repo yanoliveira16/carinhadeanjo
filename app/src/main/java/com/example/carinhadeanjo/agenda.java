@@ -21,7 +21,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class agenda extends AppCompatActivity {
 
@@ -29,7 +31,7 @@ public class agenda extends AppCompatActivity {
     ArrayAdapter<String> arrayAdapter;
     public static String onClick4;
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-    DatabaseReference myRef = database.child("P2");
+    DatabaseReference myRef = database.child("P3").child(tela_do_aluno_prof.id_aluno).child("Agenda");
 
 
     @Override
@@ -241,11 +243,24 @@ public class agenda extends AppCompatActivity {
                 comportamento = "Irritado";
             }
 
-
         }
 
+
+        //ESSA É A ÚLTIMA PARTE.
+    //AQUI VOCÊ PEGA AS STRINGS CRIADAS E ENVIA TUDO AO SERVIDOR
+    //CADA PARTE TEM UMA KEY (CHILD) DIFERENTE!
         public void enviar_servidor(){
-            
+
+            SimpleDateFormat sdf2 = new SimpleDateFormat("MM-yyyy");
+            String currentDateandTime2 = sdf2.format(new Date());
+
+            SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy as HH:mm");
+            String currentDateandTime = sdf.format(new Date());
+
+
+            myRef.child(currentDateandTime2).child(currentDateandTime).child("atvs").setValue(atvs);
+            myRef.child(currentDateandTime2).child(currentDateandTime).child("atvs2").setValue(atvs2);
+            myRef.child(currentDateandTime2).child(currentDateandTime).child("comportamento").setValue(comportamento);
         }
 
 
