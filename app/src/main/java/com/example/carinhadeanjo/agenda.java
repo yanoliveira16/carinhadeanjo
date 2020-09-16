@@ -201,7 +201,7 @@ public class agenda extends AppCompatActivity {
             s28 = findViewById(R.id.s28);
             s29 = findViewById(R.id.s29);
 
-            s26.setOnClickListener(
+           /* s26.setOnClickListener(
                     new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -228,7 +228,7 @@ public class agenda extends AppCompatActivity {
                         public void onClick(View view) {
                             s28.setChecked(false);
                         }
-                    });
+                    });*/
 
             if (s26.isChecked() == true) {
                 comportamento = "Tranquilo";
@@ -242,6 +242,10 @@ public class agenda extends AppCompatActivity {
             }
 
 
+        }
+
+        public void enviar_servidor(){
+            
         }
 
 
