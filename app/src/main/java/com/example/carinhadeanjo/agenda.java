@@ -63,6 +63,17 @@ public class agenda extends AppCompatActivity {
         alertDialog.show();
     }
 
+    String falta = "";
+    Switch s;
+    public void enviar0(){
+        Switch sFalta = findViewById(R.id.s);
+        if (s.isChecked() == true) {
+            falta = "PRESENTE";
+        }
+    }
+
+
+
     String atvs = "";
 
     public void enviar(View view) {
@@ -375,6 +386,30 @@ public class agenda extends AppCompatActivity {
                     }
         }
 
+
+    String ilanchematutino = "";
+    Switch s32;
+    Switch s34;
+    Switch s72;
+
+    public void enviar16(View view) {
+        s32 = findViewById(R.id.s32);
+        s34 = findViewById(R.id.s34);
+        s72 = findViewById(R.id.s72);
+
+        if (s32.isChecked() == true) {
+            ilanchematutino = "Comeu bem";
+        } else if (s34.isChecked() == true) {
+            ilanchematutino = "Comeu pouco";
+        }
+        else if (s72.isChecked() == true) {
+            ilanchematutino = "Não comeu";
+        }
+
+    }
+
+
+
     String ialmoço = "";
     Switch s40;
     Switch s41;
@@ -590,7 +625,7 @@ public class agenda extends AppCompatActivity {
             SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy as HH:mm");
             String currentDateandTime = sdf.format(new Date());
 
-
+            myRef.child(currentDateandTime2).child(currentDateandTime).child("falta").setValue(falta);
             myRef.child(currentDateandTime2).child(currentDateandTime).child("atvs").setValue(atvs);
             myRef.child(currentDateandTime2).child(currentDateandTime).child("atvs2").setValue(atvs2);
             myRef.child(currentDateandTime2).child(currentDateandTime).child("comportamento").setValue(comportamento);
@@ -600,6 +635,7 @@ public class agenda extends AppCompatActivity {
             myRef.child(currentDateandTime2).child(currentDateandTime).child("aviso").setValue(aviso);
             myRef.child(currentDateandTime2).child(currentDateandTime).child("ialmoço").setValue(ialmoço);
             myRef.child(currentDateandTime2).child(currentDateandTime).child("ilanchevespertino").setValue(ilanchevespertino);
+            myRef.child(currentDateandTime2).child(currentDateandTime).child("ilanchematutino").setValue(ilanchematutino);
             myRef.child(currentDateandTime2).child(currentDateandTime).child("ijanta").setValue(ijanta);
             myRef.child(currentDateandTime2).child(currentDateandTime).child("isono").setValue(isono);
             myRef.child(currentDateandTime2).child(currentDateandTime).child("icomportamento").setValue(icomportamento);

@@ -946,6 +946,70 @@
                 tools:layout_editor_absoluteY="1575dp" />
 
             <TextView
+                android:id="@+id/ilanchematutino"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="Lanche matutino"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1503dp" />
+
+            <Switch
+                android:id="@+id/s32"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Comeu bem"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1297dp" />
+
+            <Switch
+                android:id="@+id/s34"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:onClick="enviar"
+                android:text="Comeu pouco"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1325dp" />
+
+            <Switch
+                android:id="@+id/s72"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Não comeu"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1352dp" />
+
+            <TextView
+                android:id="@+id/traço16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:text="---------"
+                android:textSize="30sp"
+                tools:layout_conversion_absoluteHeight="43dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1575dp" />
+
+            <TextView
                 android:id="@+id/almoço"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
