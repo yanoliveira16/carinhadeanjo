@@ -546,6 +546,20 @@
                 tools:layout_editor_absoluteX="2dp"
                 tools:layout_editor_absoluteY="1220dp" />
 
+            <EditText
+                android:id="@+id/outro_texto3"
+                style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:ems="10"
+                android:fontFamily="@font/quicksand_medium"
+                android:inputType="textPersonName"
+                tools:layout_conversion_absoluteHeight="38dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="376dp" />
+
             <TextView
                 android:id="@+id/dever"
                 android:layout_width="match_parent"
@@ -585,17 +599,28 @@
                 tools:layout_editor_absoluteX="2dp"
                 tools:layout_editor_absoluteY="1325dp" />
 
-            <Switch
-                android:id="@+id/s32"
+            <TextView
+                android:id="@+id/De:"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_medium"
                 android:text="De:"
-                android:textSize="24sp"
-                tools:layout_conversion_absoluteHeight="27dp"
+                android:textColor="#000000"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/outro_texto5"
+                style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:ems="10"
+                android:fontFamily="@font/quicksand_medium"
+                android:inputType="textPersonName"
+                tools:layout_conversion_absoluteHeight="38dp"
                 tools:layout_conversion_absoluteWidth="407dp"
                 tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="1352dp" />
+                tools:layout_editor_absoluteY="376dp" />
 
             <Switch
                 android:id="@+id/s33"
@@ -609,17 +634,28 @@
                 tools:layout_editor_absoluteX="2dp"
                 tools:layout_editor_absoluteY="1379dp" />
 
-            <Switch
-                android:id="@+id/s34"
+            <TextView
+                android:id="@+id/de:"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_medium"
                 android:text="De:"
-                android:textSize="24sp"
-                tools:layout_conversion_absoluteHeight="27dp"
+                android:textColor="#000000"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/outro_texto4"
+                style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:ems="10"
+                android:fontFamily="@font/quicksand_medium"
+                android:inputType="textPersonName"
+                tools:layout_conversion_absoluteHeight="38dp"
                 tools:layout_conversion_absoluteWidth="407dp"
                 tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="1406dp" />
+                tools:layout_editor_absoluteY="376dp" />
 
             <Switch
                 android:id="@+id/s35"
@@ -1308,7 +1344,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_medium"
-                android:text="Tomou pouca água"
+                android:text="Sabonete Líquido"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
                 tools:layout_conversion_absoluteWidth="407dp"
@@ -1526,7 +1562,7 @@
                 tools:layout_editor_absoluteY="1575dp" />
 
             <TextView
-                android:id="@+id/saude3"
+                android:id="@+id/aviso botão"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
@@ -1546,6 +1582,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/button"
                 android:fontFamily="@font/quicksand_bold"
+                android:onClick="enviar_servidor"
                 android:paddingTop="10sp"
                 android:paddingBottom="10sp"
                 android:text="PRONTO"
