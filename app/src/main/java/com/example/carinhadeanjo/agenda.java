@@ -4,10 +4,12 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -32,6 +34,7 @@ public class agenda extends AppCompatActivity {
     public static String onClick4;
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     DatabaseReference myRef = database.child("P3").child(tela_do_aluno_prof.id_aluno).child("Agenda");
+    DatabaseReference myRef2 = database.child("P3").child(tela_do_aluno_prof.id_aluno).child("agendaValor");
 
 
     @Override
@@ -78,6 +81,11 @@ public class agenda extends AppCompatActivity {
     String atvs = "";
 
     public void enviar(View view) {
+        View a1=findViewById(R.id.progressBar4);
+        a1.setVisibility(View.VISIBLE);
+        View a2=findViewById(R.id.imageView25);
+        a2.setVisibility(View.VISIBLE);
+
         Switch s1 = findViewById(R.id.s1);
         Switch s2 = findViewById(R.id.s2);
         Switch s3 = findViewById(R.id.s3);
@@ -591,41 +599,62 @@ public class agenda extends AppCompatActivity {
                 String nn = et2.getText().toString();
                 obs3 += nn + "";
             }
-            enviar_servidor();
+            pegar_do_servidor();
     }
 
     //ESSA É A ÚLTIMA PARTE.
     //AQUI VOCÊ PEGA AS STRINGS CRIADAS E ENVIA TUDO AO SERVIDOR
     //CADA PARTE TEM UMA KEY (CHILD) DIFERENTE!
 
+    Integer valor_agenda = 0;
+    public void  pegar_do_servidor(){
+        myRef2.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                valor_agenda = dataSnapshot.getValue(Integer.class);
+                valor_agenda += 1;
+                myRef2.setValue(valor_agenda);
+                enviar_servidor();
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+    }
+
         public void enviar_servidor(){
 
             SimpleDateFormat sdf2 = new SimpleDateFormat("MM-yyyy");
             String currentDateandTime2 = sdf2.format(new Date());
 
-            SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy as HH:mm");
+            SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
             String currentDateandTime = sdf.format(new Date());
 
-            myRef.child(currentDateandTime2).child(currentDateandTime).child("falta").setValue(falta);
-            myRef.child(currentDateandTime2).child(currentDateandTime).child("atvs").setValue(atvs);
-            myRef.child(currentDateandTime2).child(currentDateandTime).child("atvs2").setValue(atvs2);
-            myRef.child(currentDateandTime2).child(currentDateandTime).child("comportamento").setValue(comportamento);
-            myRef.child(currentDateandTime2).child(currentDateandTime).child("dever").setValue(dever);
-            myRef.child(currentDateandTime2).child(currentDateandTime).child("imedicacao").setValue(imedicacao);
-            myRef.child(currentDateandTime2).child(currentDateandTime).child("iremedio").setValue(iremedio);
-            myRef.child(currentDateandTime2).child(currentDateandTime).child("idosagem").setValue(idosagem);
-            myRef.child(currentDateandTime2).child(currentDateandTime).child("ihorario").setValue(ihorario);
-            myRef.child(currentDateandTime2).child(currentDateandTime).child("apresentou").setValue(apresentou);
-            myRef.child(currentDateandTime2).child(currentDateandTime).child("aviso").setValue(aviso);
-            myRef.child(currentDateandTime2).child(currentDateandTime).child("ialmoço").setValue(ialmoço);
-            myRef.child(currentDateandTime2).child(currentDateandTime).child("ilanchevespertino").setValue(ilanchevespertino);
-            myRef.child(currentDateandTime2).child(currentDateandTime).child("ilanchematutino").setValue(ilanchematutino);
-            myRef.child(currentDateandTime2).child(currentDateandTime).child("ijanta").setValue(ijanta);
-            myRef.child(currentDateandTime2).child(currentDateandTime).child("isono").setValue(isono);
-            myRef.child(currentDateandTime2).child(currentDateandTime).child("icomportamento").setValue(icomportamento);
-            myRef.child(currentDateandTime2).child(currentDateandTime).child("iprovidenciar").setValue(iprovidenciar);
-            myRef.child(currentDateandTime2).child(currentDateandTime).child("iatv").setValue(iatv);
-            myRef.child(currentDateandTime2).child(currentDateandTime).child("obs3").setValue(obs3);
+            String data = valor_agenda + currentDateandTime;
+
+            myRef.child(currentDateandTime2).child(data).child("falta").setValue(falta);
+            myRef.child(currentDateandTime2).child(data).child("atvs").setValue(atvs);
+            myRef.child(currentDateandTime2).child(data).child("atvs2").setValue(atvs2);
+            myRef.child(currentDateandTime2).child(data).child("comportamento").setValue(comportamento);
+            myRef.child(currentDateandTime2).child(data).child("dever").setValue(dever);
+            myRef.child(currentDateandTime2).child(data).child("imedicacao").setValue(imedicacao);
+            myRef.child(currentDateandTime2).child(data).child("iremedio").setValue(iremedio);
+            myRef.child(currentDateandTime2).child(data).child("idosagem").setValue(idosagem);
+            myRef.child(currentDateandTime2).child(data).child("ihorario").setValue(ihorario);
+            myRef.child(currentDateandTime2).child(data).child("apresentou").setValue(apresentou);
+            myRef.child(currentDateandTime2).child(data).child("aviso").setValue(aviso);
+            myRef.child(currentDateandTime2).child(data).child("ialmoço").setValue(ialmoço);
+            myRef.child(currentDateandTime2).child(data).child("ilanchevespertino").setValue(ilanchevespertino);
+            myRef.child(currentDateandTime2).child(data).child("ilanchematutino").setValue(ilanchematutino);
+            myRef.child(currentDateandTime2).child(data).child("ijanta").setValue(ijanta);
+            myRef.child(currentDateandTime2).child(data).child("isono").setValue(isono);
+            myRef.child(currentDateandTime2).child(data).child("icomportamento").setValue(icomportamento);
+            myRef.child(currentDateandTime2).child(data).child("iprovidenciar").setValue(iprovidenciar);
+            myRef.child(currentDateandTime2).child(data).child("iatv").setValue(iatv);
+            myRef.child(currentDateandTime2).child(data).child("obs3").setValue(obs3);
+
+            Intent intent = new Intent(getBaseContext(), tela_do_aluno_prof.class);
+            startActivity(intent);
         }
 
 
