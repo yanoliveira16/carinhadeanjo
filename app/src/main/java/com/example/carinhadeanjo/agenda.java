@@ -642,8 +642,11 @@ public class agenda extends AppCompatActivity {
             myRef.child(currentDateandTime2).child(currentDateandTime).child("atvs2").setValue(atvs2);
             myRef.child(currentDateandTime2).child(currentDateandTime).child("comportamento").setValue(comportamento);
             myRef.child(currentDateandTime2).child(currentDateandTime).child("dever").setValue(dever);
-            myRef.child(currentDateandTime2).child(currentDateandTime).child("Medicacao").setValue(imedicacao);
-            myRef.child(currentDateandTime2).child(currentDateandTime).child("Apresentou").setValue(apresentou);
+            myRef.child(currentDateandTime2).child(currentDateandTime).child("imedicacao").setValue(imedicacao);
+            myRef.child(currentDateandTime2).child(currentDateandTime).child("iremedio").setValue(iremedio);
+            myRef.child(currentDateandTime2).child(currentDateandTime).child("idosagem").setValue(idosagem);
+            myRef.child(currentDateandTime2).child(currentDateandTime).child("ihorario").setValue(ihorario);
+            myRef.child(currentDateandTime2).child(currentDateandTime).child("apresentou").setValue(apresentou);
             myRef.child(currentDateandTime2).child(currentDateandTime).child("aviso").setValue(aviso);
             myRef.child(currentDateandTime2).child(currentDateandTime).child("ialmoço").setValue(ialmoço);
             myRef.child(currentDateandTime2).child(currentDateandTime).child("ilanchevespertino").setValue(ilanchevespertino);
