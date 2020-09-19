@@ -170,20 +170,17 @@ public class agenda_turma extends AppCompatActivity {
     Switch s30;
     Switch s31;
     Switch s33;
-    Switch s35;
+
 
     public void enviar2() {
 
         s30 = findViewById(R.id.s30);
         s31 = findViewById(R.id.s31);
         s33 = findViewById(R.id.s33);
-        s35 = findViewById(R.id.s35);
 
 
         if (s30.isChecked() == true) {
             dever = "Em folha";
-        } else if (s35.isChecked() == true) {
-            dever = "Página";
         }
         if (s31.isChecked() == true) {
             final EditText et2 = (EditText) findViewById(R.id.outro_texto5);
@@ -203,10 +200,20 @@ public class agenda_turma extends AppCompatActivity {
                     erro();
                 } else {
                     dever += nn + " | ";
+
+                    if (s33.isChecked() == true) {
+                        final EditText et4 = (EditText) findViewById(R.id.outro_texto2);
+                        String nn3 = et3.getText().toString();
+                        if (nn.equals(null) == true) {
+                            errormsg = "Você precisa escrever ao menos uma Página";
+                            erro();
+                        } else {
+                            dever += nn + " | ";
+                        }
+                    }
                 }
             }
         }
-
         enviar3();
     }
 
@@ -214,7 +221,7 @@ public class agenda_turma extends AppCompatActivity {
     String aviso = "";
 
     public void enviar3() {
-        final EditText et2 = (EditText) findViewById(R.id.avisos);
+        final EditText et2 = (EditText) findViewById(R.id.outro_texto3);
         if (et2.equals(null) == false) {
             String nn = et2.getText().toString();
             aviso += nn + "";
