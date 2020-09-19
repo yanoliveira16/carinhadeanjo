@@ -635,7 +635,7 @@
                 tools:layout_editor_absoluteY="1379dp" />
 
             <TextView
-                android:id="@+id/de:"
+                android:id="@+id/de"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_medium"
@@ -1626,7 +1626,7 @@
                 tools:layout_editor_absoluteY="1575dp" />
 
             <TextView
-                android:id="@+id/aviso botão"
+                android:id="@+id/aviso_botao"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
