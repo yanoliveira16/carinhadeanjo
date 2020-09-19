@@ -322,11 +322,23 @@ public class agenda extends AppCompatActivity {
 
 
     String imedicacao = "";
+    String iremedio = "";
+    String idosagem = "";
+    String ihorario = "";
     Switch siMed;
+    Switch siRed;
+    Switch siDos;
+    Switch siHor;
 
     public void enviar5(View view) {
 
         siMed = findViewById(R.id.imed);
+
+        if (siMed.isChecked() == true) {
+            imedicacao = "sim";
+        }else{
+            imedicacao = "não";
+        }
 
         if (siMed.isChecked() == true) {
             final EditText et2 = (EditText) findViewById(R.id.iremedio2);
@@ -335,7 +347,7 @@ public class agenda extends AppCompatActivity {
                 errormsg = "Você precisa escrever ao menos um Rémedio";
                 erro();
             } else {
-                imedicacao += nn + " | ";
+                iremedio += nn + "";
             }
 
             if (siMed.isChecked() == true) {
@@ -345,7 +357,7 @@ public class agenda extends AppCompatActivity {
                     errormsg = "Você precisa escrever ao menos uma Dosagem!";
                     erro();
                 } else {
-                    imedicacao += nn + " | ";
+                    idosagem += nn + "";
                 }
 
                 if (siMed.isChecked() == true) {
@@ -355,7 +367,7 @@ public class agenda extends AppCompatActivity {
                         errormsg = "Você precisa escrever ao menos um Horário!";
                         erro();
                     } else {
-                        imedicacao += nn + " | ";
+                        ihorario += nn + "";
                     }
                 }
             }
