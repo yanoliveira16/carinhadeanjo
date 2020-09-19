@@ -35,6 +35,7 @@ public class agenda extends AppCompatActivity {
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     DatabaseReference myRef = database.child("P3").child(tela_do_aluno_prof.id_aluno).child("Agenda");
     DatabaseReference myRef2 = database.child("P3").child(tela_do_aluno_prof.id_aluno).child("agendaValor");
+    DatabaseReference myRef3 = database.child("P5").child(tela_de_carregamento.tturma).child("agendaTurma");
 
 
     @Override
@@ -78,115 +79,11 @@ public class agenda extends AppCompatActivity {
 
 
 
-    String atvs = "";
-
     public void enviar(View view) {
         View a1=findViewById(R.id.progressBar4);
         a1.setVisibility(View.VISIBLE);
         View a2=findViewById(R.id.imageView25);
         a2.setVisibility(View.VISIBLE);
-
-        Switch s1 = findViewById(R.id.s1);
-        Switch s2 = findViewById(R.id.s2);
-        Switch s3 = findViewById(R.id.s3);
-        Switch s4 = findViewById(R.id.s4);
-        Switch s5 = findViewById(R.id.s5);
-        Switch s6 = findViewById(R.id.s6);
-        Switch s7 = findViewById(R.id.s7);
-        Switch s8 = findViewById(R.id.s8);
-        Switch s9 = findViewById(R.id.s9);
-        Switch s10 = findViewById(R.id.s10);
-        Switch s11 = findViewById(R.id.s11);
-        Switch s12 = findViewById(R.id.s12);
-        Switch s13 = findViewById(R.id.s13);
-        Switch s14 = findViewById(R.id.s14);
-        Switch s15 = findViewById(R.id.s15);
-        Switch s16 = findViewById(R.id.s16);
-        Switch s17 = findViewById(R.id.s17);
-        Switch s18 = findViewById(R.id.s18);
-        Switch s19 = findViewById(R.id.s19);
-        Switch s20 = findViewById(R.id.s20);
-        Switch s21 = findViewById(R.id.s21);
-        Switch s22 = findViewById(R.id.s22);
-        Switch s23 = findViewById(R.id.s23);
-
-        if (s1.isChecked() == true) {
-            atvs = "Português | ";
-        }
-        if (s2.isChecked() == true) {
-            atvs += "Linguagem | ";
-        }
-        if (s3.isChecked() == true) {
-            atvs += "Matemática | ";
-        }
-        if (s4.isChecked() == true) {
-            atvs += "Ciências | ";
-        }
-        if (s5.isChecked() == true) {
-            atvs += "História | ";
-        }
-        if (s6.isChecked() == true) {
-            atvs += "Geografia | ";
-        }
-        if (s7.isChecked() == true) {
-            final EditText et2 = (EditText) findViewById(R.id.outro_texto);
-            String nn = et2.getText().toString();
-            if (nn.equals(null) == true) {
-                errormsg = "Você precisa escrever ao menos uma atividade em Outro!";
-                erro();
-            } else {
-                atvs += nn + " | ";
-            }
-
-        }
-        if (s8.isChecked() == true) {
-            atvs += "Natureza e Sociedade | ";
-        }
-        if (s9.isChecked() == true) {
-            atvs += "Judo | ";
-        }
-        if (s10.isChecked() == true) {
-            atvs += "Ballet | ";
-        }
-        if (s11.isChecked() == true) {
-            atvs += "Inglês | ";
-        }
-        if (s12.isChecked() == true) {
-            atvs += "Música | ";
-        }
-        if (s13.isChecked() == true) {
-            atvs += "Teatro  | ";
-        }
-        if (s14.isChecked() == true) {
-            atvs += "Recreação Dirigida | ";
-        }
-        if (s15.isChecked() == true) {
-            atvs += "Coordenação Motora | ";
-        }
-        if (s16.isChecked() == true) {
-            atvs += "Parque | ";
-        }
-        if (s17.isChecked() == true) {
-            atvs += "Brinquedoteca | ";
-        }
-        if (s18.isChecked() == true) {
-            atvs += "Educação Artística | ";
-        }
-        if (s19.isChecked() == true) {
-            atvs += "Cozinha Experimental | ";
-        }
-        if (s20.isChecked() == true) {
-            atvs += "Hora da Novidade | ";
-        }
-        if (s21.isChecked() == true) {
-            atvs += "Jogos | ";
-        }
-        if (s22.isChecked() == true) {
-            atvs += "Videoteca | ";
-        }
-        if (s23.isChecked() == true) {
-            atvs += "Contação de História  | ";
-        }
 
         enviar0();
     }
@@ -237,50 +134,6 @@ public class agenda extends AppCompatActivity {
             comportamento = "Conversou muito";
         } else if (s29.isChecked() == true) {
             comportamento = "Irritado";
-        }
-
-        enviar4();
-    }
-
-    String dever = "";
-    Switch s30;
-    Switch s31;
-    Switch s33;
-    Switch s35;
-
-    public void enviar4() {
-
-        s30 = findViewById(R.id.s30);
-        s31 = findViewById(R.id.s31);
-        s33 = findViewById(R.id.s33);
-        s35 = findViewById(R.id.s35);
-
-
-        if (s30.isChecked() == true) {
-            dever = "Em folha";
-        } else if (s35.isChecked() == true) {
-            dever = "Página";
-        }
-        if (s31.isChecked() == true) {
-            final EditText et2 = (EditText) findViewById(R.id.outro_texto5);
-            String nn = et2.getText().toString();
-            if (nn.equals(null) == true) {
-                errormsg = "Você precisa escrever ao menos um caderno";
-                erro();
-            } else {
-                dever += nn + " | ";
-            }
-
-            if (s33.isChecked() == true) {
-                final EditText et3 = (EditText) findViewById(R.id.outro_texto4);
-                String nn2 = et3.getText().toString();
-                if (nn.equals(null) == true) {
-                    errormsg = "Você precisa escrever ao menos um livro";
-                    erro();
-                } else {
-                    dever += nn + " | ";
-                }
-            }
         }
 
         enviar5();
@@ -410,17 +263,6 @@ public class agenda extends AppCompatActivity {
         }
         else if (s42.isChecked() == true) {
             ialmoço = "Não comeu";
-        }
-        enviar8();
-    }
-
-    String aviso = "";
-
-    public void enviar8() {
-        final EditText et2 = (EditText) findViewById(R.id.avisos);
-        if (et2.equals(null) == false) {
-            String nn = et2.getText().toString();
-            aviso += nn + "";
         }
         enviar9();
     }
@@ -607,6 +449,9 @@ public class agenda extends AppCompatActivity {
     //CADA PARTE TEM UMA KEY (CHILD) DIFERENTE!
 
     Integer valor_agenda = 0;
+        String atvs;
+        String dever;
+        String aviso;
     public void  pegar_do_servidor(){
         myRef2.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -614,7 +459,38 @@ public class agenda extends AppCompatActivity {
                 valor_agenda = dataSnapshot.getValue(Integer.class);
                 valor_agenda += 1;
                 myRef2.setValue(valor_agenda);
-                enviar_servidor();
+                pegar_agendaTurma();
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+    }
+
+    public void pegar_agendaTurma(){
+        myRef3.child("atvs").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                atvs = dataSnapshot.getValue(String.class);
+                myRef3.child("dever").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        dever = dataSnapshot.getValue(String.class);
+                        myRef3.child("aviso").addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                aviso = dataSnapshot.getValue(String.class);
+                                enviar_servidor();
+                            }
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+                            }
+                        });
+                    }
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                    }
+                });
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -657,6 +533,18 @@ public class agenda extends AppCompatActivity {
             startActivity(intent);
         }
 
+
+        public void hg1(View view){
+            if (s24.isChecked() == true) {
+                s25.setChecked(false);
+            }
+        }
+
+    public void hg2(View view){
+        if (s25.isChecked() == true) {
+            s24.setChecked(false);
+        }
+    }
 
     }
 
