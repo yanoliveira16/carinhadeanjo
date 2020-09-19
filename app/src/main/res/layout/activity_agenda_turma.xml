@@ -23,7 +23,7 @@
         android:layout_marginTop="8dp"
         android:fontFamily="@font/quicksand_bold"
         android:gravity="center"
-        android:text="NOVA AGENDA"
+        android:text="NOVA AGENDA TURMA"
         android:textColor="#FF864C"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -563,34 +563,6 @@
                 tools:layout_conversion_absoluteWidth="407dp"
                 tools:layout_editor_absoluteX="2dp"
                 tools:layout_editor_absoluteY="1460dp" />
-
-            <TextView
-                android:id="@+id/aviso"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
-                android:gravity="center"
-                android:text="Aviso:"
-                android:textColor="#000000"
-                android:textSize="24sp"
-                tools:layout_conversion_absoluteHeight="34dp"
-                tools:layout_conversion_absoluteWidth="407dp"
-                tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="1503dp" />
-
-            <EditText
-                android:id="@+id/avisos"
-                style="@style/Base.Widget.MaterialComponents.TextInputEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:ems="10"
-                android:fontFamily="@font/quicksand_medium"
-                android:inputType="textPersonName"
-                tools:layout_conversion_absoluteHeight="38dp"
-                tools:layout_conversion_absoluteWidth="407dp"
-                tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="1538dp" />
 
             <TextView
                 android:id="@+id/atv_rot"

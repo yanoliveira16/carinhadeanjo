@@ -109,8 +109,12 @@ public class tela_da_professora extends AppCompatActivity {
     }
 
 
-    public void tela_de_alunosClick (View view){
+    public void tela_de_alunosClick (View view) {
         Intent intent = new Intent(getBaseContext(), tela_de_alunos.class);
         startActivity(intent);
+    }
+        public void agenda_turma (View view){
+            Intent intent = new Intent(getBaseContext(), agenda_turma.class);
+            startActivity(intent);
     }
 }
