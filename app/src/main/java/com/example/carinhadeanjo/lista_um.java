@@ -42,7 +42,7 @@ public class lista_um extends AppCompatActivity {
 
         View aa=findViewById(R.id.add);
         final TextView a1 = (TextView) findViewById(R.id.aluno_agenda);
-        if (tela_de_carregamento.qual.contains("1")==true){
+        if (tela_de_carregamento.qual == "1"){
             a1.setText(tela_de_alunos.onClick3);
             ImageView myImage = (ImageView) findViewById(R.id.imageView18);
             myImage.setImageBitmap(tela_do_aluno_prof.getRoundedCornerBitmap(tela_do_aluno_prof.my_image,400));

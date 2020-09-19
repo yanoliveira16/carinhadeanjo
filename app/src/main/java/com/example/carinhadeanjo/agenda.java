@@ -67,7 +67,7 @@ public class agenda extends AppCompatActivity {
     Switch s;
     public void enviar0(){
         Switch sFalta = findViewById(R.id.s);
-        if (s.isChecked() == true) {
+        if (sFalta.isChecked() == true) {
             falta = "PRESENTE";
         }
         enviar2();
