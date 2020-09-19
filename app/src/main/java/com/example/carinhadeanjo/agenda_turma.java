@@ -219,56 +219,9 @@ public class agenda_turma extends AppCompatActivity {
             String nn = et2.getText().toString();
             aviso += nn + "";
         }
-        enviar4();
-    }
-
-    String iatv = "";
-    Switch s65;
-    Switch s66;
-    Switch s67;
-    Switch s68;
-    Switch s69;
-    Switch s70;
-    Switch s71;
-
-    public void enviar4() {
-        s65= findViewById(R.id.s65);
-        s66 = findViewById(R.id.s66);
-        s67 = findViewById(R.id.s67);
-        s68 = findViewById(R.id.s68);
-        s69 = findViewById(R.id.s69);
-        s70 = findViewById(R.id.s70);
-        s71 = findViewById(R.id.s71);
-
-
-        if (s65.isChecked() == true) {
-            iatv = "Psicomotricidade";
-        } else if (s66.isChecked() == true) {
-            iatv = "Recreação";
-        } else if (s67.isChecked() == true) {
-            iatv = "Hora da leitura";
-        } else if (s68.isChecked() == true) {
-            iatv = "Jogos";
-        } else if (s69.isChecked() == true) {
-            iatv = "Arte";
-        } else if (s70.isChecked() == true) {
-            iatv = "Musicalização";
-        } else if (s71.isChecked() == true) {
-            iatv = "Videoteca";
-        }
-        enviar5();
-    }
-
-
-    String obs3 = "";
-    public void enviar5() {
-        final EditText et2 = (EditText) findViewById(R.id.obs2);
-        if (et2.equals(null) == false) {
-            String nn = et2.getText().toString();
-            obs3 += nn + "";
-        }
         pegar_do_servidor();
     }
+
 
     //ESSA É A ÚLTIMA PARTE.
     //AQUI VOCÊ PEGA AS STRINGS CRIADAS E ENVIA TUDO AO SERVIDOR
@@ -295,8 +248,6 @@ public class agenda_turma extends AppCompatActivity {
         myRef.child("atvs").setValue(atvs);
         myRef.child("dever").setValue(dever);
         myRef.child("aviso").setValue(aviso);
-        myRef.child("iatv").setValue(iatv);
-        myRef.child("obs3").setValue(obs3);
 
         Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
         startActivity(intent);
