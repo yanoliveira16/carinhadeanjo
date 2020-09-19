@@ -226,13 +226,15 @@ public class agenda extends AppCompatActivity {
         if (s23.isChecked() == true) {
             atvs += "Contação de História  | ";
         }
+
+        enviar2();
     }
 
     String atvs2 = "";
     Switch s24;
     Switch s25;
 
-    public void enviar2(View view) {
+    public void enviar2() {
 
         s24 = findViewById(R.id.s24);
         s25 = findViewById(R.id.s25);
@@ -249,6 +251,7 @@ public class agenda extends AppCompatActivity {
             atvs2 = "Realizou com dificuldade";
         }
 
+        enviar3();
     }
 
     String comportamento = "";
@@ -257,7 +260,7 @@ public class agenda extends AppCompatActivity {
     Switch s28;
     Switch s29;
 
-    public void enviar3(View view) {
+    public void enviar3() {
 
         s26 = findViewById(R.id.s26);
         s27 = findViewById(R.id.s27);
@@ -275,6 +278,7 @@ public class agenda extends AppCompatActivity {
             comportamento = "Irritado";
         }
 
+        enviar4();
     }
 
     String dever = "";
@@ -283,7 +287,7 @@ public class agenda extends AppCompatActivity {
     Switch s33;
     Switch s35;
 
-    public void enviar4(View view) {
+    public void enviar4() {
 
         s30 = findViewById(R.id.s30);
         s31 = findViewById(R.id.s31);
@@ -317,6 +321,8 @@ public class agenda extends AppCompatActivity {
                 }
             }
         }
+
+        enviar5();
     }
 
 
@@ -330,7 +336,7 @@ public class agenda extends AppCompatActivity {
     Switch siDos;
     Switch siHor;
 
-    public void enviar5(View view) {
+    public void enviar5() {
 
         siMed = findViewById(R.id.imed);
 
@@ -372,6 +378,8 @@ public class agenda extends AppCompatActivity {
                 }
             }
         }
+
+        enviar6();
     }
 
                 String apresentou = "";
@@ -380,7 +388,7 @@ public class agenda extends AppCompatActivity {
                Switch s38;
                Switch s39;
 
-                public void enviar6(View view) {
+                public void enviar6() {
                     s36 = findViewById(R.id.s36);
                     s37 = findViewById(R.id.s37);
                     s38 = findViewById(R.id.s38);
@@ -396,6 +404,8 @@ public class agenda extends AppCompatActivity {
                     } else if (s39.isChecked() == true) {
                         apresentou = "Febre";
                     }
+
+                    enviar16();
         }
 
 
@@ -404,7 +414,7 @@ public class agenda extends AppCompatActivity {
     Switch s34;
     Switch s72;
 
-    public void enviar16(View view) {
+    public void enviar16() {
         s32 = findViewById(R.id.s32);
         s34 = findViewById(R.id.s34);
         s72 = findViewById(R.id.s72);
@@ -417,7 +427,7 @@ public class agenda extends AppCompatActivity {
         else if (s72.isChecked() == true) {
             ilanchematutino = "Não comeu";
         }
-
+        enviar7();
     }
 
 
@@ -427,7 +437,7 @@ public class agenda extends AppCompatActivity {
     Switch s41;
     Switch s42;
 
-    public void enviar7(View view) {
+    public void enviar7() {
         s40 = findViewById(R.id.s40);
         s41 = findViewById(R.id.s41);
         s42 = findViewById(R.id.s42);
@@ -440,17 +450,18 @@ public class agenda extends AppCompatActivity {
         else if (s42.isChecked() == true) {
             ialmoço = "Não comeu";
         }
-
+        enviar8();
     }
 
     String aviso = "";
 
-    public void enviar8(View view) {
+    public void enviar8() {
         final EditText et2 = (EditText) findViewById(R.id.avisos);
         if (et2.equals(null) == false) {
             String nn = et2.getText().toString();
             aviso += nn + "";
         }
+        enviar9();
     }
 
 
@@ -459,7 +470,7 @@ public class agenda extends AppCompatActivity {
     Switch s44;
     Switch s45;
 
-    public void enviar9(View view) {
+    public void enviar9() {
         s43 = findViewById(R.id.s43);
         s44 = findViewById(R.id.s44);
         s45 = findViewById(R.id.s45);
@@ -471,6 +482,8 @@ public class agenda extends AppCompatActivity {
         } else if (s45.isChecked() == true) {
             ilanchevespertino = "Não comeu";
         }
+
+        enviar10();
     }
 
     String ijanta = "";
@@ -478,7 +491,7 @@ public class agenda extends AppCompatActivity {
     Switch s47;
     Switch s48;
 
-    public void enviar10(View view) {
+    public void enviar10() {
         s46 = findViewById(R.id.s46);
         s47 = findViewById(R.id.s47);
         s48 = findViewById(R.id.s48);
@@ -490,6 +503,7 @@ public class agenda extends AppCompatActivity {
         } else if (s48.isChecked() == true) {
             ijanta = "Não comeu";
         }
+        enviar11();
     }
 
     String isono = "";
@@ -499,7 +513,7 @@ public class agenda extends AppCompatActivity {
     Switch s52;
     Switch s53;
 
-    public void enviar11(View view) {
+    public void enviar11() {
         s49 = findViewById(R.id.s49);
         s50 = findViewById(R.id.s50);
         s51 = findViewById(R.id.s51);
@@ -517,6 +531,7 @@ public class agenda extends AppCompatActivity {
         } else if (s53.isChecked() == true) {
             isono = "Não tomou banho";
         }
+        enviar12();
     }
 
     String icomportamento = "";
@@ -524,7 +539,7 @@ public class agenda extends AppCompatActivity {
     Switch s55;
     Switch s56;
 
-    public void enviar12(View view) {
+    public void enviar12() {
         s54 = findViewById(R.id.s54);
         s55 = findViewById(R.id.s55);
         s56 = findViewById(R.id.s56);
@@ -536,7 +551,7 @@ public class agenda extends AppCompatActivity {
         } else if (s56.isChecked() == true) {
             icomportamento = "Irritado";
         }
-
+        enviar13();
     }
 
     String iprovidenciar = "";
@@ -549,7 +564,7 @@ public class agenda extends AppCompatActivity {
     Switch s63;
     Switch s64;
 
-    public void enviar13(View view) {
+    public void enviar13() {
         s57 = findViewById(R.id.s57);
         s58 = findViewById(R.id.s58);
         s59 = findViewById(R.id.s59);
@@ -577,7 +592,7 @@ public class agenda extends AppCompatActivity {
         } else if (s64.isChecked() == true) {
             iprovidenciar = "Lenço Umidecido";
         }
-
+        enviar14();
     }
 
     String iatv = "";
@@ -589,7 +604,7 @@ public class agenda extends AppCompatActivity {
     Switch s70;
     Switch s71;
 
-    public void enviar14(View view) {
+    public void enviar14() {
         s65= findViewById(R.id.s65);
         s66 = findViewById(R.id.s66);
         s67 = findViewById(R.id.s67);
@@ -614,22 +629,23 @@ public class agenda extends AppCompatActivity {
         } else if (s71.isChecked() == true) {
             iatv = "Videoteca";
         }
-
+        enviar15();
     }
     String obs3 = "";
-        public void enviar15(View view) {
+        public void enviar15() {
             final EditText et2 = (EditText) findViewById(R.id.obs2);
             if (et2.equals(null) == false) {
                 String nn = et2.getText().toString();
                 obs3 += nn + "";
             }
+            enviar_servidor();
     }
 
     //ESSA É A ÚLTIMA PARTE.
     //AQUI VOCÊ PEGA AS STRINGS CRIADAS E ENVIA TUDO AO SERVIDOR
     //CADA PARTE TEM UMA KEY (CHILD) DIFERENTE!
 
-        public void enviar_servidor(View view){
+        public void enviar_servidor(){
 
             SimpleDateFormat sdf2 = new SimpleDateFormat("MM-yyyy");
             String currentDateandTime2 = sdf2.format(new Date());
