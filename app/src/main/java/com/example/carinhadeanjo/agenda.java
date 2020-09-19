@@ -70,14 +70,14 @@ public class agenda extends AppCompatActivity {
         if (sFalta.isChecked() == true) {
             falta = "PRESENTE";
         }
-        //enviar2();
+        enviar2();
     }
 
 
 
     String atvs = "";
 
-    public void enviar() {
+    public void enviar(View view) {
         Switch s1 = findViewById(R.id.s1);
         Switch s2 = findViewById(R.id.s2);
         Switch s3 = findViewById(R.id.s3);
@@ -204,7 +204,7 @@ public class agenda extends AppCompatActivity {
             atvs2 = "Realizou com dificuldade";
         }
 
-        //enviar3();
+        enviar3();
     }
 
     String comportamento = "";
@@ -231,7 +231,7 @@ public class agenda extends AppCompatActivity {
             comportamento = "Irritado";
         }
 
-        //enviar4();
+        enviar4();
     }
 
     String dever = "";
@@ -275,7 +275,7 @@ public class agenda extends AppCompatActivity {
             }
         }
 
-        //enviar5();
+        enviar5();
     }
 
 
@@ -332,7 +332,7 @@ public class agenda extends AppCompatActivity {
             }
         }
 
-        //enviar6();
+        enviar6();
     }
 
                 String apresentou = "";
@@ -380,7 +380,7 @@ public class agenda extends AppCompatActivity {
         else if (s72.isChecked() == true) {
             ilanchematutino = "Não comeu";
         }
-       // enviar7();
+        enviar7();
     }
 
 
@@ -403,7 +403,7 @@ public class agenda extends AppCompatActivity {
         else if (s42.isChecked() == true) {
             ialmoço = "Não comeu";
         }
-        //enviar8();
+        enviar8();
     }
 
     String aviso = "";
@@ -414,7 +414,7 @@ public class agenda extends AppCompatActivity {
             String nn = et2.getText().toString();
             aviso += nn + "";
         }
-        //enviar9();
+        enviar9();
     }
 
 
@@ -436,7 +436,7 @@ public class agenda extends AppCompatActivity {
             ilanchevespertino = "Não comeu";
         }
 
-       // enviar10();
+        enviar10();
     }
 
     String ijanta = "";
@@ -456,7 +456,7 @@ public class agenda extends AppCompatActivity {
         } else if (s48.isChecked() == true) {
             ijanta = "Não comeu";
         }
-        //enviar11();
+        enviar11();
     }
 
     String isono = "";
@@ -484,7 +484,7 @@ public class agenda extends AppCompatActivity {
         } else if (s53.isChecked() == true) {
             isono = "Não tomou banho";
         }
-       // enviar12();
+        enviar12();
     }
 
     String icomportamento = "";
@@ -504,7 +504,7 @@ public class agenda extends AppCompatActivity {
         } else if (s56.isChecked() == true) {
             icomportamento = "Irritado";
         }
-        //enviar13();
+        enviar13();
     }
 
     String iprovidenciar = "";
@@ -545,7 +545,7 @@ public class agenda extends AppCompatActivity {
         } else if (s64.isChecked() == true) {
             iprovidenciar = "Lenço Umidecido";
         }
-        //enviar14();
+        enviar14();
     }
 
     String iatv = "";
@@ -582,7 +582,7 @@ public class agenda extends AppCompatActivity {
         } else if (s71.isChecked() == true) {
             iatv = "Videoteca";
         }
-       // enviar15();
+        enviar15();
     }
     String obs3 = "";
         public void enviar15() {
@@ -591,14 +591,14 @@ public class agenda extends AppCompatActivity {
                 String nn = et2.getText().toString();
                 obs3 += nn + "";
             }
-            //enviar_servidor();
+            enviar_servidor();
     }
 
     //ESSA É A ÚLTIMA PARTE.
     //AQUI VOCÊ PEGA AS STRINGS CRIADAS E ENVIA TUDO AO SERVIDOR
     //CADA PARTE TEM UMA KEY (CHILD) DIFERENTE!
 
-        public void enviar_servidor(View view){
+        public void enviar_servidor(){
 
             SimpleDateFormat sdf2 = new SimpleDateFormat("MM-yyyy");
             String currentDateandTime2 = sdf2.format(new Date());
