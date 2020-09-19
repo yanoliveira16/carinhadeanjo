@@ -90,8 +90,6 @@
                 tools:layout_editor_absoluteY="179dp" />
 
             <TextView
-<<<<<<< HEAD
-=======
                 android:id="@+id/textView20"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -410,7 +408,6 @@
                 tools:layout_editor_absoluteY="875dp" />
 
             <TextView
->>>>>>> 96e68462fc6a5d28af0880f79ba911d76716eca8
                 android:id="@+id/traço0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
