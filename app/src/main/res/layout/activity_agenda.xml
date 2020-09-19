@@ -1646,7 +1646,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/button"
                 android:fontFamily="@font/quicksand_bold"
-                android:onClick="enviar"
+                android:onClick="enviar_servidor"
                 android:paddingTop="10sp"
                 android:paddingBottom="10sp"
                 android:text="PRONTO"
