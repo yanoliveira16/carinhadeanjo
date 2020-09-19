@@ -101,53 +101,6 @@ public class agenda extends AppCompatActivity {
         Switch s21 = findViewById(R.id.s21);
         Switch s22 = findViewById(R.id.s22);
         Switch s23 = findViewById(R.id.s23);
-        Switch s24 = findViewById(R.id.s24);
-        Switch s25 = findViewById(R.id.s25);
-        Switch s26 = findViewById(R.id.s26);
-        Switch s27 = findViewById(R.id.s27);
-        Switch s28 = findViewById(R.id.s28);
-        Switch s29 = findViewById(R.id.s29);
-        Switch s30 = findViewById(R.id.s30);
-        Switch s31 = findViewById(R.id.s31);
-        Switch s33 = findViewById(R.id.s33);
-        Switch s35 = findViewById(R.id.s35);
-        Switch s36 = findViewById(R.id.s36);
-        Switch s37 = findViewById(R.id.s37);
-        Switch s38 = findViewById(R.id.s38);
-        Switch s39 = findViewById(R.id.s39);
-        Switch s40 = findViewById(R.id.s40);
-        Switch s41 = findViewById(R.id.s41);
-        Switch s42 = findViewById(R.id.s42);
-        Switch s43 = findViewById(R.id.s43);
-        Switch s44 = findViewById(R.id.s44);
-        Switch s45 = findViewById(R.id.s45);
-        Switch s46 = findViewById(R.id.s46);
-        Switch s47 = findViewById(R.id.s47);
-        Switch s48 = findViewById(R.id.s48);
-        Switch s49 = findViewById(R.id.s49);
-        Switch s50 = findViewById(R.id.s50);
-        Switch s51 = findViewById(R.id.s51);
-        Switch s52 = findViewById(R.id.s52);
-        Switch s53 = findViewById(R.id.s53);
-        Switch s54 = findViewById(R.id.s54);
-        Switch s55 = findViewById(R.id.s55);
-        Switch s56 = findViewById(R.id.s56);
-        Switch s57 = findViewById(R.id.s57);
-        Switch s58 = findViewById(R.id.s58);
-        Switch s59 = findViewById(R.id.s59);
-        Switch s60 = findViewById(R.id.s60);
-        Switch s61 = findViewById(R.id.s61);
-        Switch s62 = findViewById(R.id.s62);
-        Switch s63 = findViewById(R.id.s63);
-        Switch s64 = findViewById(R.id.s64);
-        Switch s65 = findViewById(R.id.s65);
-        Switch s66 = findViewById(R.id.s66);
-        Switch s67 = findViewById(R.id.s67);
-        Switch s68 = findViewById(R.id.s68);
-        Switch s69 = findViewById(R.id.s69);
-        Switch s70 = findViewById(R.id.s70);
-        Switch s71 = findViewById(R.id.s71);
-        Switch siMed = findViewById(R.id.imed);
 
         if (s1.isChecked() == true) {
             atvs = "Português | ";
@@ -155,7 +108,6 @@ public class agenda extends AppCompatActivity {
         if (s2.isChecked() == true) {
             atvs += "Linguagem | ";
         }
-
         if (s3.isChecked() == true) {
             atvs += "Matemática | ";
         }
