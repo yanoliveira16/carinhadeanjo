@@ -630,7 +630,7 @@ public class agenda extends AppCompatActivity {
             SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
             String currentDateandTime = sdf.format(new Date());
 
-            String data = valor_agenda + currentDateandTime;
+            String data = valor_agenda + " - " + currentDateandTime;
 
             myRef.child(currentDateandTime2).child(data).child("falta").setValue(falta);
             myRef.child(currentDateandTime2).child(data).child("atvs").setValue(atvs);
