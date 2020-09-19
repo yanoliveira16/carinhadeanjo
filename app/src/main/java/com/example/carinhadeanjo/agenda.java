@@ -70,6 +70,7 @@ public class agenda extends AppCompatActivity {
         if (s.isChecked() == true) {
             falta = "PRESENTE";
         }
+        enviar2();
     }
 
 
@@ -227,7 +228,7 @@ public class agenda extends AppCompatActivity {
             atvs += "Contação de História  | ";
         }
 
-        enviar2();
+        enviar0();
     }
 
     String atvs2 = "";
