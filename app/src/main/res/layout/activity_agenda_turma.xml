@@ -6,4 +6,766 @@
     android:layout_height="match_parent"
     tools:context=".agenda_turma">
 
+    <ImageView
+        android:id="@+id/imageView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/fundotres" />
+
+    <TextView
+        android:id="@+id/nova_agenda2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/quicksand_bold"
+        android:gravity="center"
+        android:text="NOVA AGENDA"
+        android:textColor="#FF864C"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nome_aluno_agenda4" />
+
+    <TextView
+        android:id="@+id/nome_aluno_agenda4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:fontFamily="@font/quicksand_light"
+        android:text="Carregando..."
+        android:textColor="#000000"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView27" />
+
+    <ImageView
+        android:id="@+id/imageView27"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/nome_aluno_agenda"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_sem_letra" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView25"
+        app:layout_constraintEnd_toEndOf="@+id/imageView25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nova_agenda2">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="Atividades de Sala:"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="206dp" />
+
+            <Switch
+                android:id="@+id/s1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Português"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="240dp" />
+
+            <Switch
+                android:id="@+id/s2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Linguagem"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="267dp" />
+
+            <Switch
+                android:id="@+id/s3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Matemática"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="295dp" />
+
+            <Switch
+                android:id="@+id/s4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Ciências"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="322dp" />
+
+            <Switch
+                android:id="@+id/s5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Outro"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="349dp" />
+
+            <EditText
+                android:id="@+id/outro_texto"
+                style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:ems="10"
+                android:fontFamily="@font/quicksand_medium"
+                android:inputType="textPersonName"
+                tools:layout_conversion_absoluteHeight="38dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="376dp" />
+
+            <Switch
+                android:id="@+id/s6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Geografia"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="414dp" />
+
+            <Switch
+                android:id="@+id/s7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="História"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="441dp" />
+
+            <Switch
+                android:id="@+id/s8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Natureza e Sociedade"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="468dp" />
+
+            <Switch
+                android:id="@+id/s9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Judo"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="495dp" />
+
+            <Switch
+                android:id="@+id/s10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Ballet"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="522dp" />
+
+            <Switch
+                android:id="@+id/s11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Inglês"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="549dp" />
+
+            <Switch
+                android:id="@+id/s12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Música"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="577dp" />
+
+            <Switch
+                android:id="@+id/s13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Teatro"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="604dp" />
+
+            <Switch
+                android:id="@+id/s14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Recreação Dirigida"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="631dp" />
+
+            <Switch
+                android:id="@+id/s15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Coordenação Motora"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="658dp" />
+
+            <Switch
+                android:id="@+id/s16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Parque"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="685dp" />
+
+            <Switch
+                android:id="@+id/s17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Brinquedoteca"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="712dp" />
+
+            <Switch
+                android:id="@+id/s18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Educação Artística"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="739dp" />
+
+            <Switch
+                android:id="@+id/s19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Cozinha Experimental"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="767dp" />
+
+            <Switch
+                android:id="@+id/s20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Hora da novidade"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="794dp" />
+
+            <Switch
+                android:id="@+id/s21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Jogos"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="821dp" />
+
+            <Switch
+                android:id="@+id/s22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Videoteca"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="848dp" />
+
+            <Switch
+                android:id="@+id/s23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Contação de História"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="875dp" />
+
+            <TextView
+                android:id="@+id/traço3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:text="---------"
+                android:textSize="30sp"
+                tools:layout_conversion_absoluteHeight="43dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1220dp" />
+
+            <TextView
+                android:id="@+id/aviso4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="Aviso:"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1503dp" />
+
+            <EditText
+                android:id="@+id/outro_texto3"
+                style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:ems="10"
+                android:fontFamily="@font/quicksand_medium"
+                android:inputType="textPersonName"
+                tools:layout_conversion_absoluteHeight="38dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="376dp" />
+
+            <TextView
+                android:id="@+id/traço18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:text="---------"
+                android:textSize="30sp"
+                tools:layout_conversion_absoluteHeight="43dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1220dp" />
+
+            <TextView
+                android:id="@+id/dever"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="Dever:"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1263dp" />
+
+            <Switch
+                android:id="@+id/s30"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Em folha"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1297dp" />
+
+            <Switch
+                android:id="@+id/s31"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="No caderno"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1325dp" />
+
+            <TextView
+                android:id="@+id/De"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="De:"
+                android:textColor="#000000"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/outro_texto5"
+                style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:ems="10"
+                android:fontFamily="@font/quicksand_medium"
+                android:inputType="textPersonName"
+                tools:layout_conversion_absoluteHeight="38dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="376dp" />
+
+            <Switch
+                android:id="@+id/s33"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="No Livro"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1379dp" />
+
+            <TextView
+                android:id="@+id/de"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="De:"
+                android:textColor="#000000"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/outro_texto4"
+                style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:ems="10"
+                android:fontFamily="@font/quicksand_medium"
+                android:inputType="textPersonName"
+                tools:layout_conversion_absoluteHeight="38dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="376dp" />
+
+            <TextView
+                android:id="@+id/pag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Página:"
+                android:textColor="#000000"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/outro_texto2"
+                style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:ems="10"
+                android:fontFamily="@font/quicksand_medium"
+                android:inputType="textPersonName"
+                tools:layout_conversion_absoluteHeight="38dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="376dp" />
+
+            <TextView
+                android:id="@+id/traço4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:text="---------"
+                android:textSize="30sp"
+                tools:layout_conversion_absoluteHeight="43dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1460dp" />
+
+            <TextView
+                android:id="@+id/aviso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="Aviso:"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1503dp" />
+
+            <EditText
+                android:id="@+id/avisos"
+                style="@style/Base.Widget.MaterialComponents.TextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:ems="10"
+                android:fontFamily="@font/quicksand_medium"
+                android:inputType="textPersonName"
+                tools:layout_conversion_absoluteHeight="38dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1538dp" />
+
+            <TextView
+                android:id="@+id/atv_rot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="Atividades de rotina:"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1503dp" />
+
+            <Switch
+                android:id="@+id/s65"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Psicomotricidade"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1297dp" />
+
+            <Switch
+                android:id="@+id/s66"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Recreação"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1325dp" />
+
+            <Switch
+                android:id="@+id/s67"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Hora da leitura"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1352dp" />
+
+            <Switch
+                android:id="@+id/s68"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Jogos"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1297dp" />
+
+            <Switch
+                android:id="@+id/s69"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Arte"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1352dp" />
+
+            <Switch
+                android:id="@+id/s70"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Musicalização"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1297dp" />
+
+            <Switch
+                android:id="@+id/s71"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Colônia"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1325dp" />
+
+            <TextView
+                android:id="@+id/traço14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:text="---------"
+                android:textSize="30sp"
+                tools:layout_conversion_absoluteHeight="43dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1575dp" />
+
+            <TextView
+                android:id="@+id/observaçao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="Observação:"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1503dp" />
+
+            <EditText
+                android:id="@+id/obs2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/traço15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:text="------------------"
+                android:textSize="30sp"
+                tools:layout_conversion_absoluteHeight="43dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1575dp" />
+
+            <TextView
+                android:id="@+id/aviso_botao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="Verifique tudo antes de enviar!"
+                android:textColor="#FF864C"
+                android:textSize="20sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_conversion_absoluteWidth="407dp" />
+
+            <Button
+                android:id="@+id/pronto"
+                style="@android:style/Widget.DeviceDefault.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button"
+                android:fontFamily="@font/quicksand_bold"
+                android:onClick="enviar"
+                android:paddingTop="10sp"
+                android:paddingBottom="10sp"
+                android:text="PRONTO"
+                android:textColor="#1512E6"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

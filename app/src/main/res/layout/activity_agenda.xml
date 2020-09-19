@@ -163,6 +163,20 @@
                 tools:layout_editor_absoluteX="2dp"
                 tools:layout_editor_absoluteY="349dp" />
 
+            <TextView
+                android:id="@+id/aviso3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="Aviso:"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1503dp" />
+
             <EditText
                 android:id="@+id/outro_texto"
                 style="@style/Base.Widget.MaterialComponents.TextInputEditText"
