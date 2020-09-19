@@ -7,10 +7,11 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
         android:screenOrientation="portrait"
+        android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".tela_do_aluno_prof"></activity>
+        <activity android:name=".agenda_turma"></activity>
+        <activity android:name=".tela_do_aluno_prof" />
         <activity android:name=".tela_de_alunos" />
         <activity android:name=".tela_da_professora" />
         <activity android:name=".lista_tres" />
