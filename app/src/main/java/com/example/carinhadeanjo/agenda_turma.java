@@ -256,8 +256,8 @@ public class agenda_turma extends AppCompatActivity {
         myRef.child("dever").setValue(dever);
         myRef.child("aviso").setValue(aviso);
 
-        Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
-        startActivity(intent);
+        //Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
+       // startActivity(intent);
     }
 
 

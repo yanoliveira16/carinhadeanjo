@@ -51,50 +51,33 @@
         android:background="@drawable/alunos"
         android:onClick="tela_de_alunosClick"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView23"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/textView21" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button9"
         style="@android:style/Widget.DeviceDefault.Button.Borderless"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/book"
-        android:onClick="tela_de_alunosClick"
+        android:onClick="agenda_turma"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView21" />
+        app:layout_constraintEnd_toStartOf="@+id/button7" />
 
     <Button
         android:id="@+id/button8"
         style="@android:style/Widget.DeviceDefault.Button.Borderless"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/refresh"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView23" />
-
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="20dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.588"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:visibility="invisible" />
-
-    <TextView
-        android:id="@+id/textView21"
-        android:layout_width="20dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="157dp"
-        tools:visibility="invisible" />
+        app:layout_constraintStart_toEndOf="@+id/button7" />
 
     <TextView
         android:id="@+id/turma2"
