@@ -10,7 +10,12 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".enviar_foto"></activity>
+        <activity android:name=".enviar_foto">
+            <intent-filter>
+                <action android:name="com.android.camera.action.CROP" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".agenda_turma" />
         <activity android:name=".tela_do_aluno_prof" />
         <activity android:name=".tela_de_alunos" />

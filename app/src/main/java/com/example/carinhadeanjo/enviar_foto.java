@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 
 import static android.content.Intent.ACTION_PICK;
@@ -36,7 +37,19 @@ public class enviar_foto extends AppCompatActivity {
         //Intent gallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
         //startActivityForResult(gallery, PICK_IMAGE);
 
-        performCrop();
+        /*String filename = "image.png";
+        String path = "/mnt/sdcard/" + filename;
+        File f = new File(path);  //
+        Uri imgUri= Uri.fromFile(f);*/
+        Intent intent = new Intent("com.android.camera.action.CROP", MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+        intent.setType("image/*");
+        intent.putExtra("crop", "true");
+        intent.putExtra("aspectX", 1);
+        intent.putExtra("aspectY", 1);
+        intent.putExtra("outputX", 50);
+        intent.putExtra("outputY", 50);
+        intent.putExtra("return-data", true);
+        startActivityForResult(intent, PICK_IMAGE);
 
 
         /*Intent pickImageIntent = new Intent(ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -54,11 +67,11 @@ public class enviar_foto extends AppCompatActivity {
         startActivityForResult(pickImageIntent, PICK_IMAGE);*/
     }
 
-    private void performCrop() {
+    private void performCrop(Uri picUri) {
         try {
-            Intent cropIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+            Intent cropIntent = new Intent("com.android.camera.action.CROP");
             // indicate image type and Uri
-            cropIntent.setType("image/*");
+            cropIntent.setDataAndType(picUri, "image/*");
             // set crop properties here
             cropIntent.putExtra("crop", true);
             // indicate aspect of desired crop
@@ -88,15 +101,17 @@ public class enviar_foto extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK && requestCode == PICK_IMAGE  ||requestCode == PIC_CROP) {
+        if (resultCode == RESULT_OK && requestCode == PICK_IMAGE) {
             try {
+                imageUri = data.getData();
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
-                ImageView img= (ImageView) findViewById(R.id.imageView27);
+                ImageView img = (ImageView) findViewById(R.id.imageView27);
                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                img.setImageBitmap(getRoundedCornerBitmap(bitmap,400));
+                img.setImageBitmap(getRoundedCornerBitmap(bitmap, 400));
             } catch (IOException e) {
                 e.printStackTrace();
+
             }
         }
     }
@@ -125,6 +140,6 @@ public class enviar_foto extends AppCompatActivity {
     }
 
     public void enviar_foto(View view){
-
+        performCrop(imageUri);
     }
 }
