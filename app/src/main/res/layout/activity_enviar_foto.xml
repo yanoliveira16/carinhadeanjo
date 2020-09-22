@@ -17,15 +17,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/fundoum" />
 
-    <ImageView
-        android:id="@+id/imageView27"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+    <com.lyft.android.scissors.CropView
+        android:id="@+id/crop_view"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:layout_marginTop="15dp"
+        app:cropviewViewportRatio="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/profile" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button10"
