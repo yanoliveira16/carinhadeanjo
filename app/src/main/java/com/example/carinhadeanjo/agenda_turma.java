@@ -97,13 +97,13 @@ public class agenda_turma extends AppCompatActivity {
         if (s4.isChecked() == true) {
             atvs += "Ciências | ";
         }
-        if (s5.isChecked() == true) {
+        if (s7.isChecked() == true) {
             atvs += "História | ";
         }
         if (s6.isChecked() == true) {
             atvs += "Geografia | ";
         }
-        if (s7.isChecked() == true) {
+        if (s5.isChecked() == true) {
             final EditText et2 = (EditText) findViewById(R.id.outro_texto);
             String nn = et2.getText().toString();
             if (nn.equals(null) == true) {

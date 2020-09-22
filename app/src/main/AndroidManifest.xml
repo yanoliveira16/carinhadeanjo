@@ -10,7 +10,8 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".agenda_turma"></activity>
+        <activity android:name=".enviar_foto"></activity>
+        <activity android:name=".agenda_turma" />
         <activity android:name=".tela_do_aluno_prof" />
         <activity android:name=".tela_de_alunos" />
         <activity android:name=".tela_da_professora" />

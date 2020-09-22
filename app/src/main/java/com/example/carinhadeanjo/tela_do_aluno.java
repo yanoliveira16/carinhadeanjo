@@ -91,8 +91,8 @@ public class tela_do_aluno extends AppCompatActivity {
                     listView.setBackground(gd);
                     listView.setAdapter(arrayAdapter);
                 }
-                Collections.sort(feed);
-                Collections.reverse(feed);
+                //Collections.sort(feed);
+                //Collections.reverse(feed);
                 ppp();
                 //Log.d("FEED", "feed: " + feed +"| aa: "+arrayAdapter);
             }

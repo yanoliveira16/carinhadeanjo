@@ -530,7 +530,7 @@ public class agenda extends AppCompatActivity {
             myRef.child(currentDateandTime2).child(data).child("iatv").setValue(iatv);
             myRef.child(currentDateandTime2).child(data).child("obs3").setValue(obs3);
 
-            Intent intent = new Intent(getBaseContext(), tela_do_aluno_prof.class);
+            Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
             startActivity(intent);
         }
 

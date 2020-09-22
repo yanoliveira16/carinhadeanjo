@@ -888,7 +888,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_medium"
-                android:text="Não dormiu"
+                android:text="Toalha"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
                 tools:layout_conversion_absoluteWidth="407dp"
