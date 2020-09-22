@@ -56,10 +56,10 @@ public class agenda_turma extends AppCompatActivity {
     String atvs = "";
 
     public void enviar1(View view) {
-        View a1 = findViewById(R.id.progressBar4);
-        a1.setVisibility(View.VISIBLE);
-        View a2 = findViewById(R.id.imageView25);
-        a2.setVisibility(View.VISIBLE);
+        //View a1 = findViewById(R.id.progressBar4);
+        //a1.setVisibility(View.VISIBLE);
+        //View a2 = findViewById(R.id.imageView25);
+       // a2.setVisibility(View.VISIBLE);
 
         Switch s1 = findViewById(R.id.s1);
         Switch s2 = findViewById(R.id.s2);
@@ -226,28 +226,7 @@ public class agenda_turma extends AppCompatActivity {
             String nn = et2.getText().toString();
             aviso += nn + "";
         }
-        pegar_do_servidor();
-    }
-
-
-    //ESSA É A ÚLTIMA PARTE.
-    //AQUI VOCÊ PEGA AS STRINGS CRIADAS E ENVIA TUDO AO SERVIDOR
-    //CADA PARTE TEM UMA KEY (CHILD) DIFERENTE!
-
-    Integer valor_agenda = 0;
-    public void  pegar_do_servidor(){
-        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                valor_agenda = dataSnapshot.getValue(Integer.class);
-                valor_agenda += 1;
-                myRef.setValue(valor_agenda);
-                enviar_servidor();
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-            }
-        });
+        enviar_servidor();
     }
 
     public void enviar_servidor(){
@@ -256,8 +235,8 @@ public class agenda_turma extends AppCompatActivity {
         myRef.child("dever").setValue(dever);
         myRef.child("aviso").setValue(aviso);
 
-        //Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
-       // startActivity(intent);
+        Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
+        startActivity(intent);
     }
 
 

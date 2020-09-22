@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -35,7 +36,7 @@ public class agenda extends AppCompatActivity {
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     DatabaseReference myRef = database.child("P3").child(tela_do_aluno_prof.id_aluno).child("Agenda");
     DatabaseReference myRef2 = database.child("P3").child(tela_do_aluno_prof.id_aluno).child("agendaValor");
-    DatabaseReference myRef3 = database.child("P5").child(tela_de_carregamento.tturma).child("agendaTurma");
+    DatabaseReference myRef3 = database.child("P5").child(tela_de_carregamento.tturma).child("AgendaTurma");
 
 
     @Override
@@ -534,15 +535,98 @@ public class agenda extends AppCompatActivity {
         }
 
 
+        //As atividades de sala
         public void hg1(View view){
-            if (s24.isChecked() == true) {
+            s25 = findViewById(R.id.s25);
+            if (s25.isChecked()) {
                 s25.setChecked(false);
             }
         }
 
     public void hg2(View view){
-        if (s25.isChecked() == true) {
+        s24 = findViewById(R.id.s24);
+        if (s24.isChecked()) {
             s24.setChecked(false);
+        }
+    }
+
+    //Comportamento
+    public void hg3(View view){
+        s26 = findViewById(R.id.s26);
+        s27 = findViewById(R.id.s27);
+        s28 = findViewById(R.id.s28);
+        s29 = findViewById(R.id.s29);
+        if (s26.isChecked()) {
+            s27.setChecked(false);
+            s28.setChecked(false);
+            s29.setChecked(false);
+        }
+    }
+
+    public void hg4(View view){
+        s26 = findViewById(R.id.s26);
+        s27 = findViewById(R.id.s27);
+        s28 = findViewById(R.id.s28);
+        s29 = findViewById(R.id.s29);
+        if (s27.isChecked()) {
+            s26.setChecked(false);
+            s28.setChecked(false);
+            s29.setChecked(false);
+        }
+    }
+
+    public void hg5(View view){
+        s26 = findViewById(R.id.s26);
+        s27 = findViewById(R.id.s27);
+        s28 = findViewById(R.id.s28);
+        s29 = findViewById(R.id.s29);
+        if (s28.isChecked()) {
+            s27.setChecked(false);
+            s26.setChecked(false);
+            s29.setChecked(false);
+        }
+    }
+
+    public void hg6(View view){
+        s26 = findViewById(R.id.s26);
+        s27 = findViewById(R.id.s27);
+        s28 = findViewById(R.id.s28);
+        s29 = findViewById(R.id.s29);
+        if (s29.isChecked()) {
+            s27.setChecked(false);
+            s28.setChecked(false);
+            s26.setChecked(false);
+        }
+    }
+
+    //Lanche Matutino
+    public void hg7(View view){
+        s32 = findViewById(R.id.s32);
+        s34 = findViewById(R.id.s34);
+        s72 = findViewById(R.id.s72);
+        if (s32.isChecked()) {
+            s34.setChecked(false);
+            s72.setChecked(false);
+        }
+    }
+
+    public void hg8(View view){
+        s32 = findViewById(R.id.s32);
+        s34 = findViewById(R.id.s34);
+        s72 = findViewById(R.id.s72);
+        if (s34.isChecked()) {
+            s32.setChecked(false);
+            s72.setChecked(false);
+        }
+    }
+
+    public void hg9(View view){
+        s32 = findViewById(R.id.s32);
+        s34 = findViewById(R.id.s34);
+        s72 = findViewById(R.id.s72);
+        if (s72.isChecked()) {
+            s34.setChecked(false);
+            s32.setChecked(false);
         }
     }
 

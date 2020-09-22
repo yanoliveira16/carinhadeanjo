@@ -62,7 +62,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/book"
+        android:background="@drawable/al_um"
         android:onClick="agenda_turma"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button7" />
