@@ -69,8 +69,8 @@ public class tela_da_professora extends AppCompatActivity {
                 }
             });
             arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, feed);
-
-        }
+        new AlertDialog.Builder(tela_da_professora.this).setMessage("BETA\nO aplicativo ainda se encontra em desenvolvimento.\nConfira novidades e tutorais em http://escolacarinhadeanjodf.com/aplicativo").show();
+    }
 
     public void sair_click2(View view) {
         sairDaqui();

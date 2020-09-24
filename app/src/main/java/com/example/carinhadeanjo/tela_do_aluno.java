@@ -123,6 +123,8 @@ public class tela_do_aluno extends AppCompatActivity {
 
                     View a3=findViewById(R.id.sair);
                     a3.setVisibility(View.VISIBLE);
+
+                    new AlertDialog.Builder(tela_do_aluno.this).setMessage("BETA\nO aplicativo ainda se encontra em desenvolvimento.\nConfira novidades e tutorais em http://escolacarinhadeanjodf.com/aplicativo").show();
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
