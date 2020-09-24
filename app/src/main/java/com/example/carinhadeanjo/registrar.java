@@ -5,8 +5,10 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.arch.core.util.Function;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -35,10 +37,20 @@ public class registrar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar);
 
+        View a1=findViewById(R.id.carr1);
+        a1.setVisibility(View.INVISIBLE);
 
+        View a2=findViewById(R.id.carr2);
+        a2.setVisibility(View.INVISIBLE);
     }
 
     public void cadastrar_click(final View view){
+        View a1=findViewById(R.id.carr1);
+        a1.setVisibility(View.VISIBLE);
+
+        View a2=findViewById(R.id.carr2);
+        a2.setVisibility(View.VISIBLE);
+
         final EditText et2 = (EditText) findViewById(R.id.email);
         email = et2.getText().toString();
 
@@ -102,25 +114,15 @@ public void segundaParte(){
                     if (task.isSuccessful()) {
                         FirebaseUser user = mAuth.getCurrentUser();
                         String uid = user.getUid();
+                        login_or_register.id = uid;
                         myRef.child(uid).child("Nome Pai").setValue(nomeDoResp);
                         myRef.child(uid).child("Nome Aluno").setValue(nomeDoAluno);
                         myRef.child(uid).child("Email").setValue(email);
                         myRef.child(uid).child("Turma").setValue(turma);
                         myRef.child(uid).child("ID").setValue(uid);
 
-                        AlertDialog alertDialog = new AlertDialog.Builder(registrar.this).create();
-                        alertDialog.setTitle("Sucesso!");
-                        alertDialog.setMessage("Seu cadastro foi realizado com sucesso!");
-                        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Ok",
-                                new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        Intent intent = new Intent(getBaseContext(), tela_de_carregamento.class);
-                                        startActivity(intent);
-                                        dialog.dismiss();
-                                    }
-                                });
-                        alertDialog.show();
-
+                        Intent intent = new Intent(getBaseContext(), termos_de_uso.class);
+                        startActivity(intent);
 
                         // updateUI(user);
                     } else {
@@ -137,7 +139,11 @@ public void segundaParte(){
 String errormsg="";
 
     public void erro(){
+        View a1=findViewById(R.id.carr1);
+        a1.setVisibility(View.INVISIBLE);
 
+        View a2=findViewById(R.id.carr2);
+        a2.setVisibility(View.INVISIBLE);
         AlertDialog alertDialog = new AlertDialog.Builder(registrar.this).create();
         alertDialog.setTitle("ERRO!");
         alertDialog.setMessage(errormsg);

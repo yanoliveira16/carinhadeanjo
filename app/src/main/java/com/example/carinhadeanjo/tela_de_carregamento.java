@@ -3,8 +3,10 @@ package com.example.carinhadeanjo;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -31,6 +33,27 @@ public class tela_de_carregamento extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_de_carregamento);
+
+        SharedPreferences sharedPref1 = getPreferences(Context.MODE_PRIVATE);
+        int onde_parou = sharedPref1.getInt("onde", 0);
+        Log.d("Aqui", "aqui porra " +onde_parou);
+        if (onde_parou == 1){
+            Intent intent = new Intent(getBaseContext(), termos_de_uso.class);
+            startActivity(intent);
+        }else if (onde_parou == 2){
+            Intent intent = new Intent(getBaseContext(), enviar_foto.class);
+            startActivity(intent);
+        }else{
+            primeira_chamada();
+        }
+
+    }
+
+    public void primeira_chamada(){
+        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt("porra", 0);
+        editor.apply();
 
         final TextView a1 = (TextView) findViewById(R.id.texto_carregamento);
         a1.setText("Estamos verificando suas informações nos servidores...");

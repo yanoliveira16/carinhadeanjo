@@ -30,15 +30,14 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView10" />
 
     <ScrollView
-        android:layout_width="408dp"
-        android:layout_height="469dp"
-        android:layout_marginTop="1dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView10"
-        app:layout_constraintVertical_bias="0.652"
+        app:layout_constraintTop_toBottomOf="@+id/textView17"
         tools:ignore="MissingConstraints">
 
         <LinearLayout
@@ -51,55 +50,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
-                android:text="Para continuar, você deverá ler e  aceitar o termos de uso que aqui são  informados. \n Eles também estão disponíveis no site carinhadeanjodf.termos."
-                android:textSize="17sp" />
-
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
-                android:text="Para continuar, você deverá ler e  aceitar o termos de uso que aqui são  informados. \n Eles também estão disponíveis no site carinhadeanjodf.termos."
-                android:textSize="17sp" />
-
-            <TextView
-                android:id="@+id/textView14"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
-                android:text="Para continuar, você deverá ler e  aceitar o termos de uso que aqui são  informados. \n Eles também estão disponíveis no site carinhadeanjodf.termos."
-                android:textSize="17sp" />
-
-            <TextView
-                android:id="@+id/textView13"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
-                android:text="Para continuar, você deverá ler e  aceitar o termos de uso que aqui são  informados. \n Eles também estão disponíveis no site carinhadeanjodf.termos."
-                android:textSize="17sp" />
-
-            <TextView
-                android:id="@+id/textView11"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
-                android:text="Para continuar, você deverá ler e  aceitar o termos de uso que aqui são  informados. \n Eles também estão disponíveis no site carinhadeanjodf.termos."
-                android:textSize="17sp" />
-
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
-                android:text="Para continuar, você deverá ler e  aceitar o termos de uso que aqui são  informados. \n Eles também estão disponíveis no site carinhadeanjodf.termos."
-                android:textSize="17sp" />
-
-            <TextView
-                android:id="@+id/textView12"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
-                android:text="Para continuar, você deverá ler e  aceitar o termos de uso que aqui são  informados. \n Eles também estão disponíveis no site carinhadeanjodf.termos."
+                android:gravity="center"
+                android:text="\nTermos de uso\n Aplicativo da escola Carinha de Anjo\n\n  PARA CONTINUAR VOCÊ DEVERÁ LÊ E ACEITAR OS TERMOS DE USO!\n\n O APLICATIVO NÃO SE ENCONTRA EM SUA VERSÃO FINAL. PODENDO ASSIM, PASSAR POR GRANDES MUDANÇAS EM SEUS TERMOS!\n\n Estes são os termos de uso do aplicativo que deverão ser lidas e aceitas ao final.\n\n  O aplicativo é distribuído por Gabriel Vilarouca e as políticas de privacidade em https://eununcaapp.com/politicas também são aplicáveis a esse software.\n\n  Ao usar o aplicativo você estará concordando que suas informações serão analisadas e comparadas com as da escola e apenas depois disso você terá o acesso ao aplicativo.\n\n  Suas informações pessoais são suas!\n Usaremos suas informações pessoais para melhorar o aplicativo e coordenação da escola. Fatores mais sensíveis como a senha não são visíveis e, portanto, não serão usadas e nem visualizadas por ninguém. Sendo de total responsabilidade do usuário guardá-la e não compartilhar com mais ninguém.\n\n  O aplicativo contém inteligência artificial que analisará a foto antes mesmo de ser enviada ao servidor. Portanto, não são permitidas fotos sem camisa ou que não contenham rosto.\n Sua foto será usada apenas no aplicativo e passará por uma análise juntamente com o perfil. "
                 android:textSize="17sp" />
 
             <Button

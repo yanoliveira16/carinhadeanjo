@@ -114,8 +114,8 @@ public class tela_da_professora extends AppCompatActivity {
         startActivity(intent);
     }
         public void agenda_turma (View view){
-            //Intent intent = new Intent(getBaseContext(), agenda_turma.class);
-            Intent intent = new Intent(getBaseContext(), enviar_foto.class);
+            Intent intent = new Intent(getBaseContext(), agenda_turma.class);
+            //Intent intent = new Intent(getBaseContext(), enviar_foto.class);
             startActivity(intent);
     }
 }
