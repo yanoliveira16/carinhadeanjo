@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".agenda_turma">
+    tools:context="com.gabrielvilarouca.carinhadeanjo.agenda_turma">
 
     <ImageView
         android:id="@+id/imageView25"

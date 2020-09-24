@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:963276759254:android:873ff148ea4a241c7aa977",
         "android_client_info": {
-          "package_name": "com.example.carinhadeanjo"
+          "package_name": "com.gabrielvilarouca.carinhadeanjo"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "963276759254-p599g82lvlq00m33fs05vnkgq9au5u6f.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.carinhadeanjo",
+            "package_name": "com.gabrielvilarouca.carinhadeanjo",
             "certificate_hash": "b1b9d77284c79016ffc8d2bf8fe3ebeb9c97b60d"
           }
         },

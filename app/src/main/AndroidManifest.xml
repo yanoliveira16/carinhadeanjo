@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.carinhadeanjo">
+    package="com.gabrielvilarouca.carinhadeanjo">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <application
@@ -11,33 +11,33 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".enviar_foto">
+        <activity android:name="com.gabrielvilarouca.carinhadeanjo.enviar_foto">
             <intent-filter>
                 <action android:name="com.android.camera.action.CROP" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".agenda_turma" />
-        <activity android:name=".tela_do_aluno_prof" />
-        <activity android:name=".tela_de_alunos" />
-        <activity android:name=".tela_da_professora" />
-        <activity android:name=".lista_tres" />
-        <activity android:name=".lista_dois" />
-        <activity android:name=".lista_um" />
-        <activity android:name=".agenda" />
-        <activity android:name=".tela_do_aluno" />
-        <activity android:name=".termos_de_uso" />
-        <activity android:name=".tela_de_carregamento" />
-        <activity android:name=".entra" />
-        <activity android:name=".registrar" />
-        <activity android:name=".login_or_register">
+        <activity android:name="com.gabrielvilarouca.carinhadeanjo.agenda_turma" />
+        <activity android:name="com.gabrielvilarouca.carinhadeanjo.tela_do_aluno_prof" />
+        <activity android:name="com.gabrielvilarouca.carinhadeanjo.tela_de_alunos" />
+        <activity android:name="com.gabrielvilarouca.carinhadeanjo.tela_da_professora" />
+        <activity android:name="com.gabrielvilarouca.carinhadeanjo.lista_tres" />
+        <activity android:name="com.gabrielvilarouca.carinhadeanjo.lista_dois" />
+        <activity android:name="com.gabrielvilarouca.carinhadeanjo.lista_um" />
+        <activity android:name="com.gabrielvilarouca.carinhadeanjo.agenda" />
+        <activity android:name="com.gabrielvilarouca.carinhadeanjo.tela_do_aluno" />
+        <activity android:name="com.gabrielvilarouca.carinhadeanjo.termos_de_uso" />
+        <activity android:name="com.gabrielvilarouca.carinhadeanjo.tela_de_carregamento" />
+        <activity android:name="com.gabrielvilarouca.carinhadeanjo.entra" />
+        <activity android:name="com.gabrielvilarouca.carinhadeanjo.registrar" />
+        <activity android:name="com.gabrielvilarouca.carinhadeanjo.login_or_register">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name="com.gabrielvilarouca.carinhadeanjo.MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

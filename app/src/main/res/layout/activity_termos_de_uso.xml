@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".termos_de_uso">
+    tools:context="com.gabrielvilarouca.carinhadeanjo.termos_de_uso">
 
     <ImageView
         android:id="@+id/imageView10"
