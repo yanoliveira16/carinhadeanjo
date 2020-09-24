@@ -28,11 +28,13 @@ public class tela_de_carregamento extends AppCompatActivity {
     DatabaseReference myRef3 = database.child("P4");
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_de_carregamento);
+
+        View a3=findViewById(R.id.button4);
+        a3.setVisibility(View.INVISIBLE);
 
         SharedPreferences sharedPref1 = getPreferences(Context.MODE_PRIVATE);
         int onde_parou = sharedPref1.getInt("onde", 0);
@@ -67,6 +69,11 @@ public class tela_de_carregamento extends AppCompatActivity {
                     String aa = "OPA! \n Cadastro ainda não aprovado. \n Aguarde e volte mais tarde!";
                     final TextView a1 = (TextView) findViewById(R.id.texto_carregamento);
                     a1.setText(aa);
+                    View a2=findViewById(R.id.progressBar);
+                    a2.setVisibility(View.INVISIBLE);
+
+                    View a3=findViewById(R.id.button4);
+                    a3.setVisibility(View.VISIBLE);
 
                 } else if (nn.contains("P3") == true) {
                     carregamento3();

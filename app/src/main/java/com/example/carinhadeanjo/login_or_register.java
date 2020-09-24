@@ -9,11 +9,20 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class login_or_register extends AppCompatActivity {
+
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference("P5").child("onde_parou");
 
     public static String id;
 
@@ -23,25 +32,35 @@ public class login_or_register extends AppCompatActivity {
         setContentView(R.layout.activity_login_or_register);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
-
-            SharedPreferences sharedPref1 = getPreferences(Context.MODE_PRIVATE);
-            int onde_parou = sharedPref1.getInt("onde", 0);
             id=user.getUid();
-            Log.d("Aqui", "aqui porra " +onde_parou);
-            if (onde_parou == 1){
-                chamar_termo();
-            }else if (onde_parou == 2){
-                chamar_foto();
-            }else{
-                chamar_carregar();
-            }
+            myRef.child(id).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
 
+                    String nn = dataSnapshot.getValue(String.class);
+                    if (nn.contains("01") == true) {
+                        chamar_termo();
+                    } else if (nn.contains("02") == true) {
+                        chamar_foto();
+                    } else {
+                        chamar_carregar();
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
         }else{
             View a1=findViewById(R.id.progressBar2);
             a1.setVisibility(View.INVISIBLE);
 
             View a2=findViewById(R.id.imageView12);
             a2.setVisibility(View.INVISIBLE);
+
+            View a3=findViewById(R.id.imageView27);
+            a3.setVisibility(View.INVISIBLE);
         }
     }
 

@@ -28,7 +28,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.vision.face.FaceDetector;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.lyft.android.scissors.CropView;
 
 import java.io.ByteArrayOutputStream;
@@ -54,18 +61,18 @@ import static android.content.Intent.ACTION_PICK;
 
 public class enviar_foto extends AppCompatActivity {
 
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference("P5").child("onde_parou");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enviar_foto);
 
-        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt("porra", 2);
-        editor.apply();
+        myRef.child(login_or_register.id).setValue("02");
 
         final TextView a2 = (TextView) findViewById(R.id.text_informativo);
-        a2.setText("ESCOLHA SUA IMAGEM\nDeve contér um rosto!");
+        a2.setText("ESCOLHA A FOTO DO ALUNO\nDeve contér um rosto!");
     }
 
     public void escolher_imagem(View view){
@@ -213,26 +220,53 @@ public class enviar_foto extends AppCompatActivity {
         }
         else if (faces.size() == 1) {
            // new AlertDialog.Builder(this).setMessage("Rosto detectado\nQue coisa lindaaaa.").show();
-
-            Intent intent = new Intent(getBaseContext(), tela_de_carregamento.class);
-            startActivity(intent);
+            final TextView a2 = (TextView) findViewById(R.id.text_informativo);
+            a2.setText("SEGUNDA PARTE\nEnviando foto ao servidor...");
+            enviar_servidor();
         }
         else if (faces.size() > 1) {
             //new AlertDialog.Builder(this).setMessage("Mais de um rosto foi detectado.").show();
         }
     }
+    private StorageReference mStorageRef;
+    public void enviar_servidor(){
+        mStorageRef = FirebaseStorage.getInstance().getReference();
+        StorageReference riversRef = mStorageRef.child("fotos_de_perfil/"+login_or_register.id+".png");
+
+        riversRef.putFile(imageUri)
+                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        // Get a URL to the uploaded content
+                        //Uri downloadUrl = taskSnapshot.getDownloadUrl();
+                        myRef.child(login_or_register.id).setValue("03");
+                        Intent intent = new Intent(getBaseContext(), tela_de_carregamento.class);
+                        startActivity(intent);
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception exception) {
+                        // Handle unsuccessful uploads
+                        // ...
+                        new AlertDialog.Builder(enviar_foto.this).setMessage("ERRO AO ENVIAR FOTO\n." + exception).show();
+                        final TextView a2 = (TextView) findViewById(R.id.text_informativo);
+                        a2.setText("ERRO AO ENVIAR FOTO\nNão foi possível fazer o envio da sua foto para o servidor.");
+                        View b10 = findViewById(R.id.button10);
+                        b10.setVisibility(View.VISIBLE);
+                        View b11 = findViewById(R.id.button11);
+                        b11.setVisibility(View.VISIBLE);
+
+                        View a = findViewById(R.id.imc);
+                        a.setVisibility(View.INVISIBLE);
+                        View b = findViewById(R.id.pgc);
+                        b.setVisibility(View.INVISIBLE);
+                    }
+                });
+    }
 
     @Override
     public void onBackPressed(){
-        AlertDialog alertDialog = new AlertDialog.Builder(enviar_foto.this).create();
-        alertDialog.setTitle("OPA");
-        alertDialog.setMessage("Você não pode voltar pois já começou seu processo de cadastro!\nEnvia uma foto do aluno para continuar.");
-        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Ok",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-        alertDialog.show();
+        new AlertDialog.Builder(enviar_foto.this).setMessage("VOCÊ NÃO PODE VOLTAR!\nO processo de cadastro já começou. Envie uma foto do aluno para continuar.").show();
     }
 }

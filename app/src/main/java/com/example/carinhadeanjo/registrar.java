@@ -28,6 +28,7 @@ public class registrar extends AppCompatActivity {
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("P1");
+    DatabaseReference myRef2 = database.getReference("USU");
 
 
     String email,senha,nomeDoResp,nomeDoAluno,turma;
@@ -120,6 +121,8 @@ public void segundaParte(){
                         myRef.child(uid).child("Email").setValue(email);
                         myRef.child(uid).child("Turma").setValue(turma);
                         myRef.child(uid).child("ID").setValue(uid);
+                        myRef2.child(uid).setValue("P1");
+
 
                         Intent intent = new Intent(getBaseContext(), termos_de_uso.class);
                         startActivity(intent);

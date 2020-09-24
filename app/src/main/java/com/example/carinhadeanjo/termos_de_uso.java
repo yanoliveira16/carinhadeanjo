@@ -11,25 +11,22 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.io.File;
 
 public class termos_de_uso extends AppCompatActivity {
+
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference("P5").child("onde_parou");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_termos_de_uso);
 
-        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt("porra", 1);
-        editor.apply();
-
-
-        SharedPreferences sharedPref1 = getPreferences(Context.MODE_PRIVATE);
-        int onde_parou = sharedPref1.getInt("onde", 0);
-        Log.d("Aqui", "aqui porra " +onde_parou);
-
+        myRef.child(login_or_register.id).setValue("01");
     }
     public void aceitar_click(View view) {
         Intent intent = new Intent(getBaseContext(), enviar_foto.class);
