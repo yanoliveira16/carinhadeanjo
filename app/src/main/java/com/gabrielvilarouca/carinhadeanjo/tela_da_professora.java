@@ -44,31 +44,8 @@ public class tela_da_professora extends AppCompatActivity {
              final TextView a2 = (TextView) findViewById(R.id.nome_prof);
             a2.setText(tela_de_carregamento.nnomeProfe);
 
-            myRef.child(tela_de_carregamento.tturma).child("feed").addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    for (DataSnapshot snapshot:dataSnapshot.getChildren())
-                    {
-                        // String key= snapshot.getKey();
-                        String value=snapshot.getValue().toString();
-                        // feed.add(key);
-                        feed.add(value);
-                        listview_prof = findViewById(R.id.listview_prof);
-                        GradientDrawable gd = new GradientDrawable();
-                        gd.setShape(GradientDrawable.RECTANGLE);
-                        gd.setStroke(5, Color.argb(100, 0,0,0)); // border width and color
-                        //gd.setCornerRadius(80.50f);
-                        gd.setCornerRadius(100);
-                        listview_prof.setBackground(gd);
-                        listview_prof.setAdapter(arrayAdapter);
-                    }
-                }
+          atualizar_feed();
 
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-                }
-            });
-            arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, feed);
         new AlertDialog.Builder(tela_da_professora.this).setMessage("BETA\nO aplicativo ainda se encontra em desenvolvimento.\nConfira novidades e tutorais em http://escolacarinhadeanjodf.com/aplicativo").show();
     }
 
@@ -117,5 +94,39 @@ public class tela_da_professora extends AppCompatActivity {
             Intent intent = new Intent(getBaseContext(), agenda_turma.class);
             //Intent intent = new Intent(getBaseContext(), enviar_foto.class);
             startActivity(intent);
+    }
+
+    public void atualizar_feed(){
+        myRef.child(tela_de_carregamento.tturma).child("feed").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot:dataSnapshot.getChildren())
+                {
+                    // String key= snapshot.getKey();
+                    String value=snapshot.getValue().toString();
+                    // feed.add(key);
+                    feed.add(value);
+                    listview_prof = findViewById(R.id.listview_prof);
+                    GradientDrawable gd = new GradientDrawable();
+                    gd.setShape(GradientDrawable.RECTANGLE);
+                    gd.setStroke(5, Color.argb(100, 0,0,0)); // border width and color
+                    //gd.setCornerRadius(80.50f);
+                    gd.setCornerRadius(100);
+                    listview_prof.setBackground(gd);
+                    listview_prof.setAdapter(arrayAdapter);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+        arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, feed);
+    }
+
+    public void att_feed(View view){
+        arrayAdapter.clear();
+        feed.clear();
+        atualizar_feed();
     }
 }

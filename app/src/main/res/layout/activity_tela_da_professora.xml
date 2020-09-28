@@ -76,6 +76,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/refresh"
+        android:onClick="att_feed"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button7" />
 
