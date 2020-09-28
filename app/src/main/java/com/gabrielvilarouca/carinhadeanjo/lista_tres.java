@@ -1,13 +1,16 @@
 package com.gabrielvilarouca.carinhadeanjo;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -62,6 +65,20 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
+
+        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("msg").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String nn = dataSnapshot.getValue(String.class);
+                Log.d("AQUI", "AQUI PORRa" + nn);
+                final TextView a1 = (TextView) findViewById(R.id.msg);
+                a1.setText(nn);
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
         myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("atvs").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -420,7 +437,21 @@ public class lista_tres extends AppCompatActivity {
             }
         }
 
-        public void chamarfoto(){
+
+
+    String recado = "";
+
+    public void recadinho_enviar() {
+        final EditText et2 = (EditText) findViewById(R.id.recadinho);
+        if (et2.equals(null) == false) {
+            String nn = et2.getText().toString();
+            recado += nn + "";
+        }
+    }
+
+
+
+    public void chamarfoto(){
             ImageView myImage2 = (ImageView) findViewById(R.id.profile_foto);
             myImage2.setImageBitmap(lista_dois.my_image2);
         }

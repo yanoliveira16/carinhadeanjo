@@ -75,6 +75,16 @@
                 android:textSize="25sp" />
 
             <TextView
+                android:id="@+id/msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:text="..."
+                android:textColor="#0D32D6"
+                android:textSize="25sp" />
+
+            <TextView
                 android:id="@+id/periodo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -518,6 +528,27 @@
                 android:text="Carregando..."
                 android:textColor="#0D32D6"
                 android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/recado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:paddingTop="25sp"
+                android:paddingBottom="10sp"
+                android:text="Deixe um recadinho:"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/recadinho"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textPersonName" />
 
             <Button
                 android:id="@+id/ciente"

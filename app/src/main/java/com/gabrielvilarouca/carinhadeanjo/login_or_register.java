@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -90,8 +91,18 @@ public class login_or_register extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void esqueci_senha(View view){
-
+    @Override
+    public void onBackPressed(){
+        AlertDialog alertDialog = new AlertDialog.Builder(login_or_register.this).create();
+        alertDialog.setTitle("OPA");
+        alertDialog.setMessage("Você não pode voltar pois estamos fazendo o processamento dos seus dados");
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Ok",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        alertDialog.show();
     }
 
 
