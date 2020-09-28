@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -90,7 +92,56 @@ public class entra extends AppCompatActivity {
                 });
 
     }
+    String msg="";
 
+public void esqueci_senha(View view) {
+
+    AlertDialog.Builder builder = new AlertDialog.Builder(entra.this);
+    builder.setTitle("Esqueci minha senha");
+
+    // Set up the input
+    final EditText input = new EditText(entra.this);
+// Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
+    input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
+    builder.setView(input);
+
+// Set up the buttons
+    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+            email = input.getText().toString();
+            FirebaseAuth auth = FirebaseAuth.getInstance();
+            String emailAddress = email;
+
+            auth.sendPasswordResetEmail(emailAddress)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                AlertDialog alertDialog = new AlertDialog.Builder(entra.this).create();
+                                alertDialog.setTitle("E-mail enviado!");
+                                alertDialog.setMessage(msg);
+                                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Ok",
+                                        new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                dialog.dismiss();
+                                            }
+                                        });
+                                alertDialog.show();
+                            }
+                        }
+                    });
+        }
+    });
+    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+            dialog.cancel();
+        }
+    });
+
+    builder.show();
+}
 
 
 
@@ -117,7 +168,6 @@ public class entra extends AppCompatActivity {
                 });
         alertDialog.show();
     }
-
 
 
 }

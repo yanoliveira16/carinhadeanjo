@@ -111,6 +111,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
+        android:onClick="esqueci_senha"
         android:text="ESQUECI MINHA SENHA"
         android:textColor="#5556DC"
         android:textSize="14sp"
