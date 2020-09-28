@@ -526,7 +526,7 @@ public class agenda extends AppCompatActivity {
         myRef.child(currentDateandTime2).child(data).child("iprovidenciar").setValue(iprovidenciar);
         myRef.child(currentDateandTime2).child(data).child("iatv").setValue(iatv);
         myRef.child(currentDateandTime2).child(data).child("obs3").setValue(obs3);
-
+        new AlertDialog.Builder(agenda.this).setMessage("Enviado com sucesso!").show();
         Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
         startActivity(intent);
     }
@@ -537,8 +537,8 @@ public class agenda extends AppCompatActivity {
         s24 = findViewById(R.id.s24);
         s25 = findViewById(R.id.s25);
 
-        if (s25.isChecked()) {
-            s24.setChecked(false);
+        if (s24.isChecked()) {
+            s25.setChecked(false);
         }
     }
 
@@ -546,8 +546,8 @@ public class agenda extends AppCompatActivity {
         s24 = findViewById(R.id.s24);
         s25 = findViewById(R.id.s25);
 
-        if (s24.isChecked()) {
-            s25.setChecked(false);
+        if (s25.isChecked()) {
+            s24.setChecked(false);
         }
     }
 
