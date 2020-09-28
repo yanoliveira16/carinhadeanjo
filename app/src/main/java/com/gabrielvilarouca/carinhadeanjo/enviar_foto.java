@@ -19,6 +19,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -32,6 +33,7 @@ import com.google.firebase.storage.UploadTask;
 import com.lyft.android.scissors.CropView;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -90,6 +92,7 @@ public class enviar_foto extends AppCompatActivity {
                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
                // bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
                 cropView = findViewById(R.id.crop_view);
+                //cropView.setImageURI(imageUri);
                 cropView.setImageBitmap(getRoundedCornerBitmap(bitmap, 400));
                 a2.setText("Arraste a foto com os dedos para deixar do jeito que quiser.");
             } catch (IOException e) {
@@ -217,7 +220,6 @@ public class enviar_foto extends AppCompatActivity {
     public void enviar_servidor(){
         mStorageRef = FirebaseStorage.getInstance().getReference();
         StorageReference riversRef = mStorageRef.child("fotos_de_perfil/"+login_or_register.id+".png");
-
         riversRef.putFile(imageUri)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
