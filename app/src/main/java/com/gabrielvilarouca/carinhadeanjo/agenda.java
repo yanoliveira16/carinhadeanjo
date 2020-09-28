@@ -535,18 +535,14 @@ public class agenda extends AppCompatActivity {
             s25 = findViewById(R.id.s25);
             if (s25.isChecked()) {
                 s25.setChecked(false);
+            }else if((s24.isChecked())){
+                s24.setChecked(false);
             }
         }
 
-    public void hg2(View view){
-        s24 = findViewById(R.id.s24);
-        if (s24.isChecked()) {
-            s24.setChecked(false);
-        }
-    }
 
     //Comportamento
-    public void hg3(View view){
+    public void hg2(View view){
         s26 = findViewById(R.id.s26);
         s27 = findViewById(R.id.s27);
         s28 = findViewById(R.id.s28);
@@ -555,39 +551,15 @@ public class agenda extends AppCompatActivity {
             s27.setChecked(false);
             s28.setChecked(false);
             s29.setChecked(false);
-        }
-    }
-
-    public void hg4(View view){
-        s26 = findViewById(R.id.s26);
-        s27 = findViewById(R.id.s27);
-        s28 = findViewById(R.id.s28);
-        s29 = findViewById(R.id.s29);
-        if (s27.isChecked()) {
+        }else if(s27.isChecked()){
             s26.setChecked(false);
             s28.setChecked(false);
             s29.setChecked(false);
-        }
-    }
-
-    public void hg5(View view){
-        s26 = findViewById(R.id.s26);
-        s27 = findViewById(R.id.s27);
-        s28 = findViewById(R.id.s28);
-        s29 = findViewById(R.id.s29);
-        if (s28.isChecked()) {
+        }else if(s28.isChecked()){
             s27.setChecked(false);
             s26.setChecked(false);
             s29.setChecked(false);
-        }
-    }
-
-    public void hg6(View view){
-        s26 = findViewById(R.id.s26);
-        s27 = findViewById(R.id.s27);
-        s28 = findViewById(R.id.s28);
-        s29 = findViewById(R.id.s29);
-        if (s29.isChecked()) {
+        }else if(s29.isChecked()) {
             s27.setChecked(false);
             s28.setChecked(false);
             s26.setChecked(false);
@@ -595,36 +567,92 @@ public class agenda extends AppCompatActivity {
     }
 
     //Lanche Matutino
-    public void hg7(View view){
+    public void hg3(View view){
         s32 = findViewById(R.id.s32);
         s34 = findViewById(R.id.s34);
         s72 = findViewById(R.id.s72);
         if (s32.isChecked()) {
             s34.setChecked(false);
             s72.setChecked(false);
-        }
-    }
-
-    public void hg8(View view){
-        s32 = findViewById(R.id.s32);
-        s34 = findViewById(R.id.s34);
-        s72 = findViewById(R.id.s72);
-        if (s34.isChecked()) {
+        }else if(s34.isChecked()){
             s32.setChecked(false);
             s72.setChecked(false);
-        }
-    }
-
-    public void hg9(View view){
-        s32 = findViewById(R.id.s32);
-        s34 = findViewById(R.id.s34);
-        s72 = findViewById(R.id.s72);
-        if (s72.isChecked()) {
+        }else if(s72.isChecked()){
             s34.setChecked(false);
             s32.setChecked(false);
         }
     }
+//Almoço
+    public void hg4(View view){
+        s40 = findViewById(R.id.s40);
+        s41 = findViewById(R.id.s41);
+        s42 = findViewById(R.id.s42);
 
+        if (s40.isChecked()) {
+            s41.setChecked(false);
+            s42.setChecked(false);
+        }else if(s41.isChecked()){
+            s40.setChecked(false);
+            s42.setChecked(false);
+        }else if(s42.isChecked()){
+            s40.setChecked(false);
+            s41.setChecked(false);
+        }
+    }
+
+    //lanche_vespertino
+    public void hg5(View view){
+        s43 = findViewById(R.id.s43);
+        s44 = findViewById(R.id.s44);
+        s45 = findViewById(R.id.s45);
+
+        if (s43.isChecked()) {
+            s44.setChecked(false);
+            s45.setChecked(false);
+        }else if(s44.isChecked()){
+            s43.setChecked(false);
+            s45.setChecked(false);
+        }else if(s45.isChecked()){
+            s44.setChecked(false);
+            s43.setChecked(false);
+        }
+    }
+
+    //jantar
+    public void hg6(View view){
+        s46 = findViewById(R.id.s46);
+        s47 = findViewById(R.id.s47);
+        s48 = findViewById(R.id.s48);
+
+        if (s46.isChecked()) {
+            s47.setChecked(false);
+            s48.setChecked(false);
+        }else if(s47.isChecked()){
+            s46.setChecked(false);
+            s48.setChecked(false);
+        }else if(s48.isChecked()){
+            s46.setChecked(false);
+            s47.setChecked(false);
+        }
+    }
+
+    //comportamento integral
+    public void hg7(View view){
+        s54 = findViewById(R.id.s54);
+        s55 = findViewById(R.id.s55);
+        s56 = findViewById(R.id.s56);
+
+        if (s54.isChecked()) {
+            s55.setChecked(false);
+            s56.setChecked(false);
+        }else if(s55.isChecked()){
+            s54.setChecked(false);
+            s56.setChecked(false);
+        }else if(s56.isChecked()){
+            s55.setChecked(false);
+            s54.setChecked(false);
+        }
+    }
     }
 
 
