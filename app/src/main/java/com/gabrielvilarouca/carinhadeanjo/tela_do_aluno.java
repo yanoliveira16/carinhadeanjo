@@ -64,39 +64,10 @@ public class tela_do_aluno extends AppCompatActivity {
         final TextView a2 = (TextView) findViewById(R.id.turma);
         a2.setText(tela_de_carregamento.tturma+" - "+tela_de_carregamento.nnomePai);
 
-        myRef.child(tela_de_carregamento.tturma).child("feed").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot snapshot:dataSnapshot.getChildren())
-                {
-                    String key= snapshot.getKey();
-                    String value=snapshot.getValue().toString();
-                   // feed.add(key);
-                    Log.d("FEED", "key: " + key.contains("profe") +"| aa: "+key.contains("aln") + " "+ key.contains(login_or_register.id));
-                    if (key.contains("profe")==false || key.contains("aln")==true && key.contains(login_or_register.id)==true){
-                        feed.add(value);
-                        Log.d("FEED 2", "ENTROU: "+ value);
-                    }
-                    listView = findViewById(R.id.listView);
-                    GradientDrawable gd = new GradientDrawable();
-                    gd.setShape(GradientDrawable.RECTANGLE);
-                    gd.setStroke(5, Color.argb(100, 0,0,0)); // border width and color
-                    //gd.setCornerRadius(80.50f);
-                    gd.setCornerRadius(80);
-                    listView.setBackground(gd);
-                    listView.setAdapter(arrayAdapter);
-                }
-                //Collections.sort(feed);
-                //Collections.reverse(feed);
-                ppp();
-                //Log.d("FEED", "feed: " + feed +"| aa: "+arrayAdapter);
-            }
+        atualizar_feed();
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-            }
-        });
-        arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, feed);
+        new AlertDialog.Builder(tela_do_aluno.this).setMessage("BETA\nO aplicativo ainda se encontra em desenvolvimento.\nConfira novidades e tutorais em http://escolacarinhadeanjodf.com/aplicativo").show();
+
     }
 
     public static Bitmap my_image3;
@@ -119,7 +90,7 @@ public class tela_do_aluno extends AppCompatActivity {
                     View a3=findViewById(R.id.sair);
                     a3.setVisibility(View.VISIBLE);
 
-                    new AlertDialog.Builder(tela_do_aluno.this).setMessage("BETA\nO aplicativo ainda se encontra em desenvolvimento.\nConfira novidades e tutorais em http://escolacarinhadeanjodf.com/aplicativo").show();
+                   
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
@@ -194,6 +165,49 @@ public class tela_do_aluno extends AppCompatActivity {
         Intent intent = new Intent(getBaseContext(), lista_um.class);
         startActivity(intent);
     }
+
+    public void atualizar_feed(){
+        myRef.child(tela_de_carregamento.tturma).child("feed").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot:dataSnapshot.getChildren())
+                {
+                    String key= snapshot.getKey();
+                    String value=snapshot.getValue().toString();
+                    // feed.add(key);
+                    Log.d("FEED", "key: " + key.contains("profe") +"| aa: "+key.contains("aln") + " "+ key.contains(login_or_register.id));
+                    if (key.contains("profe")==false || key.contains("aln")==true && key.contains(login_or_register.id)==true){
+                        feed.add(value);
+                        Log.d("FEED 2", "ENTROU: "+ value);
+                    }
+                    listView = findViewById(R.id.listView);
+                    GradientDrawable gd = new GradientDrawable();
+                    gd.setShape(GradientDrawable.RECTANGLE);
+                    gd.setStroke(5, Color.argb(100, 0,0,0)); // border width and color
+                    //gd.setCornerRadius(80.50f);
+                    gd.setCornerRadius(80);
+                    listView.setBackground(gd);
+                    listView.setAdapter(arrayAdapter);
+                }
+                //Collections.sort(feed);
+                //Collections.reverse(feed);
+                ppp();
+                //Log.d("FEED", "feed: " + feed +"| aa: "+arrayAdapter);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+        arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, feed);
+    }
+
+    public void att_feed(View view){
+        arrayAdapter.clear();
+        feed.clear();
+        atualizar_feed();
+    }
+
 
 
         }

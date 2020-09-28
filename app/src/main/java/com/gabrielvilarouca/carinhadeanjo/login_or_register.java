@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -33,7 +34,11 @@ public class login_or_register extends AppCompatActivity {
                 public void onDataChange(DataSnapshot dataSnapshot) {
 
                     String nn = dataSnapshot.getValue(String.class);
-                    if (nn.contains("01") == true) {
+                    Log.d("AQUI", "aquii: " + nn + " - " + id);
+                    if(nn == null ){
+                        chamar_carregar();
+                    }
+                    else if (nn.contains("01") == true) {
                         chamar_termo();
                     } else if (nn.contains("02") == true) {
                         chamar_foto();
