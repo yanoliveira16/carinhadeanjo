@@ -25,8 +25,8 @@ import java.util.ArrayList;
 
 public class tela_da_professora extends AppCompatActivity {
     ArrayList<String> feed = new ArrayList<>();
+    ArrayList<String> feed2 = new ArrayList<>();
     ArrayAdapter<String> arrayAdapter;
-    public static  String onClick19;
     private FirebaseAuth mAuth;
 
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
@@ -49,22 +49,6 @@ public class tela_da_professora extends AppCompatActivity {
           atualizar_feed();
 
         new AlertDialog.Builder(tela_da_professora.this).setMessage("BETA\nO aplicativo ainda se encontra em desenvolvimento.\nConfira novidades e tutorais em http://escolacarinhadeanjodf.com/aplicativo").show();
-
-        arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, feed);
-        final ListView lv=(ListView)findViewById(R.id.listview2);
-
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-                                    long arg3) {
-                // TODO Auto-generated method stub
-                onClick19 = (String) lv.getItemAtPosition(arg2);
-                Intent intent = new Intent(getBaseContext(), click_feed.class);
-                startActivity(intent);
-
-            }
-        });
 
     }
 
@@ -121,9 +105,9 @@ public class tela_da_professora extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot:dataSnapshot.getChildren())
                 {
-                    // String key= snapshot.getKey();
+                    String key= snapshot.getKey();
                     String value=snapshot.getValue().toString();
-                    // feed.add(key);
+                    feed2.add(key);
                     feed.add(value);
                     listview_prof = findViewById(R.id.listview_prof);
                     GradientDrawable gd = new GradientDrawable();
@@ -141,6 +125,21 @@ public class tela_da_professora extends AppCompatActivity {
             }
         });
         arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, feed);
+
+        final ListView lv=(ListView)findViewById(R.id.listview_prof);
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+                                    long arg3) {
+                // TODO Auto-generated method stub
+                tela_de_carregamento.onClick19 = (String) lv.getItemAtPosition(arg2);
+                tela_de_carregamento.key_feed = feed2.get(arg2);
+                Intent intent = new Intent(getBaseContext(), click_feed.class);
+                startActivity(intent);
+
+            }
+        });
     }
 
 
