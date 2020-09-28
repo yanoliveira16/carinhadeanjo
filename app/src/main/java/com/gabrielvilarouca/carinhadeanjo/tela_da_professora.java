@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -25,6 +26,7 @@ import java.util.ArrayList;
 public class tela_da_professora extends AppCompatActivity {
     ArrayList<String> feed = new ArrayList<>();
     ArrayAdapter<String> arrayAdapter;
+    public static  String onClick19;
     private FirebaseAuth mAuth;
 
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
@@ -47,6 +49,23 @@ public class tela_da_professora extends AppCompatActivity {
           atualizar_feed();
 
         new AlertDialog.Builder(tela_da_professora.this).setMessage("BETA\nO aplicativo ainda se encontra em desenvolvimento.\nConfira novidades e tutorais em http://escolacarinhadeanjodf.com/aplicativo").show();
+
+        arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, feed);
+        final ListView lv=(ListView)findViewById(R.id.listview2);
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+                                    long arg3) {
+                // TODO Auto-generated method stub
+                onClick19 = (String) lv.getItemAtPosition(arg2);
+                Intent intent = new Intent(getBaseContext(), click_feed.class);
+                startActivity(intent);
+
+            }
+        });
+
     }
 
     public void sair_click2(View view) {
@@ -124,9 +143,18 @@ public class tela_da_professora extends AppCompatActivity {
         arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, feed);
     }
 
+
+
+
+
+
     public void att_feed(View view){
         arrayAdapter.clear();
         feed.clear();
         atualizar_feed();
     }
+
+
+
+
 }
