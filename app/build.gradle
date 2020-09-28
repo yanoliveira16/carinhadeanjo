@@ -6,7 +6,7 @@ android {
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "com.gabrielvilarouca.carinhadeanjo"
+        applicationId 'com.gabrielvilarouca.carinhadeanjo'
         minSdkVersion 16
         targetSdkVersion 30
         versionCode 2

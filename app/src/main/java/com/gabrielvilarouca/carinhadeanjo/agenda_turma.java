@@ -229,7 +229,7 @@ public class agenda_turma extends AppCompatActivity {
         myRef.child("atvs").setValue(atvs);
         myRef.child("dever").setValue(dever);
         myRef.child("aviso").setValue(aviso);
-
+        new AlertDialog.Builder(agenda_turma.this).setMessage("Enviado com sucesso!").show();
         Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
         startActivity(intent);
     }

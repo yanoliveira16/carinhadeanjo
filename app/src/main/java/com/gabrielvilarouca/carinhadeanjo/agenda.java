@@ -532,11 +532,12 @@ public class agenda extends AppCompatActivity {
 
         //As atividades de sala
         public void hg1(View view){
+            s24 = findViewById(R.id.s24);
             s25 = findViewById(R.id.s25);
             if (s25.isChecked()) {
-                s25.setChecked(false);
-            }else if((s24.isChecked())){
                 s24.setChecked(false);
+            }else if((s24.isChecked())){
+                s25.setChecked(false);
             }
         }
 
