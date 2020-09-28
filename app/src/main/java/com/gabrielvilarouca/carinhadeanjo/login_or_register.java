@@ -35,8 +35,10 @@ public class login_or_register extends AppCompatActivity {
 
                     String nn = dataSnapshot.getValue(String.class);
                     Log.d("AQUI", "aquii: " + nn + " - " + id);
-                    if (nn.contains("01") == true) {
-
+                    if(nn == null ){
+                        chamar_carregar();
+                    }
+                    else if (nn.contains("01") == true) {
                         chamar_termo();
                     } else if (nn.contains("02") == true) {
                         chamar_foto();

@@ -65,7 +65,8 @@ public class agenda extends AppCompatActivity {
 
     String falta = "";
     Switch s;
-    public void enviar0(){
+
+    public void enviar0() {
         Switch sFalta = findViewById(R.id.s);
         if (sFalta.isChecked() == true) {
             falta = "PRESENTE";
@@ -74,11 +75,10 @@ public class agenda extends AppCompatActivity {
     }
 
 
-
     public void enviar(View view) {
-        View a1=findViewById(R.id.progressBar4);
+        View a1 = findViewById(R.id.progressBar4);
         a1.setVisibility(View.VISIBLE);
-        View a2=findViewById(R.id.imageView25);
+        View a2 = findViewById(R.id.imageView25);
         a2.setVisibility(View.VISIBLE);
 
         enviar0();
@@ -136,7 +136,6 @@ public class agenda extends AppCompatActivity {
     }
 
 
-
     String imedicacao = "";
     String iremedio = "";
     String idosagem = "";
@@ -152,7 +151,7 @@ public class agenda extends AppCompatActivity {
 
         if (siMed.isChecked() == true) {
             imedicacao = "sim";
-        }else{
+        } else {
             imedicacao = "não";
         }
 
@@ -192,31 +191,30 @@ public class agenda extends AppCompatActivity {
         enviar6();
     }
 
-                String apresentou = "";
-               Switch s36;
-               Switch s37;
-               Switch s38;
-               Switch s39;
+    String apresentou = "";
+    Switch s36;
+    Switch s37;
+    Switch s38;
+    Switch s39;
 
-                public void enviar6() {
-                    s36 = findViewById(R.id.s36);
-                    s37 = findViewById(R.id.s37);
-                    s38 = findViewById(R.id.s38);
-                    s39 = findViewById(R.id.s39);
+    public void enviar6() {
+        s36 = findViewById(R.id.s36);
+        s37 = findViewById(R.id.s37);
+        s38 = findViewById(R.id.s38);
+        s39 = findViewById(R.id.s39);
 
-                    if (s36.isChecked() == true) {
-                        apresentou = "Coriza";
-                    } else if (s37.isChecked() == true) {
-                        apresentou = "Tosse";
-                    }
-                    else if (s38.isChecked() == true) {
-                        apresentou = "Vômito";
-                    } else if (s39.isChecked() == true) {
-                        apresentou = "Febre";
-                    }
-
-                    enviar16();
+        if (s36.isChecked() == true) {
+            apresentou = "Coriza";
+        } else if (s37.isChecked() == true) {
+            apresentou = "Tosse";
+        } else if (s38.isChecked() == true) {
+            apresentou = "Vômito";
+        } else if (s39.isChecked() == true) {
+            apresentou = "Febre";
         }
+
+        enviar16();
+    }
 
 
     String ilanchematutino = "";
@@ -233,13 +231,11 @@ public class agenda extends AppCompatActivity {
             ilanchematutino = "Comeu bem";
         } else if (s34.isChecked() == true) {
             ilanchematutino = "Comeu pouco";
-        }
-        else if (s72.isChecked() == true) {
+        } else if (s72.isChecked() == true) {
             ilanchematutino = "Não comeu";
         }
         enviar7();
     }
-
 
 
     String ialmoço = "";
@@ -256,8 +252,7 @@ public class agenda extends AppCompatActivity {
             ialmoço = "Comeu bem";
         } else if (s41.isChecked() == true) {
             ialmoço = "Comeu pouco";
-        }
-        else if (s42.isChecked() == true) {
+        } else if (s42.isChecked() == true) {
             ialmoço = "Não comeu";
         }
         enviar9();
@@ -326,7 +321,7 @@ public class agenda extends AppCompatActivity {
         } else if (s51.isChecked() == true) {
             isono = "Uriniou pouco";
         } else if (s52.isChecked() == true) {
-          isono = "Tomou pouca água";
+            isono = "Tomou pouca água";
         } else if (s53.isChecked() == true) {
             isono = "Não tomou banho";
         }
@@ -404,7 +399,7 @@ public class agenda extends AppCompatActivity {
     Switch s71;
 
     public void enviar14() {
-        s65= findViewById(R.id.s65);
+        s65 = findViewById(R.id.s65);
         s66 = findViewById(R.id.s66);
         s67 = findViewById(R.id.s67);
         s68 = findViewById(R.id.s68);
@@ -430,14 +425,16 @@ public class agenda extends AppCompatActivity {
         }
         enviar15();
     }
+
     String obs3 = "";
-        public void enviar15() {
-            final EditText et2 = (EditText) findViewById(R.id.obs2);
-            if (et2.equals(null) == false) {
-                String nn = et2.getText().toString();
-                obs3 += nn + "";
-            }
-            pegar_do_servidor();
+
+    public void enviar15() {
+        final EditText et2 = (EditText) findViewById(R.id.obs2);
+        if (et2.equals(null) == false) {
+            String nn = et2.getText().toString();
+            obs3 += nn + "";
+        }
+        pegar_do_servidor();
     }
 
     //ESSA É A ÚLTIMA PARTE.
@@ -445,10 +442,11 @@ public class agenda extends AppCompatActivity {
     //CADA PARTE TEM UMA KEY (CHILD) DIFERENTE!
 
     Integer valor_agenda = 0;
-        String atvs;
-        String dever;
-        String aviso;
-    public void  pegar_do_servidor(){
+    String atvs;
+    String dever;
+    String aviso;
+
+    public void pegar_do_servidor() {
         myRef2.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -457,13 +455,14 @@ public class agenda extends AppCompatActivity {
                 myRef2.setValue(valor_agenda);
                 pegar_agendaTurma();
             }
+
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
         });
     }
 
-    public void pegar_agendaTurma(){
+    public void pegar_agendaTurma() {
         myRef3.child("atvs").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -478,113 +477,166 @@ public class agenda extends AppCompatActivity {
                                 aviso = dataSnapshot.getValue(String.class);
                                 enviar_servidor();
                             }
+
                             @Override
                             public void onCancelled(DatabaseError databaseError) {
                             }
                         });
                     }
+
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
                     }
                 });
             }
+
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
         });
     }
 
-        public void enviar_servidor(){
+    public void enviar_servidor() {
 
-            SimpleDateFormat sdf2 = new SimpleDateFormat("MM-yyyy");
-            String currentDateandTime2 = sdf2.format(new Date());
+        SimpleDateFormat sdf2 = new SimpleDateFormat("MM-yyyy");
+        String currentDateandTime2 = sdf2.format(new Date());
 
-            SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
-            String currentDateandTime = sdf.format(new Date());
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+        String currentDateandTime = sdf.format(new Date());
 
-            String data = valor_agenda + " - " + currentDateandTime;
+        String data = valor_agenda + " - " + currentDateandTime;
 
-            myRef.child(currentDateandTime2).child(data).child("falta").setValue(falta);
-            myRef.child(currentDateandTime2).child(data).child("atvs").setValue(atvs);
-            myRef.child(currentDateandTime2).child(data).child("atvs2").setValue(atvs2);
-            myRef.child(currentDateandTime2).child(data).child("comportamento").setValue(comportamento);
-            myRef.child(currentDateandTime2).child(data).child("dever").setValue(dever);
-            myRef.child(currentDateandTime2).child(data).child("imedicacao").setValue(imedicacao);
-            myRef.child(currentDateandTime2).child(data).child("iremedio").setValue(iremedio);
-            myRef.child(currentDateandTime2).child(data).child("idosagem").setValue(idosagem);
-            myRef.child(currentDateandTime2).child(data).child("ihorario").setValue(ihorario);
-            myRef.child(currentDateandTime2).child(data).child("apresentou").setValue(apresentou);
-            myRef.child(currentDateandTime2).child(data).child("aviso").setValue(aviso);
-            myRef.child(currentDateandTime2).child(data).child("ialmoço").setValue(ialmoço);
-            myRef.child(currentDateandTime2).child(data).child("ilanchevespertino").setValue(ilanchevespertino);
-            myRef.child(currentDateandTime2).child(data).child("ilanchematutino").setValue(ilanchematutino);
-            myRef.child(currentDateandTime2).child(data).child("ijanta").setValue(ijanta);
-            myRef.child(currentDateandTime2).child(data).child("isono").setValue(isono);
-            myRef.child(currentDateandTime2).child(data).child("icomportamento").setValue(icomportamento);
-            myRef.child(currentDateandTime2).child(data).child("iprovidenciar").setValue(iprovidenciar);
-            myRef.child(currentDateandTime2).child(data).child("iatv").setValue(iatv);
-            myRef.child(currentDateandTime2).child(data).child("obs3").setValue(obs3);
+        myRef.child(currentDateandTime2).child(data).child("falta").setValue(falta);
+        myRef.child(currentDateandTime2).child(data).child("atvs").setValue(atvs);
+        myRef.child(currentDateandTime2).child(data).child("atvs2").setValue(atvs2);
+        myRef.child(currentDateandTime2).child(data).child("comportamento").setValue(comportamento);
+        myRef.child(currentDateandTime2).child(data).child("dever").setValue(dever);
+        myRef.child(currentDateandTime2).child(data).child("imedicacao").setValue(imedicacao);
+        myRef.child(currentDateandTime2).child(data).child("iremedio").setValue(iremedio);
+        myRef.child(currentDateandTime2).child(data).child("idosagem").setValue(idosagem);
+        myRef.child(currentDateandTime2).child(data).child("ihorario").setValue(ihorario);
+        myRef.child(currentDateandTime2).child(data).child("apresentou").setValue(apresentou);
+        myRef.child(currentDateandTime2).child(data).child("aviso").setValue(aviso);
+        myRef.child(currentDateandTime2).child(data).child("ialmoço").setValue(ialmoço);
+        myRef.child(currentDateandTime2).child(data).child("ilanchevespertino").setValue(ilanchevespertino);
+        myRef.child(currentDateandTime2).child(data).child("ilanchematutino").setValue(ilanchematutino);
+        myRef.child(currentDateandTime2).child(data).child("ijanta").setValue(ijanta);
+        myRef.child(currentDateandTime2).child(data).child("isono").setValue(isono);
+        myRef.child(currentDateandTime2).child(data).child("icomportamento").setValue(icomportamento);
+        myRef.child(currentDateandTime2).child(data).child("iprovidenciar").setValue(iprovidenciar);
+        myRef.child(currentDateandTime2).child(data).child("iatv").setValue(iatv);
+        myRef.child(currentDateandTime2).child(data).child("obs3").setValue(obs3);
 
-            Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
-            startActivity(intent);
+        Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
+        startActivity(intent);
+    }
+
+
+    //As atividades de sala
+    public void hg1(View view) {
+        s24 = findViewById(R.id.s24);
+        s25 = findViewById(R.id.s25);
+
+        if (s25.isChecked()) {
+            s24.setChecked(false);
         }
+    }
 
+    public void hg2(View view) {
+        s24 = findViewById(R.id.s24);
+        s25 = findViewById(R.id.s25);
 
-        //As atividades de sala
-        public void hg1(View view){
-            s24 = findViewById(R.id.s24);
-            s25 = findViewById(R.id.s25);
-            if (s25.isChecked()) {
-                s24.setChecked(false);
-            }else if((s24.isChecked())){
-                s25.setChecked(false);
-            }
+        if (s24.isChecked()) {
+            s25.setChecked(false);
         }
+    }
 
 
     //Comportamento
-    public void hg2(View view){
+    public void hg3(View view) {
         s26 = findViewById(R.id.s26);
         s27 = findViewById(R.id.s27);
         s28 = findViewById(R.id.s28);
         s29 = findViewById(R.id.s29);
+
         if (s26.isChecked()) {
             s27.setChecked(false);
             s28.setChecked(false);
             s29.setChecked(false);
-        }else if(s27.isChecked()){
-            s26.setChecked(false);
-            s28.setChecked(false);
-            s29.setChecked(false);
-        }else if(s28.isChecked()){
-            s27.setChecked(false);
-            s26.setChecked(false);
-            s29.setChecked(false);
-        }else if(s29.isChecked()) {
-            s27.setChecked(false);
-            s28.setChecked(false);
-            s26.setChecked(false);
         }
     }
+        public void hg4 (View view){
+            s26 = findViewById(R.id.s26);
+            s27 = findViewById(R.id.s27);
+            s28 = findViewById(R.id.s28);
+            s29 = findViewById(R.id.s29);
+
+            if (s27.isChecked()) {
+                s26.setChecked(false);
+                s28.setChecked(false);
+                s29.setChecked(false);
+            }
+        }
+        public void hg5 (View view){
+            s26 = findViewById(R.id.s26);
+            s27 = findViewById(R.id.s27);
+            s28 = findViewById(R.id.s28);
+            s29 = findViewById(R.id.s29);
+
+            if (s28.isChecked()) {
+                s27.setChecked(false);
+                s26.setChecked(false);
+                s29.setChecked(false);
+            }
+        }
+        public void hg6 (View view){
+            s26 = findViewById(R.id.s26);
+            s27 = findViewById(R.id.s27);
+            s28 = findViewById(R.id.s28);
+            s29 = findViewById(R.id.s29);
+
+            if (s29.isChecked()) {
+                s27.setChecked(false);
+                s28.setChecked(false);
+                s26.setChecked(false);
+            }
+        }
+
 
     //Lanche Matutino
-    public void hg3(View view){
+    public void hg7(View view){
         s32 = findViewById(R.id.s32);
         s34 = findViewById(R.id.s34);
         s72 = findViewById(R.id.s72);
         if (s32.isChecked()) {
             s34.setChecked(false);
             s72.setChecked(false);
-        }else if(s34.isChecked()){
+        }
+        }
+        public void hg8(View view){
+            s32 = findViewById(R.id.s32);
+            s34 = findViewById(R.id.s34);
+            s72 = findViewById(R.id.s72);
+
+
+        if(s34.isChecked()){
             s32.setChecked(false);
             s72.setChecked(false);
-        }else if(s72.isChecked()){
+        }
+        }
+        public void hg9(View view){
+            s32 = findViewById(R.id.s32);
+            s34 = findViewById(R.id.s34);
+            s72 = findViewById(R.id.s72);
+
+        if(s72.isChecked()) {
             s34.setChecked(false);
             s32.setChecked(false);
         }
-    }
+        }
+
 //Almoço
-    public void hg4(View view){
+    public void hg10(View view) {
         s40 = findViewById(R.id.s40);
         s41 = findViewById(R.id.s41);
         s42 = findViewById(R.id.s42);
@@ -592,17 +644,31 @@ public class agenda extends AppCompatActivity {
         if (s40.isChecked()) {
             s41.setChecked(false);
             s42.setChecked(false);
-        }else if(s41.isChecked()){
-            s40.setChecked(false);
-            s42.setChecked(false);
-        }else if(s42.isChecked()){
+        }
+    }
+        public void hg11(View view){
+            s40 = findViewById(R.id.s40);
+            s41 = findViewById(R.id.s41);
+            s42 = findViewById(R.id.s42);
+
+            if (s41.isChecked()) {
+                s40.setChecked(false);
+                s42.setChecked(false);
+            }
+        }
+        public void hg12(View view){
+            s40 = findViewById(R.id.s40);
+            s41 = findViewById(R.id.s41);
+            s42 = findViewById(R.id.s42);
+
+        if(s42.isChecked()){
             s40.setChecked(false);
             s41.setChecked(false);
         }
     }
 
     //lanche_vespertino
-    public void hg5(View view){
+    public void hg13(View view) {
         s43 = findViewById(R.id.s43);
         s44 = findViewById(R.id.s44);
         s45 = findViewById(R.id.s45);
@@ -610,17 +676,31 @@ public class agenda extends AppCompatActivity {
         if (s43.isChecked()) {
             s44.setChecked(false);
             s45.setChecked(false);
-        }else if(s44.isChecked()){
+        }
+    }
+    public void hg14(View view) {
+        s43 = findViewById(R.id.s43);
+        s44 = findViewById(R.id.s44);
+        s45 = findViewById(R.id.s45);
+
+        if (s44.isChecked()) {
             s43.setChecked(false);
             s45.setChecked(false);
-        }else if(s45.isChecked()){
+        }
+    }
+    public void hg15(View view) {
+    s43 = findViewById(R.id.s43);
+    s44 = findViewById(R.id.s44);
+    s45 = findViewById(R.id.s45);
+
+            if(s45.isChecked()){
             s44.setChecked(false);
             s43.setChecked(false);
         }
     }
 
     //jantar
-    public void hg6(View view){
+    public void hg16(View view) {
         s46 = findViewById(R.id.s46);
         s47 = findViewById(R.id.s47);
         s48 = findViewById(R.id.s48);
@@ -628,17 +708,31 @@ public class agenda extends AppCompatActivity {
         if (s46.isChecked()) {
             s47.setChecked(false);
             s48.setChecked(false);
-        }else if(s47.isChecked()){
+        }
+    }
+    public void hg17(View view) {
+        s46 = findViewById(R.id.s46);
+        s47 = findViewById(R.id.s47);
+        s48 = findViewById(R.id.s48);
+
+        if (s47.isChecked()) {
             s46.setChecked(false);
             s48.setChecked(false);
-        }else if(s48.isChecked()){
+        }
+    }
+    public void hg18(View view) {
+        s46 = findViewById(R.id.s46);
+        s47 = findViewById(R.id.s47);
+        s48 = findViewById(R.id.s48);
+
+         if(s48.isChecked()){
             s46.setChecked(false);
             s47.setChecked(false);
         }
     }
 
     //comportamento integral
-    public void hg7(View view){
+    public void hg19(View view) {
         s54 = findViewById(R.id.s54);
         s55 = findViewById(R.id.s55);
         s56 = findViewById(R.id.s56);
@@ -646,10 +740,24 @@ public class agenda extends AppCompatActivity {
         if (s54.isChecked()) {
             s55.setChecked(false);
             s56.setChecked(false);
-        }else if(s55.isChecked()){
+        }
+    }
+    public void hg20(View view) {
+        s54 = findViewById(R.id.s54);
+        s55 = findViewById(R.id.s55);
+        s56 = findViewById(R.id.s56);
+
+        if (s55.isChecked()) {
             s54.setChecked(false);
             s56.setChecked(false);
-        }else if(s56.isChecked()){
+        }
+    }
+    public void hg21(View view) {
+        s54 = findViewById(R.id.s54);
+        s55 = findViewById(R.id.s55);
+        s56 = findViewById(R.id.s56);
+
+            if(s56.isChecked()){
             s55.setChecked(false);
             s54.setChecked(false);
         }
