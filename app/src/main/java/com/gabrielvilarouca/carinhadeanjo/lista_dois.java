@@ -41,7 +41,7 @@ public class lista_dois extends AppCompatActivity {
 
         final TextView a1 = (TextView) findViewById(R.id.aluno_agenda2);
 
-        c
+        View aa=findViewById(R.id.add1);
         if (tela_de_carregamento.qual == "1"){
             a1.setText(tela_de_alunos.onClick3);
             my_image2 = tela_do_aluno_prof.getRoundedCornerBitmap(tela_do_aluno_prof.my_image,400);
