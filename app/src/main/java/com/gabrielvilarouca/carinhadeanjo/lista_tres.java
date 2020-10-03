@@ -29,7 +29,7 @@ public class lista_tres extends AppCompatActivity {
     DatabaseReference myRef2 = database.child("P3");
     String uid;
     String v;
-
+    String var;
     boolean s1 = false;
     boolean s2 = false;
 
@@ -39,11 +39,21 @@ public class lista_tres extends AppCompatActivity {
 
         setContentView(R.layout.activity_lista_tres);
 
+
         if (tela_de_carregamento.qual.contains("1")==true){
             uid = tela_do_aluno_prof.id_aluno;
             final TextView a1 = (TextView) findViewById(R.id.aluno_agenda3);
             v = tela_de_alunos.onClick3 + " \n " + lista_dois.onClick2;
             a1.setText(v);
+            final TextView a18 = (TextView) findViewById(R.id.ciente);
+            final TextView a19 = (TextView) findViewById(R.id.recado);
+            final TextView a20 = (TextView) findViewById(R.id.recadinho);
+            ViewGroup parent = (ViewGroup) a18.getParent();
+            parent.removeView(a18);
+            ViewGroup parent2 = (ViewGroup) a19.getParent();
+            parent2.removeView(a19);
+            ViewGroup parent3 = (ViewGroup) a20.getParent();
+            parent3.removeView(a20);
         }else{
             uid = login_or_register.id;
             final TextView a2 = (TextView) findViewById(R.id.aluno_agenda3);
@@ -53,28 +63,49 @@ public class lista_tres extends AppCompatActivity {
 
 
 
+          final TextView  var = (TextView) findViewById(R.id.aluno_agenda3);
             myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("visto_data").addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     String nn = dataSnapshot.getValue(String.class);
-                    Log.d("AQUI", "AQUI PORRa" + nn);
-                    final TextView a2 = (TextView) findViewById(R.id.aluno_agenda3);
-                    a2.setText(v + " \n " + "Ciente: " + nn);
-                    final TextView a18 = (TextView) findViewById(R.id.ciente);
-                    final TextView a19 = (TextView) findViewById(R.id.recado);
-                    final TextView a20 = (TextView) findViewById(R.id.recadinho);
-                    ViewGroup parent = (ViewGroup) a18.getParent();
-                    parent.removeView(a18);
-                    ViewGroup parent2 = (ViewGroup) a19.getParent();
-                    parent2.removeView(a19);
-                    ViewGroup parent3 = (ViewGroup) a20.getParent();
-                    parent3.removeView(a20);
+                    if (nn != null){
+                        Log.d("AQUI", "AQUI PORRa" + nn);
+                        var.setText(v + " \n " + "Ciente: " + nn);
+                        final TextView a18 = (TextView) findViewById(R.id.ciente);
+                        final TextView a19 = (TextView) findViewById(R.id.recado);
+                        final TextView a20 = (TextView) findViewById(R.id.recadinho);
+                        ViewGroup parent = (ViewGroup) a18.getParent();
+                        parent.removeView(a18);
+                        ViewGroup parent2 = (ViewGroup) a19.getParent();
+                        parent2.removeView(a19);
+                        ViewGroup parent3 = (ViewGroup) a20.getParent();
+                        parent3.removeView(a20);
+                    }else{
+                        var.setText(v + " \n " + "Responsável não Ciente! ");
+                    }
                 }
 
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
                 }
             });
+
+        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("msg").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String nn = dataSnapshot.getValue(String.class);
+                Log.d("AQUI", "AQUI PORRa" + nn);
+                final TextView a1 = (TextView) findViewById(R.id.msg);
+                a1.setText(nn);
+                if (nn == null){
+                    ViewGroup parent = (ViewGroup) a1.getParent();
+                    parent.removeView(a1);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
 
 
 
@@ -96,18 +127,7 @@ public class lista_tres extends AppCompatActivity {
             }
         });
 
-        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("msg").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                String nn = dataSnapshot.getValue(String.class);
-                Log.d("AQUI", "AQUI PORRa" + nn);
-                final TextView a1 = (TextView) findViewById(R.id.msg);
-                a1.setText(nn);
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-            }
-        });
+
 
         myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("atvs").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
