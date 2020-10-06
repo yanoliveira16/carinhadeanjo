@@ -14,6 +14,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,6 +41,7 @@ public class tela_do_aluno_prof extends AppCompatActivity {
 
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     DatabaseReference myRef = database.child("P2");
+    DatabaseReference myRef2 = database.child("P3");
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,17 @@ public class tela_do_aluno_prof extends AppCompatActivity {
                 TextView a1 = (TextView) findViewById(R.id.turma3);
                 a1.setText(tela_de_alunos.onClick3);
                 ppp();
+                myRef2.child(id_aluno).child("recado_profe").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        String recado = dataSnapshot.getValue(String.class);
+                        TextView a1 = (EditText) findViewById(R.id.recado_profis);
+                        a1.setText(recado);
+                    }
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                    }
+                });
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -109,6 +122,11 @@ public class tela_do_aluno_prof extends AppCompatActivity {
         canvas.drawBitmap(bitmap, rect, rect, paint);
 
         return output;
+    }
+
+    public void enviar(View view){
+        final EditText et2 = (EditText) findViewById(R.id.recado_profis);
+        myRef2.child(id_aluno).child("recado_profe").setValue(et2.getText().toString());
     }
 
 

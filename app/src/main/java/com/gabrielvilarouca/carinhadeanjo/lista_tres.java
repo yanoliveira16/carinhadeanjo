@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
@@ -20,11 +21,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class lista_tres extends AppCompatActivity {
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     DatabaseReference myRef2 = database.child("P3");
     String uid;
-
+    String v;
+    String var;
     boolean s1 = false;
     boolean s2 = false;
 
@@ -34,21 +39,77 @@ public class lista_tres extends AppCompatActivity {
 
         setContentView(R.layout.activity_lista_tres);
 
+
         if (tela_de_carregamento.qual.contains("1")==true){
             uid = tela_do_aluno_prof.id_aluno;
             final TextView a1 = (TextView) findViewById(R.id.aluno_agenda3);
-            a1.setText(tela_de_alunos.onClick3 + " \n " + lista_dois.onClick2);
+            v = tela_de_alunos.onClick3 + " \n " + lista_dois.onClick2;
+            a1.setText(v);
+            final TextView a18 = (TextView) findViewById(R.id.ciente);
+            final TextView a19 = (TextView) findViewById(R.id.recado);
+            final TextView a20 = (TextView) findViewById(R.id.recadinho);
+            ViewGroup parent = (ViewGroup) a18.getParent();
+            parent.removeView(a18);
+            ViewGroup parent2 = (ViewGroup) a19.getParent();
+            parent2.removeView(a19);
+            ViewGroup parent3 = (ViewGroup) a20.getParent();
+            parent3.removeView(a20);
         }else{
             uid = login_or_register.id;
             final TextView a2 = (TextView) findViewById(R.id.aluno_agenda3);
-            a2.setText(tela_de_carregamento.nnomeAluno + " \n " + lista_dois.onClick2);
+            v = tela_de_carregamento.nnomeAluno + " \n " + lista_dois.onClick2;
+            a2.setText(v);
         }
 
 
 
+          final TextView  var = (TextView) findViewById(R.id.aluno_agenda3);
+            myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("visto_data").addListenerForSingleValueEvent(new ValueEventListener() {
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    String nn = dataSnapshot.getValue(String.class);
+                    if (nn != null){
+                        Log.d("AQUI", "AQUI PORRa" + nn);
+                        var.setText(v + " \n " + "Ciente: " + nn);
+                        final TextView a18 = (TextView) findViewById(R.id.ciente);
+                        final TextView a19 = (TextView) findViewById(R.id.recado);
+                        final TextView a20 = (TextView) findViewById(R.id.recadinho);
+                        ViewGroup parent = (ViewGroup) a18.getParent();
+                        parent.removeView(a18);
+                        ViewGroup parent2 = (ViewGroup) a19.getParent();
+                        parent2.removeView(a19);
+                        ViewGroup parent3 = (ViewGroup) a20.getParent();
+                        parent3.removeView(a20);
+                    }else{
+                        var.setText(v + " \n " + "Responsável não Ciente! ");
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                }
+            });
+
+        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("msg").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String nn = dataSnapshot.getValue(String.class);
+                Log.d("AQUI", "AQUI PORRa" + nn);
+                final TextView a1 = (TextView) findViewById(R.id.msg);
+                a1.setText(nn);
+                if (nn == null){
+                    ViewGroup parent = (ViewGroup) a1.getParent();
+                    parent.removeView(a1);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
 
 
-            GradientDrawable gd = new GradientDrawable();
+
+        GradientDrawable gd = new GradientDrawable();
             gd.setShape(GradientDrawable.RECTANGLE);
             gd.setStroke(5, Color.argb(100, 0, 0, 0)); // border width and color
             gd.setCornerRadius(60.40f);
@@ -66,18 +127,7 @@ public class lista_tres extends AppCompatActivity {
             }
         });
 
-        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("msg").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                String nn = dataSnapshot.getValue(String.class);
-                Log.d("AQUI", "AQUI PORRa" + nn);
-                final TextView a1 = (TextView) findViewById(R.id.msg);
-                a1.setText(nn);
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-            }
-        });
+
 
         myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("atvs").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -439,16 +489,37 @@ public class lista_tres extends AppCompatActivity {
 
 
 
-    String recado = "";
+    String msg = "";
 
-    public void recadinho_enviar() {
+    public void recadinho_enviar(View view) {
         final EditText et2 = (EditText) findViewById(R.id.recadinho);
         if (et2.equals(null) == false) {
             String nn = et2.getText().toString();
-            recado += nn + "";
+            msg += nn + "";
+            ciente();
         }
     }
 
+
+    public void ciente() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+        String currentDateandTime = sdf.format(new Date());
+
+        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("visto_data").setValue(currentDateandTime);
+        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("visto").setValue("ok");
+        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("msg").setValue(msg);
+
+        new AlertDialog.Builder(lista_tres.this).setMessage("Enviado com sucesso!").show();
+        final TextView a18 = (TextView) findViewById(R.id.ciente);
+        final TextView a19 = (TextView) findViewById(R.id.recado);
+        final TextView a20 = (TextView) findViewById(R.id.recadinho);
+        ViewGroup parent = (ViewGroup) a18.getParent();
+        parent.removeView(a18);
+        ViewGroup parent2 = (ViewGroup) a19.getParent();
+        parent2.removeView(a19);
+        ViewGroup parent3 = (ViewGroup) a20.getParent();
+        parent3.removeView(a20);
+    }
 
 
     public void chamarfoto(){
