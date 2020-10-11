@@ -68,7 +68,6 @@ public class lista_tres extends AppCompatActivity {
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     String nn = dataSnapshot.getValue(String.class);
                     if (nn != null){
-                        Log.d("AQUI", "AQUI PORRa" + nn);
                         var.setText(v + " \n " + "Ciente: " + nn);
                         final TextView a18 = (TextView) findViewById(R.id.ciente);
                         final TextView a19 = (TextView) findViewById(R.id.recado);
@@ -228,7 +227,7 @@ public class lista_tres extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
-                if (nn.equals("")){
+                if (nn.equals("") || nn.equals("não")){
                     View aa=findViewById(R.id.medicação);
                     ViewGroup parent2 = (ViewGroup) aa.getParent();
                     parent2.removeView(aa);
@@ -519,6 +518,9 @@ public class lista_tres extends AppCompatActivity {
         parent2.removeView(a19);
         ViewGroup parent3 = (ViewGroup) a20.getParent();
         parent3.removeView(a20);
+
+        final TextView  var = (TextView) findViewById(R.id.aluno_agenda3);
+        var.setText(v + " \n " + "Ciente: "+currentDateandTime);
     }
 
 

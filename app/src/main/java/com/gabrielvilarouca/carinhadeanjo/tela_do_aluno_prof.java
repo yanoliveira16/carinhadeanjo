@@ -1,6 +1,7 @@
 package com.gabrielvilarouca.carinhadeanjo;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -127,6 +128,7 @@ public class tela_do_aluno_prof extends AppCompatActivity {
     public void enviar(View view){
         final EditText et2 = (EditText) findViewById(R.id.recado_profis);
         myRef2.child(id_aluno).child("recado_profe").setValue(et2.getText().toString());
+        new AlertDialog.Builder(tela_do_aluno_prof.this).setMessage("Enviado com sucesso!").show();
     }
 
 

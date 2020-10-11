@@ -66,7 +66,7 @@ public class tela_do_aluno extends AppCompatActivity {
 
         atualizar_feed();
 
-        new AlertDialog.Builder(tela_do_aluno.this).setMessage("BETA\nO aplicativo ainda se encontra em desenvolvimento.\nConfira novidades e tutorais em http://escolacarinhadeanjodf.com/aplicativo").show();
+       // new AlertDialog.Builder(tela_do_aluno.this).setMessage("BETA\nO aplicativo ainda se encontra em desenvolvimento.\nConfira novidades e tutorais em http://escolacarinhadeanjodf.com/aplicativo").show();
 
     }
 

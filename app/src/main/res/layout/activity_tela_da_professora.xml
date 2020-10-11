@@ -125,6 +125,8 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="normal"
         app:layout_constraintBottom_toTopOf="@+id/button7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

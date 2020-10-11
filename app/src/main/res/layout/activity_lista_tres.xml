@@ -81,7 +81,7 @@
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="center"
                 android:text="..."
-                android:textColor="#0D32D6"
+                android:textColor="#E91E63"
                 android:textSize="25sp" />
 
             <TextView
@@ -545,7 +545,7 @@
                 android:id="@+id/recadinho"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#FFFFFF"
+                android:background="@drawable/button"
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="textPersonName" />
@@ -558,10 +558,8 @@
                 android:background="@drawable/button"
                 android:fontFamily="@font/quicksand_bold"
                 android:onClick="recadinho_enviar"
-                android:paddingTop="10sp"
-                android:paddingBottom="10sp"
                 android:text="Estou Ciente!"
-                android:textColor="#1512E6"
+                android:textColor="#03A9F4"
                 android:textSize="20sp" />
 
         </LinearLayout>

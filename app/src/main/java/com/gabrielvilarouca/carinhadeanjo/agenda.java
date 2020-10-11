@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -32,6 +34,7 @@ public class agenda extends AppCompatActivity {
     DatabaseReference myRef = database.child("P3").child(tela_do_aluno_prof.id_aluno).child("Agenda");
     DatabaseReference myRef2 = database.child("P3").child(tela_do_aluno_prof.id_aluno).child("agendaValor");
     DatabaseReference myRef3 = database.child("P5").child(tela_de_carregamento.tturma).child("AgendaTurma");
+    DatabaseReference myRef4 = database.child("P5").child(tela_de_carregamento.tturma).child("faltas");
 
 
     @Override
@@ -70,8 +73,23 @@ public class agenda extends AppCompatActivity {
         Switch sFalta = findViewById(R.id.s);
         if (sFalta.isChecked() == true) {
             falta = "PRESENTE";
+            enviar2();
+        }else{
+            falta = "FALTA";
+            myRef4.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    int nn = dataSnapshot.getValue(Integer.class);
+                    nn += 1;
+                    myRef4.setValue(nn);
+                    enviar2();
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                }
+            });
         }
-        enviar2();
     }
 
 
@@ -80,6 +98,9 @@ public class agenda extends AppCompatActivity {
         a1.setVisibility(View.VISIBLE);
         View a2 = findViewById(R.id.imageView25);
         a2.setVisibility(View.VISIBLE);
+
+        a1.setAlpha(1);
+        a2.setAlpha(1);
 
         enviar0();
     }
@@ -94,15 +115,14 @@ public class agenda extends AppCompatActivity {
         s25 = findViewById(R.id.s25);
 
 
-        if (s24.isChecked() == true) s25.setChecked(false);
+        if (s24.isChecked() == true)
         {
             atvs2 = "Realizou com facilidade";
-        }
-
-        if (s25.isChecked() == true) s24.setChecked(false);
+        }else if (s25.isChecked() == true)
         {
-
             atvs2 = "Realizou com dificuldade";
+        }else{
+            atvs2 = "";
         }
 
         enviar3();
@@ -152,7 +172,7 @@ public class agenda extends AppCompatActivity {
         if (siMed.isChecked() == true) {
             imedicacao = "sim";
         } else {
-            imedicacao = "não";
+            imedicacao = "";
         }
 
         if (siMed.isChecked() == true) {
@@ -162,27 +182,27 @@ public class agenda extends AppCompatActivity {
                 errormsg = "Você precisa escrever ao menos um Rémedio";
                 erro();
             } else {
-                iremedio += nn + "";
+                iremedio += nn;
             }
 
             if (siMed.isChecked() == true) {
                 final EditText et3 = (EditText) findViewById(R.id.idosagem2);
-                String nn2 = et2.getText().toString();
-                if (nn.equals(null) == true) {
+                String nn2 = et3.getText().toString();
+                if (nn2.equals(null) == true) {
                     errormsg = "Você precisa escrever ao menos uma Dosagem!";
                     erro();
                 } else {
-                    idosagem += nn + "";
+                    idosagem += nn2;
                 }
 
                 if (siMed.isChecked() == true) {
                     final EditText et4 = (EditText) findViewById(R.id.ihorario2);
-                    String nn3 = et2.getText().toString();
-                    if (nn.equals(null) == true) {
+                    String nn3 = et4.getText().toString();
+                    if (nn3.equals(null) == true) {
                         errormsg = "Você precisa escrever ao menos um Horário!";
                         erro();
                     } else {
-                        ihorario += nn + "";
+                        ihorario += nn3;
                     }
                 }
             }
@@ -316,13 +336,17 @@ public class agenda extends AppCompatActivity {
 
         if (s49.isChecked() == true) {
             isono = "Não dormiu";
-        } else if (s50.isChecked() == true) {
+        }
+        if (s50.isChecked() == true) {
             isono = "Evacuação anormal";
-        } else if (s51.isChecked() == true) {
+        }
+        if (s51.isChecked() == true) {
             isono = "Uriniou pouco";
-        } else if (s52.isChecked() == true) {
+        }
+        if (s52.isChecked() == true) {
             isono = "Tomou pouca água";
-        } else if (s53.isChecked() == true) {
+        }
+        if (s53.isChecked() == true) {
             isono = "Não tomou banho";
         }
         enviar12();
@@ -371,19 +395,26 @@ public class agenda extends AppCompatActivity {
 
         if (s57.isChecked() == true) {
             iprovidenciar = "Toalha";
-        } else if (s58.isChecked() == true) {
+        }
+        if (s58.isChecked() == true) {
             iprovidenciar = "Lençol";
-        } else if (s59.isChecked() == true) {
+        }
+        if (s59.isChecked() == true) {
             iprovidenciar = "Fralda";
-        } else if (s60.isChecked() == true) {
+        }
+        if (s60.isChecked() == true) {
             iprovidenciar = "Sabonete Líquido";
-        } else if (s61.isChecked() == true) {
+        }
+        if (s61.isChecked() == true) {
             iprovidenciar = "Shampoo";
-        } else if (s62.isChecked() == true) {
+        }
+        if (s62.isChecked() == true) {
             iprovidenciar = "Condicionador";
-        } else if (s63.isChecked() == true) {
+        }
+        if (s63.isChecked() == true) {
             iprovidenciar = "Colônia";
-        } else if (s64.isChecked() == true) {
+        }
+        if (s64.isChecked() == true) {
             iprovidenciar = "Lenço Umidecido";
         }
         enviar14();
@@ -410,17 +441,23 @@ public class agenda extends AppCompatActivity {
 
         if (s65.isChecked() == true) {
             iatv = "Psicomotricidade";
-        } else if (s66.isChecked() == true) {
+        }
+        if (s66.isChecked() == true) {
             iatv = "Recreação";
-        } else if (s67.isChecked() == true) {
+        }
+        if (s67.isChecked() == true) {
             iatv = "Hora da leitura";
-        } else if (s68.isChecked() == true) {
+        }
+        if (s68.isChecked() == true) {
             iatv = "Jogos";
-        } else if (s69.isChecked() == true) {
+        }
+        if (s69.isChecked() == true) {
             iatv = "Arte";
-        } else if (s70.isChecked() == true) {
+        }
+        if (s70.isChecked() == true) {
             iatv = "Musicalização";
-        } else if (s71.isChecked() == true) {
+        }
+        if (s71.isChecked() == true) {
             iatv = "Videoteca";
         }
         enviar15();
