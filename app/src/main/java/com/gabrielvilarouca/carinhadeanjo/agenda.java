@@ -34,7 +34,7 @@ public class agenda extends AppCompatActivity {
     DatabaseReference myRef = database.child("P3").child(tela_do_aluno_prof.id_aluno).child("Agenda");
     DatabaseReference myRef2 = database.child("P3").child(tela_do_aluno_prof.id_aluno).child("agendaValor");
     DatabaseReference myRef3 = database.child("P5").child(tela_de_carregamento.tturma).child("AgendaTurma");
-    DatabaseReference myRef4 = database.child("P5").child(tela_de_carregamento.tturma).child("faltas");
+    DatabaseReference myRef4 = database.child("P3").child(tela_do_aluno_prof.id_aluno).child("faltas");
 
 
     @Override

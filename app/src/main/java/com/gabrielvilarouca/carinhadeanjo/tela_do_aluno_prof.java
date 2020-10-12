@@ -54,8 +54,17 @@ public class tela_do_aluno_prof extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 id_aluno = dataSnapshot.getValue(String.class);
                 TextView a1 = (TextView) findViewById(R.id.turma3);
-                a1.setText(tela_de_alunos.onClick3);
                 ppp();
+                myRef2.child(id_aluno).child("faltas").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        int faltas = dataSnapshot.getValue(Integer.class);
+                        a1.setText(tela_de_alunos.onClick3 + "\nFaltas: "+ faltas);
+                    }
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                    }
+                });
                 myRef2.child(id_aluno).child("recado_profe").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
