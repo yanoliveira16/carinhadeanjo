@@ -140,8 +140,9 @@ public class tela_da_professora extends AppCompatActivity {
         });
     }
 
-
-
+    public void novo_feed(View view){
+        new AlertDialog.Builder(tela_da_professora.this).setMessage("EM BREVE").show();
+    }
 
 
 

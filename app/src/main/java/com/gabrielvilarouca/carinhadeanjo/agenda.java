@@ -35,6 +35,7 @@ public class agenda extends AppCompatActivity {
     DatabaseReference myRef2 = database.child("P3").child(tela_do_aluno_prof.id_aluno).child("agendaValor");
     DatabaseReference myRef3 = database.child("P5").child(tela_de_carregamento.tturma).child("AgendaTurma");
     DatabaseReference myRef4 = database.child("P3").child(tela_do_aluno_prof.id_aluno).child("faltas");
+    DatabaseReference myRef5 = database.child("P5").child(tela_de_carregamento.tturma).child("AgendaTemporaria").child(tela_do_aluno_prof.id_aluno);
 
 
     @Override
@@ -48,6 +49,456 @@ public class agenda extends AppCompatActivity {
         TextView a1 = (TextView) findViewById(R.id.nome_aluno_agenda);
         a1.setText(tela_de_alunos.onClick3);
 
+        View aa1 = findViewById(R.id.progressBar4);
+        aa1.setVisibility(View.VISIBLE);
+        View aa2 = findViewById(R.id.imageView25);
+        aa2.setVisibility(View.VISIBLE);
+        View aa3 = findViewById(R.id.button12);
+        aa3.setVisibility(View.INVISIBLE);
+
+        aa1.setAlpha(1);
+        aa2.setAlpha(1);
+        aa3.setAlpha(0);
+
+        tem_temporaria();
+
+    }
+
+    public void tem_temporaria(){
+        myRef5.child("valor").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String nk = dataSnapshot.getValue(String.class);
+                if (nk == null){
+                    View aa1 = findViewById(R.id.progressBar4);
+                    aa1.setVisibility(View.INVISIBLE);
+                    View aa2 = findViewById(R.id.imageView25);
+                    aa2.setVisibility(View.INVISIBLE);
+                    View aa3 = findViewById(R.id.button12);
+                    aa3.setVisibility(View.VISIBLE);
+
+                    aa1.setAlpha(0);
+                    aa2.setAlpha(0);
+                    aa3.setAlpha(1);
+                }else if(nk.contains("sim") == true){
+                    puxar_temporaria();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+    }
+
+    boolean hg1 = false;
+    boolean hg2 = false;
+    boolean hg3 = false;
+    boolean hg4 = false;
+    boolean hg5 = false;
+    boolean hg6 = false;
+    boolean hg7 = false;
+    boolean hg8 = false;
+    boolean hg9 = false;
+    boolean hg10 = false;
+    boolean hg11 = false;
+    boolean hg12 = false;
+
+    public void puxar_temporaria(){
+        myRef5.child("apresentou").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String nk = dataSnapshot.getValue(String.class);
+                if (nk.contains("Coriza") == true){
+                    s36 = findViewById(R.id.s36);
+                    s36.setChecked(true);
+                }
+                if (nk.contains("Tosse") == true){
+                    s37 = findViewById(R.id.s37);
+                    s37.setChecked(true);
+                }
+                if (nk.contains("Vômito") == true){
+                    s38 = findViewById(R.id.s38);
+                    s38.setChecked(true);
+                }
+                if (nk.contains("Febre") == true){
+                    s39 = findViewById(R.id.s39);
+                    s39.setChecked(true);
+                }
+                hg1 = true;
+                checar();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
+        myRef5.child("atvs2").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String nk = dataSnapshot.getValue(String.class);
+                if (nk.contains("facilidade") == true){
+                    s24 = findViewById(R.id.s24);
+                    s24.setChecked(true);
+                }else if (nk.contains("dificuldade") == true){
+                    s25 = findViewById(R.id.s25);
+                    s25.setChecked(true);
+                }
+                hg2 = true;
+                checar();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
+        myRef5.child("comportamento").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String nk = dataSnapshot.getValue(String.class);
+                if (nk.contains("Tranquilo") == true){
+                    s26 = findViewById(R.id.s26);
+                    s26.setChecked(true);
+                }else if (nk.contains("Obediente") == true){
+                    s27 = findViewById(R.id.s27);
+                    s27.setChecked(true);
+                }else if (nk.contains("Conversou") == true){
+                    s28 = findViewById(R.id.s28);
+                    s28.setChecked(true);
+                }else if (nk.contains("Irritado") == true){
+                    s29 = findViewById(R.id.s29);
+                    s29.setChecked(true);
+                }
+                hg3 = true;
+                checar();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
+        myRef5.child("iatv").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String nk = dataSnapshot.getValue(String.class);
+                if (nk.contains("Psicomotricidade") == true){
+                    s65 = findViewById(R.id.s65);
+                    s65.setChecked(true);
+                }
+                if (nk.contains("Recreação") == true){
+                    s66 = findViewById(R.id.s66);
+                    s66.setChecked(true);
+                }
+                if (nk.contains("Hora") == true){
+                    s67 = findViewById(R.id.s67);
+                    s67.setChecked(true);
+                }
+                if (nk.contains("Jogos") == true){
+                    s68 = findViewById(R.id.s68);
+                    s68.setChecked(true);
+                }
+                if (nk.contains("Arte") == true){
+                    s69 = findViewById(R.id.s69);
+                    s69.setChecked(true);
+                }
+                if (nk.contains("Musicalização") == true){
+                    s70 = findViewById(R.id.s70);
+                    s70.setChecked(true);
+                }
+                if (nk.contains("Videoteca") == true){
+                    s71 = findViewById(R.id.s71);
+                    s71.setChecked(true);
+                }
+                hg4 = true;
+                checar();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
+        myRef5.child("ilanchematutino").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String nk = dataSnapshot.getValue(String.class);
+                if (nk.contains("bem") == true){
+                    s32 = findViewById(R.id.s32);
+                    s32.setChecked(true);
+                }else if (nk.contains("pouco") == true){
+                    s34 = findViewById(R.id.s34);
+                    s34.setChecked(true);
+                }else if (nk.contains("Não") == true){
+                    s72 = findViewById(R.id.s72);
+                    s72.setChecked(true);
+                }
+                hg5 = true;
+                checar();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
+        myRef5.child("ilanchevespertino").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String nk = dataSnapshot.getValue(String.class);
+                if (nk.contains("bem") == true){
+                    s43 = findViewById(R.id.s43);
+                    s43.setChecked(true);
+                }else if (nk.contains("pouco") == true){
+                    s44 = findViewById(R.id.s44);
+                    s44.setChecked(true);
+                }else if (nk.contains("Não") == true){
+                    s45 = findViewById(R.id.s45);
+                    s45.setChecked(true);
+                }
+                hg6 = true;
+                checar();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
+        myRef5.child("ialmoço").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String nk = dataSnapshot.getValue(String.class);
+                if (nk.contains("bem") == true){
+                    s40 = findViewById(R.id.s40);
+                    s40.setChecked(true);
+                }else if (nk.contains("pouco") == true){
+                    s41 = findViewById(R.id.s41);
+                    s41.setChecked(true);
+                }else if (nk.contains("Não") == true){
+                    s42 = findViewById(R.id.s42);
+                    s42.setChecked(true);
+                }
+                hg7 = true;
+                checar();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
+        myRef5.child("ijanta").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String nk = dataSnapshot.getValue(String.class);
+                if (nk.contains("bem") == true){
+                    s46 = findViewById(R.id.s46);
+                    s46.setChecked(true);
+                }else if (nk.contains("pouco") == true){
+                    s47 = findViewById(R.id.s47);
+                    s47.setChecked(true);
+                }else if (nk.contains("Não") == true){
+                    s48 = findViewById(R.id.s48);
+                    s48.setChecked(true);
+                }
+                hg8 = true;
+                checar();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
+        myRef5.child("icomportamento").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String nk = dataSnapshot.getValue(String.class);
+                if (nk.contains("Tranquilo") == true){
+                    s54 = findViewById(R.id.s54);
+                    s54.setChecked(true);
+                }else if (nk.contains("Obediente") == true){
+                    s55 = findViewById(R.id.s55);
+                    s55.setChecked(true);
+                }else if (nk.contains("Irritado") == true){
+                    s56 = findViewById(R.id.s56);
+                    s56.setChecked(true);
+                }
+                hg9 = true;
+                checar();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
+        myRef5.child("imedicacao").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String nk = dataSnapshot.getValue(String.class);
+                if (nk.contains("Sim") == true){
+                    siMed = findViewById(R.id.imed);
+                    siMed.setChecked(true);
+                    myRef5.child("iremedio").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            String nk = dataSnapshot.getValue(String.class);
+                            final EditText et2 = (EditText) findViewById(R.id.iremedio2);
+                            et2.setText(nk);
+                            myRef5.child("ihorario").addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    String nk = dataSnapshot.getValue(String.class);
+                                    final EditText et2 = (EditText) findViewById(R.id.ihorario2);
+                                    et2.setText(nk);
+                                    myRef5.child("idosagem").addListenerForSingleValueEvent(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(DataSnapshot dataSnapshot) {
+                                            String nk = dataSnapshot.getValue(String.class);
+                                            final EditText et2 = (EditText) findViewById(R.id.idosagem2);
+                                            et2.setText(nk);
+                                            hg9 = true;
+                                            checar();
+                                        }
+
+                                        @Override
+                                        public void onCancelled(DatabaseError databaseError) {
+                                        }
+                                    });
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+                                }
+                            });
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+                        }
+                    });
+                }else{
+                    hg9 = true;
+                    checar();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
+        myRef5.child("obs3").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String nk = dataSnapshot.getValue(String.class);
+                final EditText et2 = (EditText) findViewById(R.id.obs2);
+                et2.setText(nk);
+                hg10 = true;
+                checar();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
+        myRef5.child("isono").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String nk = dataSnapshot.getValue(String.class);
+                if (nk.contains("Não dormiu") == true){
+                    s49 = findViewById(R.id.s49);
+                    s49.setChecked(true);
+                }
+                if (nk.contains("Evacuação") == true){
+                    s50 = findViewById(R.id.s50);
+                    s50.setChecked(true);
+                }
+                if (nk.contains("Urinou") == true){
+                    s51 = findViewById(R.id.s51);
+                    s51.setChecked(true);
+                }
+                if (nk.contains("Tomou") == true){
+                    s52 = findViewById(R.id.s52);
+                    s52.setChecked(true);
+                }
+                if (nk.contains("Não tomou banho") == true){
+                    s53 = findViewById(R.id.s53);
+                    s53.setChecked(true);
+                }
+                hg11 = true;
+                checar();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
+        myRef5.child("iprovidenciar").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String nk = dataSnapshot.getValue(String.class);
+                if (nk.contains("Toalha") == true){
+                    s57 = findViewById(R.id.s57);
+                    s57.setChecked(true);
+                }
+                if (nk.contains("Lençol") == true){
+                    s58 = findViewById(R.id.s58);
+                    s58.setChecked(true);
+                }
+                if (nk.contains("Fralda") == true){
+                    s59 = findViewById(R.id.s59);
+                    s59.setChecked(true);
+                }
+                if (nk.contains("Sabonete") == true){
+                    s60 = findViewById(R.id.s60);
+                    s60.setChecked(true);
+                }
+                if (nk.contains("Shampoo") == true){
+                    s61 = findViewById(R.id.s61);
+                    s61.setChecked(true);
+                }
+                if (nk.contains("Condicionador") == true){
+                    s62 = findViewById(R.id.s62);
+                    s62.setChecked(true);
+                }
+                if (nk.contains("Colônia") == true){
+                    s63 = findViewById(R.id.s63);
+                    s63.setChecked(true);
+                }
+                if (nk.contains("Lenço") == true){
+                    s64 = findViewById(R.id.s64);
+                    s64.setChecked(true);
+                }
+                hg12 = true;
+                checar();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+    }
+
+    public void checar(){
+        if(hg1 == true && hg2 == true && hg3 == true && hg4 == true && hg5 == true && hg6 == true && hg7 == true && hg8 == true && hg9 == true && hg10 == true && hg11 == true && hg12 == true){
+            View aa1 = findViewById(R.id.progressBar4);
+            aa1.setVisibility(View.INVISIBLE);
+            View aa2 = findViewById(R.id.imageView25);
+            aa2.setVisibility(View.INVISIBLE);
+            View aa3 = findViewById(R.id.button12);
+            aa3.setVisibility(View.VISIBLE);
+
+            aa1.setAlpha(0);
+            aa2.setAlpha(0);
+            aa3.setAlpha(1);
+        }
     }
 
     String errormsg = "";
@@ -98,9 +549,14 @@ public class agenda extends AppCompatActivity {
         a1.setVisibility(View.VISIBLE);
         View a2 = findViewById(R.id.imageView25);
         a2.setVisibility(View.VISIBLE);
+        View aa3 = findViewById(R.id.button12);
+        aa3.setVisibility(View.INVISIBLE);
 
         a1.setAlpha(1);
         a2.setAlpha(1);
+        aa3.setAlpha(0);
+
+        agd_temporaria = false;
 
         enviar0();
     }
@@ -170,7 +626,7 @@ public class agenda extends AppCompatActivity {
         siMed = findViewById(R.id.imed);
 
         if (siMed.isChecked() == true) {
-            imedicacao = "sim";
+            imedicacao = "Sim";
         } else {
             imedicacao = "";
         }
@@ -225,12 +681,15 @@ public class agenda extends AppCompatActivity {
 
         if (s36.isChecked() == true) {
             apresentou = "Coriza";
-        } else if (s37.isChecked() == true) {
-            apresentou = "Tosse";
-        } else if (s38.isChecked() == true) {
-            apresentou = "Vômito";
-        } else if (s39.isChecked() == true) {
-            apresentou = "Febre";
+        }
+        if (s37.isChecked() == true) {
+            apresentou += "Tosse | ";
+        }
+        if (s38.isChecked() == true) {
+            apresentou += "Vômito | ";
+        }
+        if (s39.isChecked() == true) {
+            apresentou += "Febre | ";
         }
 
         enviar16();
@@ -335,19 +794,19 @@ public class agenda extends AppCompatActivity {
         s53 = findViewById(R.id.s53);
 
         if (s49.isChecked() == true) {
-            isono = "Não dormiu";
+            isono = "Não dormiu | ";
         }
         if (s50.isChecked() == true) {
-            isono = "Evacuação anormal";
+            isono += "Evacuação anormal | ";
         }
         if (s51.isChecked() == true) {
-            isono = "Uriniou pouco";
+            isono += "Urinou pouco | ";
         }
         if (s52.isChecked() == true) {
-            isono = "Tomou pouca água";
+            isono += "Tomou pouca água | ";
         }
         if (s53.isChecked() == true) {
-            isono = "Não tomou banho";
+            isono += "Não tomou banho";
         }
         enviar12();
     }
@@ -394,28 +853,28 @@ public class agenda extends AppCompatActivity {
 
 
         if (s57.isChecked() == true) {
-            iprovidenciar = "Toalha";
+            iprovidenciar = "Toalha | ";
         }
         if (s58.isChecked() == true) {
-            iprovidenciar = "Lençol";
+            iprovidenciar += "Lençol | ";
         }
         if (s59.isChecked() == true) {
-            iprovidenciar = "Fralda";
+            iprovidenciar += "Fralda | ";
         }
         if (s60.isChecked() == true) {
-            iprovidenciar = "Sabonete Líquido";
+            iprovidenciar += "Sabonete Líquido | ";
         }
         if (s61.isChecked() == true) {
-            iprovidenciar = "Shampoo";
+            iprovidenciar += "Shampoo |";
         }
         if (s62.isChecked() == true) {
-            iprovidenciar = "Condicionador";
+            iprovidenciar += "Condicionador | ";
         }
         if (s63.isChecked() == true) {
-            iprovidenciar = "Colônia";
+            iprovidenciar += "Colônia | ";
         }
         if (s64.isChecked() == true) {
-            iprovidenciar = "Lenço Umidecido";
+            iprovidenciar += "Lenço Umidecido";
         }
         enviar14();
     }
@@ -440,25 +899,25 @@ public class agenda extends AppCompatActivity {
 
 
         if (s65.isChecked() == true) {
-            iatv = "Psicomotricidade";
+            iatv = "Psicomotricidade | ";
         }
         if (s66.isChecked() == true) {
-            iatv = "Recreação";
+            iatv += "Recreação | ";
         }
         if (s67.isChecked() == true) {
-            iatv = "Hora da leitura";
+            iatv += "Hora da leitura | ";
         }
         if (s68.isChecked() == true) {
-            iatv = "Jogos";
+            iatv += "Jogos | ";
         }
         if (s69.isChecked() == true) {
-            iatv = "Arte";
+            iatv += "Arte | ";
         }
         if (s70.isChecked() == true) {
-            iatv = "Musicalização";
+            iatv += "Musicalização | ";
         }
         if (s71.isChecked() == true) {
-            iatv = "Videoteca";
+            iatv += "Videoteca";
         }
         enviar15();
     }
@@ -471,7 +930,11 @@ public class agenda extends AppCompatActivity {
             String nn = et2.getText().toString();
             obs3 += nn + "";
         }
-        pegar_do_servidor();
+        if (agd_temporaria == false){
+            pegar_do_servidor();
+        }else{
+            enviar_temporaria();
+        }
     }
 
     //ESSA É A ÚLTIMA PARTE.
@@ -533,6 +996,45 @@ public class agenda extends AppCompatActivity {
         });
     }
 
+    boolean agd_temporaria = false;
+    public void salvar_agenda_temporaria(View view){
+        View a1 = findViewById(R.id.progressBar4);
+        a1.setVisibility(View.VISIBLE);
+        View a2 = findViewById(R.id.imageView25);
+        a2.setVisibility(View.VISIBLE);
+        View aa3 = findViewById(R.id.button12);
+        aa3.setVisibility(View.INVISIBLE);
+
+        a1.setAlpha(1);
+        a2.setAlpha(1);
+        aa3.setAlpha(0);
+        agd_temporaria = true;
+        enviar2();
+    }
+
+    public void enviar_temporaria(){
+        myRef5.child("atvs2").setValue(atvs2);
+        myRef5.child("comportamento").setValue(comportamento);
+        myRef5.child("imedicacao").setValue(imedicacao);
+        myRef5.child("iremedio").setValue(iremedio);
+        myRef5.child("idosagem").setValue(idosagem);
+        myRef5.child("ihorario").setValue(ihorario);
+        myRef5.child("apresentou").setValue(apresentou);
+        myRef5.child("ialmoço").setValue(ialmoço);
+        myRef5.child("ilanchevespertino").setValue(ilanchevespertino);
+        myRef5.child("ilanchematutino").setValue(ilanchematutino);
+        myRef5.child("ijanta").setValue(ijanta);
+        myRef5.child("isono").setValue(isono);
+        myRef5.child("icomportamento").setValue(icomportamento);
+        myRef5.child("iprovidenciar").setValue(iprovidenciar);
+        myRef5.child("iatv").setValue(iatv);
+        myRef5.child("obs3").setValue(obs3);
+        myRef5.child("valor").setValue("sim");
+        new AlertDialog.Builder(agenda.this).setMessage("Enviado com sucesso!").show();
+        Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
+        startActivity(intent);
+    }
+
     public void enviar_servidor() {
 
         SimpleDateFormat sdf2 = new SimpleDateFormat("MM-yyyy");
@@ -563,6 +1065,7 @@ public class agenda extends AppCompatActivity {
         myRef.child(currentDateandTime2).child(data).child("iprovidenciar").setValue(iprovidenciar);
         myRef.child(currentDateandTime2).child(data).child("iatv").setValue(iatv);
         myRef.child(currentDateandTime2).child(data).child("obs3").setValue(obs3);
+        myRef5.removeValue();
         new AlertDialog.Builder(agenda.this).setMessage("Enviado com sucesso!").show();
         Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
         startActivity(intent);

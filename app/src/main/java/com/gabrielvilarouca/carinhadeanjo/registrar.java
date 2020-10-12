@@ -38,6 +38,8 @@ public class registrar extends AppCompatActivity {
 
         View a2=findViewById(R.id.carr2);
         a2.setVisibility(View.INVISIBLE);
+
+        new AlertDialog.Builder(registrar.this).setMessage("ATENÇÃO\nCada aluno só pode ser cadastrado com UM e-mail!").show();
     }
 
     public void cadastrar_click(final View view){
