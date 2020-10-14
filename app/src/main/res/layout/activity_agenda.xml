@@ -20,13 +20,36 @@
         android:id="@+id/button12"
         android:layout_width="50sp"
         android:layout_height="50sp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
+        android:background="@drawable/olho"
+        android:onClick="visualizar_agenda_turma"
+        app:layout_constraintEnd_toStartOf="@+id/button13"
+        app:layout_constraintTop_toBottomOf="@+id/nome_aluno_agenda" />
+
+    <Button
+        android:id="@+id/button13"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/database"
         android:onClick="salvar_agenda_temporaria"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nome_aluno_agenda" />
+
+    <Button
+        android:id="@+id/button14"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/apagar"
+        android:onClick="apagar_agenda"
+        app:layout_constraintStart_toEndOf="@+id/button13"
+        app:layout_constraintTop_toBottomOf="@+id/nome_aluno_agenda" />
 
     <TextView
         android:id="@+id/nome_aluno_agenda"
@@ -41,24 +64,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView17" />
 
-    <TextView
-        android:id="@+id/nova_agenda"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/quicksand_bold"
-        android:gravity="center"
-        android:text="NOVA AGENDA"
-        android:textColor="#FF864C"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nome_aluno_agenda" />
-
     <ImageView
         android:id="@+id/imageView17"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         app:layout_constraintBottom_toTopOf="@+id/nome_aluno_agenda"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,12 +81,13 @@
         android:layout_height="0dp"
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="2dp"
         android:layout_marginRight="2dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView14"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nova_agenda">
+        app:layout_constraintTop_toBottomOf="@+id/button13">
 
         <LinearLayout
             android:id="@+id/linearLayout"

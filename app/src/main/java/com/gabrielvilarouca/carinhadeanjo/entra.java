@@ -112,25 +112,26 @@ public void esqueci_senha(View view) {
             email = input.getText().toString();
             FirebaseAuth auth = FirebaseAuth.getInstance();
             String emailAddress = email;
-
-            auth.sendPasswordResetEmail(emailAddress)
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()) {
-                                AlertDialog alertDialog = new AlertDialog.Builder(entra.this).create();
-                                alertDialog.setTitle("E-mail enviado!");
-                                alertDialog.setMessage(msg);
-                                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Ok",
-                                        new DialogInterface.OnClickListener() {
-                                            public void onClick(DialogInterface dialog, int which) {
-                                                dialog.dismiss();
-                                            }
-                                        });
-                                alertDialog.show();
+            if (emailAddress != null){
+                auth.sendPasswordResetEmail(emailAddress)
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    AlertDialog alertDialog = new AlertDialog.Builder(entra.this).create();
+                                    alertDialog.setTitle("E-mail enviado!");
+                                    alertDialog.setMessage(msg);
+                                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Ok",
+                                            new DialogInterface.OnClickListener() {
+                                                public void onClick(DialogInterface dialog, int which) {
+                                                    dialog.dismiss();
+                                                }
+                                            });
+                                    alertDialog.show();
+                                }
                             }
-                        }
-                    });
+                        });
+            }
         }
     });
     builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

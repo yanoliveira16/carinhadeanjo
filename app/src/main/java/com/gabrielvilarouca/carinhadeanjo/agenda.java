@@ -55,10 +55,16 @@ public class agenda extends AppCompatActivity {
         aa2.setVisibility(View.VISIBLE);
         View aa3 = findViewById(R.id.button12);
         aa3.setVisibility(View.INVISIBLE);
+        View aa4 = findViewById(R.id.button13);
+        aa4.setVisibility(View.INVISIBLE);
+        View aa5 = findViewById(R.id.button14);
+        aa5.setVisibility(View.INVISIBLE);
 
         aa1.setAlpha(1);
         aa2.setAlpha(1);
         aa3.setAlpha(0);
+        aa4.setAlpha(0);
+        aa5.setAlpha(0);
 
         tem_temporaria();
 
@@ -76,10 +82,18 @@ public class agenda extends AppCompatActivity {
                     aa2.setVisibility(View.INVISIBLE);
                     View aa3 = findViewById(R.id.button12);
                     aa3.setVisibility(View.VISIBLE);
+                    View aa4 = findViewById(R.id.button13);
+                    aa4.setVisibility(View.VISIBLE);
+                    View aa5 = findViewById(R.id.button14);
+                    aa5.setVisibility(View.VISIBLE);
 
                     aa1.setAlpha(0);
                     aa2.setAlpha(0);
                     aa3.setAlpha(1);
+                    aa4.setAlpha(1);
+                    aa5.setAlpha(1);
+
+                    new AlertDialog.Builder(agenda.this).setMessage("NOVA AGENDA\nLEMBRE-SE DE FAZER A AGENDA DA TURMA!").show();
                 }else if(nk.contains("sim") == true){
                     puxar_temporaria();
                 }
@@ -494,10 +508,18 @@ public class agenda extends AppCompatActivity {
             aa2.setVisibility(View.INVISIBLE);
             View aa3 = findViewById(R.id.button12);
             aa3.setVisibility(View.VISIBLE);
+            View aa4 = findViewById(R.id.button13);
+            aa4.setVisibility(View.VISIBLE);
+            View aa5 = findViewById(R.id.button14);
+            aa5.setVisibility(View.VISIBLE);
 
             aa1.setAlpha(0);
             aa2.setAlpha(0);
             aa3.setAlpha(1);
+            aa4.setAlpha(1);
+            aa5.setAlpha(1);
+
+            new AlertDialog.Builder(agenda.this).setMessage("AGENDA TEMPORÁRIA BUSCADA!\nLEMBRE-SE DE FAZER A AGENDA DA TURMA!").show();
         }
     }
 
@@ -1301,6 +1323,15 @@ public class agenda extends AppCompatActivity {
             s55.setChecked(false);
             s54.setChecked(false);
         }
+    }
+
+
+    public void apagar_agenda(View view){
+        new AlertDialog.Builder(agenda.this).setMessage("APAGAR AGENDA\nRecurso ainda não disponível.").show();
+    }
+
+    public void visualizar_agenda_turma(View view){
+        new AlertDialog.Builder(agenda.this).setMessage("VISUALIZAR AGENDA DA TURMA\nRecurso ainda não disponível.").show();
     }
     }
 
