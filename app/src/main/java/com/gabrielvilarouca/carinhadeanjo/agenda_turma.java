@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -60,7 +61,6 @@ public class agenda_turma extends AppCompatActivity {
         Switch s2 = findViewById(R.id.s2);
         Switch s3 = findViewById(R.id.s3);
         Switch s4 = findViewById(R.id.s4);
-        Switch s5 = findViewById(R.id.s5);
         Switch s6 = findViewById(R.id.s6);
         Switch s7 = findViewById(R.id.s7);
         Switch s8 = findViewById(R.id.s8);
@@ -97,17 +97,6 @@ public class agenda_turma extends AppCompatActivity {
         }
         if (s6.isChecked() == true) {
             atvs += "Geografia | ";
-        }
-        if (s5.isChecked() == true) {
-            final EditText et2 = (EditText) findViewById(R.id.outro_texto);
-            String nn = et2.getText().toString();
-            if (nn.equals(null) == true) {
-                errormsg = "Você precisa escrever ao menos uma atividade em Outro!";
-                erro();
-            } else {
-                atvs += nn + " | ";
-            }
-
         }
         if (s8.isChecked() == true) {
             atvs += "Natureza e Sociedade | ";
@@ -175,41 +164,60 @@ public class agenda_turma extends AppCompatActivity {
 
 
         if (s30.isChecked() == true) {
-            dever = "Em folha";
+            dever = "Em folha | ";
         }
         if (s31.isChecked() == true) {
             final EditText et2 = (EditText) findViewById(R.id.outro_texto5);
             String nn = et2.getText().toString();
-            if (nn.equals(null) == true) {
+            if (nn == null || nn == "" || nn == " ") {
                 errormsg = "Você precisa escrever ao menos um caderno";
                 erro();
             } else {
-                dever += nn + " | ";
+                dever += "No caderno de " + nn + " | ";
             }
+        }
 
             if (s33.isChecked() == true) {
                 final EditText et3 = (EditText) findViewById(R.id.outro_texto4);
                 String nn2 = et3.getText().toString();
-                if (nn.equals(null) == true) {
+                if (nn2 == null || nn2 == "" || nn2 == " ") {
                     errormsg = "Você precisa escrever ao menos um livro";
                     erro();
                 } else {
-                    dever += nn + " | ";
+                    dever += "No livro de " +nn2;
 
                     if (s33.isChecked() == true) {
                         final EditText et4 = (EditText) findViewById(R.id.outro_texto2);
-                        String nn3 = et3.getText().toString();
-                        if (nn.equals(null) == true) {
+                        String nn3 = et4.getText().toString();
+                        if (nn3 == null || nn3 == "" || nn3 == " ") {
                             errormsg = "Você precisa escrever ao menos uma Página";
                             erro();
                         } else {
-                            dever += nn + " | ";
+                            dever += ", página "+nn3;
                         }
                     }
                 }
             }
+        ultima_antes();
+    }
+
+    public void ultima_antes(){
+        Switch s5 = findViewById(R.id.s5);
+        Log.d("AQUI","foi");
+        if (s5.isChecked() == true) {
+            final EditText et2z = (EditText) findViewById(R.id.outro_texto);
+            String nnz = et2z.getText().toString();
+            Log.d("AQUI 2","nnz " +nnz);
+            if (nnz == null || nnz == "" || nnz == " ") {
+                errormsg = "Você precisa escrever ao menos uma atividade em OUTRO!";
+                erro();
+            } else {
+                atvs += nnz + " | ";
+                enviar3();
+            }
+        }else{
+            enviar3();
         }
-        enviar3();
     }
 
 
@@ -217,8 +225,8 @@ public class agenda_turma extends AppCompatActivity {
 
     public void enviar3() {
         final EditText et2 = (EditText) findViewById(R.id.outro_texto3);
-        if (et2.equals(null) == false) {
-            String nn = et2.getText().toString();
+        String nn = et2.getText().toString();
+        if (nn != null || nn != "" || nn != " ") {
             aviso += nn + "";
         }
         enviar_servidor();

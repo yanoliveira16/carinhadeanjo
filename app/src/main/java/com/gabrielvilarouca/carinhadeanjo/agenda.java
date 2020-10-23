@@ -36,6 +36,7 @@ public class agenda extends AppCompatActivity {
     DatabaseReference myRef3 = database.child("P5").child(tela_de_carregamento.tturma).child("AgendaTurma");
     DatabaseReference myRef4 = database.child("P3").child(tela_do_aluno_prof.id_aluno).child("faltas");
     DatabaseReference myRef5 = database.child("P5").child(tela_de_carregamento.tturma).child("AgendaTemporaria").child(tela_do_aluno_prof.id_aluno);
+    DatabaseReference myRef_feed = database.child("P2").child(tela_de_carregamento.tturma);
 
 
     @Override
@@ -543,11 +544,11 @@ public class agenda extends AppCompatActivity {
     Switch s;
 
     public void enviar0() {
-        Switch sFalta = findViewById(R.id.s);
-        if (sFalta.isChecked() == true) {
+        s = findViewById(R.id.s);
+        if (s.isChecked() == false) {
             falta = "PRESENTE";
             enviar2();
-        }else{
+        }else if (s.isChecked() == true){
             falta = "FALTA";
             myRef4.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
@@ -573,10 +574,16 @@ public class agenda extends AppCompatActivity {
         a2.setVisibility(View.VISIBLE);
         View aa3 = findViewById(R.id.button12);
         aa3.setVisibility(View.INVISIBLE);
+        View aa4 = findViewById(R.id.button13);
+        aa3.setVisibility(View.INVISIBLE);
+        View aa5 = findViewById(R.id.button14);
+        aa3.setVisibility(View.INVISIBLE);
 
         a1.setAlpha(1);
         a2.setAlpha(1);
         aa3.setAlpha(0);
+        aa4.setAlpha(0);
+        aa5.setAlpha(0);
 
         agd_temporaria = false;
 
@@ -1052,7 +1059,7 @@ public class agenda extends AppCompatActivity {
         myRef5.child("iatv").setValue(iatv);
         myRef5.child("obs3").setValue(obs3);
         myRef5.child("valor").setValue("sim");
-        new AlertDialog.Builder(agenda.this).setMessage("Enviado com sucesso!").show();
+        new AlertDialog.Builder(agenda.this).setMessage("Agenda temporária enviada com sucesso!").show();
         Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
         startActivity(intent);
     }
@@ -1088,7 +1095,32 @@ public class agenda extends AppCompatActivity {
         myRef.child(currentDateandTime2).child(data).child("iatv").setValue(iatv);
         myRef.child(currentDateandTime2).child(data).child("obs3").setValue(obs3);
         myRef5.removeValue();
-        new AlertDialog.Builder(agenda.this).setMessage("Enviado com sucesso!").show();
+        enviar_feed();
+    }
+
+    public void enviar_feed(){
+        myRef_feed.child("totalfeed").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Integer nn = dataSnapshot.getValue(Integer.class);
+                nn += 1;
+                myRef_feed.child("totalfeed").setValue(nn);
+
+                SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+                String currentDateandTime = sdf.format(new Date());
+
+                myRef_feed.child("feed").child(nn +" - aln - " + tela_do_aluno_prof.id_aluno).setValue(currentDateandTime + ": NOVA AGENDA DISPONÍVEL!");
+
+                pronto_feed();
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+    }
+
+    public void pronto_feed(){
+        new AlertDialog.Builder(agenda.this).setMessage("Agenda enviada com sucesso!").show();
         Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
         startActivity(intent);
     }

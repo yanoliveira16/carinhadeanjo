@@ -33,11 +33,34 @@ public class click_feed extends AppCompatActivity {
         final TextView aa = (TextView) findViewById(R.id.textView10);
         aa.setText(tela_de_carregamento.onClick19);
         ImageView img= (ImageView) findViewById(R.id.imageView34);
-        if (tela_de_carregamento.key_feed.contains("outr")){
+        if (tela_de_carregamento.key_feed.contains("atv")){
+            Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.al_um);
+            img.setImageBitmap(bitmap);
+        }else if (tela_de_carregamento.key_feed.contains("agd")){
+            Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.al_dois);
+            img.setImageBitmap(bitmap);
+        }else if (tela_de_carregamento.key_feed.contains("avs")){
+            Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.al_tres);
+            img.setImageBitmap(bitmap);
+        }else if (tela_de_carregamento.key_feed.contains("reun")){
+            Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.calendar_quatro);
+            img.setImageBitmap(bitmap);
+        }else if (tela_de_carregamento.key_feed.contains("outr")){
             Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.al_cinco);
             img.setImageBitmap(bitmap);
-        }else if (tela_de_carregamento.key_feed.contains("aviso")){
-            Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.al_tres);
+        }else if (tela_de_carregamento.key_feed.contains("profe")){
+            if(tela_de_carregamento.onClick19.contains("ALUNO")){
+                Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.alunos);
+                img.setImageBitmap(bitmap);
+            }else{
+                Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.message);
+                img.setImageBitmap(bitmap);
+            }
+        }else if (tela_de_carregamento.key_feed.contains("pic")){
+            Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.picture);
+            img.setImageBitmap(bitmap);
+        }else if (tela_de_carregamento.key_feed.contains("serve")){
+            Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.database);
             img.setImageBitmap(bitmap);
         }
     }

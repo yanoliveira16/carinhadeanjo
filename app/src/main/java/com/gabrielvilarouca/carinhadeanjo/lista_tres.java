@@ -27,6 +27,7 @@ import java.util.Date;
 public class lista_tres extends AppCompatActivity {
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     DatabaseReference myRef2 = database.child("P3");
+    DatabaseReference myRef_feed = database.child("P2").child(tela_de_carregamento.tturma);
     String uid;
     String v;
     String var;
@@ -133,7 +134,7 @@ public class lista_tres extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
                 final TextView a2 = (TextView) findViewById(R.id.atvs);
-                if (nn.equals("")){
+                if (nn ==  null){
                     a2.setPadding(0,-1,0,-20);
                     a2.setActivated(false);
                     View aa=findViewById(R.id.atividade_de_sala);
@@ -493,12 +494,10 @@ public class lista_tres extends AppCompatActivity {
     public void recadinho_enviar(View view) {
         final EditText et2 = (EditText) findViewById(R.id.recadinho);
         if (et2.equals(null) == false) {
-            String nn = et2.getText().toString();
-            msg += nn + "";
+            msg = et2.getText().toString();
             ciente();
         }
     }
-
 
     public void ciente() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
@@ -508,6 +507,38 @@ public class lista_tres extends AppCompatActivity {
         myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("visto").setValue("ok");
         myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("msg").setValue(msg);
 
+        final TextView  var = (TextView) findViewById(R.id.aluno_agenda3);
+        var.setText(v + " \n " + "Ciente: "+currentDateandTime);
+
+        enviar_feed();
+    }
+
+    public void enviar_feed(){
+        myRef_feed.child("totalfeed").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Integer nn = dataSnapshot.getValue(Integer.class);
+                nn += 1;
+                myRef_feed.child("totalfeed").setValue(nn);
+
+                SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+                String currentDateandTime = sdf.format(new Date());
+
+                if (msg == null){
+                    myRef_feed.child("feed").child(nn +" - profe - " + uid).setValue(currentDateandTime + "- " + tela_de_carregamento.nnomeAluno + ": RESPONSÁVEL CIENTE!\nAGENDA:" +lista_dois.onClick2);
+                    pronto_ciente();
+                }else{
+                    myRef_feed.child("feed").child(nn +" - profe - " + uid).setValue(currentDateandTime + "- " + tela_de_carregamento.nnomeAluno + ": " +msg +"\nAGENDA:" +lista_dois.onClick2);
+                    pronto_ciente();
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+    }
+
+    public void pronto_ciente(){
         new AlertDialog.Builder(lista_tres.this).setMessage("Enviado com sucesso!").show();
         final TextView a18 = (TextView) findViewById(R.id.ciente);
         final TextView a19 = (TextView) findViewById(R.id.recado);
@@ -518,9 +549,6 @@ public class lista_tres extends AppCompatActivity {
         parent2.removeView(a19);
         ViewGroup parent3 = (ViewGroup) a20.getParent();
         parent3.removeView(a20);
-
-        final TextView  var = (TextView) findViewById(R.id.aluno_agenda3);
-        var.setText(v + " \n " + "Ciente: "+currentDateandTime);
     }
 
 
