@@ -3,6 +3,7 @@ package com.gabrielvilarouca.carinhadeanjo;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -239,9 +240,6 @@ public class tela_do_aluno extends AppCompatActivity {
             itemCount -= 1;
             String data = feed.get(itemCount);
             String data2 = feed2.get(itemCount);
-            Log.d("AQUI", "AA2 " +itemCount);
-            Log.d("AQUI 2", "AA3 " +data);
-            Log.d("AQUI", "AA2 " +data2);
             LinearLayout bSearch2 = (LinearLayout) findViewById(R.id.linear_feed_aluno);
             id_do_button += 1;
             Button btnTag = new Button(tela_do_aluno.this);
@@ -250,6 +248,7 @@ public class tela_do_aluno extends AppCompatActivity {
                             LinearLayout.LayoutParams.MATCH_PARENT));
             btnTag.setText(data);
             btnTag.setId(id_do_button);
+            btnTag.setTextColor(Color.parseColor("#E91E63"));
             btnTag.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v)
                 {
@@ -263,20 +262,28 @@ public class tela_do_aluno extends AppCompatActivity {
             Drawable dr = getResources().getDrawable(R.drawable.close);
             if (data.contains("ATIVIDADE") == true){
                 dr = getResources().getDrawable(R.drawable.al_um);
+                btnTag.setTextColor(Color.parseColor("#000000"));
             }else if(data.contains("AGENDA") == true){
                 dr = getResources().getDrawable(R.drawable.al_dois);
+                btnTag.setTextColor(Color.parseColor("#000000"));
             }else if(data.contains("AVISO") == true){
                 dr = getResources().getDrawable(R.drawable.al_tres);
+                btnTag.setTextColor(Color.parseColor("#000000"));
             }else if(data.contains("REUNIÃO") == true || data.contains("EVENTO") == true){
                 dr = getResources().getDrawable(R.drawable.calendar_quatro);
+                btnTag.setTextColor(Color.parseColor("#000000"));
             }else if(data.contains("IMAGEM") == true){
                 dr = getResources().getDrawable(R.drawable.picture);
+                btnTag.setTextColor(Color.parseColor("#000000"));
             }else if(data.contains("SERVIDOR") == true){
                 dr = getResources().getDrawable(R.drawable.database);
+                btnTag.setTextColor(Color.parseColor("#E91E63"));
             }else if(data.contains("ALUNO") == true){
                 dr = getResources().getDrawable(R.drawable.alunos);
+                btnTag.setTextColor(Color.parseColor("#000000"));
             }else{
                 dr = getResources().getDrawable(R.drawable.message);
+                btnTag.setTextColor(Color.parseColor("#000000"));
             }
 
             Bitmap bitmap = ((BitmapDrawable) dr).getBitmap();

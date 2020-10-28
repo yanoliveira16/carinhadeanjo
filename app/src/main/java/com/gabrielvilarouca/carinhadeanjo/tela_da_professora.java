@@ -197,20 +197,28 @@ public class tela_da_professora extends AppCompatActivity {
             Drawable dr = getResources().getDrawable(R.drawable.close);
             if (data.contains("ATIVIDADE")){
                 dr = getResources().getDrawable(R.drawable.al_um);
+                btnTag.setTextColor(Color.parseColor("#000000"));
             }else if(data.contains("AGENDA")){
                 dr = getResources().getDrawable(R.drawable.al_dois);
+                btnTag.setTextColor(Color.parseColor("#000000"));
             }else if(data.contains("AVISO")){
                 dr = getResources().getDrawable(R.drawable.al_tres);
+                btnTag.setTextColor(Color.parseColor("#000000"));
             }else if(data.contains("REUNIÃO") || data.contains("EVENTO")){
                 dr = getResources().getDrawable(R.drawable.calendar_quatro);
+                btnTag.setTextColor(Color.parseColor("#000000"));
             }else if(data.contains("IMAGEM")){
                 dr = getResources().getDrawable(R.drawable.picture);
+                btnTag.setTextColor(Color.parseColor("#000000"));
             }else if(data.contains("SERVIDOR")){
                 dr = getResources().getDrawable(R.drawable.database);
+                btnTag.setTextColor(Color.parseColor("#E91E63"));
             }else if(data.contains("ALUNO")){
                 dr = getResources().getDrawable(R.drawable.alunos);
+                btnTag.setTextColor(Color.parseColor("#000000"));
             }else{
                 dr = getResources().getDrawable(R.drawable.message);
+                btnTag.setTextColor(Color.parseColor("#000000"));
             }
 
             Bitmap bitmap = ((BitmapDrawable) dr).getBitmap();

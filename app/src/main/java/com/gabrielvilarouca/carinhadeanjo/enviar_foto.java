@@ -59,7 +59,7 @@ public class enviar_foto extends AppCompatActivity {
         myRef.child(login_or_register.id).setValue("02");
 
         final TextView a2 = (TextView) findViewById(R.id.text_informativo);
-        a2.setText("ESCOLHA A FOTO DO ALUNO\nDeve contér um rosto!");
+        a2.setText("ESCOLHA A FOTO DO ALUNO\nDeve contér um rosto!\nA foto é obrigatória e deverá ser do aluno!");
 
         new AlertDialog.Builder(enviar_foto.this).setMessage("FOTO\nA foto deverá ser do seu filho(a), ou seja, do aluno(a) que frequenta a escola!").show();
     }
