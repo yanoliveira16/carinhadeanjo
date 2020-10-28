@@ -38,7 +38,6 @@ public class tela_de_carregamento extends AppCompatActivity {
 
         SharedPreferences sharedPref1 = getPreferences(Context.MODE_PRIVATE);
         int onde_parou = sharedPref1.getInt("onde", 0);
-        Log.d("Aqui", "aqui porra " +onde_parou);
         if (onde_parou == 1){
             Intent intent = new Intent(getBaseContext(), termos_de_uso.class);
             startActivity(intent);
@@ -58,7 +57,7 @@ public class tela_de_carregamento extends AppCompatActivity {
         editor.apply();
 
         final TextView a1 = (TextView) findViewById(R.id.texto_carregamento);
-        a1.setText("Estamos verificando suas informações nos servidores...");
+        a1.setText("Estamos verificando suas informações...");
 
         myRef.child(login_or_register.id).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

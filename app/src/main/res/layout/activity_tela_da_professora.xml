@@ -137,6 +137,6 @@
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_sem_letra" />
+        app:srcCompat="@drawable/logo_carinhade_anjo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

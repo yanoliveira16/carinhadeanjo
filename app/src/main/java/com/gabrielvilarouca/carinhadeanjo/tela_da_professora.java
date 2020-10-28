@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -16,6 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -30,6 +33,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -37,7 +41,6 @@ import java.util.List;
 public class tela_da_professora extends AppCompatActivity {
     List<String> feed;
     List<String> feed2;
-    List<String> feed3;
     ArrayAdapter<String> arrayAdapter;
     private FirebaseAuth mAuth;
 
@@ -53,7 +56,6 @@ public class tela_da_professora extends AppCompatActivity {
 
         feed = new ArrayList<>();
         feed2 = new ArrayList<>();
-        feed3 = new ArrayList<>();
 
             final TextView a1 = (TextView) findViewById(R.id.turma2);
             a1.setText(tela_de_carregamento.tturma);
@@ -152,25 +154,6 @@ public class tela_da_professora extends AppCompatActivity {
                     }
                 });
 
-                Collections.sort(feed2, new Comparator<String>() {
-
-                    @Override
-                    public int compare(String arg0, String arg1) {
-                        SimpleDateFormat format = new SimpleDateFormat(
-                                "dd");
-                        int compareResult = 0;
-                        try {
-                            java.util.Date arg0Date = format.parse(arg0);
-                            java.util.Date arg1Date = format.parse(arg1);
-                            compareResult = arg0Date.compareTo(arg1Date);
-                        } catch (ParseException e) {
-                            e.printStackTrace();
-                            compareResult = arg0.compareTo(arg1);
-                        }
-                        return compareResult;
-                    }
-                });
-
                 adicionar_aofeed();
             }
 
@@ -212,36 +195,22 @@ public class tela_da_professora extends AppCompatActivity {
             });
 
             Drawable dr = getResources().getDrawable(R.drawable.close);
-            Log.d("FEED", "" + data2 +" - " + data);
-            Log.d("FEED 1", "\natv: " + data2.contains("atv"));
-            Log.d("FEED 1", "agd: " + data2.contains("agd"));
-            Log.d("FEED 1", "avs: " + data2.contains("avs"));
-            Log.d("FEED 1", "reun: " + data2.contains("reun"));
-            Log.d("FEED 1", "outr: " + data2.contains("outr"));
-            Log.d("FEED 1", "pic: " + data2.contains("pic"));
-            Log.d("FEED 1", "serve: " + data2.contains("serve"));
-            Log.d("FEED 1", "profe: " + data2.contains("profe"));
-            Log.d("FEED 1", "ALUNO: " + data.contains("ALUNO"));
-            if (data2.contains("atv")){
+            if (data.contains("ATIVIDADE")){
                 dr = getResources().getDrawable(R.drawable.al_um);
-            }else if(data2.contains("agd")){
+            }else if(data.contains("AGENDA")){
                 dr = getResources().getDrawable(R.drawable.al_dois);
-            }else if(data2.contains("avs")){
+            }else if(data.contains("AVISO")){
                 dr = getResources().getDrawable(R.drawable.al_tres);
-            }else if(data2.contains("reun")){
+            }else if(data.contains("REUNIÃO") || data.contains("EVENTO")){
                 dr = getResources().getDrawable(R.drawable.calendar_quatro);
-            }else if(data2.contains("outr")){
-                dr = getResources().getDrawable(R.drawable.al_cinco);
-            }else if(data2.contains("profe")){
-                if (data.contains("ALUNO")){
-                    dr = getResources().getDrawable(R.drawable.alunos);
-                }else{
-                    dr = getResources().getDrawable(R.drawable.message);
-                }
-            }else if(data2.contains("pic")){
+            }else if(data.contains("IMAGEM")){
                 dr = getResources().getDrawable(R.drawable.picture);
-            }else if(data2.contains("serve")){
+            }else if(data.contains("SERVIDOR")){
                 dr = getResources().getDrawable(R.drawable.database);
+            }else if(data.contains("ALUNO")){
+                dr = getResources().getDrawable(R.drawable.alunos);
+            }else{
+                dr = getResources().getDrawable(R.drawable.message);
             }
 
             Bitmap bitmap = ((BitmapDrawable) dr).getBitmap();
@@ -254,9 +223,19 @@ public class tela_da_professora extends AppCompatActivity {
             bSearch2.addView(btnTag);
 
             TextView txt1 = new TextView(tela_da_professora.this);
-            txt1.setText("----------------------------------------------------------------------------");
+            txt1.setText("---------------------------------------------------------------------------------");
+           // txt1.setText("_______________________________________________________");
             txt1.setGravity(Gravity.CENTER | Gravity.CENTER);
             bSearch2.addView(txt1);
+
+
+            ScrollView scroll = (ScrollView) findViewById(R.id.scfeed);
+            GradientDrawable gd = new GradientDrawable();
+            gd.setShape(GradientDrawable.RECTANGLE);
+            gd.setStroke(5, Color.argb(100, 0,0,0)); // border width and color
+            //gd.setCornerRadius(80.50f);
+            gd.setCornerRadius(80);
+            scroll.setBackground(gd);
         }
     }
 
@@ -311,8 +290,8 @@ public class tela_da_professora extends AppCompatActivity {
 
 
     public void att_feed(View view){
-        arrayAdapter.clear();
-        feed.clear();
+        LinearLayout ll = (LinearLayout) findViewById(R.id.linear_feed);
+        ll.removeAllViews();
         new_feed();
     }
 

@@ -15,19 +15,30 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,9 +55,8 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 public class tela_do_aluno extends AppCompatActivity {
-    ArrayList<String> feed = new ArrayList<>();
-    ArrayAdapter<String> arrayAdapter;
-    private FirebaseAuth mAuth;
+    List<String> feed;
+    List<String> feed2;
 
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     DatabaseReference myRef = database.child("P2");
@@ -58,13 +68,16 @@ public class tela_do_aluno extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_do_aluno);
 
+        feed = new ArrayList<>();
+        feed2 = new ArrayList<>();
+
         final TextView a1 = (TextView) findViewById(R.id.aluno);
         a1.setText(tela_de_carregamento.nnomeAluno);
 
         final TextView a2 = (TextView) findViewById(R.id.turma);
         a2.setText(tela_de_carregamento.tturma+" - "+tela_de_carregamento.nnomePai);
 
-        atualizar_feed();
+        new_feed();
 
        // new AlertDialog.Builder(tela_do_aluno.this).setMessage("BETA\nO aplicativo ainda se encontra em desenvolvimento.\nConfira novidades e tutorais em http://escolacarinhadeanjodf.com/aplicativo").show();
 
@@ -166,7 +179,138 @@ public class tela_do_aluno extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void atualizar_feed(){
+    Integer id_do_button = 5000;
+    public void new_feed(){
+        myRef.child(tela_de_carregamento.tturma).child("feed").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot:dataSnapshot.getChildren())
+                {
+                    String key= snapshot.getKey();
+                    String value=snapshot.getValue().toString();
+                    if (key.contains("aln") == true && key.contains(login_or_register.id) == true || key.contains("prof") == false){
+                        feed2.add(key);
+                        feed.add(value);
+                    }
+                }
+                //Collections.reverse(feed);
+                //Collections.reverse(feed2);
+                /*Collections.sort(feed, new Comparator<Item>() {
+                    public int compare(Item o1, Item o2) {
+                        return o1.getDate().compareTo(o2.getDate());
+                    }
+                });*/
+
+                Collections.sort(feed, new Comparator<String>() {
+
+                    @Override
+                    public int compare(String arg0, String arg1) {
+                        SimpleDateFormat format = new SimpleDateFormat(
+                                "dd-MM-yyyy");
+                        int compareResult = 0;
+                        try {
+                            java.util.Date arg0Date = format.parse(arg0);
+                            java.util.Date arg1Date = format.parse(arg1);
+                            compareResult = arg0Date.compareTo(arg1Date);
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                            compareResult = arg0.compareTo(arg1);
+                        }
+                        return compareResult;
+                    }
+                });
+
+                adicionar_aofeed();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+    }
+
+
+
+    int itemCount;
+    public void adicionar_aofeed(){
+        itemCount = feed.size();
+        Log.d("AQUI", "AA " +itemCount);
+        while(itemCount != 0){
+            itemCount -= 1;
+            String data = feed.get(itemCount);
+            String data2 = feed2.get(itemCount);
+            Log.d("AQUI", "AA2 " +itemCount);
+            Log.d("AQUI 2", "AA3 " +data);
+            Log.d("AQUI", "AA2 " +data2);
+            LinearLayout bSearch2 = (LinearLayout) findViewById(R.id.linear_feed_aluno);
+            id_do_button += 1;
+            Button btnTag = new Button(tela_do_aluno.this);
+            btnTag.setLayoutParams(new LinearLayout.LayoutParams
+                    (LinearLayout.LayoutParams.WRAP_CONTENT,
+                            LinearLayout.LayoutParams.MATCH_PARENT));
+            btnTag.setText(data);
+            btnTag.setId(id_do_button);
+            btnTag.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v)
+                {
+                    tela_de_carregamento.onClick19 = data;
+                    tela_de_carregamento.key_feed = data2;
+                    Intent intent = new Intent(getBaseContext(), click_feed.class);
+                    startActivity(intent);
+                }
+            });
+
+            Drawable dr = getResources().getDrawable(R.drawable.close);
+            if (data.contains("ATIVIDADE") == true){
+                dr = getResources().getDrawable(R.drawable.al_um);
+            }else if(data.contains("AGENDA") == true){
+                dr = getResources().getDrawable(R.drawable.al_dois);
+            }else if(data.contains("AVISO") == true){
+                dr = getResources().getDrawable(R.drawable.al_tres);
+            }else if(data.contains("REUNIÃO") == true || data.contains("EVENTO") == true){
+                dr = getResources().getDrawable(R.drawable.calendar_quatro);
+            }else if(data.contains("IMAGEM") == true){
+                dr = getResources().getDrawable(R.drawable.picture);
+            }else if(data.contains("SERVIDOR") == true){
+                dr = getResources().getDrawable(R.drawable.database);
+            }else if(data.contains("ALUNO") == true){
+                dr = getResources().getDrawable(R.drawable.alunos);
+            }else{
+                dr = getResources().getDrawable(R.drawable.message);
+            }
+
+            Bitmap bitmap = ((BitmapDrawable) dr).getBitmap();
+            Drawable d = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 100, 100, true));
+            btnTag.setCompoundDrawablesWithIntrinsicBounds( d, null, null, null);
+
+            btnTag.setBackgroundResource(0);
+            btnTag.setGravity(Gravity.LEFT | Gravity.CENTER);
+
+            bSearch2.addView(btnTag);
+
+            TextView txt1 = new TextView(tela_do_aluno.this);
+            txt1.setText("---------------------------------------------------------------------------------");
+            // txt1.setText("_______________________________________________________");
+            txt1.setGravity(Gravity.CENTER | Gravity.CENTER);
+            bSearch2.addView(txt1);
+
+
+            ScrollView scroll = (ScrollView) findViewById(R.id.scroll_aluno_feed);
+            GradientDrawable gd = new GradientDrawable();
+            gd.setShape(GradientDrawable.RECTANGLE);
+            gd.setStroke(5, Color.argb(100, 0,0,0)); // border width and color
+            //gd.setCornerRadius(80.50f);
+            gd.setCornerRadius(80);
+            scroll.setBackground(gd);
+        }
+        if (carregado == false) {
+            carregado = true;
+            ppp();
+        }
+    }
+
+    boolean carregado = false;
+   /* public void atualizar_feed(){
         myRef.child(tela_de_carregamento.tturma).child("feed").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -200,12 +344,12 @@ public class tela_do_aluno extends AppCompatActivity {
             }
         });
         arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, feed);
-    }
+    }*/
 
     public void att_feed(View view){
-        arrayAdapter.clear();
-        feed.clear();
-        atualizar_feed();
+        LinearLayout ll = (LinearLayout) findViewById(R.id.linear_feed_aluno);
+        ll.removeAllViews();
+        new_feed();
     }
 
 

@@ -34,25 +34,14 @@
         android:id="@+id/aluno_agenda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
         android:fontFamily="@font/quicksand_light"
+        android:gravity="center"
         android:text="Carregando..."
         android:textColor="#000000"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView19" />
-
-    <ImageView
-        android:id="@+id/imageView19"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/borda_foto" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView18" />
 
     <ImageView
         android:id="@+id/imageView18"
@@ -65,8 +54,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo_sem_letra" />
 
-    <ListView
-        android:id="@+id/listview2"
+    <ScrollView
+        android:id="@+id/scroll_listaum"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="10dp"
@@ -75,11 +64,16 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
-        android:stackFromBottom="true"
-        android:transcriptMode="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aluno_agenda" />
+        app:layout_constraintTop_toBottomOf="@+id/aluno_agenda">
+
+        <LinearLayout
+            android:id="@+id/linear_listaum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

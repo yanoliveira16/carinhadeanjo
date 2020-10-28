@@ -112,7 +112,7 @@ public void esqueci_senha(View view) {
             email = input.getText().toString();
             FirebaseAuth auth = FirebaseAuth.getInstance();
             String emailAddress = email;
-            if (emailAddress != null){
+            if (emailAddress != null && emailAddress.contains("@") == true && emailAddress.contains(".") == true){
                 auth.sendPasswordResetEmail(emailAddress)
                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
@@ -128,9 +128,15 @@ public void esqueci_senha(View view) {
                                                 }
                                             });
                                     alertDialog.show();
+                                }else{
+                                    errormsg="ERRO: Verifique seu e-mail e tente novamenta!";
+                                    erro();
                                 }
                             }
                         });
+            }else{
+                errormsg="Formato de e-mail incorreto!";
+                erro();
             }
         }
     });

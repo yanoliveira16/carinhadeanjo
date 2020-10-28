@@ -39,13 +39,12 @@ public class login_or_register extends AppCompatActivity {
                 public void onDataChange(DataSnapshot dataSnapshot) {
 
                     String nn = dataSnapshot.getValue(String.class);
-                    Log.d("AQUI", "aquii: " + nn + " - " + id);
-                    if(nn == null ){
+                    if(nn == null){
                         chamar_carregar();
                     }
-                    else if (nn.contains("01") == true) {
+                    else if (nn == "01") {
                         chamar_termo();
-                    } else if (nn.contains("02") == true) {
+                    } else if (nn == "02") {
                         chamar_foto();
                     } else {
                         chamar_carregar();

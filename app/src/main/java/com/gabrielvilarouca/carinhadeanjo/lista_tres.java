@@ -30,7 +30,7 @@ public class lista_tres extends AppCompatActivity {
     DatabaseReference myRef_feed = database.child("P2").child(tela_de_carregamento.tturma);
     String uid;
     String v;
-    String var;
+    String kgh;
     boolean s1 = false;
     boolean s2 = false;
 
@@ -41,7 +41,7 @@ public class lista_tres extends AppCompatActivity {
         setContentView(R.layout.activity_lista_tres);
 
 
-        if (tela_de_carregamento.qual.contains("1")==true){
+        if (tela_de_carregamento.qual == "1"){
             uid = tela_do_aluno_prof.id_aluno;
             final TextView a1 = (TextView) findViewById(R.id.aluno_agenda3);
             v = tela_de_alunos.onClick3 + " \n " + lista_dois.onClick2;
@@ -64,12 +64,12 @@ public class lista_tres extends AppCompatActivity {
 
 
 
-          final TextView  var = (TextView) findViewById(R.id.aluno_agenda3);
+          final TextView  vaaar = (TextView) findViewById(R.id.aluno_agenda3);
             myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("visto_data").addListenerForSingleValueEvent(new ValueEventListener() {
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     String nn = dataSnapshot.getValue(String.class);
-                    if (nn != null){
-                        var.setText(v + " \n " + "Ciente: " + nn);
+                    if (nn != null && tela_de_carregamento.qual != "1"){
+                        vaaar.setText(v + " \n " + "Ciente: " + nn);
                         final TextView a18 = (TextView) findViewById(R.id.ciente);
                         final TextView a19 = (TextView) findViewById(R.id.recado);
                         final TextView a20 = (TextView) findViewById(R.id.recadinho);
@@ -80,7 +80,7 @@ public class lista_tres extends AppCompatActivity {
                         ViewGroup parent3 = (ViewGroup) a20.getParent();
                         parent3.removeView(a20);
                     }else{
-                        var.setText(v + " \n " + "Responsável não Ciente! ");
+                        vaaar.setText(v + " \n " + "Responsável não Ciente! ");
                     }
                 }
 
@@ -93,12 +93,48 @@ public class lista_tres extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
-                Log.d("AQUI", "AQUI PORRa" + nn);
-                final TextView a1 = (TextView) findViewById(R.id.msg);
-                a1.setText(nn);
                 if (nn == null){
-                    ViewGroup parent = (ViewGroup) a1.getParent();
-                    parent.removeView(a1);
+                    //ViewGroup parent = (ViewGroup) a1.getParent();
+                    //parent.removeView(a1);
+                    kgh = "-";
+                }else{
+                    kgh = nn;
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
+        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("qnt_visu").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Integer npt = dataSnapshot.getValue(Integer.class);
+                if (tela_de_carregamento.qual != "1"){
+                    if (npt == null){
+                        npt = 1;
+                        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("qnt_visu").setValue(npt);
+                        kgh += "\n" +npt +" visualizações";
+                        final TextView a1 = (TextView) findViewById(R.id.msg);
+                        a1.setText(kgh);
+                    }else{
+                        npt += 1;
+                        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("qnt_visu").setValue(npt);
+                        kgh += "\n" +npt +" visualizações";
+                        final TextView a1 = (TextView) findViewById(R.id.msg);
+                        a1.setText(kgh);
+                    }
+                }else{
+                    if (npt == null){
+                        kgh += "\nSem visualizações";
+                        final TextView a1 = (TextView) findViewById(R.id.msg);
+                        a1.setText(kgh);
+                    }else{
+                        kgh += "\n" +npt +" visualizações";
+                        final TextView a1 = (TextView) findViewById(R.id.msg);
+                        a1.setText(kgh);
+                    }
                 }
             }
 
@@ -118,7 +154,6 @@ public class lista_tres extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
-                Log.d("AQUI", "AQUI PORRa" + nn);
                 final TextView a1 = (TextView) findViewById(R.id.falta);
                 a1.setText(nn);
             }
@@ -134,7 +169,7 @@ public class lista_tres extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
                 final TextView a2 = (TextView) findViewById(R.id.atvs);
-                if (nn ==  null){
+                if (nn.equals("")){
                     a2.setPadding(0,-1,0,-20);
                     a2.setActivated(false);
                     View aa=findViewById(R.id.atividade_de_sala);
@@ -211,6 +246,7 @@ public class lista_tres extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
                 final TextView a6 = (TextView) findViewById(R.id.aviso);
+                Log.d("Porra", "aqui " + nn + "\n" + nn.contains(""));
                 if (nn.equals("")){
                     View aa=findViewById(R.id.avisos);
                     ViewGroup parent = (ViewGroup) a6.getParent();
@@ -228,7 +264,7 @@ public class lista_tres extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
-                if (nn.equals("") || nn.equals("não")){
+                if (nn.equals("")){
                     View aa=findViewById(R.id.medicação);
                     ViewGroup parent2 = (ViewGroup) aa.getParent();
                     parent2.removeView(aa);
@@ -294,7 +330,8 @@ public class lista_tres extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
-                final TextView a11 = (TextView) findViewById(R.id.apresentou); if (nn.equals("")){
+                final TextView a11 = (TextView) findViewById(R.id.apresentou);
+                if (nn.equals("")){
                     View aa=findViewById(R.id.apresent);
                     ViewGroup parent = (ViewGroup) a11.getParent();
                     parent.removeView(a11);

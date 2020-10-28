@@ -54,17 +54,6 @@
 
 
             <TextView
-                android:id="@+id/agenda"
-                style="@style/Widget.AppCompat.TextView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
-                android:text="AGENDA"
-                android:textColor="#000000"
-                android:textSize="35sp" />
-
-            <TextView
                 android:id="@+id/falta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -91,8 +80,6 @@
                 android:background="#00FFFFFF"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:paddingTop="10sp"
-                android:paddingBottom="10sp"
                 android:text="PERÍODO PARCIAL"
                 android:textColor="#FF864C"
                 android:textSize="30sp" />
@@ -103,8 +90,6 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:paddingTop="25sp"
-                android:paddingBottom="10sp"
                 android:text="Atividade de sala:"
                 android:textColor="#000000"
                 android:textSize="20sp" />
@@ -115,8 +100,6 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="center"
-                android:paddingTop="1sp"
-                android:paddingBottom="20sp"
                 android:text="Carregando..."
                 android:textColor="#0D32D6"
                 android:textSize="25sp" />
@@ -127,8 +110,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:paddingTop="25sp"
-                android:paddingBottom="10sp"
+                android:paddingTop="10sp"
                 android:text="As atividades de sala:"
                 android:textColor="#000000"
                 android:textSize="20sp" />
@@ -139,8 +121,6 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="center"
-                android:paddingTop="1sp"
-                android:paddingBottom="20sp"
                 android:text="Carregando..."
                 android:textColor="#0D32D6"
                 android:textSize="25sp" />
@@ -151,8 +131,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:paddingTop="25sp"
-                android:paddingBottom="10sp"
+                android:paddingTop="10sp"
                 android:text="Comportamento:"
                 android:textColor="#000000"
                 android:textSize="20sp" />
@@ -163,8 +142,6 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="center"
-                android:paddingTop="1sp"
-                android:paddingBottom="20sp"
                 android:text="Carregando..."
                 android:textColor="#0D32D6"
                 android:textSize="25sp" />
@@ -175,8 +152,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:paddingTop="25sp"
-                android:paddingBottom="10sp"
+                android:paddingTop="10sp"
                 android:text="Dever de casa:"
                 android:textColor="#000000"
                 android:textSize="20sp" />
@@ -187,8 +163,6 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="center"
-                android:paddingTop="1sp"
-                android:paddingBottom="20sp"
                 android:text="Carregando..."
                 android:textColor="#0D32D6"
                 android:textSize="25sp" />
@@ -199,8 +173,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:paddingTop="25sp"
-                android:paddingBottom="10sp"
+                android:paddingTop="10sp"
                 android:text="Aviso:"
                 android:textColor="#000000"
                 android:textSize="20sp" />
@@ -211,8 +184,6 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="center"
-                android:paddingTop="1sp"
-                android:paddingBottom="20sp"
                 android:text="Carregando..."
                 android:textColor="#0D32D6"
                 android:textSize="25sp" />
@@ -224,7 +195,6 @@
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
                 android:paddingTop="10sp"
-                android:paddingBottom="10sp"
                 android:text="Saúde:"
                 android:textColor="#FF864C"
                 android:textSize="30sp" />
@@ -235,8 +205,6 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:paddingTop="25sp"
-                android:paddingBottom="10sp"
                 android:text="Medicação"
                 android:textColor="#000000"
                 android:textSize="20sp" />
@@ -247,8 +215,6 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="center"
-                android:paddingTop="1sp"
-                android:paddingBottom="20sp"
                 android:text="Carregando..."
                 android:textColor="#0D32D6"
                 android:textSize="25sp" />
@@ -259,8 +225,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="center"
-                android:paddingTop="1sp"
-                android:paddingBottom="20sp"
+                android:paddingTop="5sp"
                 android:text="Carregando..."
                 android:textColor="#0D32D6"
                 android:textSize="25sp" />
@@ -271,8 +236,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="center"
-                android:paddingTop="1sp"
-                android:paddingBottom="20sp"
+                android:paddingTop="5sp"
                 android:text="Carregando..."
                 android:textColor="#0D32D6"
                 android:textSize="25sp" />
@@ -283,8 +247,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:paddingTop="25sp"
-                android:paddingBottom="10sp"
+                android:paddingTop="10sp"
                 android:text="Aprensentou:"
                 android:textColor="#000000"
                 android:textSize="20sp" />
@@ -295,8 +258,6 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="center"
-                android:paddingTop="1sp"
-                android:paddingBottom="20sp"
                 android:text="Carregando..."
                 android:textColor="#0D32D6"
                 android:textSize="25sp" />
@@ -308,7 +269,6 @@
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
                 android:paddingTop="10sp"
-                android:paddingBottom="10sp"
                 android:text="PERÍODO INTEGRAL"
                 android:textColor="#FF864C"
                 android:textSize="30sp" />
@@ -319,8 +279,6 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:paddingTop="25sp"
-                android:paddingBottom="10sp"
                 android:text="Lanche Matutino:"
                 android:textColor="#000000"
                 android:textSize="20sp" />
@@ -331,8 +289,6 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="center"
-                android:paddingTop="1sp"
-                android:paddingBottom="20sp"
                 android:text="Carregando..."
                 android:textColor="#0D32D6"
                 android:textSize="25sp" />
@@ -343,8 +299,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:paddingTop="25sp"
-                android:paddingBottom="10sp"
+                android:paddingTop="10sp"
                 android:text="Almoço:"
                 android:textColor="#000000"
                 android:textSize="20sp" />
@@ -355,8 +310,6 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="center"
-                android:paddingTop="1sp"
-                android:paddingBottom="20sp"
                 android:text="Carregando..."
                 android:textColor="#0D32D6"
                 android:textSize="25sp" />
@@ -367,8 +320,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:paddingTop="25sp"
-                android:paddingBottom="10sp"
+                android:paddingTop="10sp"
                 android:text="Lanche Vespertino:"
                 android:textColor="#000000"
                 android:textSize="20sp" />
@@ -379,8 +331,6 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="center"
-                android:paddingTop="1sp"
-                android:paddingBottom="20sp"
                 android:text="Carregando..."
                 android:textColor="#0D32D6"
                 android:textSize="25sp" />
@@ -391,8 +341,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:paddingTop="25sp"
-                android:paddingBottom="10sp"
+                android:paddingTop="10sp"
                 android:text="Jantar:"
                 android:textColor="#000000"
                 android:textSize="20sp" />
@@ -403,8 +352,6 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="center"
-                android:paddingTop="1sp"
-                android:paddingBottom="20sp"
                 android:text="Carregando..."
                 android:textColor="#0D32D6"
                 android:textSize="25sp" />
@@ -415,8 +362,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:paddingTop="25sp"
-                android:paddingBottom="10sp"
+                android:paddingTop="10sp"
                 android:text="Comportamento no Integral:"
                 android:textColor="#000000"
                 android:textSize="20sp" />
@@ -427,8 +373,6 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="center"
-                android:paddingTop="1sp"
-                android:paddingBottom="20sp"
                 android:text="Carregando..."
                 android:textColor="#0D32D6"
                 android:textSize="25sp" />
@@ -439,8 +383,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:paddingTop="25sp"
-                android:paddingBottom="10sp"
+                android:paddingTop="10sp"
                 android:text="Aspecto Fisiológico:"
                 android:textColor="#000000"
                 android:textSize="20sp" />
@@ -451,8 +394,6 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="center"
-                android:paddingTop="1sp"
-                android:paddingBottom="20sp"
                 android:text="Carregando..."
                 android:textColor="#0D32D6"
                 android:textSize="25sp" />
@@ -463,8 +404,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:paddingTop="25sp"
-                android:paddingBottom="10sp"
+                android:paddingTop="10sp"
                 android:text="Favor Providenciar:"
                 android:textColor="#000000"
                 android:textSize="20sp" />
@@ -475,8 +415,6 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="center"
-                android:paddingTop="1sp"
-                android:paddingBottom="20sp"
                 android:text="Carregando..."
                 android:textColor="#0D32D6"
                 android:textSize="25sp" />
@@ -487,8 +425,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:paddingTop="25sp"
-                android:paddingBottom="10sp"
+                android:paddingTop="10sp"
                 android:text="Atividades de Rotina:"
                 android:textColor="#000000"
                 android:textSize="20sp" />
@@ -499,8 +436,6 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="center"
-                android:paddingTop="1sp"
-                android:paddingBottom="20sp"
                 android:text="Carregando..."
                 android:textColor="#0D32D6"
                 android:textSize="25sp" />
@@ -511,8 +446,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:paddingTop="25sp"
-                android:paddingBottom="10sp"
+                android:paddingTop="10sp"
                 android:text="Observação:"
                 android:textColor="#000000"
                 android:textSize="20sp" />
@@ -523,8 +457,6 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="center"
-                android:paddingTop="1sp"
-                android:paddingBottom="20sp"
                 android:text="Carregando..."
                 android:textColor="#0D32D6"
                 android:textSize="25sp" />
@@ -535,10 +467,9 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:paddingTop="25sp"
-                android:paddingBottom="10sp"
+                android:paddingTop="20sp"
                 android:text="Deixe um recadinho:"
-                android:textColor="#000000"
+                android:textColor="#E91E63"
                 android:textSize="20sp" />
 
             <EditText
@@ -552,14 +483,13 @@
 
             <Button
                 android:id="@+id/ciente"
-                style="@android:style/Widget.Material.Light.Button"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/button"
                 android:fontFamily="@font/quicksand_bold"
                 android:onClick="recadinho_enviar"
                 android:text="Estou Ciente!"
-                android:textColor="#03A9F4"
+                android:textColor="#E91E63"
                 android:textSize="20sp" />
 
         </LinearLayout>
