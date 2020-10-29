@@ -39,13 +39,12 @@ public class lista_tres extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_lista_tres);
-
+        final TextView aaaaa = (TextView) findViewById(R.id.aluno_agenda3);
 
         if (tela_de_carregamento.qual == "1"){
             uid = tela_do_aluno_prof.id_aluno;
-            final TextView a1 = (TextView) findViewById(R.id.aluno_agenda3);
             v = tela_de_alunos.onClick3 + " \n " + lista_dois.onClick2;
-            a1.setText(v);
+            aaaaa.setText(v);
             final TextView a18 = (TextView) findViewById(R.id.ciente);
             final TextView a19 = (TextView) findViewById(R.id.recado);
             final TextView a20 = (TextView) findViewById(R.id.recadinho);
@@ -57,19 +56,17 @@ public class lista_tres extends AppCompatActivity {
             parent3.removeView(a20);
         }else{
             uid = login_or_register.id;
-            final TextView a2 = (TextView) findViewById(R.id.aluno_agenda3);
             v = tela_de_carregamento.nnomeAluno + " \n " + lista_dois.onClick2;
-            a2.setText(v);
+            aaaaa.setText(v);
         }
 
 
 
-          final TextView  vaaar = (TextView) findViewById(R.id.aluno_agenda3);
             myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("visto_data").addListenerForSingleValueEvent(new ValueEventListener() {
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     String nn = dataSnapshot.getValue(String.class);
                     if (nn != null && tela_de_carregamento.qual != "1"){
-                        vaaar.setText(v + " \n " + "Ciente: " + nn);
+                        aaaaa.setText(v + " \n " + "Ciente: " + nn);
                         final TextView a18 = (TextView) findViewById(R.id.ciente);
                         final TextView a19 = (TextView) findViewById(R.id.recado);
                         final TextView a20 = (TextView) findViewById(R.id.recadinho);
@@ -79,8 +76,10 @@ public class lista_tres extends AppCompatActivity {
                         parent2.removeView(a19);
                         ViewGroup parent3 = (ViewGroup) a20.getParent();
                         parent3.removeView(a20);
+                    }else if (nn!= null && tela_de_carregamento.qual == "1"){
+                        aaaaa.setText(v + " \n " + "Ciente: " + nn);
                     }else{
-                        vaaar.setText(v + " \n " + "Responsável não Ciente! ");
+                        aaaaa.setText(v + " \n " + "Responsável não Ciente! ");
                     }
                 }
 
@@ -592,6 +591,10 @@ public class lista_tres extends AppCompatActivity {
     public void chamarfoto(){
             ImageView myImage2 = (ImageView) findViewById(R.id.profile_foto);
             myImage2.setImageBitmap(lista_dois.my_image2);
+        View a1=findViewById(R.id.carrega_listatres1);
+        a1.setVisibility(View.INVISIBLE);
+        View a2=findViewById(R.id.carrega_listatres2);
+        a2.setVisibility(View.INVISIBLE);
         }
     }
 

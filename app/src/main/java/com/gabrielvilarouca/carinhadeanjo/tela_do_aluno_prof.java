@@ -94,7 +94,11 @@ public class tela_do_aluno_prof extends AppCompatActivity {
                 public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                     my_image = BitmapFactory.decodeFile(localFile.getAbsolutePath());
                     ImageView myImage = (ImageView) findViewById(R.id.imageView31);
-                    myImage.setImageBitmap(getRoundedCornerBitmap(my_image,400));
+                    if (myImage != null){
+                        myImage.setImageBitmap(getRoundedCornerBitmap(my_image,400));
+                    }else{
+                        new AlertDialog.Builder(tela_do_aluno_prof.this).setMessage("Erro ao buscar foto do aluno!").show();
+                    }
                     View a1=findViewById(R.id.hgf1);
                     a1.setVisibility(View.INVISIBLE);
 

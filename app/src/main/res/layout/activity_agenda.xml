@@ -23,7 +23,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:background="@drawable/olho"
+        android:background="@drawable/al_um"
         android:onClick="visualizar_agenda_turma"
         app:layout_constraintEnd_toStartOf="@+id/button13"
         app:layout_constraintTop_toBottomOf="@+id/nome_aluno_agenda" />

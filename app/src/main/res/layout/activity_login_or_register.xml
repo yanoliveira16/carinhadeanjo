@@ -27,14 +27,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_sem_letra" />
+        app:srcCompat="@drawable/logo_carinhade_anjo" />
 
     <Button
         android:id="@+id/entrar2"
         style="@android:style/Widget.DeviceDefault.Button.Borderless"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginTop="5dp"
         android:fontFamily="@font/quicksand_bold"
         android:onClick="entra_click"
         android:text="Entrar"
@@ -99,6 +98,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_sem_letra" />
+        app:srcCompat="@drawable/logo_carinhade_anjo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

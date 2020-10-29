@@ -1363,7 +1363,8 @@ public class agenda extends AppCompatActivity {
     }
 
     public void visualizar_agenda_turma(View view){
-        new AlertDialog.Builder(agenda.this).setMessage("VISUALIZAR AGENDA DA TURMA\nRecurso ainda não disponível.").show();
+        Intent intent = new Intent(getBaseContext(), agenda_turma.class);
+        startActivity(intent);
     }
     }
 

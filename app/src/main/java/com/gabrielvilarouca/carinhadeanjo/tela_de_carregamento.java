@@ -76,11 +76,17 @@ public class tela_de_carregamento extends AppCompatActivity {
 
                 } else if (nn.contains("P3") == true) {
                     carregamento3();
-
-
                 } else if (nn.contains("P4") == true) {
                     carregamento2();
+                }else{
+                    String aa = "Cadastro não encontrado!\n Realize um novo ou entrar em contato com a escola.";
+                    final TextView a1 = (TextView) findViewById(R.id.texto_carregamento);
+                    a1.setText(aa);
+                    View a2=findViewById(R.id.progressBar);
+                    a2.setVisibility(View.INVISIBLE);
 
+                    View a3=findViewById(R.id.button4);
+                    a3.setVisibility(View.VISIBLE);
                 }
             }
 
