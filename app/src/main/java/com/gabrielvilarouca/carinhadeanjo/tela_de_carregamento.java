@@ -59,12 +59,35 @@ public class tela_de_carregamento extends AppCompatActivity {
         final TextView a1 = (TextView) findViewById(R.id.texto_carregamento);
         a1.setText("Estamos verificando suas informações...");
 
+        if(login_or_register.id == null){
+            String aa = "Cadastro não encontrado!\n Realize um novo ou entrar em contato com a escola.";
+            a1.setText(aa);
+            View a2=findViewById(R.id.progressBar);
+            a2.setVisibility(View.INVISIBLE);
+
+            View a3=findViewById(R.id.button4);
+            a3.setVisibility(View.VISIBLE);
+        }else{
+            call();
+        }
+    }
+
+    public void call(){
         myRef.child(login_or_register.id).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 String nn = dataSnapshot.getValue(String.class);
-                if (nn.contains("P1") == true) {
+                if(nn == null){
+                    String aa = "Cadastro não encontrado!\n Realize um novo ou entrar em contato com a escola.";
+                    final TextView a1 = (TextView) findViewById(R.id.texto_carregamento);
+                    a1.setText(aa);
+                    View a2=findViewById(R.id.progressBar);
+                    a2.setVisibility(View.INVISIBLE);
+
+                    View a3=findViewById(R.id.button4);
+                    a3.setVisibility(View.VISIBLE);
+                }else if (nn.contains("P1") == true) {
                     String aa = "OPA! \n Cadastro ainda não aprovado. \n Aguarde e volte mais tarde!";
                     final TextView a1 = (TextView) findViewById(R.id.texto_carregamento);
                     a1.setText(aa);
@@ -79,7 +102,7 @@ public class tela_de_carregamento extends AppCompatActivity {
                 } else if (nn.contains("P4") == true) {
                     carregamento2();
                 }else{
-                    String aa = "Cadastro não encontrado!\n Realize um novo ou entrar em contato com a escola.";
+                    String aa = "ERRO\n Não encontramos suas informações!";
                     final TextView a1 = (TextView) findViewById(R.id.texto_carregamento);
                     a1.setText(aa);
                     View a2=findViewById(R.id.progressBar);
