@@ -21,24 +21,26 @@
 
     <TextView
         android:id="@+id/aluno_agenda3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
         android:fontFamily="@font/quicksand_medium"
-        android:gravity="center"
         android:text="Carregando..."
         android:textColor="#000000"
-        android:textSize="25sp"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_foto"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_foto" />
+        app:layout_constraintStart_toEndOf="@+id/profile_foto"
+        app:layout_constraintTop_toTopOf="@+id/imageView28" />
 
     <ScrollView
         android:id="@+id/scrollView3"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,7 +63,7 @@
                 android:gravity="center"
                 android:text="Carregando..."
                 android:textColor="#0D32D6"
-                android:textSize="25sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/msg"
@@ -70,7 +72,7 @@
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="center"
                 android:text="..."
-                android:textColor="#E91E63"
+                android:textColor="#BA0341"
                 android:textSize="25sp" />
 
             <TextView
@@ -81,7 +83,7 @@
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
                 android:text="PERÍODO PARCIAL"
-                android:textColor="#FF864C"
+                android:textColor="#AE3901"
                 android:textSize="30sp" />
 
             <TextView
@@ -89,7 +91,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
-                android:gravity="center"
                 android:text="Atividade de sala:"
                 android:textColor="#000000"
                 android:textSize="20sp" />
@@ -98,10 +99,9 @@
                 android:id="@+id/atvs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
+                android:fontFamily="@font/quicksand"
                 android:text="Carregando..."
-                android:textColor="#0D32D6"
+                android:textColor="#001368"
                 android:textSize="25sp" />
 
             <TextView
@@ -109,7 +109,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
-                android:gravity="center"
                 android:paddingTop="10sp"
                 android:text="As atividades de sala:"
                 android:textColor="#000000"
@@ -119,10 +118,9 @@
                 android:id="@+id/atvs2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
+                android:fontFamily="@font/quicksand"
                 android:text="Carregando..."
-                android:textColor="#0D32D6"
+                android:textColor="#001368"
                 android:textSize="25sp" />
 
             <TextView
@@ -130,7 +128,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
-                android:gravity="center"
                 android:paddingTop="10sp"
                 android:text="Comportamento:"
                 android:textColor="#000000"
@@ -140,10 +137,9 @@
                 android:id="@+id/comportamento"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
+                android:fontFamily="@font/quicksand"
                 android:text="Carregando..."
-                android:textColor="#0D32D6"
+                android:textColor="#001368"
                 android:textSize="25sp" />
 
             <TextView
@@ -151,7 +147,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
-                android:gravity="center"
                 android:paddingTop="10sp"
                 android:text="Dever de casa:"
                 android:textColor="#000000"
@@ -161,10 +156,9 @@
                 android:id="@+id/dever"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
+                android:fontFamily="@font/quicksand"
                 android:text="Carregando..."
-                android:textColor="#0D32D6"
+                android:textColor="#001368"
                 android:textSize="25sp" />
 
             <TextView
@@ -172,7 +166,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
-                android:gravity="center"
                 android:paddingTop="10sp"
                 android:text="Aviso:"
                 android:textColor="#000000"
@@ -182,10 +175,9 @@
                 android:id="@+id/aviso"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
+                android:fontFamily="@font/quicksand"
                 android:text="Carregando..."
-                android:textColor="#0D32D6"
+                android:textColor="#001368"
                 android:textSize="25sp" />
 
             <TextView
@@ -194,9 +186,8 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:paddingTop="10sp"
-                android:text="Saúde:"
-                android:textColor="#FF864C"
+                android:text="SAÚDE"
+                android:textColor="#AE3901"
                 android:textSize="30sp" />
 
             <TextView
@@ -204,7 +195,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
-                android:gravity="center"
                 android:text="Medicação"
                 android:textColor="#000000"
                 android:textSize="20sp" />
@@ -213,32 +203,29 @@
                 android:id="@+id/iremedio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
+                android:fontFamily="@font/quicksand"
                 android:text="Carregando..."
-                android:textColor="#0D32D6"
+                android:textColor="#001368"
                 android:textSize="25sp" />
 
             <TextView
                 android:id="@+id/idosagem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
+                android:fontFamily="@font/quicksand"
                 android:paddingTop="5sp"
                 android:text="Carregando..."
-                android:textColor="#0D32D6"
+                android:textColor="#001368"
                 android:textSize="25sp" />
 
             <TextView
                 android:id="@+id/ihorario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
+                android:fontFamily="@font/quicksand"
                 android:paddingTop="5sp"
                 android:text="Carregando..."
-                android:textColor="#0D32D6"
+                android:textColor="#001368"
                 android:textSize="25sp" />
 
             <TextView
@@ -246,7 +233,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
-                android:gravity="center"
                 android:paddingTop="10sp"
                 android:text="Aprensentou:"
                 android:textColor="#000000"
@@ -256,10 +242,9 @@
                 android:id="@+id/apresentou"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
+                android:fontFamily="@font/quicksand"
                 android:text="Carregando..."
-                android:textColor="#0D32D6"
+                android:textColor="#001368"
                 android:textSize="25sp" />
 
             <TextView
@@ -268,9 +253,8 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:paddingTop="10sp"
                 android:text="PERÍODO INTEGRAL"
-                android:textColor="#FF864C"
+                android:textColor="#AE3901"
                 android:textSize="30sp" />
 
             <TextView
@@ -278,7 +262,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
-                android:gravity="center"
                 android:text="Lanche Matutino:"
                 android:textColor="#000000"
                 android:textSize="20sp" />
@@ -287,10 +270,9 @@
                 android:id="@+id/ilanchematutino"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
+                android:fontFamily="@font/quicksand"
                 android:text="Carregando..."
-                android:textColor="#0D32D6"
+                android:textColor="#001368"
                 android:textSize="25sp" />
 
             <TextView
@@ -298,7 +280,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
-                android:gravity="center"
                 android:paddingTop="10sp"
                 android:text="Almoço:"
                 android:textColor="#000000"
@@ -308,10 +289,9 @@
                 android:id="@+id/ialmoço"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
+                android:fontFamily="@font/quicksand"
                 android:text="Carregando..."
-                android:textColor="#0D32D6"
+                android:textColor="#001368"
                 android:textSize="25sp" />
 
             <TextView
@@ -319,7 +299,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
-                android:gravity="center"
                 android:paddingTop="10sp"
                 android:text="Lanche Vespertino:"
                 android:textColor="#000000"
@@ -329,10 +308,9 @@
                 android:id="@+id/ilanchevespertino"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
+                android:fontFamily="@font/quicksand"
                 android:text="Carregando..."
-                android:textColor="#0D32D6"
+                android:textColor="#001368"
                 android:textSize="25sp" />
 
             <TextView
@@ -340,7 +318,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
-                android:gravity="center"
                 android:paddingTop="10sp"
                 android:text="Jantar:"
                 android:textColor="#000000"
@@ -350,10 +327,9 @@
                 android:id="@+id/ijanta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
+                android:fontFamily="@font/quicksand"
                 android:text="Carregando..."
-                android:textColor="#0D32D6"
+                android:textColor="#001368"
                 android:textSize="25sp" />
 
             <TextView
@@ -361,7 +337,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
-                android:gravity="center"
                 android:paddingTop="10sp"
                 android:text="Comportamento no Integral:"
                 android:textColor="#000000"
@@ -371,10 +346,9 @@
                 android:id="@+id/icomportamento"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
+                android:fontFamily="@font/quicksand"
                 android:text="Carregando..."
-                android:textColor="#0D32D6"
+                android:textColor="#001368"
                 android:textSize="25sp" />
 
             <TextView
@@ -382,7 +356,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
-                android:gravity="center"
                 android:paddingTop="10sp"
                 android:text="Aspecto Fisiológico:"
                 android:textColor="#000000"
@@ -392,10 +365,9 @@
                 android:id="@+id/isono"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
+                android:fontFamily="@font/quicksand"
                 android:text="Carregando..."
-                android:textColor="#0D32D6"
+                android:textColor="#001368"
                 android:textSize="25sp" />
 
             <TextView
@@ -403,7 +375,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
-                android:gravity="center"
                 android:paddingTop="10sp"
                 android:text="Favor Providenciar:"
                 android:textColor="#000000"
@@ -413,10 +384,9 @@
                 android:id="@+id/iprovidenciar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
+                android:fontFamily="@font/quicksand"
                 android:text="Carregando..."
-                android:textColor="#0D32D6"
+                android:textColor="#001368"
                 android:textSize="25sp" />
 
             <TextView
@@ -424,7 +394,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
-                android:gravity="center"
                 android:paddingTop="10sp"
                 android:text="Atividades de Rotina:"
                 android:textColor="#000000"
@@ -434,10 +403,9 @@
                 android:id="@+id/iatv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
+                android:fontFamily="@font/quicksand"
                 android:text="Carregando..."
-                android:textColor="#0D32D6"
+                android:textColor="#001368"
                 android:textSize="25sp" />
 
             <TextView
@@ -445,7 +413,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
-                android:gravity="center"
                 android:paddingTop="10sp"
                 android:text="Observação:"
                 android:textColor="#000000"
@@ -455,10 +422,9 @@
                 android:id="@+id/obs3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
+                android:fontFamily="@font/quicksand"
                 android:text="Carregando..."
-                android:textColor="#0D32D6"
+                android:textColor="#001368"
                 android:textSize="25sp" />
 
             <TextView
@@ -499,8 +465,9 @@
         android:id="@+id/profile_foto"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo_sem_letra" />
@@ -514,7 +481,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fundodois" />
+        app:srcCompat="@drawable/fundodois"
+        tools:visibility="visible" />
 
     <ProgressBar
         android:id="@+id/carrega_listatres2"

@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -34,6 +35,8 @@ public class tela_de_alunos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_de_alunos);
 
+        final TextView a1 = (TextView) findViewById(R.id.ALUNOS);
+        a1.setText("ALUNOS\n" + tela_de_carregamento.tturma);
 
 
         myRef.child(tela_de_carregamento.tturma).child("P2-1").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -50,7 +53,7 @@ public class tela_de_alunos extends AppCompatActivity {
                     gd.setShape(GradientDrawable.RECTANGLE);
                     gd.setStroke(5, Color.argb(100, 0,0,0)); // border width and color
                     //gd.setCornerRadius(80.50f);
-                    gd.setCornerRadius(150);
+                    gd.setCornerRadius(20);
                     listView_alunos.setBackground(gd);
                     listView_alunos.setAdapter(arrayAdapter);
                 }

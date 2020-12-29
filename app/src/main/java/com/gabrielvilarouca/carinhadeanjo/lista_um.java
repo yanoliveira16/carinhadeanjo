@@ -207,7 +207,7 @@ public class lista_um extends AppCompatActivity {
             dr = getResources().getDrawable(R.drawable.calendar_quatro);
 
             Bitmap bitmap = ((BitmapDrawable) dr).getBitmap();
-            Drawable d = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 100, 100, true));
+            Drawable d = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 80, 80, true));
             btnTag.setCompoundDrawablesWithIntrinsicBounds( d, null, null, null);
 
             btnTag.setBackgroundResource(0);
@@ -219,11 +219,11 @@ public class lista_um extends AppCompatActivity {
 
             bSearch2.addView(btnTag);
 
-            TextView txt1 = new TextView(lista_um.this);
+            /*TextView txt1 = new TextView(lista_um.this);
             txt1.setText("---------------------------------------------------------------------------------");
             // txt1.setText("_______________________________________________________");
             txt1.setGravity(Gravity.CENTER | Gravity.CENTER);
-            bSearch2.addView(txt1);
+            bSearch2.addView(txt1);*/
 
 
             ScrollView scroll = (ScrollView) findViewById(R.id.scroll_listaum);
@@ -231,7 +231,7 @@ public class lista_um extends AppCompatActivity {
             gd.setShape(GradientDrawable.RECTANGLE);
             gd.setStroke(5, Color.argb(100, 0,0,0)); // border width and color
             //gd.setCornerRadius(80.50f);
-            gd.setCornerRadius(80);
+            gd.setCornerRadius(20);
             scroll.setBackground(gd);
         }
     }
