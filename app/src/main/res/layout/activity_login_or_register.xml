@@ -33,12 +33,12 @@
         android:id="@+id/entrar2"
         style="@android:style/Widget.DeviceDefault.Button.Borderless"
         android:layout_width="350dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/quicksand_bold"
         android:onClick="entra_click"
         android:text="Entrar"
         android:textColor="#5856D6"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -49,20 +49,41 @@
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginTop="5dp"
+        android:alpha="0"
         android:fontFamily="@font/quicksand_bold"
         android:onClick="registrar_click"
         android:text="Registrar"
         android:textColor="#5856D6"
         android:textSize="20sp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/entrar2" />
+        app:layout_constraintTop_toBottomOf="@+id/entrar2"
+        tools:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/quicksand_medium"
+        android:gravity="center"
+        android:text="A escola gera seu e-mail e senha para o acesso ao aplicativo!"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/imageView2" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintBottom_toTopOf="@+id/textView11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/florestasemfundo" />
@@ -77,7 +98,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fundodois" />
+        app:srcCompat="@drawable/blue_blue"
+        tools:visibility="invisible" />
 
     <ProgressBar
         android:id="@+id/progressBar2"
@@ -98,6 +120,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_carinhade_anjo" />
+        app:srcCompat="@drawable/logo_sem_letra" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

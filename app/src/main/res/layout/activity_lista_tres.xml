@@ -432,19 +432,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
-                android:gravity="center"
                 android:paddingTop="20sp"
                 android:text="Deixe um recadinho:"
-                android:textColor="#E91E63"
+                android:textColor="#7A012A"
                 android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/recadinho"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/button"
+                android:background="@color/ic_launcher_background"
                 android:ems="10"
-                android:gravity="center"
                 android:inputType="textPersonName" />
 
             <Button
@@ -455,8 +453,9 @@
                 android:fontFamily="@font/quicksand_bold"
                 android:onClick="recadinho_enviar"
                 android:text="Estou Ciente!"
-                android:textColor="#E91E63"
-                android:textSize="20sp" />
+                android:textColor="#9F1342"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
     </ScrollView>

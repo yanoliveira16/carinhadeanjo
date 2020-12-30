@@ -18,13 +18,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/fundo_colorido" />
+        app:srcCompat="@drawable/roxo_new" />
 
     <ImageView
         android:id="@+id/imageView16"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:alpha="0.85"
+        android:alpha="0.9"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -146,7 +146,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView15"
-        app:srcCompat="@drawable/fundodois" />
+        app:srcCompat="@drawable/new_blue" />
 
     <ProgressBar
         android:id="@+id/kkkl2"
