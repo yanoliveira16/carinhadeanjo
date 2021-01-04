@@ -59,6 +59,7 @@
         android:fontFamily="@font/quicksand_light"
         android:text="Carregando..."
         android:textColor="#000000"
+        android:gravity="center"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -113,27 +114,14 @@
                 tools:layout_editor_absoluteY="179dp" />
 
             <TextView
-                android:id="@+id/traço0"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
-                android:text="---------"
-                android:textSize="30sp"
-                tools:layout_conversion_absoluteHeight="43dp"
-                tools:layout_conversion_absoluteWidth="407dp"
-                tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="902dp" />
-
-            <TextView
                 android:id="@+id/atvs_sala"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:text="As atividades de sala:"
+                android:text="As atividades de sala"
                 android:textColor="#000000"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:layout_conversion_absoluteHeight="34dp"
                 tools:layout_conversion_absoluteWidth="407dp"
                 tools:layout_editor_absoluteX="2dp"
@@ -166,27 +154,14 @@
                 tools:layout_editor_absoluteY="1007dp" />
 
             <TextView
-                android:id="@+id/traço2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
-                android:text="---------"
-                android:textSize="30sp"
-                tools:layout_conversion_absoluteHeight="43dp"
-                tools:layout_conversion_absoluteWidth="407dp"
-                tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="1034dp" />
-
-            <TextView
                 android:id="@+id/comp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:text="Comportamento:"
+                android:text="Comportamento"
                 android:textColor="#000000"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:layout_conversion_absoluteHeight="34dp"
                 tools:layout_conversion_absoluteWidth="407dp"
                 tools:layout_editor_absoluteX="2dp"
@@ -244,18 +219,18 @@
                 tools:layout_editor_absoluteX="2dp"
                 tools:layout_editor_absoluteY="1193dp" />
 
-            <TextView
-                android:id="@+id/traço5"
+            <Switch
+                android:id="@+id/s35"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
-                android:text="------------------"
-                android:textSize="30sp"
-                tools:layout_conversion_absoluteHeight="43dp"
+                android:onClick="hg6_2"
+                android:text="Agitado"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
                 tools:layout_conversion_absoluteWidth="407dp"
                 tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="1575dp" />
+                tools:layout_editor_absoluteY="1193dp" />
 
             <TextView
                 android:id="@+id/saude"
@@ -264,7 +239,7 @@
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
                 android:text="Saúde"
-                android:textColor="#FF864C"
+                android:textColor="#9C3200"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="34dp"
                 tools:layout_conversion_absoluteWidth="407dp"
@@ -277,9 +252,9 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:text="Medicação:"
+                android:text="Medicação"
                 android:textColor="#000000"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:layout_conversion_absoluteHeight="34dp"
                 tools:layout_conversion_absoluteWidth="407dp"
                 tools:layout_editor_absoluteX="2dp"
@@ -376,27 +351,14 @@
                 tools:visibility="visible" />
 
             <TextView
-                android:id="@+id/traço"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
-                android:text="---------"
-                android:textSize="30sp"
-                tools:layout_conversion_absoluteHeight="43dp"
-                tools:layout_conversion_absoluteWidth="407dp"
-                tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="1575dp" />
-
-            <TextView
                 android:id="@+id/apresen"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:text="Apresentou:"
+                android:text="Apresentou"
                 android:textColor="#000000"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:layout_conversion_absoluteHeight="34dp"
                 tools:layout_conversion_absoluteWidth="407dp"
                 tools:layout_editor_absoluteX="2dp"
@@ -470,25 +432,12 @@
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
                 android:text="Período Integral"
-                android:textColor="#FF864C"
+                android:textColor="#9C3200"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="34dp"
                 tools:layout_conversion_absoluteWidth="407dp"
                 tools:layout_editor_absoluteX="2dp"
                 tools:layout_editor_absoluteY="1619dp" />
-
-            <TextView
-                android:id="@+id/traço7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
-                android:text="---------"
-                android:textSize="30sp"
-                tools:layout_conversion_absoluteHeight="43dp"
-                tools:layout_conversion_absoluteWidth="407dp"
-                tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="1575dp" />
 
             <TextView
                 android:id="@+id/ilanchematutino"
@@ -498,7 +447,7 @@
                 android:gravity="center"
                 android:text="Lanche matutino"
                 android:textColor="#000000"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:layout_conversion_absoluteHeight="34dp"
                 tools:layout_conversion_absoluteWidth="407dp"
                 tools:layout_editor_absoluteX="2dp"
@@ -544,27 +493,14 @@
                 tools:layout_editor_absoluteY="1352dp" />
 
             <TextView
-                android:id="@+id/traço16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
-                android:text="---------"
-                android:textSize="30sp"
-                tools:layout_conversion_absoluteHeight="43dp"
-                tools:layout_conversion_absoluteWidth="407dp"
-                tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="1575dp" />
-
-            <TextView
                 android:id="@+id/almoço"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:text="Almoço:"
+                android:text="Almoço"
                 android:textColor="#000000"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:layout_conversion_absoluteHeight="34dp"
                 tools:layout_conversion_absoluteWidth="407dp"
                 tools:layout_editor_absoluteX="2dp"
@@ -610,27 +546,14 @@
                 tools:layout_editor_absoluteY="1352dp" />
 
             <TextView
-                android:id="@+id/traço8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
-                android:text="---------"
-                android:textSize="30sp"
-                tools:layout_conversion_absoluteHeight="43dp"
-                tools:layout_conversion_absoluteWidth="407dp"
-                tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="1575dp" />
-
-            <TextView
                 android:id="@+id/lanche_vesp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:text="Lanche Vespertino:"
+                android:text="Lanche Vespertino"
                 android:textColor="#000000"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:layout_conversion_absoluteHeight="34dp"
                 tools:layout_conversion_absoluteWidth="407dp"
                 tools:layout_editor_absoluteX="2dp"
@@ -676,27 +599,14 @@
                 tools:layout_editor_absoluteY="1352dp" />
 
             <TextView
-                android:id="@+id/traço9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
-                android:text="---------"
-                android:textSize="30sp"
-                tools:layout_conversion_absoluteHeight="43dp"
-                tools:layout_conversion_absoluteWidth="407dp"
-                tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="1575dp" />
-
-            <TextView
                 android:id="@+id/jantar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:text="Jantar:"
+                android:text="Jantar"
                 android:textColor="#000000"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:layout_conversion_absoluteHeight="34dp"
                 tools:layout_conversion_absoluteWidth="407dp"
                 tools:layout_editor_absoluteX="2dp"
@@ -742,27 +652,14 @@
                 tools:layout_editor_absoluteY="1352dp" />
 
             <TextView
-                android:id="@+id/traço10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
-                android:text="---------"
-                android:textSize="30sp"
-                tools:layout_conversion_absoluteHeight="43dp"
-                tools:layout_conversion_absoluteWidth="407dp"
-                tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="1575dp" />
-
-            <TextView
                 android:id="@+id/asp_fis"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:text="Aspecto Fisiológico:"
+                android:text="Aspecto Fisiológico"
                 android:textColor="#000000"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:layout_conversion_absoluteHeight="34dp"
                 tools:layout_conversion_absoluteWidth="407dp"
                 tools:layout_editor_absoluteX="2dp"
@@ -785,7 +682,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_medium"
-                android:text="Evacuação anormal"
+                android:text="Não evacuou"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
                 tools:layout_conversion_absoluteWidth="407dp"
@@ -829,27 +726,14 @@
                 tools:layout_editor_absoluteY="1352dp" />
 
             <TextView
-                android:id="@+id/traço11"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
-                android:text="---------"
-                android:textSize="30sp"
-                tools:layout_conversion_absoluteHeight="43dp"
-                tools:layout_conversion_absoluteWidth="407dp"
-                tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="1575dp" />
-
-            <TextView
                 android:id="@+id/comp_int"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:text="Comportamento Int:"
+                android:text="Comportamento Int."
                 android:textColor="#000000"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:layout_conversion_absoluteHeight="34dp"
                 tools:layout_conversion_absoluteWidth="407dp"
                 tools:layout_editor_absoluteX="2dp"
@@ -895,27 +779,14 @@
                 tools:layout_editor_absoluteY="1352dp" />
 
             <TextView
-                android:id="@+id/traço12"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
-                android:text="---------"
-                android:textSize="30sp"
-                tools:layout_conversion_absoluteHeight="43dp"
-                tools:layout_conversion_absoluteWidth="407dp"
-                tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="1575dp" />
-
-            <TextView
                 android:id="@+id/prov"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:text="Favor Providenciar:"
+                android:text="Favor Providenciar"
                 android:textColor="#000000"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:layout_conversion_absoluteHeight="34dp"
                 tools:layout_conversion_absoluteWidth="407dp"
                 tools:layout_editor_absoluteX="2dp"
@@ -1018,27 +889,14 @@
                 tools:layout_editor_absoluteY="1352dp" />
 
             <TextView
-                android:id="@+id/traço13"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
-                android:text="---------"
-                android:textSize="30sp"
-                tools:layout_conversion_absoluteHeight="43dp"
-                tools:layout_conversion_absoluteWidth="407dp"
-                tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="1575dp" />
-
-            <TextView
                 android:id="@+id/atv_rot"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:text="Atividades de rotina:"
+                android:text="Atividades de rotina"
                 android:textColor="#000000"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:layout_conversion_absoluteHeight="34dp"
                 tools:layout_conversion_absoluteWidth="407dp"
                 tools:layout_editor_absoluteX="2dp"
@@ -1129,27 +987,14 @@
                 tools:layout_editor_absoluteY="1325dp" />
 
             <TextView
-                android:id="@+id/traço14"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
-                android:text="---------"
-                android:textSize="30sp"
-                tools:layout_conversion_absoluteHeight="43dp"
-                tools:layout_conversion_absoluteWidth="407dp"
-                tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="1575dp" />
-
-            <TextView
                 android:id="@+id/observaçao"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
-                android:text="Observação:"
+                android:text="Observação"
                 android:textColor="#000000"
-                android:textSize="24sp"
+                android:textSize="30sp"
                 tools:layout_conversion_absoluteHeight="34dp"
                 tools:layout_conversion_absoluteWidth="407dp"
                 tools:layout_editor_absoluteX="2dp"
@@ -1165,26 +1010,13 @@
                 android:inputType="textPersonName" />
 
             <TextView
-                android:id="@+id/traço15"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
-                android:text="------------------"
-                android:textSize="30sp"
-                tools:layout_conversion_absoluteHeight="43dp"
-                tools:layout_conversion_absoluteWidth="407dp"
-                tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="1575dp" />
-
-            <TextView
                 android:id="@+id/aviso_botao"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
                 android:text="Verifique tudo antes de enviar!"
-                android:textColor="#FF864C"
+                android:textColor="#852B00"
                 android:textSize="20sp"
                 tools:layout_conversion_absoluteHeight="34dp"
                 tools:layout_conversion_absoluteWidth="407dp"
@@ -1196,14 +1028,13 @@
                 style="@android:style/Widget.DeviceDefault.Button.Borderless"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/button"
                 android:fontFamily="@font/quicksand_bold"
                 android:onClick="enviar"
                 android:paddingTop="10sp"
                 android:paddingBottom="10sp"
                 android:text="PRONTO"
-                android:textColor="#1512E6"
-                android:textSize="20sp" />
+                android:textColor="#020080"
+                android:textSize="36sp" />
 
         </LinearLayout>
     </ScrollView>

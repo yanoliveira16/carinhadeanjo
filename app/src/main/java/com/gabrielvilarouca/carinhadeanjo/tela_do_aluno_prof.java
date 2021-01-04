@@ -13,6 +13,8 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -110,6 +112,13 @@ public class tela_do_aluno_prof extends AppCompatActivity {
                 public void onFailure(@NonNull Exception e) {
                     //Toast.makeText(tela_do_aluno_prof.this, e.getMessage(), Toast.LENGTH_LONG).show();
                     new AlertDialog.Builder(tela_do_aluno_prof.this).setMessage("ALUNO SEM FOTO!").show();
+
+                    ImageView myImage = (ImageView) findViewById(R.id.imageView31);
+                    Drawable dr = getResources().getDrawable(R.drawable.new_profile);
+                    Bitmap bitmap = ((BitmapDrawable) dr).getBitmap();
+                    my_image = bitmap;
+                    myImage.setImageBitmap(getRoundedCornerBitmap(my_image,400));
+
                     View a1=findViewById(R.id.hgf1);
                     a1.setVisibility(View.INVISIBLE);
 

@@ -6,7 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
@@ -116,6 +122,7 @@ public class chat extends AppCompatActivity {
 
     int itemCount;
     Integer id_do_button = 5240;
+    public static Bitmap bitmap;
     public void adicionar_aofeed(){
         itemCount = feed.size();
         Log.d("AQUI", "AA " +itemCount);
@@ -145,12 +152,14 @@ public class chat extends AppCompatActivity {
             if (data.contains("p")){
                 dr = getResources().getDrawable(R.drawable.teacher);
                 btnTag.setTextColor(Color.parseColor("#000000"));
+                bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),400));
             }else if(data.contains("a")){
-                dr = getResources().getDrawable(R.drawable.alunos);
-                btnTag.setTextColor(Color.parseColor("#000000"));
+                if (tela_de_carregamento.qual == "1"){
+                    bitmap = (getRoundedCornerBitmap(tela_do_aluno_prof.my_image,400));
+                }else{
+                    bitmap = (getRoundedCornerBitmap(tela_do_aluno.my_image3,400));
+                }
             }
-
-            Bitmap bitmap = ((BitmapDrawable) dr).getBitmap();
             Drawable d = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 80, 80, true));
             btnTag.setCompoundDrawablesWithIntrinsicBounds( d, null, null, null);
 
@@ -159,6 +168,11 @@ public class chat extends AppCompatActivity {
 
             bSearch2.addView(btnTag);
 
+            /*TextView txt1 = new TextView(chat.this);
+            txt1.setText("--------------------------------");
+            txt1.setGravity(Gravity.CENTER | Gravity.CENTER);
+            bSearch2.addView(txt1);*/
+
             final TextView a18 = (TextView) findViewById(R.id.title_chat);
             if (tela_de_carregamento.qual == "1"){
                 a18.setText("CHAT BETA\n"+tela_de_alunos.onClick3);
@@ -166,6 +180,28 @@ public class chat extends AppCompatActivity {
                 a18.setText("CHAT BETA");
             }
         }
+    }
+
+    public static Bitmap getRoundedCornerBitmap(Bitmap bitmap, int pixels) {
+        Bitmap output = Bitmap.createBitmap(bitmap.getWidth(), bitmap
+                .getHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(output);
+
+        final int color = 0xff424242;
+        final Paint paint = new Paint();
+        final Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
+        final RectF rectF = new RectF(rect);
+        final float roundPx = pixels;
+
+        paint.setAntiAlias(true);
+        canvas.drawARGB(0, 0, 0, 0);
+        paint.setColor(color);
+        canvas.drawRoundRect(rectF, roundPx, roundPx, paint);
+
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+        canvas.drawBitmap(bitmap, rect, rect, paint);
+
+        return output;
     }
 
     public void enviar_chat(View view){

@@ -116,8 +116,9 @@ public class tela_da_professora extends AppCompatActivity {
     Integer id_do_button = 5000;
     public void new_feed(){
        if (tela_de_carregamento.tturma == null){
-           new AlertDialog.Builder(tela_da_professora.this).setMessage("Não encontramos sua turma.\nTente fechar e abrir o aplicativo. Se isso não funcionar, tente sair da sua conta e entrar novamente!" +
-                   "\nNão recomendamos que faça o uso do aplicativo com este erro.").show();
+           /*new AlertDialog.Builder(tela_da_professora.this).setMessage("Não encontramos sua turma.\nTente fechar e abrir o aplicativo. Se isso não funcionar, tente sair da sua conta e entrar novamente!" +
+                   "\nNão recomendamos que faça o uso do aplicativo com este erro.").show();*/
+           call_newfeed();
        }else{
            call_newfeed();
        }

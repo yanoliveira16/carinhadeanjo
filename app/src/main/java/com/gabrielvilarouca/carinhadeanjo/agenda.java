@@ -185,6 +185,9 @@ public class agenda extends AppCompatActivity {
                 }else if (nk.contains("Irritado") == true){
                     s29 = findViewById(R.id.s29);
                     s29.setChecked(true);
+                }else if (nk.contains("Agitado") == true){
+                    s35 = findViewById(R.id.s35);
+                    s35.setChecked(true);
                 }
                 hg3 = true;
                 checar();
@@ -618,6 +621,7 @@ public class agenda extends AppCompatActivity {
     Switch s27;
     Switch s28;
     Switch s29;
+    Switch s35;
 
     public void enviar3() {
 
@@ -635,6 +639,8 @@ public class agenda extends AppCompatActivity {
             comportamento = "Conversou muito";
         } else if (s29.isChecked() == true) {
             comportamento = "Irritado";
+        } else if (s35.isChecked() == true) {
+            comportamento = "Agitado";
         }
 
         enviar5();
@@ -826,7 +832,7 @@ public class agenda extends AppCompatActivity {
             isono = "Não dormiu | ";
         }
         if (s50.isChecked() == true) {
-            isono += "Evacuação anormal | ";
+            isono += "Não evacuou | ";
         }
         if (s51.isChecked() == true) {
             isono += "Urinou pouco | ";
@@ -1152,11 +1158,13 @@ public class agenda extends AppCompatActivity {
         s27 = findViewById(R.id.s27);
         s28 = findViewById(R.id.s28);
         s29 = findViewById(R.id.s29);
+        s35 = findViewById(R.id.s35);
 
         if (s26.isChecked()) {
             s27.setChecked(false);
             s28.setChecked(false);
             s29.setChecked(false);
+            s35.setChecked(false);
         }
     }
         public void hg4 (View view){
@@ -1164,11 +1172,13 @@ public class agenda extends AppCompatActivity {
             s27 = findViewById(R.id.s27);
             s28 = findViewById(R.id.s28);
             s29 = findViewById(R.id.s29);
+            s35 = findViewById(R.id.s35);
 
             if (s27.isChecked()) {
                 s26.setChecked(false);
                 s28.setChecked(false);
                 s29.setChecked(false);
+                s35.setChecked(false);
             }
         }
         public void hg5 (View view){
@@ -1176,11 +1186,13 @@ public class agenda extends AppCompatActivity {
             s27 = findViewById(R.id.s27);
             s28 = findViewById(R.id.s28);
             s29 = findViewById(R.id.s29);
+            s35 = findViewById(R.id.s35);
 
             if (s28.isChecked()) {
                 s27.setChecked(false);
                 s26.setChecked(false);
                 s29.setChecked(false);
+                s35.setChecked(false);
             }
         }
         public void hg6 (View view){
@@ -1188,13 +1200,30 @@ public class agenda extends AppCompatActivity {
             s27 = findViewById(R.id.s27);
             s28 = findViewById(R.id.s28);
             s29 = findViewById(R.id.s29);
+            s35 = findViewById(R.id.s35);
 
             if (s29.isChecked()) {
                 s27.setChecked(false);
                 s28.setChecked(false);
                 s26.setChecked(false);
+                s35.setChecked(false);
             }
         }
+
+    public void hg6_2 (View view){
+        s26 = findViewById(R.id.s26);
+        s27 = findViewById(R.id.s27);
+        s28 = findViewById(R.id.s28);
+        s29 = findViewById(R.id.s29);
+        s35 = findViewById(R.id.s35);
+
+        if (s35.isChecked()) {
+            s27.setChecked(false);
+            s28.setChecked(false);
+            s26.setChecked(false);
+            s29.setChecked(false);
+        }
+    }
 
 
     //Lanche Matutino

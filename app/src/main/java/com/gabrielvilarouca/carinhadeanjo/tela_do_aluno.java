@@ -160,6 +160,12 @@ public class tela_do_aluno extends AppCompatActivity {
                 "DEPOIS",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
+                        ImageView myImage = (ImageView) findViewById(R.id.imageView31);
+                        Drawable dr = getResources().getDrawable(R.drawable.new_profile);
+                        Bitmap bitmap = ((BitmapDrawable) dr).getBitmap();
+                        my_image3 = bitmap;
+                        myImage.setImageBitmap(getRoundedCornerBitmap(my_image3,400));
+
                         View a1=findViewById(R.id.kkkl1);
                         a1.setVisibility(View.INVISIBLE);
 

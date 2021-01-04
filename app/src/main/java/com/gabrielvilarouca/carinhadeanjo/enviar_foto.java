@@ -250,7 +250,7 @@ public class enviar_foto extends AppCompatActivity {
                 });
     }
 
-    @Override
+    /*@Override
     public void onBackPressed(){
        // new AlertDialog.Builder(enviar_foto.this).setMessage("VOCÊ NÃO PODE VOLTAR!\nO processo de cadastro já começou. Envie uma foto do aluno para continuar.").show();
         AlertDialog.Builder builder1 = new AlertDialog.Builder(enviar_foto.this);
@@ -277,5 +277,5 @@ public class enviar_foto extends AppCompatActivity {
 
         AlertDialog alert11 = builder1.create();
         alert11.show();
-    }
+    }*/
 }
