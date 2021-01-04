@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -25,6 +26,7 @@ import android.widget.TextView;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.vision.face.FaceDetector;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -48,15 +50,10 @@ import java.io.InputStream;
 
 public class enviar_foto extends AppCompatActivity {
 
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("P5").child("onde_parou");
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enviar_foto);
-
-        myRef.child(login_or_register.id).setValue("02");
 
         final TextView a2 = (TextView) findViewById(R.id.text_informativo);
         a2.setText("ESCOLHA A FOTO DO ALUNO\nDeve contér um rosto!\nA foto é obrigatória e deverá ser do aluno!");
@@ -228,7 +225,6 @@ public class enviar_foto extends AppCompatActivity {
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         // Get a URL to the uploaded content
                         //Uri downloadUrl = taskSnapshot.getDownloadUrl();
-                        myRef.child(login_or_register.id).setValue("03");
                         Intent intent = new Intent(getBaseContext(), tela_de_carregamento.class);
                         startActivity(intent);
                     }
@@ -256,6 +252,30 @@ public class enviar_foto extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        new AlertDialog.Builder(enviar_foto.this).setMessage("VOCÊ NÃO PODE VOLTAR!\nO processo de cadastro já começou. Envie uma foto do aluno para continuar.").show();
+       // new AlertDialog.Builder(enviar_foto.this).setMessage("VOCÊ NÃO PODE VOLTAR!\nO processo de cadastro já começou. Envie uma foto do aluno para continuar.").show();
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(enviar_foto.this);
+        builder1.setMessage("TEM CERTEZA DE QUE DESEJA VOLTAR?\nA foto é obrigatória!");
+        builder1.setCancelable(true);
+
+        builder1.setPositiveButton(
+                "VOLTAR",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        FirebaseAuth.getInstance().signOut();
+                        Intent intent = new Intent(getBaseContext(), tela_de_carregamento.class);
+                        startActivity(intent);
+                    }
+                });
+
+        builder1.setNegativeButton(
+                "CANCELAR",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
     }
 }

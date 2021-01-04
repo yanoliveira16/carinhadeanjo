@@ -108,7 +108,13 @@ public class tela_do_aluno_prof extends AppCompatActivity {
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(tela_do_aluno_prof.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                    //Toast.makeText(tela_do_aluno_prof.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                    new AlertDialog.Builder(tela_do_aluno_prof.this).setMessage("ALUNO SEM FOTO!").show();
+                    View a1=findViewById(R.id.hgf1);
+                    a1.setVisibility(View.INVISIBLE);
+
+                    View a2=findViewById(R.id.hgf2);
+                    a2.setVisibility(View.INVISIBLE);
                 }
             });
         } catch (IOException e) {
@@ -150,6 +156,11 @@ public class tela_do_aluno_prof extends AppCompatActivity {
         Intent intent = new Intent(getBaseContext(), lista_um.class);
         startActivity(intent);
 
+    }
+
+    public void chat_click(View view){
+        Intent intent = new Intent(getBaseContext(), chat.class);
+        startActivity(intent);
     }
 
 

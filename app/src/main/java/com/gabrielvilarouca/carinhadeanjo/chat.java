@@ -1,7 +1,9 @@
 package com.gabrielvilarouca.carinhadeanjo;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -13,6 +15,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -26,8 +29,10 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 
 public class chat extends AppCompatActivity {
@@ -36,8 +41,7 @@ public class chat extends AppCompatActivity {
     List<String> feed2;
 
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-    DatabaseReference myRef = database.child("P5").child(tela_de_carregamento.tturma).child("chats");
-    DatabaseReference myRef3 = database.child("P3");
+    DatabaseReference myRefchat = database.child("P5");
 
     String id_do_chat;
 
@@ -46,38 +50,30 @@ public class chat extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
+        feed = new ArrayList<>();
+        feed2 = new ArrayList<>();
+
         final TextView a18 = (TextView) findViewById(R.id.title_chat);
-        a18.setText("CARREGANDO...");
-
+        a18.setText("CARREGANDO..");
         if (tela_de_carregamento.qual == "1"){
-            myRef3.child(tela_do_aluno_prof.id_aluno).child("id_chat").addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    id_do_chat = dataSnapshot.getValue(String.class);
-                    call_the_chat();
-                }
-
-
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-
-                }
-            });
+            id_do_chat = tela_do_aluno_prof.id_aluno;
+            call_the_chat();
         }else{
             id_do_chat = login_or_register.id;
             call_the_chat();
         }
+
     }
 
     public void call_the_chat(){
-        myRef.child(tela_de_carregamento.tturma).child("feed").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRefchat.child("chat").child(id_do_chat).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot:dataSnapshot.getChildren())
                 {
                     String key= snapshot.getKey();
                     String value=snapshot.getValue().toString();
-                    if (key.contains("aln") == false){
+                    if (key != null){
                         feed2.add(key);
                         feed.add(value);
                     }
@@ -90,12 +86,12 @@ public class chat extends AppCompatActivity {
                     }
                 });*/
 
-                Collections.sort(feed, new Comparator<String>() {
+                Collections.sort(feed2, new Comparator<String>() {
 
                     @Override
                     public int compare(String arg0, String arg1) {
                         SimpleDateFormat format = new SimpleDateFormat(
-                                "dd-MM-yyyy");
+                                "dd-MM-yyyy HH:mm:ss");
                         int compareResult = 0;
                         try {
                             java.util.Date arg0Date = format.parse(arg0);
@@ -130,7 +126,7 @@ public class chat extends AppCompatActivity {
             Log.d("AQUI", "AA2 " +itemCount);
             Log.d("AQUI 2", "AA3 " +data);
             Log.d("AQUI", "AA2 " +data2);
-            LinearLayout bSearch2 = (LinearLayout) findViewById(R.id.linear_feed);
+            LinearLayout bSearch2 = (LinearLayout) findViewById(R.id.ll_chat);
             id_do_button += 1;
             Button btnTag = new Button(chat.this);
             btnTag.setLayoutParams(new LinearLayout.LayoutParams
@@ -141,37 +137,16 @@ public class chat extends AppCompatActivity {
             btnTag.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v)
                 {
-                    tela_de_carregamento.onClick19 = data;
-                    tela_de_carregamento.key_feed = data2;
-                    Intent intent = new Intent(getBaseContext(), click_feed.class);
-                    startActivity(intent);
+                    //
                 }
             });
 
             Drawable dr = getResources().getDrawable(R.drawable.close);
-            if (data.contains("ATIVIDADE")){
-                dr = getResources().getDrawable(R.drawable.al_um);
+            if (data.contains("p")){
+                dr = getResources().getDrawable(R.drawable.teacher);
                 btnTag.setTextColor(Color.parseColor("#000000"));
-            }else if(data.contains("AGENDA")){
-                dr = getResources().getDrawable(R.drawable.al_dois);
-                btnTag.setTextColor(Color.parseColor("#000000"));
-            }else if(data.contains("AVISO")){
-                dr = getResources().getDrawable(R.drawable.al_tres);
-                btnTag.setTextColor(Color.parseColor("#000000"));
-            }else if(data.contains("REUNIÃO") || data.contains("EVENTO")){
-                dr = getResources().getDrawable(R.drawable.calendar_quatro);
-                btnTag.setTextColor(Color.parseColor("#000000"));
-            }else if(data.contains("IMAGEM")){
-                dr = getResources().getDrawable(R.drawable.picture);
-                btnTag.setTextColor(Color.parseColor("#000000"));
-            }else if(data.contains("SERVIDOR")){
-                dr = getResources().getDrawable(R.drawable.database);
-                btnTag.setTextColor(Color.parseColor("#E91E63"));
-            }else if(data.contains("ALUNO")){
+            }else if(data.contains("a")){
                 dr = getResources().getDrawable(R.drawable.alunos);
-                btnTag.setTextColor(Color.parseColor("#000000"));
-            }else{
-                dr = getResources().getDrawable(R.drawable.message);
                 btnTag.setTextColor(Color.parseColor("#000000"));
             }
 
@@ -184,20 +159,49 @@ public class chat extends AppCompatActivity {
 
             bSearch2.addView(btnTag);
 
-            /*TextView txt1 = new TextView(tela_da_professora.this);
-            txt1.setText("-------------------------------------");
-           // txt1.setText("_______________________________________________________");
-            txt1.setGravity(Gravity.CENTER | Gravity.CENTER);
-            bSearch2.addView(txt1);*/
-
-
-            ScrollView scroll = (ScrollView) findViewById(R.id.scfeed);
-            GradientDrawable gd = new GradientDrawable();
-            gd.setShape(GradientDrawable.RECTANGLE);
-            gd.setStroke(5, Color.argb(100, 0,0,0)); // border width and color
-            //gd.setCornerRadius(80.50f);
-            gd.setCornerRadius(15);
-            scroll.setBackground(gd);
+            final TextView a18 = (TextView) findViewById(R.id.title_chat);
+            if (tela_de_carregamento.qual == "1"){
+                a18.setText("CHAT BETA\n"+tela_de_alunos.onClick3);
+            }else{
+                a18.setText("CHAT BETA");
+            }
         }
+    }
+
+    public void enviar_chat(View view){
+        final EditText et2 = (EditText) findViewById(R.id.chat_text);
+        String nn = et2.getText().toString();
+        if (nn == null || nn == "" || nn == " ") {
+            errormsg = "Você precisa escrever uma mensagem";
+            erro();
+        } else {
+            SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+            String currentDateandTime = sdf.format(new Date());
+
+            if (tela_de_carregamento.qual == "1"){
+                myRefchat.child("chat").child(id_do_chat).child(currentDateandTime).setValue("p - " + currentDateandTime + ": " +nn);
+            }else{
+                myRefchat.child("chat").child(id_do_chat).child(currentDateandTime).setValue("a - " + currentDateandTime + ": " +nn);
+            }
+            et2.setText("");
+            LinearLayout lyt = (LinearLayout) findViewById(R.id.ll_chat);
+            lyt.removeAllViews();
+            call_the_chat();
+        }
+    }
+
+    String errormsg = "";
+
+    public void erro() {
+        AlertDialog alertDialog = new AlertDialog.Builder(chat.this).create();
+        alertDialog.setTitle("ERRO!");
+        alertDialog.setMessage(errormsg);
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Ok",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        alertDialog.show();
     }
 }

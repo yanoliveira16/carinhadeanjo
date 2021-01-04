@@ -68,6 +68,7 @@ public class tela_do_aluno extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_do_aluno);
+        Log.d("AQUI", "AAAAAAAAA");
 
         feed = new ArrayList<>();
         feed2 = new ArrayList<>();
@@ -78,6 +79,7 @@ public class tela_do_aluno extends AppCompatActivity {
         final TextView a2 = (TextView) findViewById(R.id.turma);
         a2.setText(tela_de_carregamento.tturma+" - "+tela_de_carregamento.nnomePai);
 
+        Log.d("AQUI", "AAAAAAAAA");
         new_feed();
 
        // new AlertDialog.Builder(tela_do_aluno.this).setMessage("BETA\nO aplicativo ainda se encontra em desenvolvimento.\nConfira novidades e tutorais em http://escolacarinhadeanjodf.com/aplicativo").show();
@@ -103,13 +105,13 @@ public class tela_do_aluno extends AppCompatActivity {
 
                     View a3=findViewById(R.id.sair);
                     a3.setVisibility(View.VISIBLE);
-
                    
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(tela_do_aluno.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                    //Toast.makeText(tela_do_aluno.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                    coloque_foto();
                 }
             });
         } catch (IOException e) {
@@ -137,6 +139,41 @@ public class tela_do_aluno extends AppCompatActivity {
         canvas.drawBitmap(bitmap, rect, rect, paint);
 
         return output;
+    }
+
+    public void coloque_foto(){
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(tela_do_aluno.this);
+        builder1.setMessage("A FOTO É OBRIGATÓRIA\nColoque uma foto do seu filho(a).\nA foto deve ser adequada e possuir um rosto!");
+        builder1.setCancelable(true);
+
+        builder1.setPositiveButton(
+                "COLOCAR FOTO",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        FirebaseAuth.getInstance().signOut();
+                        Intent intent = new Intent(getBaseContext(), enviar_foto.class);
+                        startActivity(intent);
+                    }
+                });
+
+        builder1.setNegativeButton(
+                "DEPOIS",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        View a1=findViewById(R.id.kkkl1);
+                        a1.setVisibility(View.INVISIBLE);
+
+                        View a2=findViewById(R.id.kkkl2);
+                        a2.setVisibility(View.INVISIBLE);
+
+                        View a3=findViewById(R.id.sair);
+                        a3.setVisibility(View.VISIBLE);
+                        dialog.cancel();
+                    }
+                });
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
     }
 
     public void sair_click3(View view) {
@@ -182,6 +219,7 @@ public class tela_do_aluno extends AppCompatActivity {
 
     Integer id_do_button = 5000;
     public void new_feed(){
+        Log.d("AQUI", "AAAAAAAAA");
         myRef.child(tela_de_carregamento.tturma).child("feed").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -240,6 +278,8 @@ public class tela_do_aluno extends AppCompatActivity {
             itemCount -= 1;
             String data = feed.get(itemCount);
             String data2 = feed2.get(itemCount);
+            Log.d("AQUI", "feed" +data);
+            Log.d("AQUI", "feed2" +data2);
             LinearLayout bSearch2 = (LinearLayout) findViewById(R.id.linear_feed_aluno);
             id_do_button += 1;
             Button btnTag = new Button(tela_do_aluno.this);
@@ -357,6 +397,11 @@ public class tela_do_aluno extends AppCompatActivity {
         LinearLayout ll = (LinearLayout) findViewById(R.id.linear_feed_aluno);
         ll.removeAllViews();
         new_feed();
+    }
+
+    public void chat_click(View view){
+        Intent intent = new Intent(getBaseContext(), chat.class);
+        startActivity(intent);
     }
 
 
