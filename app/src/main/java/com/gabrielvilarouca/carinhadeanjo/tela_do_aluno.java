@@ -420,10 +420,8 @@ public class tela_do_aluno extends AppCompatActivity {
     }
 
     public void pdf_open(View view){
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setDataAndType(Uri.parse(tela_de_carregamento.url_pdf), "text/html");
+        Intent intent = new Intent(getBaseContext(), view_pdf.class);
         startActivity(intent);
-        
     }
 
 

@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class tela_de_carregamento extends AppCompatActivity {
-    public static String nnomePai, nnomeAluno, tturma, nnomeProfe, qual, onClick19, key_feed, url_pdf;
+    public static String nnomePai, nnomeAluno, tturma, nnomeProfe, qual, onClick19, key_feed;
     public static Integer faltar_no_total;
 
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
@@ -176,21 +176,8 @@ public class tela_de_carregamento extends AppCompatActivity {
                                     @Override
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         faltar_no_total = dataSnapshot.getValue(Integer.class);
-
-                                        myRef4.child("url_pdf").addListenerForSingleValueEvent(new ValueEventListener() {
-                                            @Override
-                                            public void onDataChange(DataSnapshot dataSnapshot) {
-                                                url_pdf = dataSnapshot.getValue(String.class);
-                                                Intent intent = new Intent(getBaseContext(), tela_do_aluno.class);
-                                                startActivity(intent);
-                                            }
-
-
-                                            @Override
-                                            public void onCancelled(DatabaseError databaseError) {
-
-                                            }
-                                        });
+                                        Intent intent = new Intent(getBaseContext(), tela_do_aluno.class);
+                                        startActivity(intent);
 
                                     }
 
