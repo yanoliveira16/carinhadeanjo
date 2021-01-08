@@ -176,6 +176,7 @@ public class tela_da_professora extends AppCompatActivity {
 
 
         int itemCount;
+    public static Bitmap bitmap;
     public void adicionar_aofeed(){
         itemCount = feed.size();
         Log.d("AQUI", "AA " +itemCount);

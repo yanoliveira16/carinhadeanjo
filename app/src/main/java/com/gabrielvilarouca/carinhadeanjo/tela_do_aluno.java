@@ -68,7 +68,6 @@ public class tela_do_aluno extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_do_aluno);
-        Log.d("AQUI", "AAAAAAAAA");
 
         feed = new ArrayList<>();
         feed2 = new ArrayList<>();
@@ -77,9 +76,8 @@ public class tela_do_aluno extends AppCompatActivity {
         a1.setText(tela_de_carregamento.nnomeAluno);
 
         final TextView a2 = (TextView) findViewById(R.id.turma);
-        a2.setText(tela_de_carregamento.tturma+" - "+tela_de_carregamento.nnomePai);
+        a2.setText(tela_de_carregamento.tturma+" - "+tela_de_carregamento.faltar_no_total+" faltas");
 
-        Log.d("AQUI", "AAAAAAAAA");
         new_feed();
 
        // new AlertDialog.Builder(tela_do_aluno.this).setMessage("BETA\nO aplicativo ainda se encontra em desenvolvimento.\nConfira novidades e tutorais em http://escolacarinhadeanjodf.com/aplicativo").show();
@@ -277,6 +275,7 @@ public class tela_do_aluno extends AppCompatActivity {
 
 
     int itemCount;
+    public static Bitmap bitmap;
     public void adicionar_aofeed(){
         itemCount = feed.size();
         Log.d("AQUI", "AA " +itemCount);
@@ -309,30 +308,37 @@ public class tela_do_aluno extends AppCompatActivity {
             if (data.contains("ATIVIDADE") == true){
                 dr = getResources().getDrawable(R.drawable.al_um);
                 btnTag.setTextColor(Color.parseColor("#000000"));
+                bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }else if(data.contains("AGENDA") == true){
                 dr = getResources().getDrawable(R.drawable.al_dois);
                 btnTag.setTextColor(Color.parseColor("#000000"));
+                bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }else if(data.contains("AVISO") == true){
                 dr = getResources().getDrawable(R.drawable.al_tres);
                 btnTag.setTextColor(Color.parseColor("#000000"));
+                bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }else if(data.contains("REUNIÃO") == true || data.contains("EVENTO") == true){
                 dr = getResources().getDrawable(R.drawable.calendar_quatro);
                 btnTag.setTextColor(Color.parseColor("#000000"));
+                bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }else if(data.contains("IMAGEM") == true){
                 dr = getResources().getDrawable(R.drawable.picture);
                 btnTag.setTextColor(Color.parseColor("#000000"));
+                bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }else if(data.contains("SERVIDOR") == true){
                 dr = getResources().getDrawable(R.drawable.database);
                 btnTag.setTextColor(Color.parseColor("#E91E63"));
+                bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }else if(data.contains("ALUNO") == true){
                 dr = getResources().getDrawable(R.drawable.alunos);
                 btnTag.setTextColor(Color.parseColor("#000000"));
+                bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }else{
                 dr = getResources().getDrawable(R.drawable.message);
                 btnTag.setTextColor(Color.parseColor("#000000"));
+                bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }
 
-            Bitmap bitmap = ((BitmapDrawable) dr).getBitmap();
             Drawable d = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 80, 80, true));
             btnTag.setCompoundDrawablesWithIntrinsicBounds( d, null, null, null);
 

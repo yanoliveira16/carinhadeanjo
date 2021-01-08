@@ -112,7 +112,7 @@
         android:layout_marginTop="15dp"
         android:background="@drawable/new_cancel"
         android:onClick="sair_click3"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
