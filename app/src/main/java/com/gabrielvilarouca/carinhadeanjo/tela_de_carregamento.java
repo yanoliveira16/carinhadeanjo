@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class tela_de_carregamento extends AppCompatActivity {
-    public static String nnomePai, nnomeAluno, tturma, nnomeProfe, qual, onClick19, key_feed;
+    public static String nnomePai, nnomeAluno, tturma, nnomeProfe, qual, onClick19, key_feed, tem_coordena;
     public static Integer faltar_no_total;
 
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
@@ -103,6 +103,10 @@ public class tela_de_carregamento extends AppCompatActivity {
                     carregamento3();
                 } else if (nn.contains("P4") == true) {
                     carregamento2();
+                }else if (nn.contains("TODOS") == true) {
+                    tem_coordena = "tem";
+                    Intent intent = new Intent(getBaseContext(), coordena.class);
+                    startActivity(intent);
                 }else{
                     String aa = "ERRO\n Não encontramos suas informações!";
                     final TextView a1 = (TextView) findViewById(R.id.texto_carregamento);

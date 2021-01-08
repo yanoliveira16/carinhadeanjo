@@ -82,30 +82,35 @@ public class tela_da_professora extends AppCompatActivity {
     }
 
     public void sairDaqui(){
-        AlertDialog.Builder builder1 = new AlertDialog.Builder(tela_da_professora.this);
-        builder1.setMessage("TEM CERTEZA QUE DESEJA SAIR?");
-        builder1.setCancelable(true);
+        if (tela_de_carregamento.tem_coordena == "tem"){
+            Intent intent = new Intent(getBaseContext(), coordena.class);
+            startActivity(intent);
+        }else{
+            AlertDialog.Builder builder1 = new AlertDialog.Builder(tela_da_professora.this);
+            builder1.setMessage("TEM CERTEZA QUE DESEJA SAIR?");
+            builder1.setCancelable(true);
 
-        builder1.setPositiveButton(
-                "SAIR",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        FirebaseAuth.getInstance().signOut();
-                        Intent intent = new Intent(getBaseContext(), login_or_register.class);
-                        startActivity(intent);
-                    }
-                });
+            builder1.setPositiveButton(
+                    "SAIR",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            FirebaseAuth.getInstance().signOut();
+                            Intent intent = new Intent(getBaseContext(), login_or_register.class);
+                            startActivity(intent);
+                        }
+                    });
 
-        builder1.setNegativeButton(
-                "CANCELAR",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                });
+            builder1.setNegativeButton(
+                    "CANCELAR",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    });
 
-        AlertDialog alert11 = builder1.create();
-        alert11.show();
+            AlertDialog alert11 = builder1.create();
+            alert11.show();
+        }
     }
 
 
