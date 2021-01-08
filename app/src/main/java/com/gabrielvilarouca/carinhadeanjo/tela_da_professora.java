@@ -6,7 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
@@ -209,30 +215,37 @@ public class tela_da_professora extends AppCompatActivity {
             if (data.contains("ATIVIDADE")){
                 dr = getResources().getDrawable(R.drawable.al_um);
                 btnTag.setTextColor(Color.parseColor("#000000"));
+                bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }else if(data.contains("AGENDA")){
                 dr = getResources().getDrawable(R.drawable.al_dois);
                 btnTag.setTextColor(Color.parseColor("#000000"));
+                bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }else if(data.contains("AVISO")){
                 dr = getResources().getDrawable(R.drawable.al_tres);
                 btnTag.setTextColor(Color.parseColor("#000000"));
+                bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }else if(data.contains("REUNIÃO") || data.contains("EVENTO")){
                 dr = getResources().getDrawable(R.drawable.calendar_quatro);
                 btnTag.setTextColor(Color.parseColor("#000000"));
+                bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }else if(data.contains("IMAGEM")){
                 dr = getResources().getDrawable(R.drawable.picture);
                 btnTag.setTextColor(Color.parseColor("#000000"));
+                bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }else if(data.contains("SERVIDOR")){
                 dr = getResources().getDrawable(R.drawable.database);
                 btnTag.setTextColor(Color.parseColor("#E91E63"));
+                bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }else if(data.contains("ALUNO")){
                 dr = getResources().getDrawable(R.drawable.alunos);
                 btnTag.setTextColor(Color.parseColor("#000000"));
+                bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }else{
                 dr = getResources().getDrawable(R.drawable.message);
                 btnTag.setTextColor(Color.parseColor("#000000"));
+                bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }
 
-            Bitmap bitmap = ((BitmapDrawable) dr).getBitmap();
             Drawable d = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 80, 80, true));
             btnTag.setCompoundDrawablesWithIntrinsicBounds( d, null, null, null);
 
@@ -256,6 +269,28 @@ public class tela_da_professora extends AppCompatActivity {
             gd.setCornerRadius(15);
             scroll.setBackground(gd);
         }
+    }
+
+    public static Bitmap getRoundedCornerBitmap(Bitmap bitmap, int pixels) {
+        Bitmap output = Bitmap.createBitmap(bitmap.getWidth(), bitmap
+                .getHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(output);
+
+        final int color = 0xff424242;
+        final Paint paint = new Paint();
+        final Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
+        final RectF rectF = new RectF(rect);
+        final float roundPx = pixels;
+
+        paint.setAntiAlias(true);
+        canvas.drawARGB(0, 0, 0, 0);
+        paint.setColor(color);
+        canvas.drawRoundRect(rectF, roundPx, roundPx, paint);
+
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+        canvas.drawBitmap(bitmap, rect, rect, paint);
+
+        return output;
     }
 
 
