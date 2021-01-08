@@ -149,11 +149,11 @@ public class chat extends AppCompatActivity {
             });
 
             Drawable dr = getResources().getDrawable(R.drawable.close);
-            if (data.contains("p")){
+            if (data.startsWith("p")){
                 dr = getResources().getDrawable(R.drawable.teacher);
                 btnTag.setTextColor(Color.parseColor("#000000"));
                 bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),400));
-            }else if(data.contains("a")){
+            }else if(data.startsWith("a")){
                 if (tela_de_carregamento.qual == "1"){
                     bitmap = (getRoundedCornerBitmap(tela_do_aluno_prof.my_image,400));
                 }else{
