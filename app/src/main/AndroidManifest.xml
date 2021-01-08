@@ -13,7 +13,8 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view_pdf"></activity>
+        <activity android:name=".coordena"></activity>
+        <activity android:name=".view_pdf" />
         <activity android:name=".chat" />
         <activity android:name=".click_feed" />
         <activity android:name=".enviar_foto">
