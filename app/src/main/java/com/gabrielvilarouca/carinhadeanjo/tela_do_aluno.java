@@ -19,6 +19,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 
 import android.util.Log;
@@ -32,6 +33,8 @@ import android.widget.ListView;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -414,6 +417,13 @@ public class tela_do_aluno extends AppCompatActivity {
     public void chat_click(View view){
         Intent intent = new Intent(getBaseContext(), chat.class);
         startActivity(intent);
+    }
+
+    public void pdf_open(View view){
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setDataAndType(Uri.parse(tela_de_carregamento.url_pdf), "text/html");
+        startActivity(intent);
+        
     }
 
 

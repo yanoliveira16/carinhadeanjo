@@ -252,7 +252,7 @@ public class lista_dois extends AppCompatActivity {
             gd.setShape(GradientDrawable.RECTANGLE);
             gd.setStroke(5, Color.argb(100, 0,0,0)); // border width and color
             //gd.setCornerRadius(80.50f);
-            gd.setCornerRadius(20);
+            gd.setCornerRadius(70);
             scroll.setBackground(gd);
         }
     }

@@ -67,7 +67,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/new_paste"
-        android:onClick="lista_um_click"
+        android:onClick="pdf_open"
         app:layout_constraintEnd_toStartOf="@+id/textView12"
         app:layout_constraintTop_toBottomOf="@+id/turma" />
 
@@ -168,7 +168,7 @@
         android:layout_height="0dp"
         android:alpha="1"
         android:scaleType="centerCrop"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/imageView15"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
