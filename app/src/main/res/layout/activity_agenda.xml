@@ -56,7 +56,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
         android:background="@drawable/new_view"
-        android:onClick="apagar_agenda"
+        android:onClick="visualizar_agenda_turma"
         app:layout_constraintStart_toEndOf="@+id/textView16"
         app:layout_constraintTop_toBottomOf="@+id/nome_aluno_agenda" />
 

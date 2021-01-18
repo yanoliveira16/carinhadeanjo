@@ -51,22 +51,7 @@ public class agenda extends AppCompatActivity {
         TextView a1 = (TextView) findViewById(R.id.nome_aluno_agenda);
         a1.setText(tela_de_alunos.onClick3);
 
-        View aa1 = findViewById(R.id.progressBar4);
-        aa1.setVisibility(View.VISIBLE);
-        View aa2 = findViewById(R.id.imageView25);
-        aa2.setVisibility(View.VISIBLE);
-        View aa3 = findViewById(R.id.button12);
-        aa3.setVisibility(View.INVISIBLE);
-        View aa4 = findViewById(R.id.button13);
-        aa4.setVisibility(View.INVISIBLE);
-        View aa5 = findViewById(R.id.button14);
-        aa5.setVisibility(View.INVISIBLE);
-
-        aa1.setAlpha(1);
-        aa2.setAlpha(1);
-        aa3.setAlpha(0);
-        aa4.setAlpha(0);
-        aa5.setAlpha(0);
+        colocar_carregamento();
 
         buscar_dia();
 
@@ -111,22 +96,7 @@ public class agenda extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nk = dataSnapshot.getValue(String.class);
                 if (nk == null){
-                    View aa1 = findViewById(R.id.progressBar4);
-                    aa1.setVisibility(View.INVISIBLE);
-                    View aa2 = findViewById(R.id.imageView25);
-                    aa2.setVisibility(View.INVISIBLE);
-                    View aa3 = findViewById(R.id.button12);
-                    aa3.setVisibility(View.VISIBLE);
-                    View aa4 = findViewById(R.id.button13);
-                    aa4.setVisibility(View.VISIBLE);
-                    View aa5 = findViewById(R.id.button14);
-                    aa5.setVisibility(View.VISIBLE);
-
-                    aa1.setAlpha(0);
-                    aa2.setAlpha(0);
-                    aa3.setAlpha(1);
-                    aa4.setAlpha(1);
-                    aa5.setAlpha(1);
+                    tirar_carregamento();
 
                    // new AlertDialog.Builder(agenda.this).setMessage("NOVA AGENDA\nLEMBRE-SE DE FAZER A AGENDA DA TURMA!").show();
                 }else if(nk.contains("sim") == true){
@@ -540,24 +510,7 @@ public class agenda extends AppCompatActivity {
 
     public void checar(){
         if(hg1 == true && hg2 == true && hg3 == true && hg4 == true && hg5 == true && hg6 == true && hg7 == true && hg8 == true && hg9 == true && hg10 == true && hg11 == true && hg12 == true){
-            View aa1 = findViewById(R.id.progressBar4);
-            aa1.setVisibility(View.INVISIBLE);
-            View aa2 = findViewById(R.id.imageView25);
-            aa2.setVisibility(View.INVISIBLE);
-            View aa3 = findViewById(R.id.button12);
-            aa3.setVisibility(View.VISIBLE);
-            View aa4 = findViewById(R.id.button13);
-            aa4.setVisibility(View.VISIBLE);
-            View aa5 = findViewById(R.id.button14);
-            aa5.setVisibility(View.VISIBLE);
-
-            aa1.setAlpha(0);
-            aa2.setAlpha(0);
-            aa3.setAlpha(1);
-            aa4.setAlpha(1);
-            aa5.setAlpha(1);
-
-            new AlertDialog.Builder(agenda.this).setMessage("AGENDA TEMPORÁRIA BUSCADA!\nLEMBRE-SE DE FAZER A AGENDA DA TURMA!").show();
+            tirar_carregamento();
         }
     }
 
@@ -1067,16 +1020,7 @@ public class agenda extends AppCompatActivity {
 
     boolean agd_temporaria = false;
     public void salvar_agenda_temporaria(View view){
-        View a1 = findViewById(R.id.progressBar4);
-        a1.setVisibility(View.VISIBLE);
-        View a2 = findViewById(R.id.imageView25);
-        a2.setVisibility(View.VISIBLE);
-        View aa3 = findViewById(R.id.button12);
-        aa3.setVisibility(View.INVISIBLE);
-
-        a1.setAlpha(1);
-        a2.setAlpha(1);
-        aa3.setAlpha(0);
+        colocar_carregamento();
         agd_temporaria = true;
         enviar2();
     }
@@ -1422,13 +1366,236 @@ public class agenda extends AppCompatActivity {
 
 
     public void apagar_agenda(View view){
-        new AlertDialog.Builder(agenda.this).setMessage("APAGAR AGENDA\nRecurso ainda não disponível.").show();
+        colocar_carregamento();
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(agenda.this);
+        builder1.setMessage("ATENÇÃO\nTem certeza que deseja apagar toda agenda?\nIsso não apagará a agenda da turma.\nA agenda temporária será mantida até que uma nova seja enviada." +
+                " Ou seja, se você sair e voltar, a agenda temporária anterior será preenchidda se não tiver uma nova!");
+        builder1.setCancelable(true);
+
+        builder1.setPositiveButton(
+                "Apagar",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Switch a_1 = findViewById(R.id.s);
+                        a_1.setChecked(false);
+                        Switch a_2 = findViewById(R.id.s24);
+                        a_2.setChecked(false);
+                        Switch a_3 = findViewById(R.id.s25);
+                        a_3.setChecked(false);
+                        Switch a_4 = findViewById(R.id.s26);
+                        a_4.setChecked(false);
+                        Switch a_5 = findViewById(R.id.s27);
+                        a_5.setChecked(false);
+                        Switch a_6 = findViewById(R.id.s28);
+                        a_6.setChecked(false);
+                        Switch a_7 = findViewById(R.id.s29);
+                        a_7.setChecked(false);
+                        Switch a_8 = findViewById(R.id.s35);
+                        a_8.setChecked(false);
+                        Switch a_9 = findViewById(R.id.imed);
+                        a_9.setChecked(false);
+                        Switch a_10 = findViewById(R.id.s36);
+                        a_10.setChecked(false);
+                        Switch a_11 = findViewById(R.id.s37);
+                        a_11.setChecked(false);
+                        Switch a_12 = findViewById(R.id.s38);
+                        a_12.setChecked(false);
+                        Switch a_13 = findViewById(R.id.s39);
+                        a_13.setChecked(false);
+                        Switch a_14 = findViewById(R.id.s32);
+                        a_14.setChecked(false);
+                        Switch a_15 = findViewById(R.id.s34);
+                        a_15.setChecked(false);
+                        Switch a_16 = findViewById(R.id.s72);
+                        a_16.setChecked(false);
+                        Switch a_17 = findViewById(R.id.s40);
+                        a_17.setChecked(false);
+                        Switch a_18 = findViewById(R.id.s41);
+                        a_18.setChecked(false);
+                        Switch a_19 = findViewById(R.id.s42);
+                        a_19.setChecked(false);
+                        Switch a_20 = findViewById(R.id.s43);
+                        a_20.setChecked(false);
+                        Switch a_21 = findViewById(R.id.s44);
+                        a_21.setChecked(false);
+                        Switch a_22 = findViewById(R.id.s45);
+                        a_22.setChecked(false);
+                        Switch a_23 = findViewById(R.id.s46);
+                        a_23.setChecked(false);
+                        Switch a_24 = findViewById(R.id.s47);
+                        a_24.setChecked(false);
+                        Switch a_25 = findViewById(R.id.s48);
+                        a_25.setChecked(false);
+                        Switch a_26 = findViewById(R.id.s49);
+                        a_26.setChecked(false);
+                        Switch a_27 = findViewById(R.id.s50);
+                        a_27.setChecked(false);
+                        Switch a_28 = findViewById(R.id.s51);
+                        a_28.setChecked(false);
+                        Switch a_29 = findViewById(R.id.s52);
+                        a_29.setChecked(false);
+                        Switch a_30 = findViewById(R.id.s53);
+                        a_30.setChecked(false);
+                        Switch a_31 = findViewById(R.id.s54);
+                        a_31.setChecked(false);
+                        Switch a_32 = findViewById(R.id.s55);
+                        a_32.setChecked(false);
+                        Switch a_33 = findViewById(R.id.s56);
+                        a_33.setChecked(false);
+                        Switch a_34 = findViewById(R.id.s57);
+                        a_34.setChecked(false);
+                        Switch a_35 = findViewById(R.id.s58);
+                        a_35.setChecked(false);
+                        Switch a_36 = findViewById(R.id.s59);
+                        a_36.setChecked(false);
+                        Switch a_37 = findViewById(R.id.s60);
+                        a_37.setChecked(false);
+                        Switch a_38 = findViewById(R.id.s61);
+                        a_38.setChecked(false);
+                        Switch a_39 = findViewById(R.id.s62);
+                        a_39.setChecked(false);
+                        Switch a_40 = findViewById(R.id.s63);
+                        a_40.setChecked(false);
+                        Switch a_41 = findViewById(R.id.s64);
+                        a_41.setChecked(false);
+                        Switch a_42 = findViewById(R.id.s65);
+                        a_42.setChecked(false);
+                        Switch a_43 = findViewById(R.id.s66);
+                        a_43.setChecked(false);
+                        Switch a_44 = findViewById(R.id.s67);
+                        a_44.setChecked(false);
+                        Switch a_45 = findViewById(R.id.s68);
+                        a_45.setChecked(false);
+                        Switch a_46 = findViewById(R.id.s69);
+                        a_46.setChecked(false);
+                        Switch a_47 = findViewById(R.id.s70);
+                        a_47.setChecked(false);
+                        Switch a_48 = findViewById(R.id.s71);
+                        a_48.setChecked(false);
+
+                        final EditText et1 = (EditText) findViewById(R.id.iremedio2);
+                        et1.setText("");
+                        final EditText et2 = (EditText) findViewById(R.id.ihorario2);
+                        et2.setText("");
+                        final EditText et3 = (EditText) findViewById(R.id.idosagem2);
+                        et3.setText("");
+                        final EditText et4 = (EditText) findViewById(R.id.obs2);
+                        et4.setText("");
+                        tirar_carregamento();
+                    }
+                });
+
+        builder1.setNegativeButton(
+                "Cancelar",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                        tirar_carregamento();
+                        dialog.cancel();
+                    }
+                });
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
     }
 
     public void visualizar_agenda_turma(View view){
-        Intent intent = new Intent(getBaseContext(), agenda_turma.class);
-        startActivity(intent);
+        colocar_carregamento();
+        myRef3.child("atvs").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String t_atvs = dataSnapshot.getValue(String.class);
+                myRef3.child("dever").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        String t_dever = dataSnapshot.getValue(String.class);
+                        myRef3.child("aviso").addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                String t_aviso = dataSnapshot.getValue(String.class);
+                                myRef3.child("data").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        String t_data = dataSnapshot.getValue(String.class);
+                                        AlertDialog.Builder builder1 = new AlertDialog.Builder(agenda.this);
+                                        builder1.setMessage("AGENDA DA TURMA\n" + t_data +"\n\nAtividade de sala:\n" +t_atvs +"\n\nDever de casa:\n" + t_dever +"\n\nAviso:\n" +t_aviso);
+                                        builder1.setCancelable(true);
+
+                                        builder1.setNegativeButton(
+                                                "OK",
+                                                new DialogInterface.OnClickListener() {
+                                                    public void onClick(DialogInterface dialog, int id) {
+                                                        tirar_carregamento();
+                                                        dialog.cancel();
+                                                    }
+                                                });
+
+                                        AlertDialog alert11 = builder1.create();
+                                        alert11.show();
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                    }
+                                });
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                    }
+                });
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
     }
+
+    public void colocar_carregamento(){
+        View aa1 = findViewById(R.id.progressBar4);
+        aa1.setVisibility(View.VISIBLE);
+        View aa2 = findViewById(R.id.imageView25);
+        aa2.setVisibility(View.VISIBLE);
+        View aa3 = findViewById(R.id.button12);
+        aa3.setVisibility(View.INVISIBLE);
+        View aa4 = findViewById(R.id.button13);
+        aa4.setVisibility(View.INVISIBLE);
+        View aa5 = findViewById(R.id.button14);
+        aa5.setVisibility(View.INVISIBLE);
+
+        aa1.setAlpha(1);
+        aa2.setAlpha(1);
+        aa3.setAlpha(0);
+        aa4.setAlpha(0);
+        aa5.setAlpha(0);
+    }
+
+    public void tirar_carregamento(){
+        View aa1 = findViewById(R.id.progressBar4);
+        aa1.setVisibility(View.INVISIBLE);
+        View aa2 = findViewById(R.id.imageView25);
+        aa2.setVisibility(View.INVISIBLE);
+        View aa3 = findViewById(R.id.button12);
+        aa3.setVisibility(View.VISIBLE);
+        View aa4 = findViewById(R.id.button13);
+        aa4.setVisibility(View.VISIBLE);
+        View aa5 = findViewById(R.id.button14);
+        aa5.setVisibility(View.VISIBLE);
+
+        aa1.setAlpha(0);
+        aa2.setAlpha(0);
+        aa3.setAlpha(1);
+        aa4.setAlpha(1);
+        aa5.setAlpha(1);
+    }
+
     }
 
 
