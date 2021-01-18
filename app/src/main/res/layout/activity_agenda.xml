@@ -18,38 +18,64 @@
 
     <Button
         android:id="@+id/button12"
-        android:layout_width="50sp"
-        android:layout_height="50sp"
+        android:layout_width="35sp"
+        android:layout_height="35sp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:background="@drawable/al_um"
-        android:onClick="visualizar_agenda_turma"
+        android:background="@drawable/new_cancel"
+        android:onClick="apagar_agenda"
         app:layout_constraintEnd_toStartOf="@+id/button13"
         app:layout_constraintTop_toBottomOf="@+id/nome_aluno_agenda" />
 
     <Button
         android:id="@+id/button13"
-        android:layout_width="50sp"
-        android:layout_height="50sp"
+        android:layout_width="35sp"
+        android:layout_height="35sp"
         android:layout_marginTop="5dp"
-        android:background="@drawable/database"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/new_save"
         android:onClick="salvar_agenda_temporaria"
+        app:layout_constraintEnd_toStartOf="@+id/textView16"
+        app:layout_constraintTop_toBottomOf="@+id/nome_aluno_agenda" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nome_aluno_agenda" />
+        app:layout_constraintTop_toTopOf="@+id/button13" />
 
     <Button
         android:id="@+id/button14"
-        android:layout_width="50sp"
-        android:layout_height="50sp"
+        android:layout_width="35sp"
+        android:layout_height="35sp"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
-        android:background="@drawable/apagar"
+        android:background="@drawable/new_view"
         android:onClick="apagar_agenda"
-        app:layout_constraintStart_toEndOf="@+id/button13"
+        app:layout_constraintStart_toEndOf="@+id/textView16"
         app:layout_constraintTop_toBottomOf="@+id/nome_aluno_agenda" />
+
+    <Button
+        android:id="@+id/pronto"
+        style="@android:style/Widget.DeviceDefault.Button.Borderless"
+        android:layout_width="35sp"
+        android:layout_height="35sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/new_check"
+        android:fontFamily="@font/quicksand_bold"
+        android:onClick="enviar"
+        android:paddingTop="10sp"
+        android:paddingBottom="10sp"
+        android:textColor="#020080"
+        android:textSize="36sp"
+        app:layout_constraintStart_toEndOf="@+id/button14"
+        app:layout_constraintTop_toTopOf="@+id/textView16" />
 
     <TextView
         android:id="@+id/nome_aluno_agenda"
@@ -1022,19 +1048,6 @@
                 tools:layout_conversion_absoluteWidth="407dp"
                 tools:layout_editor_absoluteX="2dp"
                 tools:layout_editor_absoluteY="1619dp" />
-
-            <Button
-                android:id="@+id/pronto"
-                style="@android:style/Widget.DeviceDefault.Button.Borderless"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
-                android:onClick="enviar"
-                android:paddingTop="10sp"
-                android:paddingBottom="10sp"
-                android:text="PRONTO"
-                android:textColor="#020080"
-                android:textSize="36sp" />
 
         </LinearLayout>
     </ScrollView>
