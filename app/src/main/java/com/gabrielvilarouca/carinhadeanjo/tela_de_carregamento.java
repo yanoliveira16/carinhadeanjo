@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class tela_de_carregamento extends AppCompatActivity {
-    public static String nnomePai, nnomeAluno, tturma, nnomeProfe, qual, onClick19, key_feed, tem_coordena;
+    public static String nnomePai, nnomeAluno, tturma, nnomeProfe, qual, onClick19, key_feed, tem_coordena, pdf_qualfile;
     public static Integer faltar_no_total;
 
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();

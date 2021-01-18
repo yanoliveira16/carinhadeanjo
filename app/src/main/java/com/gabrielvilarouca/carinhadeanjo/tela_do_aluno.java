@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -420,8 +421,48 @@ public class tela_do_aluno extends AppCompatActivity {
     }
 
     public void pdf_open(View view){
-        Intent intent = new Intent(getBaseContext(), view_pdf.class);
-        startActivity(intent);
+        AlertDialog.Builder builderSingle = new AlertDialog.Builder(tela_do_aluno.this);
+        builderSingle.setIcon(R.drawable.new_paste);
+        builderSingle.setTitle("Select One Name:-");
+
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(tela_do_aluno.this, android.R.layout.select_dialog_singlechoice);
+        arrayAdapter.add("Cardápio");
+        arrayAdapter.add("Calendário Escolar");
+        arrayAdapter.add("Tema Gerador");
+        arrayAdapter.add("Rotina Semanal");
+        arrayAdapter.add("Avisos Gerais");
+
+        builderSingle.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        builderSingle.setAdapter(arrayAdapter, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String strName = arrayAdapter.getItem(which);
+                if (strName == "Cardápio"){
+                    tela_de_carregamento.pdf_qualfile = "cardapio.pdf";
+                }else if(strName == "Calendário Escolar"){
+                    if(tela_de_carregamento.tturma == "Fundamental 2" || tela_de_carregamento.tturma == "Fundamental 3" || tela_de_carregamento.tturma == "Fundamental 4" ){
+                        tela_de_carregamento.pdf_qualfile = "calendario2.pdf";
+                    }else{
+                        tela_de_carregamento.pdf_qualfile = "calendario1.pdf";
+                    }
+                }else if(strName == "Tema Gerador"){
+                    tela_de_carregamento.pdf_qualfile = "tema_"+tela_de_carregamento.tturma + ".pdf";
+                }else if(strName == "Rotina Semanal"){
+                    tela_de_carregamento.pdf_qualfile = "rotina"+tela_de_carregamento.tturma + ".pdf";
+                }else if(strName == "Avisos Gerais"){
+                    tela_de_carregamento.pdf_qualfile = "avisos.pdf";
+                }
+                Intent intent = new Intent(getBaseContext(), view_pdf.class);
+                startActivity(intent);
+            }
+        });
+        builderSingle.show();
     }
 
 
