@@ -32,7 +32,7 @@ public class view_pdf extends AppCompatActivity {
         /*WebView webView = findViewById(R.id.webview);
         webView.loadUrl(tela_de_carregamento.url_pdf);*/
 
-        StorageReference ref = FirebaseStorage.getInstance().getReference().child("cardapio.pdf");
+        StorageReference ref = FirebaseStorage.getInstance().getReference().child(tela_de_carregamento.pdf_qualfile);
         try {
             final File localFile = File.createTempFile("application", "pdf");
             ref.getFile(localFile).addOnSuccessListener(new OnSuccessListener< FileDownloadTask.TaskSnapshot >() {

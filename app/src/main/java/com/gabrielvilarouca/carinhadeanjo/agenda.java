@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -67,8 +68,42 @@ public class agenda extends AppCompatActivity {
         aa4.setAlpha(0);
         aa5.setAlpha(0);
 
-        tem_temporaria();
+        buscar_dia();
 
+    }
+
+    public void buscar_dia(){
+        myRef3.child("data").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String nk = dataSnapshot.getValue(String.class);
+                SimpleDateFormat sdf2 = new SimpleDateFormat("dd-MM-yyyy");
+                String currentDateandTime2 = sdf2.format(new Date());
+                if (nk == currentDateandTime2){
+                    tem_temporaria();
+                }else{
+                    AlertDialog.Builder builder1 = new AlertDialog.Builder(agenda.this);
+                    builder1.setMessage("OPA\nVOCÊ NÃO FEZ A AGENDA DA TURMA HOJE!\nFaça a agenda da turma antes de fazer a agenda do aluno!");
+                    builder1.setCancelable(true);
+
+                    builder1.setPositiveButton(
+                            "VOLTAR",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    Intent intent = new Intent(getBaseContext(), lista_um.class);
+                                    startActivity(intent);
+                                }
+                            });
+
+                    AlertDialog alert11 = builder1.create();
+                    alert11.show();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
     }
 
     public void tem_temporaria(){
@@ -94,7 +129,7 @@ public class agenda extends AppCompatActivity {
                     aa4.setAlpha(1);
                     aa5.setAlpha(1);
 
-                    new AlertDialog.Builder(agenda.this).setMessage("NOVA AGENDA\nLEMBRE-SE DE FAZER A AGENDA DA TURMA!").show();
+                   // new AlertDialog.Builder(agenda.this).setMessage("NOVA AGENDA\nLEMBRE-SE DE FAZER A AGENDA DA TURMA!").show();
                 }else if(nk.contains("sim") == true){
                     puxar_temporaria();
                 }
