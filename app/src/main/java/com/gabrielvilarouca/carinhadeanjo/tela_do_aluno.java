@@ -423,7 +423,7 @@ public class tela_do_aluno extends AppCompatActivity {
     public void pdf_open(View view){
         AlertDialog.Builder builderSingle = new AlertDialog.Builder(tela_do_aluno.this);
         builderSingle.setIcon(R.drawable.new_paste);
-        builderSingle.setTitle("Select One Name:-");
+        builderSingle.setTitle("PDF's - Escolha qual deseja vê:");
 
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(tela_do_aluno.this, android.R.layout.select_dialog_singlechoice);
         arrayAdapter.add("Cardápio");
@@ -446,7 +446,7 @@ public class tela_do_aluno extends AppCompatActivity {
                 if (strName == "Cardápio"){
                     tela_de_carregamento.pdf_qualfile = "cardapio.pdf";
                 }else if(strName == "Calendário Escolar"){
-                    if(tela_de_carregamento.tturma == "Fundamental 2" || tela_de_carregamento.tturma == "Fundamental 3" || tela_de_carregamento.tturma == "Fundamental 4" ){
+                    if(tela_de_carregamento.tturma.contains("Fundamental 2") || tela_de_carregamento.tturma.contains("Fundamental 3") || tela_de_carregamento.tturma.contains("Fundamental 4") ){
                         tela_de_carregamento.pdf_qualfile = "calendario2.pdf";
                     }else{
                         tela_de_carregamento.pdf_qualfile = "calendario1.pdf";

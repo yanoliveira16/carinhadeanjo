@@ -10,13 +10,13 @@
         android:id="@+id/imageView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:alpha="0.2"
+        android:alpha="0.1"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/blue_blue" />
+        app:srcCompat="@drawable/roxo_new" />
 
     <TextView
         android:id="@+id/title_chat"
@@ -35,13 +35,13 @@
     <Button
         android:id="@+id/button15"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="5dp"
+        android:layout_width="45sp"
+        android:layout_height="45sp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/send"
         android:onClick="enviar_chat"
-        android:text="ENVIAR"
         android:textColor="#980C02"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"

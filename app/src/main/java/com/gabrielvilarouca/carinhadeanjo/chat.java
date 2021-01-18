@@ -175,9 +175,9 @@ public class chat extends AppCompatActivity {
 
             final TextView a18 = (TextView) findViewById(R.id.title_chat);
             if (tela_de_carregamento.qual == "1"){
-                a18.setText("CHAT BETA\n"+tela_de_alunos.onClick3);
+                a18.setText("CHAT\n"+tela_de_alunos.onClick3);
             }else{
-                a18.setText("CHAT BETA");
+                a18.setText("CHAT COM A PROFESSORA");
             }
         }
     }

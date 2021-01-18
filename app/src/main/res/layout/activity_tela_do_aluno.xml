@@ -110,7 +110,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"
-        android:background="@drawable/new_cancel"
+        android:background="@drawable/new_delete"
         android:onClick="sair_click3"
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
@@ -173,7 +173,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView15"
-        app:srcCompat="@drawable/new_blue" />
+        app:srcCompat="@drawable/imagem_um" />
 
     <ProgressBar
         android:id="@+id/kkkl2"
