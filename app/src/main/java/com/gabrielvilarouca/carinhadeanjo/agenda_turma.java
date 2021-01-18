@@ -16,7 +16,9 @@ import android.widget.TextView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class agenda_turma extends AppCompatActivity {
     public static String onClick4;
@@ -234,9 +236,13 @@ public class agenda_turma extends AppCompatActivity {
 
     public void enviar_servidor(){
 
+        SimpleDateFormat sdf2 = new SimpleDateFormat("dd-MM-yyyy");
+        String currentDateandTime2 = sdf2.format(new Date());
+
         myRef.child("atvs").setValue(atvs);
         myRef.child("dever").setValue(dever);
         myRef.child("aviso").setValue(aviso);
+        myRef.child("data").setValue(currentDateandTime2);
         new AlertDialog.Builder(agenda_turma.this).setMessage("Enviado com sucesso!").show();
         Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
         startActivity(intent);

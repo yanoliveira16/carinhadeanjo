@@ -79,7 +79,7 @@ public class agenda extends AppCompatActivity {
                 String nk = dataSnapshot.getValue(String.class);
                 SimpleDateFormat sdf2 = new SimpleDateFormat("dd-MM-yyyy");
                 String currentDateandTime2 = sdf2.format(new Date());
-                if (nk == currentDateandTime2){
+                if (nk.contains(currentDateandTime2)){
                     tem_temporaria();
                 }else{
                     AlertDialog.Builder builder1 = new AlertDialog.Builder(agenda.this);
