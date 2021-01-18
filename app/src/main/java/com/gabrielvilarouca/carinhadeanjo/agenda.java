@@ -90,8 +90,7 @@ public class agenda extends AppCompatActivity {
                             "VOLTAR",
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
-                                    Intent intent = new Intent(getBaseContext(), lista_um.class);
-                                    startActivity(intent);
+                                    finish();
                                 }
                             });
 

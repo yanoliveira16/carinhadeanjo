@@ -271,6 +271,13 @@ public class lista_um extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed(){
+
+        finish();
+
+    }
+
 }
 
 

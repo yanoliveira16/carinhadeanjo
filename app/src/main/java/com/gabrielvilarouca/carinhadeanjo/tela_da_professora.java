@@ -83,8 +83,7 @@ public class tela_da_professora extends AppCompatActivity {
 
     public void sairDaqui(){
         if (tela_de_carregamento.tem_coordena == "tem"){
-            Intent intent = new Intent(getBaseContext(), coordena.class);
-            startActivity(intent);
+            finish();
         }else{
             AlertDialog.Builder builder1 = new AlertDialog.Builder(tela_da_professora.this);
             builder1.setMessage("TEM CERTEZA QUE DESEJA SAIR?");
@@ -352,6 +351,51 @@ public class tela_da_professora extends AppCompatActivity {
         LinearLayout ll = (LinearLayout) findViewById(R.id.linear_feed);
         ll.removeAllViews();
         new_feed();
+    }
+
+    public void pdf_open(View view){
+        AlertDialog.Builder builderSingle = new AlertDialog.Builder(tela_da_professora.this);
+        builderSingle.setIcon(R.drawable.new_paste);
+        builderSingle.setTitle("PDF's - Escolha qual deseja vê:");
+
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(tela_da_professora.this, android.R.layout.select_dialog_singlechoice);
+        arrayAdapter.add("Cardápio");
+        arrayAdapter.add("Calendário Escolar");
+        arrayAdapter.add("Tema Gerador");
+        arrayAdapter.add("Rotina Semanal");
+        arrayAdapter.add("Avisos Gerais");
+
+        builderSingle.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        builderSingle.setAdapter(arrayAdapter, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String strName = arrayAdapter.getItem(which);
+                if (strName == "Cardápio"){
+                    tela_de_carregamento.pdf_qualfile = "cardapio.pdf";
+                }else if(strName == "Calendário Escolar"){
+                    if(tela_de_carregamento.tturma.contains("Fundamental 2") || tela_de_carregamento.tturma.contains("Fundamental 3") || tela_de_carregamento.tturma.contains("Fundamental 4") ){
+                        tela_de_carregamento.pdf_qualfile = "calendario2.pdf";
+                    }else{
+                        tela_de_carregamento.pdf_qualfile = "calendario1.pdf";
+                    }
+                }else if(strName == "Tema Gerador"){
+                    tela_de_carregamento.pdf_qualfile = "tema_"+tela_de_carregamento.tturma + ".pdf";
+                }else if(strName == "Rotina Semanal"){
+                    tela_de_carregamento.pdf_qualfile = "rotina"+tela_de_carregamento.tturma + ".pdf";
+                }else if(strName == "Avisos Gerais"){
+                    tela_de_carregamento.pdf_qualfile = "avisos.pdf";
+                }
+                Intent intent = new Intent(getBaseContext(), view_pdf.class);
+                startActivity(intent);
+            }
+        });
+        builderSingle.show();
     }
 
 
