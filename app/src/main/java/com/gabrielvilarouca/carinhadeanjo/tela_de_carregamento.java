@@ -38,7 +38,10 @@ public class tela_de_carregamento extends AppCompatActivity {
         View a3=findViewById(R.id.button4);
         a3.setVisibility(View.INVISIBLE);
 
-        SharedPreferences sharedPref1 = getPreferences(Context.MODE_PRIVATE);
+        Log.d("AQUI","CARREGANDO...");
+        primeira_chamada();
+
+       /* SharedPreferences sharedPref1 = getPreferences(Context.MODE_PRIVATE);
         int onde_parou = sharedPref1.getInt("onde", 0);
         if (onde_parou == 1){
             Intent intent = new Intent(getBaseContext(), termos_de_uso.class);
@@ -48,15 +51,18 @@ public class tela_de_carregamento extends AppCompatActivity {
             startActivity(intent);
         }else{
             primeira_chamada();
-        }
+        }*/
 
     }
 
     public void primeira_chamada(){
-        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        /*SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putInt("porra", 0);
-        editor.apply();
+        editor.apply();*/
+
+
+        Log.d("AQUI","CARREGANDO " + login_or_register.id);
 
         final TextView a1 = (TextView) findViewById(R.id.texto_carregamento);
         a1.setText("Estamos verificando suas informações...");

@@ -68,6 +68,13 @@ public class tela_da_professora extends AppCompatActivity {
              final TextView a2 = (TextView) findViewById(R.id.nome_prof);
             a2.setText(tela_de_carregamento.nnomeProfe);
 
+        //String versionCode = String.valueOf(BuildConfig.VERSION_CODE);
+        String versionName = String.valueOf(BuildConfig.VERSION_NAME);
+
+        if (versionName.contains("1.5.2") == false) {
+            new AlertDialog.Builder(tela_da_professora.this).setMessage("Atualize seu aplicativo!").show();
+        }
+
         new_feed();
 
     }

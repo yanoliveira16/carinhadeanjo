@@ -64,7 +64,22 @@ public class agenda extends AppCompatActivity {
                 String nk = dataSnapshot.getValue(String.class);
                 SimpleDateFormat sdf2 = new SimpleDateFormat("dd-MM-yyyy");
                 String currentDateandTime2 = sdf2.format(new Date());
-                if (nk.contains(currentDateandTime2)){
+                if (nk == null){
+                    AlertDialog.Builder builder1 = new AlertDialog.Builder(agenda.this);
+                    builder1.setMessage("OPA\nVOCÊ NÃO FEZ A AGENDA DA TURMA HOJE!\nFaça a agenda da turma antes de fazer a agenda do aluno!");
+                    builder1.setCancelable(true);
+
+                    builder1.setPositiveButton(
+                            "VOLTAR",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    finish();
+                                }
+                            });
+
+                    AlertDialog alert11 = builder1.create();
+                    alert11.show();
+                }else if (nk.contains(currentDateandTime2)){
                     tem_temporaria();
                 }else{
                     AlertDialog.Builder builder1 = new AlertDialog.Builder(agenda.this);
@@ -616,6 +631,7 @@ public class agenda extends AppCompatActivity {
         s27 = findViewById(R.id.s27);
         s28 = findViewById(R.id.s28);
         s29 = findViewById(R.id.s29);
+        s35 = findViewById(R.id.s35);
 
 
         if (s26.isChecked() == true) {
@@ -643,8 +659,10 @@ public class agenda extends AppCompatActivity {
     Switch siDos;
     Switch siHor;
 
-    public void enviar5() {
+    boolean pode_continuar = true;
 
+    public void enviar5() {
+        pode_continuar = true;
         siMed = findViewById(R.id.imed);
 
         if (siMed.isChecked() == true) {
@@ -656,9 +674,12 @@ public class agenda extends AppCompatActivity {
         if (siMed.isChecked() == true) {
             final EditText et2 = (EditText) findViewById(R.id.iremedio2);
             String nn = et2.getText().toString();
-            if (nn.equals(null) == true) {
+            Log.d("AGENDA--","MEDICA 1 " +nn);
+            if (nn.equals(null) == true || nn == null || nn == "" || nn.isEmpty()) {
+                pode_continuar = false;
                 errormsg = "Você precisa escrever ao menos um Rémedio";
                 erro();
+                tirar_carregamento();
             } else {
                 iremedio += nn;
             }
@@ -666,9 +687,11 @@ public class agenda extends AppCompatActivity {
             if (siMed.isChecked() == true) {
                 final EditText et3 = (EditText) findViewById(R.id.idosagem2);
                 String nn2 = et3.getText().toString();
-                if (nn2.equals(null) == true) {
+                if (nn2.equals(null) == true || nn2 == null || nn2 == "" || nn2.isEmpty()) {
+                    pode_continuar = false;
                     errormsg = "Você precisa escrever ao menos uma Dosagem!";
                     erro();
+                    tirar_carregamento();
                 } else {
                     idosagem += nn2;
                 }
@@ -676,9 +699,11 @@ public class agenda extends AppCompatActivity {
                 if (siMed.isChecked() == true) {
                     final EditText et4 = (EditText) findViewById(R.id.ihorario2);
                     String nn3 = et4.getText().toString();
-                    if (nn3.equals(null) == true) {
+                    if (nn3.equals(null) == true || nn3 == null || nn3 == "" || nn3.isEmpty()) {
+                        pode_continuar = false;
                         errormsg = "Você precisa escrever ao menos um Horário!";
                         erro();
+                        tirar_carregamento();
                     } else {
                         ihorario += nn3;
                     }
@@ -686,7 +711,9 @@ public class agenda extends AppCompatActivity {
             }
         }
 
-        enviar6();
+        if (pode_continuar == true){
+            enviar6();
+        }
     }
 
     String apresentou = "";

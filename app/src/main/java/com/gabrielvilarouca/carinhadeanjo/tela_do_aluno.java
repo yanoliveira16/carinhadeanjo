@@ -82,6 +82,13 @@ public class tela_do_aluno extends AppCompatActivity {
         final TextView a2 = (TextView) findViewById(R.id.turma);
         a2.setText(tela_de_carregamento.tturma+" - "+tela_de_carregamento.faltar_no_total+" faltas");
 
+        String versionCode = String.valueOf(BuildConfig.VERSION_CODE);
+        //String versionName = String.valueOf(BuildConfig.VERSION_NAME);
+
+        if (versionCode.contains("12") == false) {
+            new AlertDialog.Builder(tela_do_aluno.this).setMessage("Atualize seu aplicativo!").show();
+        }
+
         new_feed();
 
        // new AlertDialog.Builder(tela_do_aluno.this).setMessage("BETA\nO aplicativo ainda se encontra em desenvolvimento.\nConfira novidades e tutorais em http://escolacarinhadeanjodf.com/aplicativo").show();
@@ -162,7 +169,8 @@ public class tela_do_aluno extends AppCompatActivity {
                 "DEPOIS",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        ImageView myImage = (ImageView) findViewById(R.id.imageView31);
+                        Log.d("AQUI","DEPOIS CLICK");
+                        ImageView myImage = (ImageView) findViewById(R.id.imageView13);
                         Drawable dr = getResources().getDrawable(R.drawable.new_profile);
                         Bitmap bitmap = ((BitmapDrawable) dr).getBitmap();
                         my_image3 = bitmap;
