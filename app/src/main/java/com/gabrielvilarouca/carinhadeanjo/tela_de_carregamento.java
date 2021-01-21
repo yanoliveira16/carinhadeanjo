@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class tela_de_carregamento extends AppCompatActivity {
-    public static String nnomePai, nnomeAluno, tturma, nnomeProfe, qual, onClick19, key_feed, tem_coordena, pdf_qualfile;
+    public static String nnomePai, nnomeAluno, tturma, nnomeProfe, qual, onClick19, key_feed, tem_coordena, pdf_qualfile, versao;
     public static Integer faltar_no_total;
 
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
@@ -38,8 +38,19 @@ public class tela_de_carregamento extends AppCompatActivity {
         View a3=findViewById(R.id.button4);
         a3.setVisibility(View.INVISIBLE);
 
-        Log.d("AQUI","CARREGANDO...");
-        primeira_chamada();
+        myRef4.child("version_andr").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                versao = dataSnapshot.getValue(String.class);
+                primeira_chamada();
+            }
+
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
        /* SharedPreferences sharedPref1 = getPreferences(Context.MODE_PRIVATE);
         int onde_parou = sharedPref1.getInt("onde", 0);

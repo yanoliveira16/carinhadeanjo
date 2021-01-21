@@ -82,11 +82,10 @@ public class tela_do_aluno extends AppCompatActivity {
         final TextView a2 = (TextView) findViewById(R.id.turma);
         a2.setText(tela_de_carregamento.tturma+" - "+tela_de_carregamento.faltar_no_total+" faltas");
 
-        String versionCode = String.valueOf(BuildConfig.VERSION_CODE);
-        //String versionName = String.valueOf(BuildConfig.VERSION_NAME);
+        String versionName = String.valueOf(BuildConfig.VERSION_NAME);
 
-        if (versionCode.contains("12") == false) {
-            new AlertDialog.Builder(tela_do_aluno.this).setMessage("Atualize seu aplicativo!").show();
+        if (versionName.contains(tela_de_carregamento.versao) == false) {
+            new AlertDialog.Builder(tela_do_aluno.this).setMessage("NOVA ATUALIZAÇÃO DISPONÍVEL\n\nRecomendamos que atualize seu aplicativo antes do uso!").show();
         }
 
         new_feed();
