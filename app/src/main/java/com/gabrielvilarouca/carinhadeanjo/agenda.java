@@ -1132,6 +1132,7 @@ public class agenda extends AppCompatActivity {
 
     public void pronto_feed(){
         new AlertDialog.Builder(agenda.this).setMessage("Agenda enviada com sucesso!").show();
+        //finish();
         Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
         startActivity(intent);
     }

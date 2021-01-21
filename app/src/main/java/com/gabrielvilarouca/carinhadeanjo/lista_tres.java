@@ -603,7 +603,7 @@ public class lista_tres extends AppCompatActivity {
 
         public void apagar_click(View view){
             AlertDialog.Builder builder1 = new AlertDialog.Builder(lista_tres.this);
-            builder1.setMessage("ATENÇÃO\n\nTEM CERTEZA DE QUE DESEJA APAGAR ESSA AGENDA?\nEssa ação não poderá ser desfeita!!!");
+            builder1.setMessage("ATENÇÃO\n\nTEM CERTEZA DE QUE DESEJA APAGAR ESSA AGENDA?\nEssa ação não poderá ser desfeita!!!\n\nA agenda seguirá a ordem normalmente!");
             builder1.setCancelable(true);
 
             builder1.setPositiveButton(
@@ -628,14 +628,17 @@ public class lista_tres extends AppCompatActivity {
 
         public void confirma_apagar(){
             AlertDialog.Builder builder1 = new AlertDialog.Builder(lista_tres.this);
-            builder1.setMessage("TEM CERTEZA DE QUE DESEJA APAGAR ESTA AGENDA?\n\nNem o desenvolvedor do aplicativo poderá recuperá-la depois!");
+            builder1.setMessage("TEM CERTEZA DE QUE DESEJA APAGAR ESTA AGENDA?\n\nNem o desenvolvedor do aplicativo poderá recuperá-la depois!\n\nIsso não irá tirar a notificação " +
+                    "no feed do aluno!");
             builder1.setCancelable(true);
 
             builder1.setPositiveButton(
                     "Sim, quero apagar",
                     new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
-
+                            myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).removeValue();
+                            Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
+                            startActivity(intent);
                         }
                     });
 
@@ -649,10 +652,6 @@ public class lista_tres extends AppCompatActivity {
 
             AlertDialog alert11 = builder1.create();
             alert11.show();
-        }
-
-        public void executar_apagar(){
-        
         }
 
     }
