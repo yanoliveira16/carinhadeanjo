@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -58,6 +59,9 @@ public class lista_tres extends AppCompatActivity {
             uid = login_or_register.id;
             v = tela_de_carregamento.nnomeAluno + " \n " + lista_dois.onClick2;
             aaaaa.setText(v);
+            final TextView aa20 = (TextView) findViewById(R.id.apagar_agendaclick);
+            ViewGroup parent = (ViewGroup) aa20.getParent();
+            parent.removeView(aa20);
         }
 
 
@@ -596,5 +600,60 @@ public class lista_tres extends AppCompatActivity {
         View a2=findViewById(R.id.carrega_listatres2);
         a2.setVisibility(View.INVISIBLE);
         }
+
+        public void apagar_click(View view){
+            AlertDialog.Builder builder1 = new AlertDialog.Builder(lista_tres.this);
+            builder1.setMessage("ATENÇÃO\n\nTEM CERTEZA DE QUE DESEJA APAGAR ESSA AGENDA?\nEssa ação não poderá ser desfeita!!!");
+            builder1.setCancelable(true);
+
+            builder1.setPositiveButton(
+                    "apagar",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            confirma_apagar();
+                        }
+                    });
+
+            builder1.setNegativeButton(
+                    "CANCELAR",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    });
+
+            AlertDialog alert11 = builder1.create();
+            alert11.show();
+        }
+
+        public void confirma_apagar(){
+            AlertDialog.Builder builder1 = new AlertDialog.Builder(lista_tres.this);
+            builder1.setMessage("TEM CERTEZA DE QUE DESEJA APAGAR ESTA AGENDA?\n\nNem o desenvolvedor do aplicativo poderá recuperá-la depois!");
+            builder1.setCancelable(true);
+
+            builder1.setPositiveButton(
+                    "Sim, quero apagar",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+
+                        }
+                    });
+
+            builder1.setNegativeButton(
+                    "CANCELAR",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    });
+
+            AlertDialog alert11 = builder1.create();
+            alert11.show();
+        }
+
+        public void executar_apagar(){
+        
+        }
+
     }
 

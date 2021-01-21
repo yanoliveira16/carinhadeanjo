@@ -457,6 +457,16 @@
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
+            <Button
+                android:id="@+id/apagar_agendaclick"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="APAGAR AGENDA"
+                android:textColor="#C30000"
+                android:textSize="24sp" />
+
         </LinearLayout>
     </ScrollView>
 
