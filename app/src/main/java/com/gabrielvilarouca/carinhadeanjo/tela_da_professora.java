@@ -89,8 +89,10 @@ public class tela_da_professora extends AppCompatActivity {
     }
 
     public void sairDaqui(){
-        if (tela_de_carregamento.tem_coordena == "tem"){
-            finish();
+        if (tela_de_carregamento.tem_coordena.contains("tem")){
+            //finish();
+            Intent intent = new Intent(getBaseContext(), coordena.class);
+            startActivity(intent);
         }else{
             AlertDialog.Builder builder1 = new AlertDialog.Builder(tela_da_professora.this);
             builder1.setMessage("TEM CERTEZA QUE DESEJA SAIR?");
