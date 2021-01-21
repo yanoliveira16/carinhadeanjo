@@ -122,6 +122,7 @@ public class tela_de_carregamento extends AppCompatActivity {
                     carregamento2();
                 }else if (nn.contains("TODOS") == true) {
                     tem_coordena = "tem";
+                    qual = "1";
                     Intent intent = new Intent(getBaseContext(), coordena.class);
                     startActivity(intent);
                 }else{

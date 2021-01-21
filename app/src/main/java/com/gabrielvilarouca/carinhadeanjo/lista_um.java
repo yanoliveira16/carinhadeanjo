@@ -57,6 +57,7 @@ public class lista_um extends AppCompatActivity {
         View aa=findViewById(R.id.add);
         final TextView a1 = (TextView) findViewById(R.id.aluno_agenda);
         String onde_pegar;
+        Log.d("PAPAPAPAPPA","\n\n\n\n\n\n\n\n"+ tela_de_carregamento.qual +"\n\n\n\n\n\n\n\n\n\n");
         if (tela_de_carregamento.qual == "1"){
             a1.setText("AGENDA\n"+tela_de_alunos.onClick3);
             ImageView myImage = (ImageView) findViewById(R.id.imageView18);
