@@ -34,6 +34,7 @@ public class lista_tres extends AppCompatActivity {
     String kgh;
     boolean s1 = false;
     boolean s2 = false;
+    boolean tem_afalta = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -159,6 +160,9 @@ public class lista_tres extends AppCompatActivity {
                 String nn = dataSnapshot.getValue(String.class);
                 final TextView a1 = (TextView) findViewById(R.id.falta);
                 a1.setText(nn);
+                if(nn.contains("FALTA")){
+                    tem_afalta = true;
+                }
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -636,9 +640,27 @@ public class lista_tres extends AppCompatActivity {
                     "Sim, quero apagar",
                     new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
-                            myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).removeValue();
-                            Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
-                            startActivity(intent);
+                            if (tem_afalta == true){
+                                myRef2.child(uid).child("faltas").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        int nn = dataSnapshot.getValue(Integer.class);
+                                        nn -= 1;
+                                        myRef2.child(uid).child("faltas").setValue(nn);
+                                        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).removeValue();
+                                        Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
+                                        startActivity(intent);
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                    }
+                                });
+                            }else{
+                                myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).removeValue();
+                                Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
+                                startActivity(intent);
+                            }
                         }
                     });
 
