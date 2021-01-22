@@ -430,7 +430,7 @@ public class tela_do_aluno extends AppCompatActivity {
     public void pdf_open(View view){
         AlertDialog.Builder builderSingle = new AlertDialog.Builder(tela_do_aluno.this);
         builderSingle.setIcon(R.drawable.new_paste);
-        builderSingle.setTitle("PDF's - Escolha qual deseja vê:");
+        builderSingle.setTitle("PDF's - Escolha qual deseja visualizar:");
 
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(tela_do_aluno.this, android.R.layout.select_dialog_singlechoice);
         arrayAdapter.add("Cardápio");
