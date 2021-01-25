@@ -3,9 +3,12 @@ package com.gabrielvilarouca.carinhadeanjo;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActivityManager;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -76,6 +79,13 @@ public class tela_da_professora extends AppCompatActivity {
         }
 
         new_feed();
+
+        ActivityManager.MemoryInfo memoryInfo = getAvailableMemory();
+        if (!memoryInfo.lowMemory) {
+            new AlertDialog.Builder(tela_da_professora.this).setMessage("MODO ECONOMIA DE MEMÓRIA ATIVADA (BETA)\nSeu aparelho se encontra " +
+                    "com pouca memória RAM. Recomendamos que feche seus aplicativos abertos antes de continuar.\nLembre-se de que ainda estamos " +
+                    "otimizando o aplicativo!").show();
+        }
 
     }
 
@@ -224,43 +234,49 @@ public class tela_da_professora extends AppCompatActivity {
                 }
             });
 
-            Drawable dr = getResources().getDrawable(R.drawable.close);
-            if (data.contains("ATIVIDADE")){
-                dr = getResources().getDrawable(R.drawable.al_um);
-                btnTag.setTextColor(Color.parseColor("#000000"));
-                bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
-            }else if(data.contains("AGENDA")){
-                dr = getResources().getDrawable(R.drawable.al_dois);
-                btnTag.setTextColor(Color.parseColor("#000000"));
-                bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
-            }else if(data.contains("AVISO")){
-                dr = getResources().getDrawable(R.drawable.al_tres);
-                btnTag.setTextColor(Color.parseColor("#000000"));
-                bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
-            }else if(data.contains("REUNIÃO") || data.contains("EVENTO")){
-                dr = getResources().getDrawable(R.drawable.calendar_quatro);
-                btnTag.setTextColor(Color.parseColor("#000000"));
-                bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
-            }else if(data.contains("IMAGEM")){
-                dr = getResources().getDrawable(R.drawable.picture);
-                btnTag.setTextColor(Color.parseColor("#000000"));
-                bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
-            }else if(data.contains("SERVIDOR")){
-                dr = getResources().getDrawable(R.drawable.database);
-                btnTag.setTextColor(Color.parseColor("#E91E63"));
-                bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
-            }else if(data.contains("ALUNO")){
-                dr = getResources().getDrawable(R.drawable.alunos);
-                btnTag.setTextColor(Color.parseColor("#000000"));
-                bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
+            ActivityManager.MemoryInfo memoryInfo = getAvailableMemory();
+            if (!memoryInfo.lowMemory) {
             }else{
-                dr = getResources().getDrawable(R.drawable.message);
-                btnTag.setTextColor(Color.parseColor("#000000"));
-                bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
+                Drawable dr = getResources().getDrawable(R.drawable.close);
+                if (data.contains("ATIVIDADE")){
+                    dr = getResources().getDrawable(R.drawable.al_um);
+                    btnTag.setTextColor(Color.parseColor("#000000"));
+                    bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
+                }else if(data.contains("AGENDA")){
+                    dr = getResources().getDrawable(R.drawable.al_dois);
+                    btnTag.setTextColor(Color.parseColor("#000000"));
+                    bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
+                }else if(data.contains("AVISO")){
+                    dr = getResources().getDrawable(R.drawable.al_tres);
+                    btnTag.setTextColor(Color.parseColor("#000000"));
+                    bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
+                }else if(data.contains("REUNIÃO") || data.contains("EVENTO")){
+                    dr = getResources().getDrawable(R.drawable.calendar_quatro);
+                    btnTag.setTextColor(Color.parseColor("#000000"));
+                    bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
+                }else if(data.contains("IMAGEM")){
+                    dr = getResources().getDrawable(R.drawable.picture);
+                    btnTag.setTextColor(Color.parseColor("#000000"));
+                    bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
+                }else if(data.contains("SERVIDOR")){
+                    dr = getResources().getDrawable(R.drawable.database);
+                    btnTag.setTextColor(Color.parseColor("#E91E63"));
+                    bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
+                }else if(data.contains("ALUNO")){
+                    dr = getResources().getDrawable(R.drawable.alunos);
+                    btnTag.setTextColor(Color.parseColor("#000000"));
+                    bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
+                }else{
+                    dr = getResources().getDrawable(R.drawable.message);
+                    btnTag.setTextColor(Color.parseColor("#000000"));
+                    bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
+                }
+
+                Drawable d = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 80, 80, true));
+                btnTag.setCompoundDrawablesWithIntrinsicBounds( d, null, null, null);
             }
 
-            Drawable d = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 80, 80, true));
-            btnTag.setCompoundDrawablesWithIntrinsicBounds( d, null, null, null);
+
 
             btnTag.setBackgroundResource(0);
             btnTag.setGravity(Gravity.LEFT | Gravity.CENTER);
@@ -304,6 +320,14 @@ public class tela_da_professora extends AppCompatActivity {
         canvas.drawBitmap(bitmap, rect, rect, paint);
 
         return output;
+    }
+
+    // Get a MemoryInfo object for the device's current memory status.
+    private ActivityManager.MemoryInfo getAvailableMemory() {
+        ActivityManager activityManager = (ActivityManager) this.getSystemService(ACTIVITY_SERVICE);
+        ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
+        activityManager.getMemoryInfo(memoryInfo);
+        return memoryInfo;
     }
 
 

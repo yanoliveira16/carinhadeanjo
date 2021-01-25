@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActivityManager;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -55,8 +57,15 @@ public class tela_do_aluno_prof extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 id_aluno = dataSnapshot.getValue(String.class);
+                ActivityManager.MemoryInfo memoryInfo = getAvailableMemory();
                 TextView a1 = (TextView) findViewById(R.id.turma3);
-                ppp();
+                if (!memoryInfo.lowMemory){
+                    new AlertDialog.Builder(tela_do_aluno_prof.this).setMessage("MODO ECONOMIA DE MEMÓRIA ATIVADA (BETA)\nSeu aparelho se encontra " +
+                            "com pouca memória RAM. Recomendamos que feche seus aplicativos abertos antes de continuar.\nLembre-se de que ainda estamos " +
+                            "otimizando o aplicativo!").show();
+                }else{
+                    ppp();
+                }
                 myRef2.child(id_aluno).child("faltas").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
@@ -96,6 +105,7 @@ public class tela_do_aluno_prof extends AppCompatActivity {
                 public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                     my_image = BitmapFactory.decodeFile(localFile.getAbsolutePath());
                     ImageView myImage = (ImageView) findViewById(R.id.imageView31);
+                    ActivityManager.MemoryInfo memoryInfo = getAvailableMemory();
                     if (myImage != null){
                         myImage.setImageBitmap(getRoundedCornerBitmap(my_image,400));
                     }else{
@@ -112,7 +122,6 @@ public class tela_do_aluno_prof extends AppCompatActivity {
                 public void onFailure(@NonNull Exception e) {
                     //Toast.makeText(tela_do_aluno_prof.this, e.getMessage(), Toast.LENGTH_LONG).show();
                     new AlertDialog.Builder(tela_do_aluno_prof.this).setMessage("ALUNO SEM FOTO!").show();
-
                     ImageView myImage = (ImageView) findViewById(R.id.imageView31);
                     Drawable dr = getResources().getDrawable(R.drawable.new_profile);
                     Bitmap bitmap = ((BitmapDrawable) dr).getBitmap();
@@ -129,6 +138,14 @@ public class tela_do_aluno_prof extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    // Get a MemoryInfo object for the device's current memory status.
+    private ActivityManager.MemoryInfo getAvailableMemory() {
+        ActivityManager activityManager = (ActivityManager) this.getSystemService(ACTIVITY_SERVICE);
+        ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
+        activityManager.getMemoryInfo(memoryInfo);
+        return memoryInfo;
     }
 
     public static Bitmap getRoundedCornerBitmap(Bitmap bitmap, int pixels) {
