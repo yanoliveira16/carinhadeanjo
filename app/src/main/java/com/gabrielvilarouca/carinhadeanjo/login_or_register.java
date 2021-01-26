@@ -22,34 +22,27 @@ import com.google.firebase.database.ValueEventListener;
 
 public class login_or_register extends AppCompatActivity {
 
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("P5").child("onde_parou");
-
-    public static String id;
+    public static String id, versao;
+    DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+    DatabaseReference myRef4 = database.child("P5");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_or_register);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        Log.d("USER", "\n\n\n\n\n\n\naqui" + user.getUid());
         if (user != null) {
             id=user.getUid();
-            myRef.child(id).addListenerForSingleValueEvent(new ValueEventListener() {
+            myRef4.child("version_andr").addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
-
-                    String nn = dataSnapshot.getValue(String.class);
-                    if(nn == null){
-                        chamar_carregar();
-                    }
-                    else if (nn == "01") {
-                        chamar_termo();
-                    } else if (nn == "02") {
-                        chamar_foto();
-                    } else {
-                        chamar_carregar();
-                    }
+                    versao = dataSnapshot.getValue(String.class);
+                    Log.d("VERSION", "\n\n\n\n\n\n\naqui" + versao);
+                    Intent intent = new Intent(getBaseContext(), tela_de_carregamento.class);
+                    startActivity(intent);
                 }
+
 
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
@@ -68,19 +61,6 @@ public class login_or_register extends AppCompatActivity {
         }
     }
 
-    public void chamar_termo(){
-        Intent intent = new Intent(getBaseContext(), termos_de_uso.class);
-        startActivity(intent);
-    }
-    public void chamar_foto(){
-        Intent intent = new Intent(getBaseContext(), enviar_foto.class);
-        startActivity(intent);
-    }
-    public void chamar_carregar(){
-        Intent intent = new Intent(getBaseContext(), tela_de_carregamento.class);
-        startActivity(intent);
-    }
-
     public void registrar_click(View view){
         Intent intent = new Intent(getBaseContext(), registrar.class);
         startActivity(intent);
@@ -94,7 +74,7 @@ public class login_or_register extends AppCompatActivity {
     public void onBackPressed(){
         AlertDialog alertDialog = new AlertDialog.Builder(login_or_register.this).create();
         alertDialog.setTitle("OPA");
-        alertDialog.setMessage("Você não pode voltar pois estamos fazendo o processamento dos seus dados");
+        alertDialog.setMessage("Você não pode voltar!");
         alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Ok",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {

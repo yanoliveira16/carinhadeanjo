@@ -59,13 +59,7 @@ public class tela_do_aluno_prof extends AppCompatActivity {
                 id_aluno = dataSnapshot.getValue(String.class);
                 ActivityManager.MemoryInfo memoryInfo = getAvailableMemory();
                 TextView a1 = (TextView) findViewById(R.id.turma3);
-                if (!memoryInfo.lowMemory){
-                    new AlertDialog.Builder(tela_do_aluno_prof.this).setMessage("MODO ECONOMIA DE MEMÓRIA ATIVADA (BETA)\nSeu aparelho se encontra " +
-                            "com pouca memória RAM. Recomendamos que feche seus aplicativos abertos antes de continuar.\nLembre-se de que ainda estamos " +
-                            "otimizando o aplicativo!").show();
-                }else{
-                    ppp();
-                }
+                ppp();
                 myRef2.child(id_aluno).child("faltas").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {

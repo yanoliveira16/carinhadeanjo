@@ -84,7 +84,7 @@ public class tela_do_aluno extends AppCompatActivity {
 
         String versionName = String.valueOf(BuildConfig.VERSION_NAME);
 
-        if (versionName.contains(tela_de_carregamento.versao) == false) {
+        if (versionName.contains(login_or_register.versao) == false) {
             new AlertDialog.Builder(tela_do_aluno.this).setMessage("NOVA ATUALIZAÇÃO DISPONÍVEL\n\nRecomendamos que atualize seu aplicativo antes do uso!").show();
         }
 

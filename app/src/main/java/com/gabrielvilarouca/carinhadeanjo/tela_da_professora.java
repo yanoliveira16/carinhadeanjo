@@ -74,18 +74,11 @@ public class tela_da_professora extends AppCompatActivity {
         //String versionCode = String.valueOf(BuildConfig.VERSION_CODE);
         String versionName = String.valueOf(BuildConfig.VERSION_NAME);
 
-        if (versionName.contains(tela_de_carregamento.versao) == false) {
+        if (versionName.contains(login_or_register.versao) == false) {
             new AlertDialog.Builder(tela_da_professora.this).setMessage("NOVA ATUALIZAÇÃO DISPONÍVEL\n\nRecomendamos que atualize seu aplicativo antes do uso!").show();
         }
 
         new_feed();
-
-        ActivityManager.MemoryInfo memoryInfo = getAvailableMemory();
-        if (!memoryInfo.lowMemory) {
-            new AlertDialog.Builder(tela_da_professora.this).setMessage("MODO ECONOMIA DE MEMÓRIA ATIVADA (BETA)\nSeu aparelho se encontra " +
-                    "com pouca memória RAM. Recomendamos que feche seus aplicativos abertos antes de continuar.\nLembre-se de que ainda estamos " +
-                    "otimizando o aplicativo!").show();
-        }
 
     }
 
@@ -234,9 +227,6 @@ public class tela_da_professora extends AppCompatActivity {
                 }
             });
 
-            ActivityManager.MemoryInfo memoryInfo = getAvailableMemory();
-            if (!memoryInfo.lowMemory) {
-            }else{
                 Drawable dr = getResources().getDrawable(R.drawable.close);
                 if (data.contains("ATIVIDADE")){
                     dr = getResources().getDrawable(R.drawable.al_um);
@@ -274,7 +264,6 @@ public class tela_da_professora extends AppCompatActivity {
 
                 Drawable d = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 80, 80, true));
                 btnTag.setCompoundDrawablesWithIntrinsicBounds( d, null, null, null);
-            }
 
 
 
