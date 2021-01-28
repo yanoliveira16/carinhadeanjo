@@ -74,7 +74,7 @@ public class tela_da_professora extends AppCompatActivity {
         //String versionCode = String.valueOf(BuildConfig.VERSION_CODE);
         String versionName = String.valueOf(BuildConfig.VERSION_NAME);
 
-        if (versionName.contains(login_or_register.versao) == false) {
+        if (versionName.contains(tela_de_carregamento.versao) == false) {
             new AlertDialog.Builder(tela_da_professora.this).setMessage("NOVA ATUALIZAÇÃO DISPONÍVEL\n\nRecomendamos que atualize seu aplicativo antes do uso!").show();
         }
 

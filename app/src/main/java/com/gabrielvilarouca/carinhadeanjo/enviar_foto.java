@@ -73,6 +73,8 @@ public class enviar_foto extends AppCompatActivity {
 
     private static final int PICK_IMAGE = 1;
     Uri imageUri;
+    String caminho;
+    String msg_Caminho;
 
     CropView cropView;
 
@@ -191,9 +193,33 @@ public class enviar_foto extends AppCompatActivity {
         cropView.setImageDrawable(new BitmapDrawable(getResources(),tempBitmap));
 
         if (faces.size() < 1) {
-            new AlertDialog.Builder(this).setMessage("ERRO\nNenhum rosto detectado.").show();
             final TextView a2 = (TextView) findViewById(R.id.text_informativo);
             a2.setText("ERRO\nNenhum rosto foi detectado.");
+
+            AlertDialog.Builder builder1 = new AlertDialog.Builder(enviar_foto.this);
+            builder1.setMessage("ERRO\nNenhum rosto foi detectado\n\nDeseja enviar ao suporte?\nIsso ajudará em futuras atualizações!");
+            builder1.setCancelable(true);
+
+            builder1.setPositiveButton(
+                    "Enviar erro",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            caminho = "fotos_com_erro/" +login_or_register.id +".png";
+                            msg_Caminho = "PRONTO\nCriamos e enviamos um relatório de erro.";
+                            enviar_servidor();
+                        }
+                    });
+
+            builder1.setNegativeButton(
+                    "Tentar novamente",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    });
+
+            AlertDialog alert11 = builder1.create();
+            alert11.show();
 
             View b10 = findViewById(R.id.button10);
             b10.setVisibility(View.VISIBLE);
@@ -209,24 +235,67 @@ public class enviar_foto extends AppCompatActivity {
            // new AlertDialog.Builder(this).setMessage("Rosto detectado\nQue coisa lindaaaa.").show();
             final TextView a2 = (TextView) findViewById(R.id.text_informativo);
             a2.setText("SEGUNDA PARTE\nEnviando foto ao servidor...");
+            caminho = "fotos_de_perfil/"+login_or_register.id +".png";
+            msg_Caminho = "PRONTO\nVocê verá sua foto assim que abrir o aplicativo novamente!";
             enviar_servidor();
         }
         else if (faces.size() > 1) {
             //new AlertDialog.Builder(this).setMessage("Mais de um rosto foi detectado.").show();
+            AlertDialog.Builder builder1 = new AlertDialog.Builder(enviar_foto.this);
+            builder1.setMessage("ERRO\nMais de um rosto foi detectado na foto!\n\nDeseja enviar ao suporte?\nIsso ajudará em futuras atualizações!");
+            builder1.setCancelable(true);
+
+            builder1.setPositiveButton(
+                    "Enviar erro",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            caminho = "fotos_com_erro/" +login_or_register.id +".png";
+                            msg_Caminho = "PRONTO\nCriamos e enviamos um relatório de erro.";
+                            enviar_servidor();
+                        }
+                    });
+
+            builder1.setNegativeButton(
+                    "Tentar novamente",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    });
+
+            AlertDialog alert11 = builder1.create();
+            alert11.show();
         }
     }
     private StorageReference mStorageRef;
     public void enviar_servidor(){
         mStorageRef = FirebaseStorage.getInstance().getReference();
-        StorageReference riversRef = mStorageRef.child("fotos_de_perfil/"+login_or_register.id+".png");
+        StorageReference riversRef = mStorageRef.child(caminho);
         riversRef.putFile(imageUri)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         // Get a URL to the uploaded content
                         //Uri downloadUrl = taskSnapshot.getDownloadUrl();
-                        Intent intent = new Intent(getBaseContext(), tela_de_carregamento.class);
-                        startActivity(intent);
+                        //Intent intent = new Intent(getBaseContext(), tela_de_carregamento.class);
+                        //startActivity(intent);
+                        AlertDialog.Builder builder1 = new AlertDialog.Builder(enviar_foto.this);
+                        builder1.setMessage(msg_Caminho + "\n\nAgora, recomendamos que reinicie o aplicativo!");
+                        builder1.setCancelable(true);
+
+                        builder1.setPositiveButton(
+                                "Ok",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        //finish();
+                                       // Intent intent = new Intent(getBaseContext(), tela_de_carregamento.class);
+                                        //startActivity(intent);
+                                        dialog.cancel();
+                                    }
+                                });
+
+                        AlertDialog alert11 = builder1.create();
+                        alert11.show();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

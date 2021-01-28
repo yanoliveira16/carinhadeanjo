@@ -84,7 +84,7 @@ public class tela_do_aluno extends AppCompatActivity {
 
         String versionName = String.valueOf(BuildConfig.VERSION_NAME);
 
-        if (versionName.contains(login_or_register.versao) == false) {
+        if (!versionName.contains(tela_de_carregamento.versao)) {
             new AlertDialog.Builder(tela_do_aluno.this).setMessage("NOVA ATUALIZAÇÃO DISPONÍVEL\n\nRecomendamos que atualize seu aplicativo antes do uso!").show();
         }
 
@@ -370,7 +370,7 @@ public class tela_do_aluno extends AppCompatActivity {
             gd.setShape(GradientDrawable.RECTANGLE);
             gd.setStroke(5, Color.argb(100, 0,0,0)); // border width and color
             //gd.setCornerRadius(80.50f);
-            gd.setCornerRadius(70);
+            gd.setCornerRadius(60);
             scroll.setBackground(gd);
         }
         if (carregado == false) {

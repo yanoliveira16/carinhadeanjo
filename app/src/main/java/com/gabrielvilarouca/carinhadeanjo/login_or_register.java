@@ -22,33 +22,18 @@ import com.google.firebase.database.ValueEventListener;
 
 public class login_or_register extends AppCompatActivity {
 
-    public static String id, versao;
-    DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-    DatabaseReference myRef4 = database.child("P5");
+    public static String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_or_register);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        Log.d("USER", "\n\n\n\n\n\n\naqui" + user.getUid());
+        //Log.d("USER", "\n\n\n\n\n\n\naqui" + user.getUid());
         if (user != null) {
             id=user.getUid();
-            myRef4.child("version_andr").addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    versao = dataSnapshot.getValue(String.class);
-                    Log.d("VERSION", "\n\n\n\n\n\n\naqui" + versao);
-                    Intent intent = new Intent(getBaseContext(), tela_de_carregamento.class);
-                    startActivity(intent);
-                }
-
-
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-
-                }
-            });
+            Intent intent = new Intent(getBaseContext(), tela_de_carregamento.class);
+            startActivity(intent);
         }else{
             View a1=findViewById(R.id.progressBar2);
             a1.setVisibility(View.INVISIBLE);

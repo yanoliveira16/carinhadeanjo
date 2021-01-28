@@ -34,11 +34,12 @@
         style="@android:style/Widget.DeviceDefault.Button.Borderless"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:fontFamily="@font/quicksand_bold"
         android:onClick="entra_click"
         android:text="Entrar"
         android:textColor="#5856D6"
-        android:textSize="24sp"
+        android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
