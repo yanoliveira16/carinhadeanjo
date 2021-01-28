@@ -280,14 +280,14 @@ public class enviar_foto extends AppCompatActivity {
                         //Intent intent = new Intent(getBaseContext(), tela_de_carregamento.class);
                         //startActivity(intent);
                         AlertDialog.Builder builder1 = new AlertDialog.Builder(enviar_foto.this);
-                        builder1.setMessage(msg_Caminho + "\n\nAgora, recomendamos que reinicie o aplicativo!");
+                        builder1.setMessage(msg_Caminho);
                         builder1.setCancelable(true);
 
                         builder1.setPositiveButton(
                                 "Ok",
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int id) {
-                                        //finish();
+                                        finish();
                                        // Intent intent = new Intent(getBaseContext(), tela_de_carregamento.class);
                                         //startActivity(intent);
                                         dialog.cancel();

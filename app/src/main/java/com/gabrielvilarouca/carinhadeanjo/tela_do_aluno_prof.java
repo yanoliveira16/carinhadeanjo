@@ -41,6 +41,8 @@ import java.io.IOException;
 public class tela_do_aluno_prof extends AppCompatActivity {
 
     public static String id_aluno;
+    String email_alunoprofe;
+    String senha_alunoprofe;
 
     private StorageReference mStorageRef;
 
@@ -60,6 +62,7 @@ public class tela_do_aluno_prof extends AppCompatActivity {
                 ActivityManager.MemoryInfo memoryInfo = getAvailableMemory();
                 TextView a1 = (TextView) findViewById(R.id.turma3);
                 ppp();
+                pegar_info_emailsenha();
                 myRef2.child(id_aluno).child("faltas").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
@@ -87,6 +90,27 @@ public class tela_do_aluno_prof extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void pegar_info_emailsenha(){
+        myRef2.child(id_aluno).child("email").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                email_alunoprofe = dataSnapshot.getValue(String.class);
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+        myRef2.child(id_aluno).child("senha").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                senha_alunoprofe = dataSnapshot.getValue(String.class);
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
     }
 
     public static Bitmap my_image;
@@ -183,6 +207,9 @@ public class tela_do_aluno_prof extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void ve_emailesenha(View view){
+        new AlertDialog.Builder(tela_do_aluno_prof.this).setMessage("INFORMAÇÕES DO ALUNO\n\nEmail: " +email_alunoprofe + "\nSenha: " +senha_alunoprofe).show();
+    }
 
 
 }

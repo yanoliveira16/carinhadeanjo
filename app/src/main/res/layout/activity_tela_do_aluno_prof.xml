@@ -11,8 +11,8 @@
         style="@android:style/Widget.DeviceDefault.Button.Borderless"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/new_check"
         android:onClick="enviar"
@@ -36,13 +36,26 @@
         style="@android:style/Widget.DeviceDefault.Button.Borderless"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/new_folder"
         android:onClick="agenda_click"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button5" />
+
+    <Button
+        android:id="@+id/button24"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/new_view"
+        android:onClick="ve_emailesenha"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/turma3"

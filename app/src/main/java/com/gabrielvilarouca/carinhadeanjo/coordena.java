@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -103,7 +104,7 @@ public class coordena extends AppCompatActivity {
             gd.setShape(GradientDrawable.RECTANGLE);
             gd.setStroke(5, Color.argb(100, 0,0,0)); // border width and color
             //gd.setCornerRadius(80.50f);
-            gd.setCornerRadius(0);
+            gd.setCornerRadius(40);
             scroll.setBackground(gd);
         }
     }
@@ -142,6 +143,11 @@ public class coordena extends AppCompatActivity {
 
         AlertDialog alert11 = builder1.create();
         alert11.show();
+    }
+
+    public void add_alunos(View view){
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://gabrielvilarouca.com/adm_carinhadeanjo"));
+        startActivity(browserIntent);
     }
 
 }
