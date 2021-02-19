@@ -386,6 +386,7 @@ public class tela_da_professora extends AppCompatActivity {
         arrayAdapter.add("Tema Gerador");
         arrayAdapter.add("Rotina Semanal");
         arrayAdapter.add("Avisos Gerais");
+        arrayAdapter.add("Avisos da Turma");
 
         builderSingle.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
             @Override
@@ -409,9 +410,11 @@ public class tela_da_professora extends AppCompatActivity {
                 }else if(strName == "Tema Gerador"){
                     tela_de_carregamento.pdf_qualfile = "tema_"+tela_de_carregamento.tturma + ".pdf";
                 }else if(strName == "Rotina Semanal"){
-                    tela_de_carregamento.pdf_qualfile = "rotina"+tela_de_carregamento.tturma + ".pdf";
+                    tela_de_carregamento.pdf_qualfile = "rotina_"+tela_de_carregamento.tturma + ".pdf";
                 }else if(strName == "Avisos Gerais"){
                     tela_de_carregamento.pdf_qualfile = "avisos.pdf";
+                }else if(strName == "Avisos da Turma"){
+                    tela_de_carregamento.pdf_qualfile = "avisos_"+tela_de_carregamento.tturma + ".pdf";
                 }
                 Intent intent = new Intent(getBaseContext(), view_pdf.class);
                 startActivity(intent);
