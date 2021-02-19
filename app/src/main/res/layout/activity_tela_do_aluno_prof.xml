@@ -10,6 +10,7 @@
         android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
+        android:layout_marginBottom="5dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="@+id/hgf1"
         app:layout_constraintEnd_toEndOf="parent"

@@ -208,7 +208,7 @@ public class tela_do_aluno_prof extends AppCompatActivity {
     }
 
     public void ve_emailesenha(View view){
-        new AlertDialog.Builder(tela_do_aluno_prof.this).setMessage("INFORMAÇÕES DO ALUNO\n\nEMAIL:\n" +email_alunoprofe + "\nSENHA:\n" +senha_alunoprofe).show();
+        new AlertDialog.Builder(tela_do_aluno_prof.this).setMessage("INFORMAÇÕES DO ALUNO\n\nID:\n"+id_aluno +"\n\nEMAIL:\n" +email_alunoprofe + "\n\nSENHA:\n" +senha_alunoprofe).show();
     }
 
 
