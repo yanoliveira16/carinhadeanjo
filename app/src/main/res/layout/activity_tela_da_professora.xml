@@ -8,11 +8,11 @@
 
     <Button
         android:id="@+id/sair6"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
         android:background="@drawable/new_adiciona"
         android:onClick="novo_feed"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,11 +20,11 @@
 
     <Button
         android:id="@+id/sair4"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="15dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/new_delete"
         android:onClick="sair_click2"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,7 +53,7 @@
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/button7"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nome_prof">
@@ -66,57 +66,146 @@
             android:orientation="vertical" />
     </ScrollView>
 
-    <Button
-        android:id="@+id/button7"
-        style="@android:style/Widget.DeviceDefault.Button.Borderless"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/new_alunoslist"
-        android:onClick="tela_de_alunosClick"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView14" />
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView26"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-    <Button
-        android:id="@+id/button9"
-        style="@android:style/Widget.DeviceDefault.Button.Borderless"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/new_agdturma"
-        android:onClick="agenda_turma"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button7" />
+        <FrameLayout
+            android:layout_width="75dp"
+            android:layout_height="70dp">
 
-    <Button
-        android:id="@+id/button8"
-        style="@android:style/Widget.DeviceDefault.Button.Borderless"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/new_refresh"
-        android:onClick="att_feed"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button20" />
+            <ImageView
+                android:id="@+id/imageView22"
+                android:layout_width="75dp"
+                android:layout_height="45dp"
+                app:srcCompat="@drawable/new_agdturma" />
 
-    <Button
-        android:id="@+id/button20"
-        style="@android:style/Widget.DeviceDefault.Button.Borderless"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/new_paste"
-        android:onClick="pdf_open"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView14" />
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="75dp"
+                android:layout_height="70dp"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="bottom|center_horizontal"
+                android:text="AGD. TURMA"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/button9"
+                style="@android:style/Widget.DeviceDefault.Button.Borderless"
+                android:layout_width="75dp"
+                android:layout_height="70dp"
+                android:onClick="agenda_turma" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="10dp"
+            android:layout_height="55dp">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="75dp"
+            android:layout_height="70dp">
+
+            <ImageView
+                android:id="@+id/imageView24"
+                android:layout_width="75dp"
+                android:layout_height="45dp"
+                app:srcCompat="@drawable/new_alunoslist" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="75dp"
+                android:layout_height="70dp"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="bottom|center_horizontal"
+                android:text="ALUNOS"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/button7"
+                style="@android:style/Widget.DeviceDefault.Button.Borderless"
+                android:layout_width="75dp"
+                android:layout_height="70dp"
+                android:onClick="tela_de_alunosClick" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="10dp"
+            android:layout_height="55dp">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="75dp"
+            android:layout_height="70dp">
+
+            <ImageView
+                android:id="@+id/imageView29"
+                android:layout_width="75dp"
+                android:layout_height="45dp"
+                app:srcCompat="@drawable/new_paste" />
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="75dp"
+                android:layout_height="70dp"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="bottom|center_horizontal"
+                android:text="PDF's"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/button20"
+                style="@android:style/Widget.DeviceDefault.Button.Borderless"
+                android:layout_width="75dp"
+                android:layout_height="70dp"
+                android:onClick="pdf_open" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="10dp"
+            android:layout_height="55dp">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="75dp"
+            android:layout_height="70dp">
+
+            <ImageView
+                android:id="@+id/imageView35"
+                android:layout_width="75dp"
+                android:layout_height="45dp"
+                app:srcCompat="@drawable/new_refresh" />
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="75dp"
+                android:layout_height="70dp"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="bottom|center_horizontal"
+                android:text="ATUALIZAR"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/button8"
+                style="@android:style/Widget.DeviceDefault.Button.Borderless"
+                android:layout_width="75dp"
+                android:layout_height="70dp"
+                android:onClick="att_feed" />
+
+        </FrameLayout>
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/turma2"
@@ -142,13 +231,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/turma2" />
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView26"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,56 +6,112 @@
     android:layout_height="match_parent"
     tools:context="com.gabrielvilarouca.carinhadeanjo.tela_do_aluno_prof">
 
-    <Button
-        android:id="@+id/button6"
-        style="@android:style/Widget.DeviceDefault.Button.Borderless"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/new_check"
-        android:onClick="enviar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button5" />
-
-    <Button
-        android:id="@+id/button5"
-        style="@android:style/Widget.DeviceDefault.Button.Borderless"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/new_chat"
-        android:onClick="chat_click"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/hgf1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent">
 
-    <Button
-        android:id="@+id/button17"
-        style="@android:style/Widget.DeviceDefault.Button.Borderless"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/new_folder"
-        android:onClick="agenda_click"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button5" />
+        <FrameLayout
+            android:layout_width="75dp"
+            android:layout_height="70dp">
 
-    <Button
-        android:id="@+id/button24"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="40sp"
-        android:layout_height="40sp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@drawable/new_view"
-        android:onClick="ve_emailesenha"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:id="@+id/imageView22"
+                android:layout_width="75dp"
+                android:layout_height="45dp"
+                app:srcCompat="@drawable/new_folder" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="75dp"
+                android:layout_height="70dp"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="bottom|center_horizontal"
+                android:text="AGENDA"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/button17"
+                style="@android:style/Widget.DeviceDefault.Button.Borderless"
+                android:layout_width="75dp"
+                android:layout_height="70dp"
+                android:onClick="agenda_click" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="10dp"
+            android:layout_height="55dp">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="75dp"
+            android:layout_height="70dp">
+
+            <ImageView
+                android:id="@+id/imageView35"
+                android:layout_width="75dp"
+                android:layout_height="45dp"
+                app:srcCompat="@drawable/new_chat" />
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="75dp"
+                android:layout_height="70dp"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="bottom|center_horizontal"
+                android:text="CHAT"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/button5"
+                style="@android:style/Widget.DeviceDefault.Button.Borderless"
+                android:layout_width="75dp"
+                android:layout_height="70dp"
+                android:onClick="chat_click" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="10dp"
+            android:layout_height="55dp">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="75dp"
+            android:layout_height="70dp">
+
+            <ImageView
+                android:id="@+id/imageView29"
+                android:layout_width="75dp"
+                android:layout_height="45dp"
+                app:srcCompat="@drawable/new_check" />
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="75dp"
+                android:layout_height="70dp"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="bottom|center_horizontal"
+                android:text="SALVAR"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/button6"
+                style="@android:style/Widget.DeviceDefault.Button.Borderless"
+                android:layout_width="75dp"
+                android:layout_height="70dp"
+                android:onClick="enviar" />
+
+        </FrameLayout>
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/turma3"
@@ -69,6 +125,37 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView31" />
+
+    <FrameLayout
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="65dp"
+            android:layout_height="45dp"
+            app:srcCompat="@drawable/new_view" />
+
+        <TextView
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:fontFamily="@font/quicksand_medium"
+            android:gravity="bottom|center_horizontal"
+            android:text="INFOS"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/button24"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:onClick="ve_emailesenha" />
+
+    </FrameLayout>
 
     <ImageView
         android:id="@+id/imageView31"
@@ -85,12 +172,17 @@
         android:id="@+id/recado_profis"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="10dp"
         android:ems="10"
         android:gravity="top"
         android:inputType="textPersonName"
         android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="@+id/hgf1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/turma3" />
@@ -106,7 +198,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/fundoum"
-        tools:visibility="visible" />
+        tools:visibility="invisible" />
 
     <ProgressBar
         android:id="@+id/hgf2"
