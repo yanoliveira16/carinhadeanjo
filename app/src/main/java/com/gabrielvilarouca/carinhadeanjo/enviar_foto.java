@@ -56,9 +56,9 @@ public class enviar_foto extends AppCompatActivity {
         setContentView(R.layout.activity_enviar_foto);
 
         final TextView a2 = (TextView) findViewById(R.id.text_informativo);
-        a2.setText("ESCOLHA A FOTO DO ALUNO\nDeve contér um rosto!\nA foto é obrigatória e deverá ser do aluno!");
+        a2.setText("FOTO DO ALUNO\nDeve contér um rosto visível!");
 
-        new AlertDialog.Builder(enviar_foto.this).setMessage("FOTO\nA foto deverá ser do seu filho(a), ou seja, do aluno(a) que frequenta a escola!").show();
+        //new AlertDialog.Builder(enviar_foto.this).setMessage("FOTO\nA foto deverá ser do seu filho(a), ou seja, do aluno(a) que frequenta a escola!").show();
     }
 
     public void escolher_imagem(View view){
@@ -95,7 +95,7 @@ public class enviar_foto extends AppCompatActivity {
                 cropView = findViewById(R.id.crop_view);
                 //cropView.setImageURI(imageUri);
                 cropView.setImageBitmap(getRoundedCornerBitmap(bitmap, 400));
-                a2.setText("Arraste a foto com os dedos para deixar do jeito que quiser.");
+                a2.setText("FOTO DO ALUNO\nCertifique-se de que o rosto esteja visível!");
             } catch (IOException e) {
                 e.printStackTrace();
                 a2.setText("ERRO\nTente novamente ou entre em contato com o suporte.");
@@ -197,15 +197,17 @@ public class enviar_foto extends AppCompatActivity {
             a2.setText("ERRO\nNenhum rosto foi detectado.");
 
             AlertDialog.Builder builder1 = new AlertDialog.Builder(enviar_foto.this);
-            builder1.setMessage("ERRO\nNenhum rosto foi detectado\n\nDeseja enviar ao suporte?\nIsso ajudará em futuras atualizações!");
+            builder1.setMessage("ERRO\nNenhum rosto foi detectado.");
             builder1.setCancelable(true);
 
             builder1.setPositiveButton(
-                    "Enviar erro",
+                    "AJUDAR",
                     new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
-                            caminho = "fotos_com_erro/" +login_or_register.id +".png";
-                            msg_Caminho = "PRONTO\nCriamos e enviamos um relatório de erro.";
+                            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.escolacarinhadeanjodf.com/erro-foto"));
+                            startActivity(browserIntent);
+                            //caminho = "fotos_com_erro/" +login_or_register.id +".png";
+                            //msg_Caminho = "PRONTO\nCriamos e enviamos um relatório de erro.";
                             enviar_servidor();
                         }
                     });
@@ -242,18 +244,8 @@ public class enviar_foto extends AppCompatActivity {
         else if (faces.size() > 1) {
             //new AlertDialog.Builder(this).setMessage("Mais de um rosto foi detectado.").show();
             AlertDialog.Builder builder1 = new AlertDialog.Builder(enviar_foto.this);
-            builder1.setMessage("ERRO\nMais de um rosto foi detectado na foto!\n\nDeseja enviar ao suporte?\nIsso ajudará em futuras atualizações!");
+            builder1.setMessage("ERRO\nMais de um rosto foi detectado na foto!");
             builder1.setCancelable(true);
-
-            builder1.setPositiveButton(
-                    "Enviar erro",
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            caminho = "fotos_com_erro/" +login_or_register.id +".png";
-                            msg_Caminho = "PRONTO\nCriamos e enviamos um relatório de erro.";
-                            enviar_servidor();
-                        }
-                    });
 
             builder1.setNegativeButton(
                     "Tentar novamente",
