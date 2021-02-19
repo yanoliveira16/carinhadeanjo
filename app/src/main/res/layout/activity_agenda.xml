@@ -16,66 +16,147 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/fundotres" />
 
-    <Button
-        android:id="@+id/button12"
-        android:layout_width="35sp"
-        android:layout_height="35sp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@drawable/new_cancel"
-        android:onClick="apagar_agenda"
-        app:layout_constraintEnd_toStartOf="@+id/button13"
-        app:layout_constraintTop_toBottomOf="@+id/nome_aluno_agenda" />
-
-    <Button
-        android:id="@+id/button13"
-        android:layout_width="35sp"
-        android:layout_height="35sp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@drawable/new_save"
-        android:onClick="salvar_agenda_temporaria"
-        app:layout_constraintEnd_toStartOf="@+id/textView16"
-        app:layout_constraintTop_toBottomOf="@+id/nome_aluno_agenda" />
-
-    <TextView
-        android:id="@+id/textView16"
+    <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button13" />
+        app:layout_constraintTop_toBottomOf="@+id/nome_aluno_agenda">
 
-    <Button
-        android:id="@+id/button14"
-        android:layout_width="35sp"
-        android:layout_height="35sp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/new_view"
-        android:onClick="visualizar_agenda_turma"
-        app:layout_constraintStart_toEndOf="@+id/textView16"
-        app:layout_constraintTop_toBottomOf="@+id/nome_aluno_agenda" />
+        <FrameLayout
+            android:layout_width="75dp"
+            android:layout_height="70dp">
 
-    <Button
-        android:id="@+id/pronto"
-        style="@android:style/Widget.DeviceDefault.Button.Borderless"
-        android:layout_width="35sp"
-        android:layout_height="35sp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:background="@drawable/new_check"
-        android:fontFamily="@font/quicksand_bold"
-        android:onClick="enviar"
-        android:paddingTop="10sp"
-        android:paddingBottom="10sp"
-        android:textColor="#020080"
-        android:textSize="36sp"
-        app:layout_constraintStart_toEndOf="@+id/button14"
-        app:layout_constraintTop_toTopOf="@+id/textView16" />
+            <ImageView
+                android:id="@+id/imageView22"
+                android:layout_width="75dp"
+                android:layout_height="45dp"
+                app:srcCompat="@drawable/new_cancel" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="75dp"
+                android:layout_height="70dp"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="bottom|center_horizontal"
+                android:text="APAGAR"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/button12"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="75dp"
+                android:layout_height="70dp"
+                android:onClick="apagar_agenda" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="10dp"
+            android:layout_height="55dp">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="75dp"
+            android:layout_height="70dp">
+
+            <ImageView
+                android:id="@+id/imageView24"
+                android:layout_width="75dp"
+                android:layout_height="45dp"
+                app:srcCompat="@drawable/new_save" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="75dp"
+                android:layout_height="70dp"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="bottom|center_horizontal"
+                android:text="SALVAR"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/button13"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="75dp"
+                android:layout_height="70dp"
+                android:onClick="salvar_agenda_temporaria" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="10dp"
+            android:layout_height="55dp">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="75dp"
+            android:layout_height="70dp">
+
+            <ImageView
+                android:id="@+id/imageView35"
+                android:layout_width="75dp"
+                android:layout_height="45dp"
+                app:srcCompat="@drawable/new_view" />
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="75dp"
+                android:layout_height="70dp"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="bottom|center_horizontal"
+                android:text="AGD. TURMA"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/button14"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="75dp"
+                android:layout_height="70dp"
+                android:onClick="visualizar_agenda_turma" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="10dp"
+            android:layout_height="55dp">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="75dp"
+            android:layout_height="70dp">
+
+            <ImageView
+                android:id="@+id/imageView29"
+                android:layout_width="75dp"
+                android:layout_height="45dp"
+                app:srcCompat="@drawable/new_check" />
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="75dp"
+                android:layout_height="70dp"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="bottom|center_horizontal"
+                android:text="ENVIAR"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/pronto"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="75dp"
+                android:layout_height="70dp"
+                android:onClick="enviar" />
+
+        </FrameLayout>
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/nome_aluno_agenda"
@@ -114,7 +195,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/imageView14"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button13">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
         <LinearLayout
             android:id="@+id/linearLayout"
