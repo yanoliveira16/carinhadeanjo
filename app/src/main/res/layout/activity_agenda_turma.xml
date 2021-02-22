@@ -205,34 +205,6 @@
                 tools:layout_editor_absoluteY="468dp" />
 
             <Switch
-                android:id="@+id/s9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand"
-                android:paddingTop="10dp"
-                android:text="Judo"
-                android:textColorLink="#7C0000"
-                android:textSize="24sp"
-                tools:layout_conversion_absoluteHeight="27dp"
-                tools:layout_conversion_absoluteWidth="407dp"
-                tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="495dp" />
-
-            <Switch
-                android:id="@+id/s10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand"
-                android:paddingTop="10dp"
-                android:text="Ballet"
-                android:textColorLink="#7C0000"
-                android:textSize="24sp"
-                tools:layout_conversion_absoluteHeight="27dp"
-                tools:layout_conversion_absoluteWidth="407dp"
-                tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="522dp" />
-
-            <Switch
                 android:id="@+id/s11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

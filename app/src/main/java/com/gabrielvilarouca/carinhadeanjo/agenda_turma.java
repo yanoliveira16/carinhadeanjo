@@ -66,8 +66,6 @@ public class agenda_turma extends AppCompatActivity {
         Switch s6 = findViewById(R.id.s6);
         Switch s7 = findViewById(R.id.s7);
         Switch s8 = findViewById(R.id.s8);
-        Switch s9 = findViewById(R.id.s9);
-        Switch s10 = findViewById(R.id.s10);
         Switch s11 = findViewById(R.id.s11);
         Switch s12 = findViewById(R.id.s12);
         Switch s13 = findViewById(R.id.s13);
@@ -102,12 +100,6 @@ public class agenda_turma extends AppCompatActivity {
         }
         if (s8.isChecked() == true) {
             atvs += "Natureza e Sociedade | ";
-        }
-        if (s9.isChecked() == true) {
-            atvs += "Judo | ";
-        }
-        if (s10.isChecked() == true) {
-            atvs += "Ballet | ";
         }
         if (s11.isChecked() == true) {
             atvs += "Inglês | ";
@@ -238,6 +230,9 @@ public class agenda_turma extends AppCompatActivity {
 
         SimpleDateFormat sdf2 = new SimpleDateFormat("dd-MM-yyyy");
         String currentDateandTime2 = sdf2.format(new Date());
+
+        SimpleDateFormat sdf3 = new SimpleDateFormat("HH:mm:ss");
+        String currentDateandTime3 = sdf3.format(new Date());
 
         myRef.child("atvs").setValue(atvs);
         myRef.child("dever").setValue(dever);
