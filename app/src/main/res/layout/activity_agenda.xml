@@ -827,6 +827,18 @@
                 tools:layout_editor_absoluteY="1503dp" />
 
             <Switch
+                android:id="@+id/sint_dormiu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Dormiu"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1297dp" />
+
+            <Switch
                 android:id="@+id/s49"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -849,6 +861,45 @@
                 tools:layout_conversion_absoluteWidth="407dp"
                 tools:layout_editor_absoluteX="2dp"
                 tools:layout_editor_absoluteY="1325dp" />
+
+            <Switch
+                android:id="@+id/sint_evacuou"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:text="Evacuou"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1325dp" />
+
+            <TextView
+                android:id="@+id/sint_textevacuou"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alpha="1"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:text="Quantas vezes?"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1653dp"
+                tools:visibility="visible" />
+
+            <EditText
+                android:id="@+id/sint_qntsevacuou"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="1"
+                android:background="#FFFFFF"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="number"
+                tools:visibility="visible" />
 
             <Switch
                 android:id="@+id/s51"
@@ -933,6 +984,19 @@
                 android:fontFamily="@font/quicksand_medium"
                 android:onClick="hg21"
                 android:text="Irritado"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1352dp" />
+
+            <Switch
+                android:id="@+id/sint_agitado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:onClick="hg21"
+                android:text="Agitado"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
                 tools:layout_conversion_absoluteWidth="407dp"

@@ -1111,7 +1111,7 @@ public class agenda extends AppCompatActivity {
     public void enviar_temporaria(){
         SimpleDateFormat sdf000 = new SimpleDateFormat("dd-MM-yyyy");
         String currentDateandTime000 = sdf000.format(new Date());
-        
+
         myRef5.child("atvs2").setValue(atvs2);
         myRef5.child("extra_ballet").setValue(extra_ballet);
         myRef5.child("extra_judo").setValue(extra_judo);
