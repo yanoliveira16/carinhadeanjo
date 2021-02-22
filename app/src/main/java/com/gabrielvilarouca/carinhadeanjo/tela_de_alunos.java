@@ -58,7 +58,6 @@ public class tela_de_alunos extends AppCompatActivity {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             valor_nisso = dataSnapshot.getValue(String.class);
-                            Log.d("AQUI", "\n\nINFERNO DE ANDROID DO CARALHO\n" +valor_nisso +"\n" +key);
                             if (valor_nisso != null){
                                 if (valor_nisso.contains("fixa - "+ currentDateandTime2)== true){
                                     feed.add("\uD83D\uDFE2 - "+key);

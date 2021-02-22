@@ -38,6 +38,7 @@ public class agenda extends AppCompatActivity {
     DatabaseReference myRef4 = database.child("P3").child(tela_do_aluno_prof.id_aluno).child("faltas");
     DatabaseReference myRef5 = database.child("P5").child(tela_de_carregamento.tturma).child("AgendaTemporaria").child(tela_do_aluno_prof.id_aluno);
     DatabaseReference myRef_feed = database.child("P2").child(tela_de_carregamento.tturma);
+    DatabaseReference myRef6 = database.child("P6");
 
     Switch s_ballet;
     Switch s_judo;
@@ -1108,6 +1109,9 @@ public class agenda extends AppCompatActivity {
     }
 
     public void enviar_temporaria(){
+        SimpleDateFormat sdf000 = new SimpleDateFormat("dd-MM-yyyy");
+        String currentDateandTime000 = sdf000.format(new Date());
+        
         myRef5.child("atvs2").setValue(atvs2);
         myRef5.child("extra_ballet").setValue(extra_ballet);
         myRef5.child("extra_judo").setValue(extra_judo);
@@ -1127,6 +1131,7 @@ public class agenda extends AppCompatActivity {
         myRef5.child("iatv").setValue(iatv);
         myRef5.child("obs3").setValue(obs3);
         myRef5.child("valor").setValue("sim");
+        myRef6.child("agd_diaria").child(tela_de_carregamento.tturma).child(tela_de_alunos.onClick3).setValue("provi - "+ currentDateandTime000);
         new AlertDialog.Builder(agenda.this).setMessage("Agenda temporária enviada com sucesso!").show();
         Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
         startActivity(intent);
@@ -1151,6 +1156,9 @@ public class agenda extends AppCompatActivity {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
         String currentDateandTime = sdf.format(new Date());
 
+        SimpleDateFormat sdf000 = new SimpleDateFormat("dd-MM-yyyy");
+        String currentDateandTime000 = sdf000.format(new Date());
+
         String data = valor_agenda + " - " + currentDateandTime;
 
         myRef.child(currentDateandTime2).child(data).child("falta").setValue(falta);
@@ -1173,6 +1181,7 @@ public class agenda extends AppCompatActivity {
         myRef.child(currentDateandTime2).child(data).child("iprovidenciar").setValue(iprovidenciar);
         myRef.child(currentDateandTime2).child(data).child("iatv").setValue(iatv);
         myRef.child(currentDateandTime2).child(data).child("obs3").setValue(obs3);
+        myRef6.child("agd_diaria").child(tela_de_carregamento.tturma).child(tela_de_alunos.onClick3).setValue("fixa - "+ currentDateandTime000);
         myRef5.removeValue();
         enviar_feed();
     }
