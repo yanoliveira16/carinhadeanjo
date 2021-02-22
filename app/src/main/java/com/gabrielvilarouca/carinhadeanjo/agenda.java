@@ -39,6 +39,9 @@ public class agenda extends AppCompatActivity {
     DatabaseReference myRef5 = database.child("P5").child(tela_de_carregamento.tturma).child("AgendaTemporaria").child(tela_do_aluno_prof.id_aluno);
     DatabaseReference myRef_feed = database.child("P2").child(tela_de_carregamento.tturma);
 
+    Switch s_ballet;
+    Switch s_judo;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -139,6 +142,40 @@ public class agenda extends AppCompatActivity {
     boolean hg12 = false;
 
     public void puxar_temporaria(){
+        myRef5.child("extra_ballet").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String nk = dataSnapshot.getValue(String.class);
+                if (nk != null){
+                    if (nk.contains("sim")){
+                        s_ballet = findViewById(R.id.s_ballet);
+                        s_ballet.setChecked(true);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
+        myRef5.child("extra_judo").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String nk = dataSnapshot.getValue(String.class);
+                if (nk != null){
+                    if (nk.contains("sim")){
+                        s_judo = findViewById(R.id.s_judo);
+                        s_judo.setChecked(true);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
         myRef5.child("apresentou").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -596,10 +633,28 @@ public class agenda extends AppCompatActivity {
     }
 
     String atvs2 = "";
+    String extra_ballet = "";
+    String extra_judo = "";
     Switch s24;
     Switch s25;
 
-    public void enviar2() {
+    public void enviar2(){
+        s_ballet = findViewById(R.id.s_ballet);
+        s_judo = findViewById(R.id.s_judo);
+
+        if (s_ballet.isChecked() == true){
+            extra_ballet = "sim";
+        }
+
+        if (s_judo.isChecked() == true){
+            extra_judo = "sim";
+        }
+
+        enviar2_1();
+
+    }
+
+    public void enviar2_1() {
 
         s24 = findViewById(R.id.s24);
         s25 = findViewById(R.id.s25);
@@ -1054,6 +1109,8 @@ public class agenda extends AppCompatActivity {
 
     public void enviar_temporaria(){
         myRef5.child("atvs2").setValue(atvs2);
+        myRef5.child("extra_ballet").setValue(extra_ballet);
+        myRef5.child("extra_judo").setValue(extra_judo);
         myRef5.child("comportamento").setValue(comportamento);
         myRef5.child("imedicacao").setValue(imedicacao);
         myRef5.child("iremedio").setValue(iremedio);
@@ -1075,7 +1132,18 @@ public class agenda extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void enviar_servidor() {
+    public void enviar_servidor(){
+        if(extra_ballet == "sim"){
+            atvs += "Ballet |";
+        }
+        if(extra_judo == "sim"){
+            atvs += "Judô |";
+        }
+
+        enviar_servidor_oficial();
+    }
+
+    public void enviar_servidor_oficial() {
 
         SimpleDateFormat sdf2 = new SimpleDateFormat("MM-yyyy");
         String currentDateandTime2 = sdf2.format(new Date());
