@@ -831,6 +831,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_medium"
+                android:onClick="hg_sono2"
                 android:text="Dormiu"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -843,6 +844,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_medium"
+                android:onClick="hg_sono1"
                 android:text="Não dormiu"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -851,22 +853,11 @@
                 tools:layout_editor_absoluteY="1297dp" />
 
             <Switch
-                android:id="@+id/s50"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:text="Não evacuou"
-                android:textSize="24sp"
-                tools:layout_conversion_absoluteHeight="27dp"
-                tools:layout_conversion_absoluteWidth="407dp"
-                tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="1325dp" />
-
-            <Switch
                 android:id="@+id/sint_evacuou"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_medium"
+                android:onClick="hg_evacuou2"
                 android:text="Evacuou"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -900,6 +891,19 @@
                 android:gravity="center"
                 android:inputType="number"
                 tools:visibility="visible" />
+
+            <Switch
+                android:id="@+id/s50"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:onClick="hg_evacuou1"
+                android:text="Não evacuou"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1325dp" />
 
             <Switch
                 android:id="@+id/s51"
@@ -995,7 +999,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_medium"
-                android:onClick="hg21"
+                android:onClick="hg20_1"
                 android:text="Agitado"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"

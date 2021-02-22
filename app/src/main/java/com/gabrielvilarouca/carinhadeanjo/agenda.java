@@ -42,6 +42,8 @@ public class agenda extends AppCompatActivity {
 
     Switch s_ballet;
     Switch s_judo;
+    Switch sint_dormiu;
+    Switch sint_evacuou;
 
 
     @Override
@@ -401,6 +403,9 @@ public class agenda extends AppCompatActivity {
                 }else if (nk.contains("Irritado") == true){
                     s56 = findViewById(R.id.s56);
                     s56.setChecked(true);
+                }else if (nk.contains("Agitado") == true){
+                    sint_agitado = findViewById(R.id.sint_agitado);
+                    sint_agitado.setChecked(true);
                 }
                 hg9 = true;
                 checar();
@@ -486,11 +491,17 @@ public class agenda extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nk = dataSnapshot.getValue(String.class);
-                if (nk.contains("Não dormiu") == true){
+                if (nk.contains("Não dor") == true){
                     s49 = findViewById(R.id.s49);
                     s49.setChecked(true);
+                }else if (nk.contains("Dormiu") == true){
+                    sint_dormiu = findViewById(R.id.sint_dormiu);
+                    sint_dormiu.setChecked(true);
                 }
-                if (nk.contains("Evacuação") == true){
+                if (nk.contains("vezes") == true){
+                    sint_evacuou = findViewById(R.id.sint_evacuou);
+                    sint_evacuou.setChecked(true);
+                }else if (nk.contains("Não evacuou")== true){
                     s50 = findViewById(R.id.s50);
                     s50.setChecked(true);
                 }
@@ -508,6 +519,21 @@ public class agenda extends AppCompatActivity {
                 }
                 hg11 = true;
                 checar();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
+        myRef5.child("isono_vezes").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String nk = dataSnapshot.getValue(String.class);
+                if (nk != null && nk != ""){
+                    final EditText et5 = (EditText) findViewById(R.id.sint_qntsevacuou);
+                    et5.setText(nk);
+                }
             }
 
             @Override
@@ -892,13 +918,16 @@ public class agenda extends AppCompatActivity {
     Switch s53;
 
     public void enviar11() {
+        sint_dormiu = findViewById(R.id.sint_dormiu);
         s49 = findViewById(R.id.s49);
         s50 = findViewById(R.id.s50);
         s51 = findViewById(R.id.s51);
         s52 = findViewById(R.id.s52);
         s53 = findViewById(R.id.s53);
 
-        if (s49.isChecked() == true) {
+        if (sint_dormiu.isChecked() == true){
+            isono = "Dormiu | ";
+        }else if (s49.isChecked() == true) {
             isono = "Não dormiu | ";
         }
         if (s50.isChecked() == true) {
@@ -920,11 +949,13 @@ public class agenda extends AppCompatActivity {
     Switch s54;
     Switch s55;
     Switch s56;
+    Switch sint_agitado;
 
     public void enviar12() {
         s54 = findViewById(R.id.s54);
         s55 = findViewById(R.id.s55);
         s56 = findViewById(R.id.s56);
+        sint_agitado = findViewById(R.id.sint_agitado);
 
         if (s54.isChecked() == true) {
             icomportamento = "Tranquilo";
@@ -932,6 +963,8 @@ public class agenda extends AppCompatActivity {
             icomportamento = "Obediente";
         } else if (s56.isChecked() == true) {
             icomportamento = "Irritado";
+        }else if (sint_agitado.isChecked() == true){
+            icomportamento = "Agitado";
         }
         enviar13();
     }
@@ -1437,35 +1470,91 @@ public class agenda extends AppCompatActivity {
         }
     }
 
+    //evacuou
+    public void hg_evacuou1(View view){
+        s50 = findViewById(R.id.s50);
+        sint_evacuou = findViewById(R.id.sint_evacuou);
+
+        if (s50.isChecked()) {
+            sint_evacuou.setChecked(false);
+        }
+    }
+
+    public void hg_evacuou2(View view){
+        s50 = findViewById(R.id.s50);
+        sint_evacuou = findViewById(R.id.sint_evacuou);
+
+        if (sint_evacuou.isChecked()) {
+            s50.setChecked(false);
+        }
+    }
+
+    //dormiu
+    public void hg_sono1(View view) {
+        s49 = findViewById(R.id.s49);
+        sint_dormiu = findViewById(R.id.sint_dormiu);
+
+        if (s49.isChecked()) {
+            sint_dormiu.setChecked(false);
+        }
+    }
+
+    public void hg_sono2(View view) {
+        s49 = findViewById(R.id.s49);
+        sint_dormiu = findViewById(R.id.sint_dormiu);
+
+        if (sint_dormiu.isChecked()) {
+            s49.setChecked(false);
+        }
+    }
+
     //comportamento integral
     public void hg19(View view) {
         s54 = findViewById(R.id.s54);
         s55 = findViewById(R.id.s55);
         s56 = findViewById(R.id.s56);
+        sint_agitado = findViewById(R.id.sint_agitado);
 
         if (s54.isChecked()) {
             s55.setChecked(false);
             s56.setChecked(false);
+            sint_agitado.setChecked(false);
         }
     }
     public void hg20(View view) {
         s54 = findViewById(R.id.s54);
         s55 = findViewById(R.id.s55);
         s56 = findViewById(R.id.s56);
+        sint_agitado = findViewById(R.id.sint_agitado);
 
         if (s55.isChecked()) {
             s54.setChecked(false);
             s56.setChecked(false);
+            sint_agitado.setChecked(false);
         }
     }
     public void hg21(View view) {
         s54 = findViewById(R.id.s54);
         s55 = findViewById(R.id.s55);
         s56 = findViewById(R.id.s56);
+        sint_agitado = findViewById(R.id.sint_agitado);
 
-            if(s56.isChecked()){
+        if(s56.isChecked()){
             s55.setChecked(false);
             s54.setChecked(false);
+            sint_agitado.setChecked(false);
+        }
+    }
+    public void hg20_1(View view){
+        s54 = findViewById(R.id.s54);
+        s55 = findViewById(R.id.s55);
+        s56 = findViewById(R.id.s56);
+        sint_agitado = findViewById(R.id.sint_agitado);
+
+        if (sint_agitado.isChecked()) {
+            s54.setChecked(false);
+            s56.setChecked(false);
+            s55.setChecked(false);
         }
     }
 
@@ -1481,6 +1570,17 @@ public class agenda extends AppCompatActivity {
                 "Apagar",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
+                        Switch aa_1 = findViewById(R.id.s_ballet);
+                        aa_1.setChecked(false);
+                        Switch aa_2 = findViewById(R.id.s_judo);
+                        aa_2.setChecked(false);
+                        Switch aa_3 = findViewById(R.id.sint_dormiu);
+                        aa_3.setChecked(false);
+                        Switch aa_4 = findViewById(R.id.sint_evacuou);
+                        aa_4.setChecked(false);
+                        Switch aa_5 = findViewById(R.id.sint_agitado);
+                        aa_5.setChecked(false);
+
                         Switch a_1 = findViewById(R.id.s);
                         a_1.setChecked(false);
                         Switch a_2 = findViewById(R.id.s24);
@@ -1586,6 +1686,8 @@ public class agenda extends AppCompatActivity {
                         et3.setText("");
                         final EditText et4 = (EditText) findViewById(R.id.obs2);
                         et4.setText("");
+                        final EditText et5 = (EditText) findViewById(R.id.sint_qntsevacuou);
+                        et5.setText("");
                         tirar_carregamento();
                     }
                 });
