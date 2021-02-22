@@ -13,8 +13,11 @@ import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -24,6 +27,7 @@ public class agenda_turma extends AppCompatActivity {
     public static String onClick4;
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     DatabaseReference myRef = database.child("P5").child(tela_de_carregamento.tturma).child("AgendaTurma");
+    String nkxz = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,26 @@ public class agenda_turma extends AppCompatActivity {
         ArrayAdapter<String> arrayAdapter;
         TextView a1 = (TextView) findViewById(R.id.nome_aluno_agenda4);
         a1.setText(tela_de_carregamento.tturma);
+
+        SimpleDateFormat sdfx = new SimpleDateFormat("dd-MM-yyyy");
+        String currentDateandTimex = sdfx.format(new Date());
+
+        myRef.child("data").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                nkxz = dataSnapshot.getValue(String.class);
+                if (nkxz != null && nkxz != ""){
+                    if (nkxz.contains(currentDateandTimex) == true){
+                        errormsg = "A AGENDA DA TURMA JÁ FOI FEITA HOJE.\nSE VOCÊ FIZER UMA NOVA, ELA SUBSTITUIRÁ A ATUAL.";
+                        erro();
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
     }
 
     String errormsg = "";
@@ -238,6 +262,7 @@ public class agenda_turma extends AppCompatActivity {
         myRef.child("dever").setValue(dever);
         myRef.child("aviso").setValue(aviso);
         myRef.child("data").setValue(currentDateandTime2);
+        myRef.child("hora").setValue(currentDateandTime3);
         new AlertDialog.Builder(agenda_turma.this).setMessage("Enviado com sucesso!").show();
         Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
         startActivity(intent);
