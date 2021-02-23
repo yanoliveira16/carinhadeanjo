@@ -573,7 +573,7 @@ public class agenda extends AppCompatActivity {
                     s63 = findViewById(R.id.s63);
                     s63.setChecked(true);
                 }
-                if (nk.contains("Lenço") == true){
+                if (nk.contains("Lenço Umidecido") == true){
                     s64 = findViewById(R.id.s64);
                     s64.setChecked(true);
                 }
@@ -911,6 +911,7 @@ public class agenda extends AppCompatActivity {
     }
 
     String isono = "";
+    String isono_vezes = "";
     Switch s49;
     Switch s50;
     Switch s51;
@@ -919,6 +920,7 @@ public class agenda extends AppCompatActivity {
 
     public void enviar11() {
         sint_dormiu = findViewById(R.id.sint_dormiu);
+        sint_evacuou = findViewById(R.id.sint_evacuou);
         s49 = findViewById(R.id.s49);
         s50 = findViewById(R.id.s50);
         s51 = findViewById(R.id.s51);
@@ -930,9 +932,6 @@ public class agenda extends AppCompatActivity {
         }else if (s49.isChecked() == true) {
             isono = "Não dormiu | ";
         }
-        if (s50.isChecked() == true) {
-            isono += "Não evacuou | ";
-        }
         if (s51.isChecked() == true) {
             isono += "Urinou pouco | ";
         }
@@ -940,9 +939,46 @@ public class agenda extends AppCompatActivity {
             isono += "Tomou pouca água | ";
         }
         if (s53.isChecked() == true) {
-            isono += "Não tomou banho";
+            isono += "Não tomou banho |";
         }
-        enviar12();
+        if (s50.isChecked() == true) {
+            Log.d("A MERDA","AQUI ISSO 1 ");
+            isono += "Não evacuou | ";
+            enviar12();
+        }else if(sint_evacuou.isChecked() == true){
+            enviar11_1();
+        }else{
+            Log.d("A MERDA","AQUI ISSO 2 ");
+            enviar12();
+        }
+    }
+
+    public void enviar11_1(){
+        final EditText et2x = (EditText) findViewById(R.id.sint_qntsevacuou);
+        isono_vezes = et2x.getText().toString();
+        Log.d("A MERDA","AQUI ISSO" +"\n-"+isono_vezes+"-\n");
+        Log.d("A MERDA 2", String.valueOf(isono_vezes != null));
+        Log.d("A MERDA 3", String.valueOf(isono_vezes != ""));
+        Log.d("A MERDA 4", String.valueOf(isono_vezes != " "));
+        if (isono_vezes != null){
+            if(isono_vezes.contains("1") == true || isono_vezes.contains("2") == true || isono_vezes.contains("3") == true || isono_vezes.contains("4") == true || isono_vezes.contains("5") == true || isono_vezes.contains("6") == true || isono_vezes.contains("7") == true || isono_vezes.contains("8") == true || isono_vezes.contains("9") == true || isono_vezes.contains("10") == true){
+                Log.d("A MERDA","AQUI ISSO 3 ");
+                isono += "Evacuou "+ isono_vezes  +" vezes | ";
+                enviar12();
+            }else{
+                Log.d("A MERDA","AQUI ISSO 4 ");
+                pode_continuar = false;
+                errormsg = "Você precisa escrever quantas vezes o aluno(a) evacuou!";
+                erro();
+                tirar_carregamento();
+            }
+        }else{
+            Log.d("A MERDA","AQUI ISSO 4 ");
+            pode_continuar = false;
+            errormsg = "Você precisa escrever quantas vezes o aluno(a) evacuou!";
+            erro();
+            tirar_carregamento();
+        }
     }
 
     String icomportamento = "";
@@ -1159,6 +1195,7 @@ public class agenda extends AppCompatActivity {
         myRef5.child("ilanchematutino").setValue(ilanchematutino);
         myRef5.child("ijanta").setValue(ijanta);
         myRef5.child("isono").setValue(isono);
+        myRef5.child("isono_vezes").setValue(isono_vezes);
         myRef5.child("icomportamento").setValue(icomportamento);
         myRef5.child("iprovidenciar").setValue(iprovidenciar);
         myRef5.child("iatv").setValue(iatv);
