@@ -7,24 +7,10 @@
     tools:context="com.gabrielvilarouca.carinhadeanjo.tela_do_aluno">
 
     <ImageView
-        android:id="@+id/imageView15"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:alpha="1"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/roxo_new" />
-
-    <ImageView
         android:id="@+id/imageView16"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:alpha="1"
+        android:alpha="0.3"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,13 +18,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/imagem_um" />
+        app:srcCompat="@drawable/lofundoclound" />
 
     <ImageView
         android:id="@+id/imageView13"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,36 +35,37 @@
         android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/turma">
 
         <FrameLayout
-            android:layout_width="75dp"
-            android:layout_height="70dp">
+            android:layout_width="65dp"
+            android:layout_height="65dp">
 
             <ImageView
                 android:id="@+id/imageView22"
-                android:layout_width="75dp"
+                android:layout_width="65dp"
                 android:layout_height="45dp"
                 app:srcCompat="@drawable/new_folder" />
 
             <TextView
                 android:id="@+id/textView14"
-                android:layout_width="75dp"
-                android:layout_height="70dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="bottom|center_horizontal"
                 android:text="AGENDA"
+                android:textColor="#000000"
                 android:textSize="11sp" />
 
             <Button
                 android:id="@+id/button"
                 style="@android:style/Widget.DeviceDefault.Button.Borderless"
-                android:layout_width="75dp"
-                android:layout_height="70dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
                 android:onClick="lista_um_click"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/imageView22"
@@ -88,104 +75,136 @@
         </FrameLayout>
 
         <FrameLayout
-            android:layout_width="10dp"
+            android:layout_width="5dp"
             android:layout_height="55dp">
 
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="5dp"
+                android:layout_height="35dp"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="bottom|center_horizontal"
+                android:text="|"
+                android:textColor="#000000"
+                android:textSize="11sp" />
         </FrameLayout>
 
         <FrameLayout
-            android:layout_width="75dp"
-            android:layout_height="70dp">
+            android:layout_width="65dp"
+            android:layout_height="65dp">
 
             <ImageView
                 android:id="@+id/imageView24"
-                android:layout_width="75dp"
+                android:layout_width="65dp"
                 android:layout_height="45dp"
                 app:srcCompat="@drawable/new_paste" />
 
             <TextView
                 android:id="@+id/textView22"
-                android:layout_width="75dp"
-                android:layout_height="70dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="bottom|center_horizontal"
                 android:text="PDF's"
+                android:textColor="#000000"
                 android:textSize="11sp" />
 
             <Button
                 android:id="@+id/button18"
                 style="@android:style/Widget.DeviceDefault.Button.Borderless"
-                android:layout_width="75dp"
-                android:layout_height="70dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
                 android:layout_marginRight="8dp"
                 android:onClick="pdf_open" />
 
         </FrameLayout>
 
         <FrameLayout
-            android:layout_width="10dp"
+            android:layout_width="5dp"
             android:layout_height="55dp">
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="5dp"
+                android:layout_height="35dp"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="bottom|center_horizontal"
+                android:text="|"
+                android:textColor="#000000"
+                android:textSize="11sp" />
 
         </FrameLayout>
 
         <FrameLayout
-            android:layout_width="75dp"
-            android:layout_height="70dp">
+            android:layout_width="65dp"
+            android:layout_height="65dp">
 
             <ImageView
                 android:id="@+id/imageView35"
-                android:layout_width="75dp"
+                android:layout_width="65dp"
                 android:layout_height="45dp"
                 app:srcCompat="@drawable/new_chat" />
 
             <TextView
                 android:id="@+id/textView27"
-                android:layout_width="75dp"
-                android:layout_height="70dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="bottom|center_horizontal"
                 android:text="CHAT"
+                android:textColor="#000000"
                 android:textSize="11sp" />
 
             <Button
                 android:id="@+id/button16"
                 style="@android:style/Widget.DeviceDefault.Button.Borderless"
-                android:layout_width="75dp"
-                android:layout_height="70dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
                 android:onClick="chat_click" />
 
         </FrameLayout>
 
         <FrameLayout
-            android:layout_width="10dp"
+            android:layout_width="5dp"
             android:layout_height="55dp">
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="5dp"
+                android:layout_height="35dp"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="bottom|center_horizontal"
+                android:text="|"
+                android:textColor="#000000"
+                android:textSize="11sp" />
 
         </FrameLayout>
 
         <FrameLayout
-            android:layout_width="75dp"
-            android:layout_height="70dp">
+            android:layout_width="65dp"
+            android:layout_height="65dp">
 
             <ImageView
                 android:id="@+id/imageView29"
-                android:layout_width="75dp"
+                android:layout_width="65dp"
                 android:layout_height="45dp"
                 app:srcCompat="@drawable/new_refresh" />
 
             <TextView
                 android:id="@+id/textView26"
-                android:layout_width="75dp"
-                android:layout_height="70dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="bottom|center_horizontal"
                 android:text="ATUALIZAR"
+                android:textColor="#000000"
                 android:textSize="11sp" />
 
             <Button
                 android:id="@+id/button2"
                 style="@android:style/Widget.DeviceDefault.Button.Borderless"
-                android:layout_width="75dp"
-                android:layout_height="70dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
                 android:onClick="att_feed" />
 
         </FrameLayout>
@@ -194,8 +213,8 @@
 
     <Button
         android:id="@+id/sair"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
@@ -233,12 +252,12 @@
         android:id="@+id/scroll_aluno_feed"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -251,29 +270,17 @@
             android:orientation="vertical" />
     </ScrollView>
 
-    <ImageView
-        android:id="@+id/kkkl1"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:alpha="1"
-        android:scaleType="centerCrop"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView15"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView15"
-        app:srcCompat="@drawable/imagem_um" />
-
     <ProgressBar
         android:id="@+id/kkkl2"
         style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
         android:alpha="1"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView15"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageView15"
         app:layout_constraintTop_toTopOf="parent" />
 
 

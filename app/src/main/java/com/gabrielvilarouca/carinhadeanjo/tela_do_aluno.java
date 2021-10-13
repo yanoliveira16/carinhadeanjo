@@ -105,8 +105,6 @@ public class tela_do_aluno extends AppCompatActivity {
                     my_image3 = BitmapFactory.decodeFile(localFile.getAbsolutePath());
                     ImageView myImage = (ImageView) findViewById(R.id.imageView13);
                     myImage.setImageBitmap(getRoundedCornerBitmap(my_image3,400));
-                    View a1=findViewById(R.id.kkkl1);
-                    a1.setVisibility(View.INVISIBLE);
 
                     View a2=findViewById(R.id.kkkl2);
                     a2.setVisibility(View.INVISIBLE);
@@ -156,9 +154,6 @@ public class tela_do_aluno extends AppCompatActivity {
         Bitmap bitmap = ((BitmapDrawable) dr).getBitmap();
         my_image3 = bitmap;
         myImage.setImageBitmap(getRoundedCornerBitmap(my_image3,400));
-
-        View a1=findViewById(R.id.kkkl1);
-        a1.setVisibility(View.INVISIBLE);
 
         View a2=findViewById(R.id.kkkl2);
         a2.setVisibility(View.INVISIBLE);
@@ -369,9 +364,9 @@ public class tela_do_aluno extends AppCompatActivity {
             ScrollView scroll = (ScrollView) findViewById(R.id.scroll_aluno_feed);
             GradientDrawable gd = new GradientDrawable();
             gd.setShape(GradientDrawable.RECTANGLE);
-            gd.setStroke(5, Color.argb(100, 0,0,0)); // border width and color
+            gd.setStroke(0, Color.argb(100, 0,0,0)); // border width and color
             //gd.setCornerRadius(80.50f);
-            gd.setCornerRadius(60);
+            gd.setCornerRadius(40);
             scroll.setBackground(gd);
         }
         if (carregado == false) {

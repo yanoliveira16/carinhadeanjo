@@ -21,14 +21,28 @@
         app:srcCompat="@drawable/new_blue" />
 
     <ImageView
+        android:id="@+id/imageView36"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.3"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/lofundoclound" />
+
+    <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="70dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/imageView6"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/imagem_quatro" />
+        app:srcCompat="@drawable/logo_sem_letra" />
 
     <TextView
         android:id="@+id/texto_carregamento"
@@ -40,7 +54,7 @@
         android:layout_marginRight="10dp"
         android:fontFamily="@font/quicksand_bold"
         android:gravity="center"
-        android:text="Estamos verificando suas \n informações nos \n servidores..."
+        android:text="Carregando..."
         android:textColor="#FFFFFF"
         android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"

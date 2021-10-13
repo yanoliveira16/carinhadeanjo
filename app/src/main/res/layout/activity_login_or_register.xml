@@ -10,6 +10,7 @@
         android:id="@+id/imageView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:alpha="0.5"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/imagem_um" />
+        app:srcCompat="@drawable/lofundoclound" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -37,9 +38,9 @@
         android:layout_marginTop="5dp"
         android:fontFamily="@font/quicksand_bold"
         android:onClick="entra_click"
-        android:text="Entrar"
-        android:textColor="#5856D6"
-        android:textSize="28sp"
+        android:text="ACESSAR"
+        android:textColor="#000000"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -87,7 +88,7 @@
         app:layout_constraintBottom_toTopOf="@+id/textView11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/florestasemfundo" />
+        app:srcCompat="@drawable/logogfsem" />
 
     <ImageView
         android:id="@+id/imageView12"

@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/roxo_new" />
+        app:srcCompat="@drawable/new_blue" />
 
     <Button
         android:id="@+id/entrar2"
@@ -29,7 +29,7 @@
         android:fontFamily="@font/quicksand_bold"
         android:onClick="entrar_click"
         android:text="Entrar"
-        android:textColor="#01028A"
+        android:textColor="#000000"
         android:textSize="27sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
@@ -86,7 +86,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/quicksand_bold"
         android:text="E-MAIL:"
-        android:textColor="#000185"
+        android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/email3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -99,7 +99,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/quicksand_bold"
         android:text="SENHA:"
-        android:textColor="#000185"
+        android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/senha2"
         app:layout_constraintEnd_toEndOf="parent"
