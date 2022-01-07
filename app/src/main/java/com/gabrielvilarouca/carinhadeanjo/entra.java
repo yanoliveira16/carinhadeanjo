@@ -82,7 +82,7 @@ public class entra extends AppCompatActivity {
                             // updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
-                            errormsg="Erro, e-mail ou senha incorretos!";
+                            errormsg="O e-mail ou a senha não foram digitados da maneira correta. Verifique as informações e tente novamente.";
                             erro();
                            //updateUI(null);
                         }
@@ -165,9 +165,9 @@ public void esqueci_senha(View view) {
         a3.setVisibility(View.INVISIBLE);
 
         AlertDialog alertDialog = new AlertDialog.Builder(entra.this).create();
-        alertDialog.setTitle("ERRO!");
+        alertDialog.setTitle("OPS");
         alertDialog.setMessage(errormsg);
-        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Ok",
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();

@@ -562,11 +562,20 @@ public class lista_tres extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Integer nn = dataSnapshot.getValue(Integer.class);
-                nn += 1;
-                myRef_feed.child("totalfeed").setValue(nn);
 
                 SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
                 String currentDateandTime = sdf.format(new Date());
+
+                if(nn >= 95){
+                    nn = 1;
+                    myRef_feed.child("feed").removeValue();
+                    myRef_feed.child("feed").child(nn +" - serve").setValue(currentDateandTime + " - SERVIDOR: Feed limpo!");
+                    nn += 1;
+                    myRef_feed.child("totalfeed").setValue(nn);
+                }else{
+                    nn += 1;
+                    myRef_feed.child("totalfeed").setValue(nn);
+                }
 
                 if (msg == null){
                     myRef_feed.child("feed").child(nn +" - profe - " + uid).setValue(currentDateandTime + "- " + tela_de_carregamento.nnomeAluno + ": RESPONSÁVEL CIENTE!\nAGENDA:" +lista_dois.onClick2);

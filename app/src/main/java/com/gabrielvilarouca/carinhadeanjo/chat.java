@@ -48,6 +48,7 @@ public class chat extends AppCompatActivity {
 
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     DatabaseReference myRefchat = database.child("P5");
+    DatabaseReference myRef_feed = database.child("P2").child(tela_de_carregamento.tturma);
 
     String id_do_chat;
 
@@ -125,14 +126,12 @@ public class chat extends AppCompatActivity {
     public static Bitmap bitmap;
     public void adicionar_aofeed(){
         itemCount = feed.size();
-        Log.d("AQUI", "AA " +itemCount);
         while(itemCount != 0){
             itemCount -= 1;
             String data = feed.get(itemCount);
             String data2 = feed2.get(itemCount);
-            Log.d("AQUI", "AA2 " +itemCount);
-            Log.d("AQUI 2", "AA3 " +data);
-            Log.d("AQUI", "AA2 " +data2);
+
+
             LinearLayout bSearch2 = (LinearLayout) findViewById(R.id.ll_chat);
             id_do_button += 1;
             Button btnTag = new Button(chat.this);
@@ -223,7 +222,41 @@ public class chat extends AppCompatActivity {
             LinearLayout lyt = (LinearLayout) findViewById(R.id.ll_chat);
             lyt.removeAllViews();
             call_the_chat();
+            enviar_ao_main_feed();
         }
+    }
+
+    public void enviar_ao_main_feed(){
+        myRef_feed.child("totalfeed").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Integer nn = dataSnapshot.getValue(Integer.class);
+
+                SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+                String currentDateandTime = sdf.format(new Date());
+
+                if(nn >= 95){
+                    nn = 1;
+                    myRef_feed.child("feed").removeValue();
+                    myRef_feed.child("feed").child(nn +" - serve").setValue(currentDateandTime + " - SERVIDOR: Feed limpo!");
+                    nn += 1;
+                    myRef_feed.child("totalfeed").setValue(nn);
+                }else{
+                    nn += 1;
+                    myRef_feed.child("totalfeed").setValue(nn);
+                }
+
+                if (tela_de_carregamento.qual == "1"){
+                    myRef_feed.child("feed").child(nn +" - aln - " + id_do_chat).setValue(currentDateandTime + " - AVISO: Nova mensagem no CHAT");
+                }else{
+                    myRef_feed.child("feed").child(nn +" - profe - " + id_do_chat).setValue(currentDateandTime + " - AVISO: Nova mensagem no CHAT com " + tela_de_carregamento.nnomeAluno);
+                }
+
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
     }
 
     String errormsg = "";

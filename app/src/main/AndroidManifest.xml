@@ -14,7 +14,7 @@
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".cordena_alunos"></activity>
+        <activity android:name=".cordena_alunos" />
         <activity android:name=".coordena" />
         <activity android:name=".view_pdf" />
         <activity android:name=".chat" />

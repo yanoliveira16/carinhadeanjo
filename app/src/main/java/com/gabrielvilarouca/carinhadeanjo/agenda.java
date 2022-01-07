@@ -44,6 +44,11 @@ public class agenda extends AppCompatActivity {
     Switch s_judo;
     Switch sint_dormiu;
     Switch sint_evacuou;
+    Switch sevacuou_normal;
+    Switch sevacuou_mole;
+    Switch sevacuou_pastosa;
+    Switch sevacuou_diarreia;
+    Switch sevacuou_ressecada;
 
 
     @Override
@@ -72,7 +77,7 @@ public class agenda extends AppCompatActivity {
                 String currentDateandTime2 = sdf2.format(new Date());
                 if (nk == null){
                     AlertDialog.Builder builder1 = new AlertDialog.Builder(agenda.this);
-                    builder1.setMessage("OPA\nVOCÊ NÃO FEZ A AGENDA DA TURMA HOJE!\nFaça a agenda da turma antes de fazer a agenda do aluno!");
+                    builder1.setMessage("VOCÊ NÃO FEZ A AGENDA DA TURMA HOJE!\n\nFaça a agenda da turma antes de fazer a agenda do aluno!");
                     builder1.setCancelable(true);
 
                     builder1.setPositiveButton(
@@ -218,6 +223,9 @@ public class agenda extends AppCompatActivity {
                 }else if (nk.contains("dificuldade") == true){
                     s25 = findViewById(R.id.s25);
                     s25.setChecked(true);
+                }else if (nk.contains("Não fez") == true){
+                    atvsala = findViewById(R.id.s_atvsala);
+                    atvsala.setChecked(true);
                 }
                 hg2 = true;
                 checar();
@@ -505,6 +513,26 @@ public class agenda extends AppCompatActivity {
                     s50 = findViewById(R.id.s50);
                     s50.setChecked(true);
                 }
+                if (nk.contains("normal") == true){
+                    sevacuou_normal = findViewById(R.id.sevacuou_normal);
+                    sevacuou_normal.setChecked(true);
+                }
+                if (nk.contains("mole") == true){
+                    sevacuou_mole = findViewById(R.id.sevacuou_mole);
+                    sevacuou_mole.setChecked(true);
+                }
+                if (nk.contains("pastosa") == true){
+                    sevacuou_pastosa = findViewById(R.id.sevacuou_pastosa);
+                    sevacuou_pastosa.setChecked(true);
+                }
+                if (nk.contains("Diarréia") == true){
+                    sevacuou_diarreia = findViewById(R.id.sevacuou_diarreia);
+                    sevacuou_diarreia.setChecked(true);
+                }
+                if (nk.contains("ressecada") == true){
+                    sevacuou_ressecada = findViewById(R.id.sevacuou_ressecada);
+                    sevacuou_ressecada.setChecked(true);
+                }
                 if (nk.contains("Urinou") == true){
                     s51 = findViewById(R.id.s51);
                     s51.setChecked(true);
@@ -611,14 +639,24 @@ public class agenda extends AppCompatActivity {
 
     String falta = "";
     Switch s;
+    Switch deve_casa;
 
     public void enviar0() {
         s = findViewById(R.id.s);
+        deve_casa = findViewById(R.id.s_devercasa);
         if (s.isChecked() == false) {
-            falta = "PRESENTE";
+            if(deve_casa.isChecked() == true){
+                falta = "PRESENTE | NÃO FEZ O DEVER DE CASA";
+            }else{
+                falta = "PRESENTE";
+            }
             enviar2();
         }else if (s.isChecked() == true){
-            falta = "FALTA";
+            if(deve_casa.isChecked() == true){
+                falta = "FALTA | NÃO FEZ O DEVER DE CASA";
+            }else{
+                falta = "FALTA";
+            }
             myRef4.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
@@ -664,6 +702,7 @@ public class agenda extends AppCompatActivity {
     String extra_judo = "";
     Switch s24;
     Switch s25;
+    Switch atvsala;
 
     public void enviar2(){
         s_ballet = findViewById(R.id.s_ballet);
@@ -685,14 +724,16 @@ public class agenda extends AppCompatActivity {
 
         s24 = findViewById(R.id.s24);
         s25 = findViewById(R.id.s25);
+        atvsala = findViewById(R.id.s_atvsala);
 
 
         if (s24.isChecked() == true)
         {
             atvs2 = "Realizou com facilidade";
-        }else if (s25.isChecked() == true)
-        {
+        }else if (s25.isChecked() == true) {
             atvs2 = "Realizou com dificuldade";
+        }else if (atvsala.isChecked() == true) {
+            atvs2 = "Não fez a atividade de sala";
         }else{
             atvs2 = "";
         }
@@ -799,6 +840,8 @@ public class agenda extends AppCompatActivity {
     }
 
     String apresentou = "";
+    String graus = "";
+    boolean fefe = false;
     Switch s36;
     Switch s37;
     Switch s38;
@@ -809,6 +852,7 @@ public class agenda extends AppCompatActivity {
         s37 = findViewById(R.id.s37);
         s38 = findViewById(R.id.s38);
         s39 = findViewById(R.id.s39);
+        fefe = false;
 
         if (s36.isChecked() == true) {
             apresentou = "Coriza";
@@ -820,7 +864,14 @@ public class agenda extends AppCompatActivity {
             apresentou += "Vômito | ";
         }
         if (s39.isChecked() == true) {
-            apresentou += "Febre | ";
+            final EditText graustt = (EditText) findViewById(R.id.graus);
+            graus = graustt.getText().toString();
+            if (graus != null && graus != ""){
+                apresentou += "Febre de " +graus + " graus |";
+            }else{
+                apresentou += "Febre | ";
+            }
+            fefe = true;
         }
 
         enviar16();
@@ -921,6 +972,11 @@ public class agenda extends AppCompatActivity {
     public void enviar11() {
         sint_dormiu = findViewById(R.id.sint_dormiu);
         sint_evacuou = findViewById(R.id.sint_evacuou);
+        sevacuou_normal = findViewById(R.id.sevacuou_normal);
+        sevacuou_mole = findViewById(R.id.sevacuou_mole);
+        sevacuou_pastosa = findViewById(R.id.sevacuou_pastosa);
+        sevacuou_diarreia = findViewById(R.id.sevacuou_diarreia);
+        sevacuou_ressecada = findViewById(R.id.sevacuou_ressecada);
         s49 = findViewById(R.id.s49);
         s50 = findViewById(R.id.s50);
         s51 = findViewById(R.id.s51);
@@ -941,14 +997,29 @@ public class agenda extends AppCompatActivity {
         if (s53.isChecked() == true) {
             isono += "Não tomou banho |";
         }
+
+        if (sevacuou_normal.isChecked() == true) {
+            isono += "Evacuação normal |";
+        }
+        if (sevacuou_mole.isChecked() == true) {
+            isono += "Evacuação mole |";
+        }
+        if (sevacuou_pastosa.isChecked() == true) {
+            isono += "Evacuação pastosa |";
+        }
+        if (sevacuou_diarreia.isChecked() == true) {
+            isono += "Diarréia |";
+        }
+        if (sevacuou_ressecada.isChecked() == true) {
+            isono += "Evacuação ressecada |";
+        }
+
         if (s50.isChecked() == true) {
-            Log.d("A MERDA","AQUI ISSO 1 ");
             isono += "Não evacuou | ";
             enviar12();
         }else if(sint_evacuou.isChecked() == true){
             enviar11_1();
         }else{
-            Log.d("A MERDA","AQUI ISSO 2 ");
             enviar12();
         }
     }
@@ -956,10 +1027,6 @@ public class agenda extends AppCompatActivity {
     public void enviar11_1(){
         final EditText et2x = (EditText) findViewById(R.id.sint_qntsevacuou);
         isono_vezes = et2x.getText().toString();
-        Log.d("A MERDA","AQUI ISSO" +"\n-"+isono_vezes+"-\n");
-        Log.d("A MERDA 2", String.valueOf(isono_vezes != null));
-        Log.d("A MERDA 3", String.valueOf(isono_vezes != ""));
-        Log.d("A MERDA 4", String.valueOf(isono_vezes != " "));
         if (isono_vezes != null){
             if(isono_vezes.contains("1") == true || isono_vezes.contains("2") == true || isono_vezes.contains("3") == true || isono_vezes.contains("4") == true || isono_vezes.contains("5") == true || isono_vezes.contains("6") == true || isono_vezes.contains("7") == true || isono_vezes.contains("8") == true || isono_vezes.contains("9") == true || isono_vezes.contains("10") == true){
                 Log.d("A MERDA","AQUI ISSO 3 ");
@@ -1221,7 +1288,8 @@ public class agenda extends AppCompatActivity {
     public void enviar_servidor_oficial() {
 
         SimpleDateFormat sdf2 = new SimpleDateFormat("MM-yyyy");
-        String currentDateandTime2 = sdf2.format(new Date());
+        String datinha1 = sdf2.format(new Date());
+        String currentDateandTime2 = "1 | " + datinha1;
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
         String currentDateandTime = sdf.format(new Date());
@@ -1261,13 +1329,28 @@ public class agenda extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Integer nn = dataSnapshot.getValue(Integer.class);
-                nn += 1;
-                myRef_feed.child("totalfeed").setValue(nn);
 
                 SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
                 String currentDateandTime = sdf.format(new Date());
 
+                if(nn >= 95){
+                    nn = 1;
+                    myRef_feed.child("feed").removeValue();
+                    myRef_feed.child("feed").child(nn +" - serve").setValue(currentDateandTime + " - SERVIDOR: Feed limpo!");
+                    nn += 1;
+                    myRef_feed.child("totalfeed").setValue(nn);
+                }else{
+                    nn += 1;
+                    myRef_feed.child("totalfeed").setValue(nn);
+                }
+
                 myRef_feed.child("feed").child(nn +" - aln - " + tela_do_aluno_prof.id_aluno).setValue(currentDateandTime + ": NOVA AGENDA DISPONÍVEL!");
+
+                if (fefe == true){
+                    nn += 1;
+                    myRef_feed.child("totalfeed").setValue(nn);
+                    myRef_feed.child("feed").child(nn +" - aln - " + tela_do_aluno_prof.id_aluno).setValue(currentDateandTime + " - ATENÇÃO: FEBRE REGISTRADA NA ÚLTIMA AGENDA!");
+                }
 
                 pronto_feed();
             }

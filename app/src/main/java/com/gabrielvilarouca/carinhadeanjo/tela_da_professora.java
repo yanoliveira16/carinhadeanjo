@@ -201,14 +201,10 @@ public class tela_da_professora extends AppCompatActivity {
     public static Bitmap bitmap;
     public void adicionar_aofeed(){
         itemCount = feed.size();
-        Log.d("AQUI", "AA " +itemCount);
         while(itemCount != 0){
             itemCount -= 1;
             String data = feed.get(itemCount);
             String data2 = feed2.get(itemCount);
-            Log.d("AQUI", "AA2 " +itemCount);
-            Log.d("AQUI 2", "AA3 " +data);
-            Log.d("AQUI", "AA2 " +data2);
             LinearLayout bSearch2 = (LinearLayout) findViewById(R.id.linear_feed);
             id_do_button += 1;
             Button btnTag = new Button(tela_da_professora.this);
