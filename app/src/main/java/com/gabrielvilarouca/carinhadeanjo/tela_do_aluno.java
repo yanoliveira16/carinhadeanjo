@@ -430,11 +430,14 @@ public class tela_do_aluno extends AppCompatActivity {
 
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(tela_do_aluno.this, android.R.layout.select_dialog_singlechoice);
         arrayAdapter.add("Cardápio");
+        arrayAdapter.add("Cardápio Berçário");
         arrayAdapter.add("Calendário Escolar");
         arrayAdapter.add("Tema Gerador");
         arrayAdapter.add("Rotina Semanal");
         arrayAdapter.add("Avisos Gerais");
         arrayAdapter.add("Avisos da Turma");
+        arrayAdapter.add("Informações Gerais 1");
+        arrayAdapter.add("Informações Gerais 2");
 
         builderSingle.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
             @Override

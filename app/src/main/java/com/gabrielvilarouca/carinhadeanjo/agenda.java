@@ -94,7 +94,7 @@ public class agenda extends AppCompatActivity {
                     tem_temporaria();
                 }else{
                     AlertDialog.Builder builder1 = new AlertDialog.Builder(agenda.this);
-                    builder1.setMessage("OPA\nVOCÊ NÃO FEZ A AGENDA DA TURMA HOJE!\nFaça a agenda da turma antes de fazer a agenda do aluno!");
+                    builder1.setMessage("VOCÊ NÃO FEZ A AGENDA DA TURMA HOJE!\nFaça a agenda da turma antes de fazer a agenda do aluno!");
                     builder1.setCancelable(true);
 
                     builder1.setPositiveButton(
