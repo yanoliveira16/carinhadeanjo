@@ -26,7 +26,7 @@ import java.util.Date;
 public class agenda_turma extends AppCompatActivity {
     public static String onClick4;
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-    DatabaseReference myRef = database.child("P5").child(tela_de_carregamento.tturma).child("AgendaTurma");
+    DatabaseReference myRef = database.child("P5").child(tela_de_carregamento.tturma).child("AGENDATurma");
     String nkxz = "";
 
     @Override
@@ -221,11 +221,9 @@ public class agenda_turma extends AppCompatActivity {
 
     public void ultima_antes(){
         Switch s5 = findViewById(R.id.s5);
-        Log.d("AQUI","foi");
         if (s5.isChecked() == true) {
             final EditText et2z = (EditText) findViewById(R.id.outro_texto);
             String nnz = et2z.getText().toString();
-            Log.d("AQUI 2","nnz " +nnz);
             if (nnz == null || nnz == "" || nnz == " ") {
                 errormsg = "Você precisa escrever ao menos uma atividade em OUTRO!";
                 erro();

@@ -67,7 +67,7 @@ public class lista_tres extends AppCompatActivity {
 
 
 
-            myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("visto_data").addListenerForSingleValueEvent(new ValueEventListener() {
+            myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("visto_data").addListenerForSingleValueEvent(new ValueEventListener() {
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     String nn = dataSnapshot.getValue(String.class);
                     if (nn != null && tela_de_carregamento.qual != "1"){
@@ -93,7 +93,7 @@ public class lista_tres extends AppCompatActivity {
                 }
             });
 
-        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("msg").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("msg").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -111,20 +111,20 @@ public class lista_tres extends AppCompatActivity {
             }
         });
 
-        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("qnt_visu").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("qnt_visu").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Integer npt = dataSnapshot.getValue(Integer.class);
                 if (tela_de_carregamento.qual != "1"){
                     if (npt == null){
                         npt = 1;
-                        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("qnt_visu").setValue(npt);
+                        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("qnt_visu").setValue(npt);
                         kgh += "\n" +npt +" visualizações";
                         final TextView a1 = (TextView) findViewById(R.id.msg);
                         a1.setText(kgh);
                     }else{
                         npt += 1;
-                        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("qnt_visu").setValue(npt);
+                        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("qnt_visu").setValue(npt);
                         kgh += "\n" +npt +" visualizações";
                         final TextView a1 = (TextView) findViewById(R.id.msg);
                         a1.setText(kgh);
@@ -154,7 +154,7 @@ public class lista_tres extends AppCompatActivity {
             gd.setStroke(5, Color.argb(100, 0, 0, 0)); // border width and color
             gd.setCornerRadius(60.40f);
 
-        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("falta").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("falta").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -171,7 +171,7 @@ public class lista_tres extends AppCompatActivity {
 
 
 
-        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("atvs").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("atvs").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -192,7 +192,7 @@ public class lista_tres extends AppCompatActivity {
             }
         });
 
-        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("atvs2").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("atvs2").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -212,7 +212,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("comportamento").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("comportamento").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -230,7 +230,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("dever").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("dever").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -248,7 +248,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("aviso").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("aviso").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -267,7 +267,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("imedicacao").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("imedicacao").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -283,7 +283,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("iremedio").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("iremedio").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -299,7 +299,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("idosagem").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("idosagem").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -316,7 +316,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("ihorario").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("ihorario").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -333,7 +333,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("apresentou").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("apresentou").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -357,7 +357,7 @@ public class lista_tres extends AppCompatActivity {
         });
 
 
-        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("ilanchematutino").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("ilanchematutino").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -375,7 +375,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("ialmoço").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("ialmoço").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -393,7 +393,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("ilanchevespertino").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("ilanchevespertino").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -411,7 +411,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("ijanta").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("ijanta").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -429,7 +429,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("icomportamento").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("icomportamento").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -447,7 +447,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-       myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("isono").addListenerForSingleValueEvent(new ValueEventListener() {
+       myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("isono").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -465,7 +465,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
        });
-        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("iprovidenciar").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("iprovidenciar").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -483,7 +483,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("iatv").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("iatv").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -501,7 +501,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("obs3").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("obs3").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -547,9 +547,9 @@ public class lista_tres extends AppCompatActivity {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
         String currentDateandTime = sdf.format(new Date());
 
-        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("visto_data").setValue(currentDateandTime);
-        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("visto").setValue("ok");
-        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).child("msg").setValue(msg);
+        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("visto_data").setValue(currentDateandTime);
+        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("visto").setValue("ok");
+        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("msg").setValue(msg);
 
         final TextView  var = (TextView) findViewById(R.id.aluno_agenda3);
         var.setText(v + " \n " + "Ciente: "+currentDateandTime);
@@ -656,7 +656,7 @@ public class lista_tres extends AppCompatActivity {
                                         int nn = dataSnapshot.getValue(Integer.class);
                                         nn -= 1;
                                         myRef2.child(uid).child("faltas").setValue(nn);
-                                        myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).removeValue();
+                                        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).removeValue();
                                         Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
                                         startActivity(intent);
                                     }
@@ -666,7 +666,7 @@ public class lista_tres extends AppCompatActivity {
                                     }
                                 });
                             }else{
-                                myRef2.child(uid).child("Agenda").child(lista_um.onClick).child(lista_dois.onClick2).removeValue();
+                                myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).removeValue();
                                 Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
                                 startActivity(intent);
                             }

@@ -6,18 +6,6 @@
     android:layout_height="match_parent"
     tools:context="com.gabrielvilarouca.carinhadeanjo.lista_dois">
 
-    <ImageView
-        android:id="@+id/imageView20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:alpha="0.2"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fundo_colorido" />
-
     <TextView
         android:id="@+id/aluno_agenda2"
         android:layout_width="wrap_content"
@@ -40,7 +28,7 @@
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_sem_letra" />
+        app:srcCompat="@drawable/alunos" />
 
     <Button
         android:id="@+id/add1"

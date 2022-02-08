@@ -197,7 +197,7 @@ public class tela_do_aluno_prof extends AppCompatActivity {
 
 
     public void agenda_click (View view){
-        Intent intent = new Intent(getBaseContext(), lista_um.class);
+        Intent intent = new Intent(getBaseContext(), lista_ano.class);
         startActivity(intent);
 
     }

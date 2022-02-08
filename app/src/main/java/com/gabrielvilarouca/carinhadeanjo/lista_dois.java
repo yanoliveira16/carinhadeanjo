@@ -82,7 +82,7 @@ public class lista_dois extends AppCompatActivity {
             onde_pegar = login_or_register.id;
         }
 
-        myRef.child(onde_pegar).child("Agenda").child(lista_um.onClick).addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef.child(onde_pegar).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot:dataSnapshot.getChildren())
@@ -126,7 +126,7 @@ public class lista_dois extends AppCompatActivity {
             ImageView myImage = (ImageView) findViewById(R.id.imageView23);
             myImage.setImageBitmap(my_image2);
             aa.setVisibility(View.VISIBLE);
-            myRef.child(tela_do_aluno_prof.id_aluno).child("Agenda").child(lista_um.onClick).addListenerForSingleValueEvent(new ValueEventListener() {
+            myRef.child(tela_do_aluno_prof.id_aluno).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
@@ -155,7 +155,7 @@ public class lista_dois extends AppCompatActivity {
             ImageView myImage = (ImageView) findViewById(R.id.imageView23);
             myImage.setImageBitmap(my_image2);
             aa.setVisibility(View.INVISIBLE);
-            myRef.child(login_or_register.id).child("Agenda").child(lista_um.onClick).addListenerForSingleValueEvent(new ValueEventListener() {
+            myRef.child(login_or_register.id).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {

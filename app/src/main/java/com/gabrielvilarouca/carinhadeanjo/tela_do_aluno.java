@@ -85,7 +85,7 @@ public class tela_do_aluno extends AppCompatActivity {
         String versionName = String.valueOf(BuildConfig.VERSION_NAME);
 
         if (!versionName.contains(tela_de_carregamento.versao)) {
-            new AlertDialog.Builder(tela_do_aluno.this).setMessage("NOVA ATUALIZAÇÃO DISPONÍVEL\n\nRecomendamos que atualize seu aplicativo antes do uso!").show();
+            new AlertDialog.Builder(tela_do_aluno.this).setMessage("NOVA ATUALIZAÇÃO DISPONÍVEL\n\nRecomendamos que atualize seu aplicativo antes do uso!\n\nVersão atual: " + versionName + "\nNova versão: " + tela_de_carregamento.versao).show();
         }
 
         new_feed();
@@ -224,7 +224,7 @@ public class tela_do_aluno extends AppCompatActivity {
     }
 
     public void lista_um_click(View view){
-        Intent intent = new Intent(getBaseContext(), lista_um.class);
+        Intent intent = new Intent(getBaseContext(), lista_ano.class);
         startActivity(intent);
     }
 
