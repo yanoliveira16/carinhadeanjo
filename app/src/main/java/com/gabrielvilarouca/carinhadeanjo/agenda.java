@@ -1192,7 +1192,11 @@ public class agenda extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 valor_agenda = dataSnapshot.getValue(Integer.class);
-                valor_agenda += 1;
+                if(valor_agenda == null){
+                    valor_agenda = 1;
+                }else{
+                    valor_agenda += 1;
+                }
                 myRef2.setValue(valor_agenda);
                 pegar_agendaTurma();
             }
@@ -1303,6 +1307,8 @@ public class agenda extends AppCompatActivity {
         String currentDateandTime000 = sdf000.format(new Date());
 
         String data = valor_agenda + " - " + currentDateandTime + " as " +currentDateandTimex2;
+
+        Log.d("AQUI MERDA","AQUI MERDA - " + myRef +" - " + sistemasd1 + " - " + sistemasd2 + " - " + data);
 
         myRef.child(sistemasd1).child(sistemasd2).child(data).child("falta").setValue(falta);
         myRef.child(sistemasd1).child(sistemasd2).child(data).child("atvs").setValue(atvs);

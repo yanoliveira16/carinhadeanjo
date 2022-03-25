@@ -14,13 +14,18 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".lista_ano"></activity>
+        <activity
+            android:name=".enviar_pdf"
+            android:exported="false" />
+        <activity android:name=".lista_ano" />
         <activity android:name=".cordena_alunos" />
         <activity android:name=".coordena" />
         <activity android:name=".view_pdf" />
         <activity android:name=".chat" />
         <activity android:name=".click_feed" />
-        <activity android:name=".enviar_foto">
+        <activity
+            android:name=".enviar_foto"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.android.camera.action.CROP" />
 
@@ -40,7 +45,8 @@
         <activity android:name=".tela_de_carregamento" />
         <activity android:name=".entra" />
         <activity android:name=".registrar" />
-        <activity android:name=".login_or_register"
+        <activity
+            android:name=".login_or_register"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -56,6 +62,10 @@
         <meta-data
             android:name="com.google.android.gms.vision.DEPENDENCIES"
             android:value="face" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
     </application>
 
 </manifest>
