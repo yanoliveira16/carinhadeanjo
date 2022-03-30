@@ -213,7 +213,7 @@ public class lista_um extends AppCompatActivity {
             Drawable dr = getResources().getDrawable(R.drawable.close);
             dr = getResources().getDrawable(R.drawable.calendar);
             bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
-            Drawable d = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 80, 80, true));
+            Drawable d = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 140, 140, true));
             btnTag.setCompoundDrawablesWithIntrinsicBounds( d, null, null, null);
 
             btnTag.setBackgroundResource(0);
@@ -235,7 +235,7 @@ public class lista_um extends AppCompatActivity {
             ScrollView scroll = (ScrollView) findViewById(R.id.scroll_listaum);
             GradientDrawable gd = new GradientDrawable();
             gd.setShape(GradientDrawable.RECTANGLE);
-            gd.setStroke(8, Color.argb(100, 0,0,0)); // border width and color
+            gd.setStroke(12, Color.argb(100, 0,0,0)); // border width and color
             //gd.setCornerRadius(80.50f);
             gd.setCornerRadius(50);
             scroll.setBackground(gd);
