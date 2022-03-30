@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
@@ -34,30 +35,30 @@ public class click_feed extends AppCompatActivity {
         aa.setText(tela_de_carregamento.onClick19);
         ImageView img= (ImageView) findViewById(R.id.imageView34);
         if (tela_de_carregamento.key_feed.contains("atv")){
-            Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.al_um);
+            Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.exam);
             img.setImageBitmap(bitmap);
         }else if (tela_de_carregamento.key_feed.contains("agd")){
-            Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.al_dois);
+            Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.folder);
             img.setImageBitmap(bitmap);
         }else if (tela_de_carregamento.key_feed.contains("avs")){
-            Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.al_tres);
+            Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.brake);
             img.setImageBitmap(bitmap);
         }else if (tela_de_carregamento.key_feed.contains("reun")){
-            Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.calendar_quatro);
+            Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.calendar);
             img.setImageBitmap(bitmap);
         }else if (tela_de_carregamento.key_feed.contains("outr")){
-            Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.al_cinco);
+            Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.mortarboard);
             img.setImageBitmap(bitmap);
         }else if (tela_de_carregamento.key_feed.contains("profe")){
             if(tela_de_carregamento.onClick19.contains("ALUNO")){
-                Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.alunos);
+                Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.mortarboard);
                 img.setImageBitmap(bitmap);
             }else{
-                Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.message);
+                Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.chat);
                 img.setImageBitmap(bitmap);
             }
         }else if (tela_de_carregamento.key_feed.contains("pic")){
-            Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.picture);
+            Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.auto);
             img.setImageBitmap(bitmap);
         }else if (tela_de_carregamento.key_feed.contains("serve")){
             Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.database);

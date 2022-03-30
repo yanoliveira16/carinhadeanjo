@@ -93,7 +93,7 @@ public class lista_tres extends AppCompatActivity {
                 }
             });
 
-        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("msg").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("msg").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);

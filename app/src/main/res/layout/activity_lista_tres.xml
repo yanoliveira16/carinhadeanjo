@@ -11,19 +11,19 @@
         android:id="@+id/imageView28"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:alpha="0.4"
+        android:alpha="0.3"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fundo_colorido" />
+        app:srcCompat="@drawable/fundodois" />
 
     <ImageView
         android:id="@+id/imageView37"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:alpha="0.4"
+        android:alpha="0"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -74,8 +74,8 @@
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="center"
                 android:text="Carregando..."
-                android:textColor="#0D32D6"
-                android:textSize="18sp" />
+                android:textColor="#000000"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/msg"
@@ -488,11 +488,10 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_sem_letra" />
+        app:srcCompat="@drawable/aaazul" />
 
     <ImageView
         android:id="@+id/carrega_listatres1"
@@ -504,7 +503,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/fundodois"
-        tools:visibility="visible" />
+        tools:visibility="invisible" />
 
     <ProgressBar
         android:id="@+id/carrega_listatres2"

@@ -10,6 +10,7 @@
         android:id="@+id/imageView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:alpha="0.5"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,7 +35,7 @@
                 android:id="@+id/imageView22"
                 android:layout_width="65dp"
                 android:layout_height="35dp"
-                app:srcCompat="@drawable/new_cancel" />
+                app:srcCompat="@drawable/delete" />
 
             <TextView
                 android:id="@+id/textView14"
@@ -43,7 +44,8 @@
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="bottom|center_horizontal"
                 android:text="APAGAR"
-                android:textSize="11sp" />
+                android:textColor="#000000"
+                android:textSize="12sp" />
 
             <Button
                 android:id="@+id/button12"
@@ -68,7 +70,7 @@
                 android:id="@+id/imageView24"
                 android:layout_width="65dp"
                 android:layout_height="35dp"
-                app:srcCompat="@drawable/new_save" />
+                app:srcCompat="@drawable/save" />
 
             <TextView
                 android:id="@+id/textView22"
@@ -77,7 +79,8 @@
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="bottom|center_horizontal"
                 android:text="SALVAR"
-                android:textSize="11sp" />
+                android:textColor="#000000"
+                android:textSize="12sp" />
 
             <Button
                 android:id="@+id/button13"
@@ -102,7 +105,7 @@
                 android:id="@+id/imageView35"
                 android:layout_width="65dp"
                 android:layout_height="35dp"
-                app:srcCompat="@drawable/new_view" />
+                app:srcCompat="@drawable/eye" />
 
             <TextView
                 android:id="@+id/textView27"
@@ -111,7 +114,8 @@
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="bottom|center_horizontal"
                 android:text="AGD. TURMA"
-                android:textSize="11sp" />
+                android:textColor="#000000"
+                android:textSize="12sp" />
 
             <Button
                 android:id="@+id/button14"
@@ -136,7 +140,7 @@
                 android:id="@+id/imageView29"
                 android:layout_width="65dp"
                 android:layout_height="35dp"
-                app:srcCompat="@drawable/new_check" />
+                app:srcCompat="@drawable/send" />
 
             <TextView
                 android:id="@+id/textView26"
@@ -145,7 +149,8 @@
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="bottom|center_horizontal"
                 android:text="ENVIAR"
-                android:textSize="11sp" />
+                android:textSize="12sp"
+                android:textColor="#000000" />
 
             <Button
                 android:id="@+id/pronto"
@@ -163,10 +168,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
-        android:fontFamily="@font/quicksand_light"
+        android:fontFamily="@font/quicksand_medium"
+        android:gravity="center"
         android:text="Carregando..."
         android:textColor="#000000"
-        android:gravity="center"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -181,7 +186,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_sem_letra" />
+        app:srcCompat="@drawable/aaazul" />
 
     <ScrollView
         android:id="@+id/scrollView2"

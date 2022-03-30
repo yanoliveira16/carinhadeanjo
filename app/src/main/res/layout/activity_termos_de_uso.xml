@@ -15,7 +15,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_carinhade_anjo" />
+        app:srcCompat="@drawable/aaazul" />
 
     <TextView
         android:id="@+id/textView17"
