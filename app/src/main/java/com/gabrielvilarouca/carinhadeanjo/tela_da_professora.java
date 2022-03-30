@@ -211,7 +211,7 @@ public class tela_da_professora extends AppCompatActivity {
             btnTag.setLayoutParams(new LinearLayout.LayoutParams
                     (LinearLayout.LayoutParams.WRAP_CONTENT,
                             LinearLayout.LayoutParams.MATCH_PARENT));
-            btnTag.setText(data);
+            btnTag.setText("    "+data);
             btnTag.setId(id_do_button);
             btnTag.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v)

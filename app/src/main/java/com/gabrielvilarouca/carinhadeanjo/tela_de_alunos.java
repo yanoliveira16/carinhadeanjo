@@ -41,7 +41,7 @@ public class tela_de_alunos extends AppCompatActivity {
         setContentView(R.layout.activity_tela_de_alunos);
 
         final TextView a1 = (TextView) findViewById(R.id.ALUNOS);
-        a1.setText("ALUNOS\n" + tela_de_carregamento.tturma);
+        a1.setText("LISTA DE ALUNOS\n" + tela_de_carregamento.tturma);
 
         SimpleDateFormat sdf2 = new SimpleDateFormat("dd-MM-yyyy");
         String currentDateandTime2 = sdf2.format(new Date());
@@ -60,21 +60,21 @@ public class tela_de_alunos extends AppCompatActivity {
                             valor_nisso = dataSnapshot.getValue(String.class);
                             if (valor_nisso != null){
                                 if (valor_nisso.contains("fixa - "+ currentDateandTime2)== true){
-                                    feed.add("\uD83D\uDFE2 - "+key);
+                                    feed.add("✔ "+key);
                                 }else if(valor_nisso.contains("provi - "+ currentDateandTime2)== true){
-                                    feed.add("\uD83D\uDFE0 - "+key);
+                                    feed.add("⚠ "+key);
                                 }else{
-                                    feed.add("\uD83D\uDD34 - "+key);
+                                    feed.add("❌ "+key);
                                 }
                             }else{
-                                feed.add("\uD83D\uDD34 - "+key);
+                                feed.add("❌ "+key);
                             }
                             feed2.add(key);
                             listView_alunos = findViewById(R.id.listView_alunos);
                             GradientDrawable gd = new GradientDrawable();
                             gd.setShape(GradientDrawable.RECTANGLE);
                             gd.setStroke(5, Color.argb(100, 0,0,0)); // border width and color
-                            gd.setCornerRadius(20);
+                            gd.setCornerRadius(40);
                             listView_alunos.setBackground(gd);
                             listView_alunos.setAdapter(arrayAdapter);
                            /* for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
