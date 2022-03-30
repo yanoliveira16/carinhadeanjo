@@ -149,7 +149,7 @@ public class chat extends AppCompatActivity {
 
             Drawable dr = getResources().getDrawable(R.drawable.close);
             if (data.startsWith("p")){
-                dr = getResources().getDrawable(R.drawable.teacher);
+                dr = getResources().getDrawable(R.drawable.aaazul);
                 btnTag.setTextColor(Color.parseColor("#000000"));
                 bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),400));
             }else if(data.startsWith("a")){

@@ -225,35 +225,35 @@ public class tela_da_professora extends AppCompatActivity {
 
                 Drawable dr = getResources().getDrawable(R.drawable.close);
                 if (data.contains("ATIVIDADE")){
-                    dr = getResources().getDrawable(R.drawable.al_um);
+                    dr = getResources().getDrawable(R.drawable.exam);
                     btnTag.setTextColor(Color.parseColor("#000000"));
                     bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
                 }else if(data.contains("AGENDA")){
-                    dr = getResources().getDrawable(R.drawable.al_dois);
+                    dr = getResources().getDrawable(R.drawable.folder);
                     btnTag.setTextColor(Color.parseColor("#000000"));
                     bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
                 }else if(data.contains("AVISO")){
-                    dr = getResources().getDrawable(R.drawable.al_tres);
+                    dr = getResources().getDrawable(R.drawable.brake);
                     btnTag.setTextColor(Color.parseColor("#000000"));
                     bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
                 }else if(data.contains("REUNIÃO") || data.contains("EVENTO")){
-                    dr = getResources().getDrawable(R.drawable.calendar_quatro);
+                    dr = getResources().getDrawable(R.drawable.calendar);
                     btnTag.setTextColor(Color.parseColor("#000000"));
                     bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
                 }else if(data.contains("IMAGEM")){
-                    dr = getResources().getDrawable(R.drawable.picture);
+                    dr = getResources().getDrawable(R.drawable.auto);
                     btnTag.setTextColor(Color.parseColor("#000000"));
                     bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
                 }else if(data.contains("SERVIDOR")){
-                    dr = getResources().getDrawable(R.drawable.database);
+                    dr = getResources().getDrawable(R.drawable.server);
                     btnTag.setTextColor(Color.parseColor("#E91E63"));
                     bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
                 }else if(data.contains("ALUNO")){
-                    dr = getResources().getDrawable(R.drawable.alunos);
+                    dr = getResources().getDrawable(R.drawable.mortarboard);
                     btnTag.setTextColor(Color.parseColor("#000000"));
                     bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
                 }else{
-                    dr = getResources().getDrawable(R.drawable.message);
+                    dr = getResources().getDrawable(R.drawable.chat);
                     btnTag.setTextColor(Color.parseColor("#000000"));
                     bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
                 }
@@ -373,7 +373,7 @@ public class tela_da_professora extends AppCompatActivity {
 
     public void pdf_open(View view){
         AlertDialog.Builder builderSingle = new AlertDialog.Builder(tela_da_professora.this);
-        builderSingle.setIcon(R.drawable.exam);
+        builderSingle.setIcon(R.drawable.exam );
         builderSingle.setTitle("PDF's - Escolha qual deseja visualizar:");
 
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(tela_da_professora.this, android.R.layout.select_dialog_singlechoice);

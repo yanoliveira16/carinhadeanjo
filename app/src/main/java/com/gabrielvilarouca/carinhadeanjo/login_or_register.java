@@ -41,6 +41,9 @@ public class login_or_register extends AppCompatActivity {
 
             View a3=findViewById(R.id.imageView27);
             a3.setVisibility(View.INVISIBLE);
+
+            Intent intent = new Intent(getBaseContext(), entra.class);
+            startActivity(intent);
         }
     }
 

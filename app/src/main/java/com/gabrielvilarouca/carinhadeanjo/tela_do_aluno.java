@@ -285,20 +285,17 @@ public class tela_do_aluno extends AppCompatActivity {
     public static Bitmap bitmap;
     public void adicionar_aofeed(){
         itemCount = feed.size();
-        Log.d("AQUI", "AA " +itemCount);
         while(itemCount != 0){
             itemCount -= 1;
             String data = feed.get(itemCount);
             String data2 = feed2.get(itemCount);
-            Log.d("AQUI", "feed" +data);
-            Log.d("AQUI", "feed2" +data2);
             LinearLayout bSearch2 = (LinearLayout) findViewById(R.id.linear_feed_aluno);
             id_do_button += 1;
             Button btnTag = new Button(tela_do_aluno.this);
             btnTag.setLayoutParams(new LinearLayout.LayoutParams
                     (LinearLayout.LayoutParams.WRAP_CONTENT,
                             LinearLayout.LayoutParams.MATCH_PARENT));
-            btnTag.setText(data);
+            btnTag.setText("    "+data);
             btnTag.setId(id_do_button);
             btnTag.setTextColor(Color.parseColor("#E91E63"));
             btnTag.setOnClickListener(new View.OnClickListener() {
@@ -313,40 +310,40 @@ public class tela_do_aluno extends AppCompatActivity {
 
             Drawable dr = getResources().getDrawable(R.drawable.close);
             if (data.contains("ATIVIDADE") == true){
-                dr = getResources().getDrawable(R.drawable.al_um);
+                dr = getResources().getDrawable(R.drawable.exam);
                 btnTag.setTextColor(Color.parseColor("#000000"));
                 bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }else if(data.contains("AGENDA") == true){
-                dr = getResources().getDrawable(R.drawable.al_dois);
+                dr = getResources().getDrawable(R.drawable.folder);
                 btnTag.setTextColor(Color.parseColor("#000000"));
                 bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }else if(data.contains("AVISO") == true){
-                dr = getResources().getDrawable(R.drawable.al_tres);
+                dr = getResources().getDrawable(R.drawable.brake);
                 btnTag.setTextColor(Color.parseColor("#000000"));
                 bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }else if(data.contains("REUNIÃO") == true || data.contains("EVENTO") == true){
-                dr = getResources().getDrawable(R.drawable.calendar_quatro);
+                dr = getResources().getDrawable(R.drawable.calendar);
                 btnTag.setTextColor(Color.parseColor("#000000"));
                 bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }else if(data.contains("IMAGEM") == true){
-                dr = getResources().getDrawable(R.drawable.picture);
+                dr = getResources().getDrawable(R.drawable.auto);
                 btnTag.setTextColor(Color.parseColor("#000000"));
                 bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }else if(data.contains("SERVIDOR") == true){
-                dr = getResources().getDrawable(R.drawable.database);
+                dr = getResources().getDrawable(R.drawable.server);
                 btnTag.setTextColor(Color.parseColor("#E91E63"));
                 bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }else if(data.contains("ALUNO") == true){
-                dr = getResources().getDrawable(R.drawable.alunos);
+                dr = getResources().getDrawable(R.drawable.mortarboard);
                 btnTag.setTextColor(Color.parseColor("#000000"));
                 bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }else{
-                dr = getResources().getDrawable(R.drawable.message);
+                dr = getResources().getDrawable(R.drawable.chat);
                 btnTag.setTextColor(Color.parseColor("#000000"));
                 bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }
 
-            Drawable d = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 80, 80, true));
+            Drawable d = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 100, 100, true));
             btnTag.setCompoundDrawablesWithIntrinsicBounds( d, null, null, null);
 
             btnTag.setBackgroundResource(0);

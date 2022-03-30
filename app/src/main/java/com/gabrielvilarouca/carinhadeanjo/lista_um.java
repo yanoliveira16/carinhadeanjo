@@ -186,7 +186,7 @@ public class lista_um extends AppCompatActivity {
     }
 
     int itemCount;
-    Integer id_do_button = 10000;
+    Integer id_do_button = 11000;
     public static Bitmap bitmap;
     public void adicionar_aofeed(){
         itemCount = feed2.size();
@@ -199,7 +199,7 @@ public class lista_um extends AppCompatActivity {
             btnTag.setLayoutParams(new LinearLayout.LayoutParams
                     (LinearLayout.LayoutParams.WRAP_CONTENT,
                             LinearLayout.LayoutParams.MATCH_PARENT));
-            btnTag.setText(data2);
+            btnTag.setText("    "+data2);
             btnTag.setId(id_do_button);
             btnTag.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v)

@@ -118,7 +118,7 @@ public class lista_ano extends AppCompatActivity {
             btnTag.setLayoutParams(new LinearLayout.LayoutParams
                     (LinearLayout.LayoutParams.WRAP_CONTENT,
                             LinearLayout.LayoutParams.MATCH_PARENT));
-            btnTag.setText(data2);
+            btnTag.setText("    "+data2);
             btnTag.setId(id_do_button);
             btnTag.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v)
