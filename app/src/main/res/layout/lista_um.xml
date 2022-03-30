@@ -22,7 +22,7 @@
         android:id="@+id/aluno_agenda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/quicksand_light"
+        android:fontFamily="@font/quicksand_medium"
         android:gravity="center"
         android:text="Carregando..."
         android:textColor="#000000"
@@ -40,7 +40,7 @@
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/alunos" />
+        app:srcCompat="@drawable/aaazul" />
 
     <ScrollView
         android:id="@+id/scroll_listaum"

@@ -35,8 +35,6 @@ public class login_or_register extends AppCompatActivity {
             Intent intent = new Intent(getBaseContext(), tela_de_carregamento.class);
             startActivity(intent);
         }else{
-            View a1=findViewById(R.id.progressBar2);
-            a1.setVisibility(View.INVISIBLE);
 
             View a2=findViewById(R.id.imageView12);
             a2.setVisibility(View.INVISIBLE);
