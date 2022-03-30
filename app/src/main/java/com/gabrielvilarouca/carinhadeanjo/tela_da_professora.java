@@ -278,7 +278,7 @@ public class tela_da_professora extends AppCompatActivity {
             ScrollView scroll = (ScrollView) findViewById(R.id.scfeed);
             GradientDrawable gd = new GradientDrawable();
             gd.setShape(GradientDrawable.RECTANGLE);
-            gd.setStroke(5, Color.argb(100, 0,0,0)); // border width and color
+            gd.setStroke(0, Color.argb(100, 0,0,0)); // border width and color
             //gd.setCornerRadius(80.50f);
             gd.setCornerRadius(70);
             scroll.setBackground(gd);
@@ -373,7 +373,7 @@ public class tela_da_professora extends AppCompatActivity {
 
     public void pdf_open(View view){
         AlertDialog.Builder builderSingle = new AlertDialog.Builder(tela_da_professora.this);
-        builderSingle.setIcon(R.drawable.new_paste);
+        builderSingle.setIcon(R.drawable.exam);
         builderSingle.setTitle("PDF's - Escolha qual deseja visualizar:");
 
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(tela_da_professora.this, android.R.layout.select_dialog_singlechoice);

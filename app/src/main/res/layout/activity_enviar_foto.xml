@@ -10,6 +10,7 @@
         android:id="@+id/imageView30"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:alpha="0.4"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,7 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/profile" />
+        app:srcCompat="@drawable/auto" />
 
     <com.lyft.android.scissors.CropView
         android:id="@+id/crop_view"

@@ -81,8 +81,6 @@ public class tela_de_carregamento extends AppCompatActivity {
         if(login_or_register.id == null){
             String aa = "Cadastro não encontrado!\nEntre em contato com a escola.";
             a1.setText(aa);
-            View a2=findViewById(R.id.progressBar);
-            a2.setVisibility(View.INVISIBLE);
 
             View a3=findViewById(R.id.button4);
             a3.setVisibility(View.VISIBLE);
@@ -98,11 +96,9 @@ public class tela_de_carregamento extends AppCompatActivity {
 
                 String nn = dataSnapshot.getValue(String.class);
                 if(nn == null){
-                    String aa = "Cadastro não encontrado!\nEntre em contato com a escola.";
+                    String aa = "Cadastro não encontrado!\nTente novamente ou entre em contato com a escola.";
                     final TextView a1 = (TextView) findViewById(R.id.texto_carregamento);
                     a1.setText(aa);
-                    View a2=findViewById(R.id.progressBar);
-                    a2.setVisibility(View.INVISIBLE);
 
                     View a3=findViewById(R.id.button4);
                     a3.setVisibility(View.VISIBLE);
@@ -110,8 +106,6 @@ public class tela_de_carregamento extends AppCompatActivity {
                     String aa = "OPA! \n Cadastro ainda não aprovado.\nAguarde e volte mais tarde!";
                     final TextView a1 = (TextView) findViewById(R.id.texto_carregamento);
                     a1.setText(aa);
-                    View a2=findViewById(R.id.progressBar);
-                    a2.setVisibility(View.INVISIBLE);
 
                     View a3=findViewById(R.id.button4);
                     a3.setVisibility(View.VISIBLE);
@@ -129,8 +123,6 @@ public class tela_de_carregamento extends AppCompatActivity {
                     String aa = "ERRO\nNão encontramos suas informações!";
                     final TextView a1 = (TextView) findViewById(R.id.texto_carregamento);
                     a1.setText(aa);
-                    View a2=findViewById(R.id.progressBar);
-                    a2.setVisibility(View.INVISIBLE);
 
                     View a3=findViewById(R.id.button4);
                     a3.setVisibility(View.VISIBLE);

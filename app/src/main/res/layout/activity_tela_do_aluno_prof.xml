@@ -24,7 +24,7 @@
                 android:id="@+id/imageView22"
                 android:layout_width="75dp"
                 android:layout_height="45dp"
-                app:srcCompat="@drawable/new_folder" />
+                app:srcCompat="@drawable/folder" />
 
             <TextView
                 android:id="@+id/textView14"
@@ -33,7 +33,7 @@
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="bottom|center_horizontal"
                 android:text="AGENDA"
-                android:textSize="11sp" />
+                android:textSize="14sp" />
 
             <Button
                 android:id="@+id/button17"
@@ -58,7 +58,7 @@
                 android:id="@+id/imageView35"
                 android:layout_width="75dp"
                 android:layout_height="45dp"
-                app:srcCompat="@drawable/new_chat" />
+                app:srcCompat="@drawable/chat" />
 
             <TextView
                 android:id="@+id/textView27"
@@ -67,7 +67,7 @@
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="bottom|center_horizontal"
                 android:text="CHAT"
-                android:textSize="11sp" />
+                android:textSize="14sp" />
 
             <Button
                 android:id="@+id/button5"
@@ -92,7 +92,7 @@
                 android:id="@+id/imageView29"
                 android:layout_width="75dp"
                 android:layout_height="45dp"
-                app:srcCompat="@drawable/new_check" />
+                app:srcCompat="@drawable/save" />
 
             <TextView
                 android:id="@+id/textView26"
@@ -101,7 +101,7 @@
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="bottom|center_horizontal"
                 android:text="SALVAR"
-                android:textSize="11sp" />
+                android:textSize="14sp" />
 
             <Button
                 android:id="@+id/button6"
@@ -118,7 +118,7 @@
         android:id="@+id/turma3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/quicksand_light"
+        android:fontFamily="@font/quicksand_medium"
         android:gravity="center"
         android:text="Carregando..."
         android:textColor="#000000"
@@ -139,7 +139,7 @@
         <ImageView
             android:layout_width="65dp"
             android:layout_height="45dp"
-            app:srcCompat="@drawable/new_view" />
+            app:srcCompat="@drawable/eye" />
 
         <TextView
             android:layout_width="65dp"
@@ -147,7 +147,7 @@
             android:fontFamily="@font/quicksand_medium"
             android:gravity="bottom|center_horizontal"
             android:text="INFOS"
-            android:textSize="11sp" />
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/button24"
@@ -167,7 +167,7 @@
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/new_profile" />
+        app:srcCompat="@drawable/aaazul" />
 
     <EditText
         android:id="@+id/recado_profis"
@@ -198,7 +198,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fundoum"
+        app:srcCompat="@drawable/fundodois"
         tools:visibility="invisible" />
 
     <ProgressBar

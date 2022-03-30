@@ -217,7 +217,7 @@
         android:layout_height="30dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
-        android:background="@drawable/delete"
+        android:background="@drawable/logout"
         android:onClick="sair_click3"
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"

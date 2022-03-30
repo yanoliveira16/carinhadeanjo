@@ -16,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/roxo_new" />
+        app:srcCompat="@drawable/blue_blue" />
 
     <TextView
         android:id="@+id/title_chat"
