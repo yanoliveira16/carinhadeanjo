@@ -10,7 +10,7 @@
         android:id="@+id/aluno_nomeano"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/quicksand_light"
+        android:fontFamily="@font/quicksand_medium"
         android:gravity="center"
         android:text="Carregando..."
         android:textColor="#000000"
@@ -26,7 +26,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        android:background="@drawable/add"
+        android:background="@drawable/plus"
         android:onClick="add_click"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -39,7 +39,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/alunos" />
+        app:srcCompat="@drawable/aaazul" />
 
     <ScrollView
         android:id="@+id/scroll_listaano"

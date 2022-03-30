@@ -57,7 +57,6 @@ public class lista_um extends AppCompatActivity {
         View aa=findViewById(R.id.add);
         final TextView a1 = (TextView) findViewById(R.id.aluno_agenda);
         String onde_pegar;
-        Log.d("PAPAPAPAPPA","\n\n\n\n\n\n\n\n"+ tela_de_carregamento.qual +"\n\n\n\n\n\n\n\n\n\n");
         if (tela_de_carregamento.qual == "1"){
             a1.setText("AGENDA\n"+tela_de_alunos.onClick3);
             ImageView myImage = (ImageView) findViewById(R.id.imageView18);
@@ -212,7 +211,7 @@ public class lista_um extends AppCompatActivity {
             });
 
             Drawable dr = getResources().getDrawable(R.drawable.close);
-            dr = getResources().getDrawable(R.drawable.calendar_quatro);
+            dr = getResources().getDrawable(R.drawable.calendar);
             bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             Drawable d = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 80, 80, true));
             btnTag.setCompoundDrawablesWithIntrinsicBounds( d, null, null, null);
@@ -236,7 +235,7 @@ public class lista_um extends AppCompatActivity {
             ScrollView scroll = (ScrollView) findViewById(R.id.scroll_listaum);
             GradientDrawable gd = new GradientDrawable();
             gd.setShape(GradientDrawable.RECTANGLE);
-            gd.setStroke(3, Color.argb(100, 0,0,0)); // border width and color
+            gd.setStroke(8, Color.argb(100, 0,0,0)); // border width and color
             //gd.setCornerRadius(80.50f);
             gd.setCornerRadius(50);
             scroll.setBackground(gd);
