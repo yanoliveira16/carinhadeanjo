@@ -231,7 +231,7 @@ public class tela_do_aluno extends AppCompatActivity {
     Integer id_do_button = 5000;
     public void new_feed(){
         Log.d("AQUI", "AAAAAAAAA");
-        myRef.child(tela_de_carregamento.tturma).child("feed").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef.child(tela_de_carregamento.tturma).child("FEED").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot:dataSnapshot.getChildren())

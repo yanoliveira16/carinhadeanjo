@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -1336,34 +1337,38 @@ public class agenda extends AppCompatActivity {
     }
 
     public void enviar_feed(){
-        myRef_feed.child("totalfeed").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef_feed.child("TOTAL_FEED").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Integer nn = dataSnapshot.getValue(Integer.class);
-
                 SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
                 String currentDateandTime = sdf.format(new Date());
-
-                if(nn >= 95){
+                if (nn == null){
                     nn = 1;
-                    myRef_feed.child("feed").removeValue();
-                    myRef_feed.child("feed").child(nn +" - serve").setValue(currentDateandTime + " - SERVIDOR: Feed limpo!");
-                    nn += 1;
-                    myRef_feed.child("totalfeed").setValue(nn);
+                    myRef_feed.child("TOTAL_FEED").setValue(nn);
                 }else{
-                    nn += 1;
-                    myRef_feed.child("totalfeed").setValue(nn);
+                    if(nn >= 95){
+                        nn = 1;
+                        myRef_feed.child("FEED").removeValue();
+                        myRef_feed.child("FEED").child(nn +" - serve").setValue(currentDateandTime + " - SERVIDOR: Feed limpo!");
+                        nn += 1;
+                        myRef_feed.child("TOTAL_FEED").setValue(nn);
+                    }else{
+                        nn += 1;
+                        myRef_feed.child("TOTAL_FEED").setValue(nn);
+                    }
                 }
 
-                myRef_feed.child("feed").child(nn +" - aln - " + tela_do_aluno_prof.id_aluno).setValue(currentDateandTime + ": NOVA AGENDA DISPONÍVEL!");
+                myRef_feed.child("FEED").child(nn +" - aln - " + tela_do_aluno_prof.id_aluno).setValue(currentDateandTime + " - NOVA AGENDA: " + falta);
 
                 if (fefe == true){
                     nn += 1;
-                    myRef_feed.child("totalfeed").setValue(nn);
-                    myRef_feed.child("feed").child(nn +" - aln - " + tela_do_aluno_prof.id_aluno).setValue(currentDateandTime + " - ATENÇÃO: FEBRE REGISTRADA NA ÚLTIMA AGENDA!");
+                    myRef_feed.child("TOTAL_FEED").setValue(nn);
+                    myRef_feed.child("FEED").child(nn +" - aln - " + tela_do_aluno_prof.id_aluno).setValue(currentDateandTime + " - AVISO: FEBRE REGISTRADA NA ÚLTIMA AGENDA!");
                 }
 
                 pronto_feed();
+
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {

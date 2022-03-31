@@ -47,10 +47,9 @@ public class chat extends AppCompatActivity {
     List<String> feed2;
 
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-    DatabaseReference myRefchat = database.child("P5");
     DatabaseReference myRef_feed = database.child("P2").child(tela_de_carregamento.tturma);
-
-    String id_do_chat;
+    DatabaseReference refchat = database.child("P3");
+    String id_aluno_chat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,19 +60,20 @@ public class chat extends AppCompatActivity {
         feed2 = new ArrayList<>();
 
         final TextView a18 = (TextView) findViewById(R.id.title_chat);
-        a18.setText("CARREGANDO..");
         if (tela_de_carregamento.qual == "1"){
-            id_do_chat = tela_do_aluno_prof.id_aluno;
+            id_aluno_chat = tela_do_aluno_prof.id_aluno;
+            a18.setText("CHAT\n"+tela_de_alunos.onClick3);
             call_the_chat();
         }else{
-            id_do_chat = login_or_register.id;
+            id_aluno_chat = login_or_register.id;
+            a18.setText("CHAT COM A PROFESSORA");
             call_the_chat();
         }
 
     }
 
     public void call_the_chat(){
-        myRefchat.child("chat").child(id_do_chat).addListenerForSingleValueEvent(new ValueEventListener() {
+        refchat.child(id_aluno_chat).child("CHAT").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot:dataSnapshot.getChildren())
@@ -150,9 +150,10 @@ public class chat extends AppCompatActivity {
             Drawable dr = getResources().getDrawable(R.drawable.close);
             if (data.startsWith("p")){
                 dr = getResources().getDrawable(R.drawable.aaazul);
-                btnTag.setTextColor(Color.parseColor("#000000"));
+                btnTag.setTextColor(Color.parseColor("#003FC1"));
                 bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),400));
             }else if(data.startsWith("a")){
+                btnTag.setTextColor(Color.parseColor("#000000"));
                 if (tela_de_carregamento.qual == "1"){
                     bitmap = (getRoundedCornerBitmap(tela_do_aluno_prof.my_image,400));
                 }else{
@@ -214,43 +215,49 @@ public class chat extends AppCompatActivity {
             String currentDateandTime = sdf.format(new Date());
 
             if (tela_de_carregamento.qual == "1"){
-                myRefchat.child("chat").child(id_do_chat).child(currentDateandTime).setValue("p - " + currentDateandTime + ": " +nn);
+                refchat.child(id_aluno_chat).child("CHAT").child(currentDateandTime).setValue("p - " + currentDateandTime + ": " +nn);
             }else{
-                myRefchat.child("chat").child(id_do_chat).child(currentDateandTime).setValue("a - " + currentDateandTime + ": " +nn);
+                refchat.child(id_aluno_chat).child("CHAT").child(currentDateandTime).setValue("a - " + currentDateandTime + ": " +nn);
             }
-            et2.setText("");
-            LinearLayout lyt = (LinearLayout) findViewById(R.id.ll_chat);
-            lyt.removeAllViews();
-            call_the_chat();
             enviar_ao_main_feed();
         }
     }
 
     public void enviar_ao_main_feed(){
-        myRef_feed.child("totalfeed").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef_feed.child("TOTAL_FEED").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Integer nn = dataSnapshot.getValue(Integer.class);
-
                 SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
                 String currentDateandTime = sdf.format(new Date());
-
-                if(nn >= 95){
+                if (nn == null){
                     nn = 1;
-                    myRef_feed.child("feed").removeValue();
-                    myRef_feed.child("feed").child(nn +" - serve").setValue(currentDateandTime + " - SERVIDOR: Feed limpo!");
-                    nn += 1;
-                    myRef_feed.child("totalfeed").setValue(nn);
+                    myRef_feed.child("TOTAL_FEED").setValue(nn);
                 }else{
-                    nn += 1;
-                    myRef_feed.child("totalfeed").setValue(nn);
+                    if(nn >= 95){
+                        nn = 1;
+                        myRef_feed.child("FEED").removeValue();
+                        myRef_feed.child("FEED").child(nn +" - serve").setValue(currentDateandTime + " - SERVIDOR: Feed limpo!");
+                        nn += 1;
+                        myRef_feed.child("TOTAL_FEED").setValue(nn);
+                    }else{
+                        nn += 1;
+                        myRef_feed.child("TOTAL_FEED").setValue(nn);
+                    }
                 }
 
                 if (tela_de_carregamento.qual == "1"){
-                    myRef_feed.child("feed").child(nn +" - aln - " + id_do_chat).setValue(currentDateandTime + " - AVISO: Nova mensagem no CHAT");
+                    myRef_feed.child("FEED").child(nn +" - aln - " + id_aluno_chat).setValue(currentDateandTime + " - MSG: Nova mensagem no CHAT");
                 }else{
-                    myRef_feed.child("feed").child(nn +" - profe - " + id_do_chat).setValue(currentDateandTime + " - AVISO: Nova mensagem no CHAT com " + tela_de_carregamento.nnomeAluno);
+                    myRef_feed.child("FEED").child(nn +" - profe - " + id_aluno_chat).setValue(currentDateandTime + " - MSG: Nova mensagem no CHAT com " + tela_de_carregamento.nnomeAluno);
                 }
+
+                new AlertDialog.Builder(chat.this).setMessage("Enviado com sucesso!").show();
+                final EditText et2 = (EditText) findViewById(R.id.chat_text);
+                et2.setText("");
+                LinearLayout lyt = (LinearLayout) findViewById(R.id.ll_chat);
+                lyt.removeAllViews();
+                call_the_chat();
 
             }
             @Override

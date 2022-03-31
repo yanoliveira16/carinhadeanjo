@@ -147,7 +147,7 @@ public class tela_da_professora extends AppCompatActivity {
     }
 
     public void call_newfeed(){
-        myRef.child(tela_de_carregamento.tturma).child("feed").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef.child(tela_de_carregamento.tturma).child("FEED").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot:dataSnapshot.getChildren())
