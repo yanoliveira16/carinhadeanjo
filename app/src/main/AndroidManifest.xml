@@ -15,6 +15,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".novo_aluno"
+            android:exported="false" />
+        <activity
+            android:name=".gerenciar"
+            android:exported="false" />
+        <activity
+            android:name=".entrar_dois"
+            android:exported="false" />
+        <activity
             android:name=".atualizacao"
             android:exported="false" />
         <activity

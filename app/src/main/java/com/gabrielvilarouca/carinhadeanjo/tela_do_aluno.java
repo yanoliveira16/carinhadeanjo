@@ -280,6 +280,10 @@ public class tela_do_aluno extends AppCompatActivity {
     }
 
 
+    public void boleto_click(View view){
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://carinhadeanjo.sistema.softwaregeo.com.br/paginas/Login.aspx"));
+        startActivity(browserIntent);
+    }
 
     int itemCount;
     public static Bitmap bitmap;
@@ -410,9 +414,12 @@ public class tela_do_aluno extends AppCompatActivity {
     }*/
 
     public void att_feed(View view){
-        LinearLayout ll = (LinearLayout) findViewById(R.id.linear_feed_aluno);
+        /*LinearLayout ll = (LinearLayout) findViewById(R.id.linear_feed_aluno);
         ll.removeAllViews();
-        new_feed();
+        new_feed();*/
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(tela_do_aluno.this);
+        builder1.setMessage("RECURSO EM DESENVOLVIMENTO\nEstamos com muitas novidades, e em breve iremos liberar mais recursos.");
+        builder1.setCancelable(true);
     }
 
     public void chat_click(View view){
@@ -422,7 +429,7 @@ public class tela_do_aluno extends AppCompatActivity {
 
     public void pdf_open(View view){
         AlertDialog.Builder builderSingle = new AlertDialog.Builder(tela_do_aluno.this);
-        builderSingle.setIcon(R.drawable.new_paste);
+        builderSingle.setIcon(R.drawable.exam);
         builderSingle.setTitle("PDF's - Escolha qual deseja visualizar:");
 
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(tela_do_aluno.this, android.R.layout.select_dialog_singlechoice);

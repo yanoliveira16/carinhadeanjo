@@ -10,11 +10,11 @@
         android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@+id/hgf1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/turma3">
 
         <FrameLayout
             android:layout_width="75dp"
@@ -92,7 +92,7 @@
                 android:id="@+id/imageView29"
                 android:layout_width="75dp"
                 android:layout_height="45dp"
-                app:srcCompat="@drawable/save" />
+                app:srcCompat="@drawable/modeling" />
 
             <TextView
                 android:id="@+id/textView26"
@@ -100,7 +100,7 @@
                 android:layout_height="70dp"
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="bottom|center_horizontal"
-                android:text="SALVAR"
+                android:text="MUDAR"
                 android:textSize="14sp" />
 
             <Button
@@ -108,7 +108,7 @@
                 style="@android:style/Widget.DeviceDefault.Button.Borderless"
                 android:layout_width="75dp"
                 android:layout_height="70dp"
-                android:onClick="enviar" />
+                android:onClick="mudar" />
 
         </FrameLayout>
 
@@ -158,6 +158,27 @@
 
     </FrameLayout>
 
+    <TextView
+        android:id="@+id/info_apto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="-"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+    <EditText
+        android:id="@+id/codigo_do_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info_apto" />
+
     <ImageView
         android:id="@+id/imageView31"
         android:layout_width="100dp"
@@ -168,25 +189,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/aaazul" />
-
-    <EditText
-        android:id="@+id/recado_profis"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="10dp"
-        android:ems="10"
-        android:gravity="top"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        app:layout_constraintEnd_toEndOf="@+id/hgf1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/turma3" />
 
     <ImageView
         android:id="@+id/hgf1"

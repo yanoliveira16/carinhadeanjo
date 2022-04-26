@@ -84,7 +84,7 @@
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="center"
                 android:text="..."
-                android:textColor="#BA0341"
+                android:textColor="#470038"
                 android:textSize="25sp" />
 
             <TextView
@@ -95,8 +95,8 @@
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
                 android:text="PERÍODO PARCIAL"
-                android:textColor="#AE3901"
-                android:textSize="30sp" />
+                android:textColor="#421500"
+                android:textSize="28sp" />
 
             <TextView
                 android:id="@+id/atividade_de_sala"
@@ -199,8 +199,8 @@
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
                 android:text="SAÚDE"
-                android:textColor="#AE3901"
-                android:textSize="30sp" />
+                android:textColor="#421500"
+                android:textSize="28sp" />
 
             <TextView
                 android:id="@+id/medicação"
@@ -266,8 +266,8 @@
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
                 android:text="PERÍODO INTEGRAL"
-                android:textColor="#AE3901"
-                android:textSize="30sp" />
+                android:textColor="#421500"
+                android:textSize="28sp" />
 
             <TextView
                 android:id="@+id/lanche_mat"
@@ -445,7 +445,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:paddingTop="20sp"
-                android:text="Deixe um recadinho:"
+                android:text="Deixe um recado:"
                 android:textColor="#7A012A"
                 android:textSize="20sp" />
 
@@ -453,7 +453,7 @@
                 android:id="@+id/recadinho"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/ic_launcher_background"
+                android:background="#AFAFAF"
                 android:ems="10"
                 android:inputType="textPersonName" />
 
@@ -464,7 +464,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:onClick="recadinho_enviar"
-                android:text="Estou Ciente!"
+                android:text="ESTOU CIENTE"
                 android:textColor="#9F1342"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -477,7 +477,7 @@
                 android:fontFamily="@font/quicksand_bold"
                 android:onClick="apagar_click"
                 android:text="- APAGAR A AGENDA -"
-                android:textColor="#C30000"
+                android:textColor="#FF0057"
                 android:textSize="24sp" />
 
         </LinearLayout>

@@ -73,17 +73,6 @@ public class tela_do_aluno_prof extends AppCompatActivity {
                     public void onCancelled(DatabaseError databaseError) {
                     }
                 });
-                myRef2.child(id_aluno).child("recado_profe").addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        String recado = dataSnapshot.getValue(String.class);
-                        TextView a1 = (EditText) findViewById(R.id.recado_profis);
-                        a1.setText(recado);
-                    }
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                    }
-                });
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -97,6 +86,19 @@ public class tela_do_aluno_prof extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 email_alunoprofe = dataSnapshot.getValue(String.class);
+                if (email_alunoprofe != null){
+                    final TextView a1 = (TextView) findViewById(R.id.info_apto);
+                    a1.setText("Aluno(a) apto(a) para login com código:");
+
+                    TextView a111 = (EditText) findViewById(R.id.codigo_do_id);
+                    a111.setText(id_aluno);
+                }else{
+                    final TextView a1 = (TextView) findViewById(R.id.info_apto);
+                    a1.setText("Aluno(a) NÃO apto(a) para login com código!");
+
+                    TextView a222 = (EditText) findViewById(R.id.codigo_do_id);
+                    a222.setText("");
+                }
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -188,18 +190,16 @@ public class tela_do_aluno_prof extends AppCompatActivity {
         return output;
     }
 
-    public void enviar(View view){
-        final EditText et2 = (EditText) findViewById(R.id.recado_profis);
-        myRef2.child(id_aluno).child("recado_profe").setValue(et2.getText().toString());
-        new AlertDialog.Builder(tela_do_aluno_prof.this).setMessage("Enviado com sucesso!").show();
-    }
-
-
 
     public void agenda_click (View view){
         Intent intent = new Intent(getBaseContext(), lista_ano.class);
         startActivity(intent);
+    }
 
+    public void mudar(View view){
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(tela_do_aluno_prof.this);
+        builder1.setMessage("RECURSO EM DESENVOLVIMENTO\nEstamos com muitas novidades, e em breve iremos liberar mais recursos.");
+        builder1.setCancelable(true);
     }
 
     public void chat_click(View view){

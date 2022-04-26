@@ -190,6 +190,7 @@ public class tela_de_carregamento extends AppCompatActivity {
                                     @Override
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         faltar_no_total = dataSnapshot.getValue(Integer.class);
+
                                         Intent intent = new Intent(getBaseContext(), tela_do_aluno.class);
                                         startActivity(intent);
 

@@ -184,7 +184,7 @@
                 android:id="@+id/imageView35"
                 android:layout_width="75dp"
                 android:layout_height="45dp"
-                app:srcCompat="@drawable/time" />
+                app:srcCompat="@drawable/modeling" />
 
             <TextView
                 android:id="@+id/textView27"
@@ -192,7 +192,7 @@
                 android:layout_height="70dp"
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="bottom|center_horizontal"
-                android:text="ATUALIZAR"
+                android:text="GERENCIAR"
                 android:textSize="12sp" />
 
             <Button
@@ -200,7 +200,7 @@
                 style="@android:style/Widget.DeviceDefault.Button.Borderless"
                 android:layout_width="75dp"
                 android:layout_height="70dp"
-                android:onClick="att_feed" />
+                android:onClick="gerenciar_click" />
 
         </FrameLayout>
 

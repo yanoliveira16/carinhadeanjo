@@ -363,7 +363,10 @@ public class tela_da_professora extends AppCompatActivity {
         new AlertDialog.Builder(tela_da_professora.this).setMessage("EM BREVE").show();
     }
 
-
+    public void gerenciar_click(View view){
+        Intent intent = new Intent(getBaseContext(), gerenciar.class);
+        startActivity(intent);
+    }
 
     public void att_feed(View view){
         LinearLayout ll = (LinearLayout) findViewById(R.id.linear_feed);

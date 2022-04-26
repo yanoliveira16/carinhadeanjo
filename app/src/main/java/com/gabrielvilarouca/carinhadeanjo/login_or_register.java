@@ -4,8 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -30,10 +32,9 @@ public class login_or_register extends AppCompatActivity {
         setContentView(R.layout.activity_login_or_register);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         //Log.d("USER", "\n\n\n\n\n\n\naqui" + user.getUid());
-        if (user != null) {
+        if (user != null){
             id=user.getUid();
-            Intent intent = new Intent(getBaseContext(), tela_de_carregamento.class);
-            startActivity(intent);
+            ir_Agora();
         }else{
 
             View a2=findViewById(R.id.imageView12);
@@ -41,10 +42,12 @@ public class login_or_register extends AppCompatActivity {
 
             View a3=findViewById(R.id.imageView27);
             a3.setVisibility(View.INVISIBLE);
-
-            Intent intent = new Intent(getBaseContext(), entra.class);
-            startActivity(intent);
         }
+    }
+
+    public void ir_Agora(){
+        Intent intent = new Intent(getBaseContext(), tela_de_carregamento.class);
+        startActivity(intent);
     }
 
     public void registrar_click(View view){
@@ -53,6 +56,11 @@ public class login_or_register extends AppCompatActivity {
     }
     public void entra_click(View view){
         Intent intent = new Intent(getBaseContext(), entra.class);
+        startActivity(intent);
+    }
+
+    public void entranovo_click(View view){
+        Intent intent = new Intent(getBaseContext(), entrar_dois.class);
         startActivity(intent);
     }
 
