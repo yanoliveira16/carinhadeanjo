@@ -19,6 +19,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class tela_de_carregamento extends AppCompatActivity {
     public static String nnomePai, nnomeAluno, tturma, nnomeProfe, qual, onClick19, key_feed, tem_coordena, pdf_qualfile, versao;
     public static Integer faltar_no_total;
@@ -96,6 +99,7 @@ public class tela_de_carregamento extends AppCompatActivity {
 
                 String nn = dataSnapshot.getValue(String.class);
                 if(nn == null){
+                    tem_coordena = "nao";
                     String aa = "Cadastro não encontrado!\nTente novamente ou entre em contato com a escola.";
                     final TextView a1 = (TextView) findViewById(R.id.texto_carregamento);
                     a1.setText(aa);
@@ -103,6 +107,7 @@ public class tela_de_carregamento extends AppCompatActivity {
                     View a3=findViewById(R.id.button4);
                     a3.setVisibility(View.VISIBLE);
                 }else if (nn.contains("P1") == true) {
+                    tem_coordena = "nao";
                     String aa = "OPA! \n Cadastro ainda não aprovado.\nAguarde e volte mais tarde!";
                     final TextView a1 = (TextView) findViewById(R.id.texto_carregamento);
                     a1.setText(aa);
@@ -111,8 +116,10 @@ public class tela_de_carregamento extends AppCompatActivity {
                     a3.setVisibility(View.VISIBLE);
 
                 } else if (nn.contains("P3") == true) {
+                    tem_coordena = "nao";
                     carregamento3();
                 } else if (nn.contains("P4") == true) {
+                    tem_coordena = "nao";
                     carregamento2();
                 }else if (nn.contains("TODOS") == true) {
                     tem_coordena = "tem";
@@ -120,6 +127,7 @@ public class tela_de_carregamento extends AppCompatActivity {
                     Intent intent = new Intent(getBaseContext(), coordena.class);
                     startActivity(intent);
                 }else{
+                    tem_coordena = "nao";
                     String aa = "ERRO\nNão encontramos suas informações!";
                     final TextView a1 = (TextView) findViewById(R.id.texto_carregamento);
                     a1.setText(aa);
@@ -148,6 +156,11 @@ public class tela_de_carregamento extends AppCompatActivity {
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         qual = "1";
                         tturma = dataSnapshot.getValue(String.class);
+
+                        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+                        String currentDateandTime = sdf.format(new Date());
+                        myRef3.child(login_or_register.id).child("ultimo_login").setValue(currentDateandTime);
+
                         Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
                         startActivity(intent);
 
@@ -190,6 +203,10 @@ public class tela_de_carregamento extends AppCompatActivity {
                                     @Override
                                     public void onDataChange(DataSnapshot dataSnapshot) {
                                         faltar_no_total = dataSnapshot.getValue(Integer.class);
+
+                                        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+                                        String currentDateandTime = sdf.format(new Date());
+                                        myRef2.child(login_or_register.id).child("ultimo_login").setValue(currentDateandTime);
 
                                         Intent intent = new Intent(getBaseContext(), tela_do_aluno.class);
                                         startActivity(intent);

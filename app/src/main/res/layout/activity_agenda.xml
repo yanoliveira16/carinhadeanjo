@@ -628,7 +628,7 @@
                 android:background="#FFFFFF"
                 android:ems="10"
                 android:gravity="center"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 tools:visibility="visible" />
 
             <TextView

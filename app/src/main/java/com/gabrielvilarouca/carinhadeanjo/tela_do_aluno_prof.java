@@ -73,6 +73,17 @@ public class tela_do_aluno_prof extends AppCompatActivity {
                     public void onCancelled(DatabaseError databaseError) {
                     }
                 });
+                myRef2.child(id_aluno).child("ultimo_login").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        String ultimologa = dataSnapshot.getValue(String.class);
+                        TextView abbbc1 = (TextView) findViewById(R.id.ultimologin);
+                        abbbc1.setText("Último login do aluno no aplicativo:\n" +ultimologa);
+                    }
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                    }
+                });
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -98,6 +109,9 @@ public class tela_do_aluno_prof extends AppCompatActivity {
 
                     TextView a222 = (EditText) findViewById(R.id.codigo_do_id);
                     a222.setText("");
+
+                    View abc1=findViewById(R.id.codigo_do_id);
+                    abc1.setVisibility(View.INVISIBLE);
                 }
             }
             @Override

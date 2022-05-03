@@ -103,6 +103,15 @@ public class lista_tres extends AppCompatActivity {
                     kgh = "-";
                 }else{
                     kgh = nn;
+                    final TextView a18 = (TextView) findViewById(R.id.ciente);
+                    final TextView a19 = (TextView) findViewById(R.id.recado);
+                    final TextView a20 = (TextView) findViewById(R.id.recadinho);
+                    ViewGroup parent = (ViewGroup) a18.getParent();
+                    parent.removeView(a18);
+                    ViewGroup parent2 = (ViewGroup) a19.getParent();
+                    parent2.removeView(a19);
+                    ViewGroup parent3 = (ViewGroup) a20.getParent();
+                    parent3.removeView(a20);
                 }
             }
 
@@ -558,7 +567,7 @@ public class lista_tres extends AppCompatActivity {
     }
 
     public void enviar_feed(){
-        myRef_feed.child("totalfeed").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef_feed.child("TOTAL_FEED").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Integer nn = dataSnapshot.getValue(Integer.class);
@@ -568,20 +577,20 @@ public class lista_tres extends AppCompatActivity {
 
                 if(nn >= 95){
                     nn = 1;
-                    myRef_feed.child("feed").removeValue();
-                    myRef_feed.child("feed").child(nn +" - serve").setValue(currentDateandTime + " - SERVIDOR: Feed limpo!");
+                    myRef_feed.child("FEED").removeValue();
+                    myRef_feed.child("FEED").child(nn +" - serve").setValue(currentDateandTime + " - SERVIDOR: Feed limpo!");
                     nn += 1;
-                    myRef_feed.child("totalfeed").setValue(nn);
+                    myRef_feed.child("TOTAL_FEED").setValue(nn);
                 }else{
                     nn += 1;
-                    myRef_feed.child("totalfeed").setValue(nn);
+                    myRef_feed.child("TOTAL_FEED").setValue(nn);
                 }
 
                 if (msg == null){
-                    myRef_feed.child("feed").child(nn +" - profe - " + uid).setValue(currentDateandTime + "- " + tela_de_carregamento.nnomeAluno + ": RESPONSÁVEL CIENTE!\nAGENDA:" +lista_dois.onClick2);
+                    myRef_feed.child("FEED").child(nn +" - profe - " + uid).setValue(currentDateandTime + "- " + tela_de_carregamento.nnomeAluno + ": RESPONSÁVEL CIENTE!\nAGENDA:" +lista_dois.onClick2);
                     pronto_ciente();
                 }else{
-                    myRef_feed.child("feed").child(nn +" - profe - " + uid).setValue(currentDateandTime + "- " + tela_de_carregamento.nnomeAluno + ": " +msg +"\nAGENDA:" +lista_dois.onClick2);
+                    myRef_feed.child("FEED").child(nn +" - profe - " + uid).setValue(currentDateandTime + "- " + tela_de_carregamento.nnomeAluno + ": " +msg +"\nAGENDA:" +lista_dois.onClick2);
                     pronto_ciente();
                 }
             }
