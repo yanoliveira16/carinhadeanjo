@@ -247,9 +247,9 @@ public class chat extends AppCompatActivity {
                 }
 
                 if (tela_de_carregamento.qual == "1"){
-                    myRef_feed.child("FEED").child(nn +" - aln - " + id_aluno_chat).setValue(currentDateandTime + " - MSG: Nova mensagem no CHAT");
+                    myRef_feed.child("FEED").child(nn +" - chat - aln - " + id_aluno_chat).setValue(currentDateandTime + " - MSG: Nova mensagem no CHAT");
                 }else{
-                    myRef_feed.child("FEED").child(nn +" - profe - " + id_aluno_chat).setValue(currentDateandTime + " - MSG: Nova mensagem no CHAT com " + tela_de_carregamento.nnomeAluno);
+                    myRef_feed.child("FEED").child(nn +" - chat - profe - " + id_aluno_chat).setValue(currentDateandTime + " - MSG: Nova mensagem no CHAT com " + tela_de_carregamento.nnomeAluno);
                 }
 
                 new AlertDialog.Builder(chat.this).setMessage("Enviado com sucesso!").show();

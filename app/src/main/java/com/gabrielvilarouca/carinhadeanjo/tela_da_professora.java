@@ -66,6 +66,9 @@ public class tela_da_professora extends AppCompatActivity {
         feed = new ArrayList<>();
         feed2 = new ArrayList<>();
 
+        Button button = (Button) findViewById(R.id.btn_avi_profe);
+        button.setText(tela_de_carregamento.avi_texto);
+
             final TextView a1 = (TextView) findViewById(R.id.turma2);
             a1.setText(tela_de_carregamento.tturma);
              final TextView a2 = (TextView) findViewById(R.id.nome_prof);
@@ -420,6 +423,13 @@ public class tela_da_professora extends AppCompatActivity {
             }
         });
         builderSingle.show();
+    }
+
+    public void click_avi_profe(View view){
+        if (tela_de_carregamento.avi_texto != "SEM AVISO IMPORTANTE"){
+            Intent intent = new Intent(getBaseContext(), aviso_importante.class);
+            startActivity(intent);
+        }
     }
 
 

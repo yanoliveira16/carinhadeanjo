@@ -43,20 +43,32 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/imagem_um" />
 
+    <Button
+        android:id="@+id/btn_avi_profe"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:onClick="click_avi_profe"
+        android:text="SEM AVISO"
+        android:textColor="#770000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nome_prof" />
+
     <ScrollView
         android:id="@+id/scfeed"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
         android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nome_prof">
+        app:layout_constraintTop_toBottomOf="@+id/btn_avi_profe">
 
         <LinearLayout
             android:id="@+id/linear_feed"

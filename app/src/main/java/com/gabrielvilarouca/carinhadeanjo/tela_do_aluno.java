@@ -41,6 +41,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 
 import android.widget.ScrollView;
@@ -75,6 +76,9 @@ public class tela_do_aluno extends AppCompatActivity {
 
         feed = new ArrayList<>();
         feed2 = new ArrayList<>();
+
+        Button button = (Button) findViewById(R.id.btn_aviso);
+        button.setText(tela_de_carregamento.avi_texto);
 
         final TextView a1 = (TextView) findViewById(R.id.aluno);
         a1.setText(tela_de_carregamento.nnomeAluno);
@@ -475,6 +479,36 @@ public class tela_do_aluno extends AppCompatActivity {
             }
         });
         builderSingle.show();
+    }
+
+    public void click_avi(View view){
+        if (tela_de_carregamento.avi_texto != "SEM AVISO IMPORTANTE"){
+            View a2=findViewById(R.id.kkkl2);
+            a2.setVisibility(View.VISIBLE);
+
+            myRef.child(tela_de_carregamento.tturma).child("aviso_turma").child("avi_cliques").addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    String avi_cliques = dataSnapshot.getValue(String.class);
+                    SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+                    String currentDateandTime = sdf.format(new Date()) +":" + tela_de_carregamento.nnomeAluno + " -- ";
+                    if (avi_cliques == null){
+                        avi_cliques = currentDateandTime;
+                    }else{
+                        avi_cliques += currentDateandTime;
+                    }
+                    myRef.child(tela_de_carregamento.tturma).child("aviso_turma").child("avi_cliques").setValue(avi_cliques);
+                    Intent intent = new Intent(getBaseContext(), aviso_importante.class);
+                    startActivity(intent);
+                    View a2=findViewById(R.id.kkkl2);
+                    a2.setVisibility(View.INVISIBLE);
+                }
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+        }
     }
 
 

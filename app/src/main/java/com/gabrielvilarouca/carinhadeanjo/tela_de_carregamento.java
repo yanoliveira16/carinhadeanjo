@@ -23,14 +23,15 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class tela_de_carregamento extends AppCompatActivity {
-    public static String nnomePai, nnomeAluno, tturma, nnomeProfe, qual, onClick19, key_feed, tem_coordena, pdf_qualfile, versao;
+    public static String avi_texto, nnomeAluno, tturma, nnomeProfe, qual, onClick19, key_feed, tem_coordena, pdf_qualfile, versao;
     public static Integer faltar_no_total;
 
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     DatabaseReference myRef = database.child("USU");
-    DatabaseReference myRef2 = database.child("P3");
+    DatabaseReference myRef2 = database.child("P3").child(login_or_register.id);
     DatabaseReference myRef3 = database.child("P4");
     DatabaseReference myRef4 = database.child("P5");
+    DatabaseReference myRef5 = database.child("P2");
 
 
     @Override
@@ -75,9 +76,6 @@ public class tela_de_carregamento extends AppCompatActivity {
         editor.putInt("porra", 0);
         editor.apply();*/
 
-
-        Log.d("AQUI","CARREGANDO " + login_or_register.id);
-
         final TextView a1 = (TextView) findViewById(R.id.texto_carregamento);
         a1.setText("Estamos verificando suas informações...");
 
@@ -117,7 +115,7 @@ public class tela_de_carregamento extends AppCompatActivity {
 
                 } else if (nn.contains("P3") == true) {
                     tem_coordena = "nao";
-                    carregamento3();
+                    novo_carregamento();
                 } else if (nn.contains("P4") == true) {
                     tem_coordena = "nao";
                     carregamento2();
@@ -157,12 +155,26 @@ public class tela_de_carregamento extends AppCompatActivity {
                         qual = "1";
                         tturma = dataSnapshot.getValue(String.class);
 
-                        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
-                        String currentDateandTime = sdf.format(new Date());
-                        myRef3.child(login_or_register.id).child("ultimo_login").setValue(currentDateandTime);
+                        myRef5.child(tturma).child("aviso_turma").child("avi_title").addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                avi_texto = dataSnapshot.getValue(String.class);
+                                if (avi_texto == null || avi_texto == ""){
+                                    avi_texto = "SEM AVISO IMPORTANTE";
+                                }
 
-                        Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
-                        startActivity(intent);
+                                SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+                                String currentDateandTime = sdf.format(new Date());
+                                myRef3.child(login_or_register.id).child("ultimo_login").setValue(currentDateandTime);
+
+                                Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
+                                startActivity(intent);
+                            }
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                            }
+                        });
 
                     }
 
@@ -182,65 +194,60 @@ public class tela_de_carregamento extends AppCompatActivity {
 
     }
 
-    public void carregamento3() {
-        myRef2.child(login_or_register.id).child("Nome Pai").addListenerForSingleValueEvent(new ValueEventListener() {
+    public void novo_carregamento(){
+        myRef2.child("Nome Aluno").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                nnomePai = dataSnapshot.getValue(String.class);
-                myRef2.child(login_or_register.id).child("Nome Aluno").addListenerForSingleValueEvent(new ValueEventListener() {
+                nnomeAluno = dataSnapshot.getValue(String.class);
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        myRef2.child("faltas").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                faltar_no_total = dataSnapshot.getValue(Integer.class);
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        myRef2.child("Turma").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                qual = "2";
+                tturma = dataSnapshot.getValue(String.class);
+
+                myRef5.child(tturma).child("aviso_turma").child("avi_title").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
+                        avi_texto = dataSnapshot.getValue(String.class);
+                        if (avi_texto == null || avi_texto == ""){
+                            avi_texto = "SEM AVISO IMPORTANTE";
+                        }
 
-                        nnomeAluno = dataSnapshot.getValue(String.class);
-                        myRef2.child(login_or_register.id).child("Turma").addListenerForSingleValueEvent(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(DataSnapshot dataSnapshot) {
-                                qual = "2";
-                                tturma = dataSnapshot.getValue(String.class);
+                        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+                        String currentDateandTime = sdf.format(new Date());
+                        myRef2.child(login_or_register.id).child("ultimo_login").setValue(currentDateandTime);
 
-                                myRef2.child(login_or_register.id).child("faltas").addListenerForSingleValueEvent(new ValueEventListener() {
-                                    @Override
-                                    public void onDataChange(DataSnapshot dataSnapshot) {
-                                        faltar_no_total = dataSnapshot.getValue(Integer.class);
-
-                                        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
-                                        String currentDateandTime = sdf.format(new Date());
-                                        myRef2.child(login_or_register.id).child("ultimo_login").setValue(currentDateandTime);
-
-                                        Intent intent = new Intent(getBaseContext(), tela_do_aluno.class);
-                                        startActivity(intent);
-
-                                    }
-
-
-                                    @Override
-                                    public void onCancelled(DatabaseError databaseError) {
-
-                                    }
-                                });
-                            }
-
-                            @Override
-                            public void onCancelled(DatabaseError databaseError) {
-
-                            }
-                        });
+                        Intent intent = new Intent(getBaseContext(), tela_do_aluno.class);
+                        startActivity(intent);
                     }
-
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
 
                     }
                 });
             }
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
             }
         });
-
     }
 
     @Override

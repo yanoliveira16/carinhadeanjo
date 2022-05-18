@@ -30,30 +30,20 @@ public class login_or_register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_or_register);
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        //Log.d("USER", "\n\n\n\n\n\n\naqui" + user.getUid());
-        if (user != null){
-            id=user.getUid();
-            ir_Agora();
-        }else{
 
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null){
+            id = user.getUid();
+            Intent intent = new Intent(getBaseContext(), tela_de_carregamento.class);
+            startActivity(intent);
+        }else{
             View a2=findViewById(R.id.imageView12);
             a2.setVisibility(View.INVISIBLE);
-
             View a3=findViewById(R.id.imageView27);
             a3.setVisibility(View.INVISIBLE);
         }
     }
 
-    public void ir_Agora(){
-        Intent intent = new Intent(getBaseContext(), tela_de_carregamento.class);
-        startActivity(intent);
-    }
-
-    public void registrar_click(View view){
-        Intent intent = new Intent(getBaseContext(), registrar.class);
-        startActivity(intent);
-    }
     public void entra_click(View view){
         Intent intent = new Intent(getBaseContext(), entra.class);
         startActivity(intent);

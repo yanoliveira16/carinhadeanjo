@@ -25,4 +25,9 @@ public class gerenciar extends AppCompatActivity {
         builder1.setMessage("RECURSO EM DESENVOLVIMENTO\nEstamos com muitas novidades, e em breve iremos liberar mais recursos.");
         builder1.setCancelable(true);
     }
+
+    public void aviso_criar_clique(View view){
+        Intent intent = new Intent(getBaseContext(), colocar_aviso.class);
+        startActivity(intent);
+    }
 }
