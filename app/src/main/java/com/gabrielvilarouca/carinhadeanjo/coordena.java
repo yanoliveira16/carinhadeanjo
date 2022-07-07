@@ -54,9 +54,7 @@ public class coordena extends AppCompatActivity {
                 {
                     String key= snapshot.getKey();
                    // String value=snapshot.getValue().toString();
-                    Log.d("AQUI", "AAH " + key +" - ");
                     if (key != null){
-                        Log.d("AQUI", "AAH2 " + key +" - ");
                         feed.add(key);
                     }
                 }
@@ -74,7 +72,6 @@ public class coordena extends AppCompatActivity {
     Integer id_do_button = 8371;
     public void adicionar_aofeed(){
         itemCount = feed.size();
-        Log.d("AQUI", "AA " +itemCount);
         while(itemCount != 0){
             itemCount -= 1;
             String data = feed.get(itemCount);

@@ -49,6 +49,8 @@ public class chat extends AppCompatActivity {
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     DatabaseReference myRef_feed = database.child("P2").child(tela_de_carregamento.tturma);
     DatabaseReference refchat = database.child("P3");
+    DatabaseReference banco_feed_aluno = database.child("P3");
+    DatabaseReference banco_feed_professor = database.child("P2").child(tela_de_carregamento.tturma);
     String id_aluno_chat;
 
     @Override
@@ -204,10 +206,11 @@ public class chat extends AppCompatActivity {
         return output;
     }
 
+    String amensagem;
     public void enviar_chat(View view){
         final EditText et2 = (EditText) findViewById(R.id.chat_text);
-        String nn = et2.getText().toString();
-        if (nn == null || nn == "" || nn == " ") {
+        amensagem = et2.getText().toString();
+        if (amensagem == null || amensagem == "" || amensagem == " ") {
             errormsg = "Você precisa escrever uma mensagem";
             erro();
         } else {
@@ -215,12 +218,87 @@ public class chat extends AppCompatActivity {
             String currentDateandTime = sdf.format(new Date());
 
             if (tela_de_carregamento.qual == "1"){
-                refchat.child(id_aluno_chat).child("CHAT").child(currentDateandTime).setValue("p - " + currentDateandTime + ": " +nn);
+                refchat.child(id_aluno_chat).child("CHAT").child(currentDateandTime).setValue("professor(a) - " + currentDateandTime + ": " +amensagem);
             }else{
-                refchat.child(id_aluno_chat).child("CHAT").child(currentDateandTime).setValue("a - " + currentDateandTime + ": " +nn);
+                refchat.child(id_aluno_chat).child("CHAT").child(currentDateandTime).setValue("aluno(a) - " + currentDateandTime + ": " +amensagem);
             }
-            enviar_ao_main_feed();
+            if (tela_de_carregamento.qual == "1"){
+                novo_feed_aluno();
+            }else{
+                novo_feed_professora();
+            }
         }
+    }
+
+    public void novo_feed_aluno(){
+        banco_feed_aluno.child(id_aluno_chat).child("total_feed").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Integer nn = dataSnapshot.getValue(Integer.class);
+                if (nn == null){
+                    nn = 1;
+                    banco_feed_aluno.child(id_aluno_chat).child("total_feed").setValue(nn);
+                }else{
+                    if(nn >= 20){
+                        nn = 1;
+                        banco_feed_aluno.child(id_aluno_chat).child("feed").removeValue();
+                        banco_feed_aluno.child(id_aluno_chat).child("total_feed").setValue(nn);
+                    }else{
+                        nn += 1;
+                        banco_feed_aluno.child(id_aluno_chat).child("total_feed").setValue(nn);
+                    }
+                }
+
+                SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+                String currentDateandTime = sdf.format(new Date());
+                banco_feed_aluno.child(id_aluno_chat).child("feed").child(nn + " - " +currentDateandTime).setValue(currentDateandTime + " - MSG CHAT: " + amensagem);
+                sucesso_feed();
+
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+    }
+
+    public void novo_feed_professora(){
+        banco_feed_professor.child("total_new_feed").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Integer nn = dataSnapshot.getValue(Integer.class);
+                if (nn == null){
+                    nn = 1;
+                    banco_feed_professor.child("total_new_feed").setValue(nn);
+                }else{
+                    if(nn >= 70){
+                        nn = 1;
+                        banco_feed_professor.child("new_feed").removeValue();
+                        banco_feed_professor.child("total_new_feed").setValue(nn);
+                    }else{
+                        nn += 1;
+                        banco_feed_professor.child("total_new_feed").setValue(nn);
+                    }
+                }
+
+                SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+                String currentDateandTime = sdf.format(new Date());
+                banco_feed_professor.child("new_feed").child(nn + " - "+currentDateandTime).setValue(currentDateandTime + " - MSG CHAT DE "+tela_de_carregamento.nnomeAluno +": " + amensagem);
+                sucesso_feed();
+
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+    }
+
+    public void sucesso_feed(){
+        new AlertDialog.Builder(chat.this).setMessage("Enviado com sucesso!").show();
+        final EditText et2 = (EditText) findViewById(R.id.chat_text);
+        et2.setText("");
+        LinearLayout lyt = (LinearLayout) findViewById(R.id.ll_chat);
+        lyt.removeAllViews();
+        call_the_chat();
     }
 
     public void enviar_ao_main_feed(){

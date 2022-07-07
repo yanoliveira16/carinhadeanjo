@@ -68,16 +68,6 @@
 
 
             <TextView
-                android:id="@+id/falta"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
-                android:text="Carregando..."
-                android:textColor="#000000"
-                android:textSize="20sp" />
-
-            <TextView
                 android:id="@+id/msg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -85,7 +75,17 @@
                 android:gravity="center"
                 android:text="..."
                 android:textColor="#470038"
-                android:textSize="25sp" />
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/falta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:text="Carregando..."
+                android:textColor="#000000"
+                android:textSize="28sp" />
 
             <TextView
                 android:id="@+id/periodo"
@@ -96,7 +96,7 @@
                 android:gravity="center"
                 android:text="PERÍODO PARCIAL"
                 android:textColor="#421500"
-                android:textSize="28sp" />
+                android:textSize="38sp" />
 
             <TextView
                 android:id="@+id/atividade_de_sala"
@@ -200,7 +200,7 @@
                 android:gravity="center"
                 android:text="SAÚDE"
                 android:textColor="#421500"
-                android:textSize="28sp" />
+                android:textSize="38sp" />
 
             <TextView
                 android:id="@+id/medicação"
@@ -267,7 +267,7 @@
                 android:gravity="center"
                 android:text="PERÍODO INTEGRAL"
                 android:textColor="#421500"
-                android:textSize="28sp" />
+                android:textSize="38sp" />
 
             <TextView
                 android:id="@+id/lanche_mat"
@@ -498,12 +498,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/fundodois"
-        tools:visibility="invisible" />
+        tools:visibility="visible" />
 
     <ProgressBar
         android:id="@+id/carrega_listatres2"

@@ -92,6 +92,7 @@ public class colocar_aviso extends AppCompatActivity {
             myRef5.child("avi_title").setValue(titulo);
             myRef5.child("avi_texto").setValue(textoo);
             myRef5.child("avi_link").setValue(linkin);
+            myRef5.child("avi_cliques").setValue("");
             enviar3();
         }
     }

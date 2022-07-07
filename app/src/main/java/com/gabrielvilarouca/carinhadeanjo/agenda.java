@@ -40,6 +40,7 @@ public class agenda extends AppCompatActivity {
     DatabaseReference myRef5 = database.child("P5").child(tela_de_carregamento.tturma).child("AGENDATemporaria").child(tela_do_aluno_prof.id_aluno);
     DatabaseReference myRef_feed = database.child("P2").child(tela_de_carregamento.tturma);
     DatabaseReference myRef6 = database.child("P6");
+    DatabaseReference banco_feed_aluno = database.child("P3");
 
     Switch s_ballet;
     Switch s_judo;
@@ -647,16 +648,16 @@ public class agenda extends AppCompatActivity {
         deve_casa = findViewById(R.id.s_devercasa);
         if (s.isChecked() == false) {
             if(deve_casa.isChecked() == true){
-                falta = "PRESENTE | NÃO FEZ O DEVER DE CASA";
+                falta = "PRESENTE MAS NÃO FEZ O DEVER DE CASA";
             }else{
                 falta = "PRESENTE";
             }
             enviar2();
         }else if (s.isChecked() == true){
             if(deve_casa.isChecked() == true){
-                falta = "FALTA | NÃO FEZ O DEVER DE CASA";
+                falta = "FALTA E NÃO FEZ O DEVER DE CASA";
             }else{
-                falta = "FALTA";
+                falta = "O ALUNO FALTOU NO DIA";
             }
             myRef4.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
@@ -1333,7 +1334,44 @@ public class agenda extends AppCompatActivity {
         myRef.child(sistemasd1).child(sistemasd2).child(data).child("obs3").setValue(obs3);
         myRef6.child("agd_diaria").child(tela_de_carregamento.tturma).child(tela_de_alunos.onClick3).setValue("fixa - "+ currentDateandTime000);
         myRef5.removeValue();
-        enviar_feed();
+        new_feed();
+    }
+
+    public void new_feed(){
+        banco_feed_aluno.child(tela_do_aluno_prof.id_aluno).child("total_feed").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Integer nn = dataSnapshot.getValue(Integer.class);
+                if (nn == null){
+                    nn = 1;
+                    banco_feed_aluno.child(tela_do_aluno_prof.id_aluno).child("total_feed").setValue(nn);
+                }else{
+                    if(nn >= 20){
+                        nn = 1;
+                        banco_feed_aluno.child(tela_do_aluno_prof.id_aluno).child("feed").removeValue();
+                        banco_feed_aluno.child(tela_do_aluno_prof.id_aluno).child("total_feed").setValue(nn);
+                    }else{
+                        nn += 1;
+                        banco_feed_aluno.child(tela_do_aluno_prof.id_aluno).child("total_feed").setValue(nn);
+                    }
+                }
+
+                SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+                String currentDateandTime = sdf.format(new Date());
+                String la_mensagem;
+                if (fefe){
+                    la_mensagem = " - FEBRE REGISTRADA";
+                }else{
+                    la_mensagem = "";
+                }
+                banco_feed_aluno.child(tela_do_aluno_prof.id_aluno).child("feed").child(nn + " - " +currentDateandTime).setValue(currentDateandTime + " - NOVA AGENDA: " + falta +la_mensagem);
+                pronto_feed();
+
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
     }
 
     public void enviar_feed(){

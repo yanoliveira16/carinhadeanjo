@@ -55,7 +55,7 @@ public class tela_da_professora extends AppCompatActivity {
 
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     DatabaseReference myRef = database.child("P2");
-
+    DatabaseReference myRef5 = database.child("P2");
 
     ListView listview_prof;
     @Override
@@ -65,9 +65,6 @@ public class tela_da_professora extends AppCompatActivity {
 
         feed = new ArrayList<>();
         feed2 = new ArrayList<>();
-
-        Button button = (Button) findViewById(R.id.btn_avi_profe);
-        button.setText(tela_de_carregamento.avi_texto);
 
             final TextView a1 = (TextView) findViewById(R.id.turma2);
             a1.setText(tela_de_carregamento.tturma);
@@ -80,6 +77,22 @@ public class tela_da_professora extends AppCompatActivity {
         if (versionName.contains(tela_de_carregamento.versao) == false) {
             new AlertDialog.Builder(tela_da_professora.this).setMessage("NOVA ATUALIZAÇÃO DISPONÍVEL\n\nRecomendamos que atualize seu aplicativo antes do uso!\n\nVersão atual: " + versionName + "\nNova versão: " + tela_de_carregamento.versao).show();
         }
+
+        myRef5.child(tela_de_carregamento.tturma).child("aviso_turma").child("avi_title").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                tela_de_carregamento.avi_texto = dataSnapshot.getValue(String.class);
+                if (tela_de_carregamento.avi_texto == null || tela_de_carregamento.avi_texto == ""){
+                    tela_de_carregamento.avi_texto = "SEM AVISO IMPORTANTE";
+                }
+                Button button = (Button) findViewById(R.id.btn_avi_profe);
+                button.setText(tela_de_carregamento.avi_texto);
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
         new_feed();
 
@@ -150,7 +163,7 @@ public class tela_da_professora extends AppCompatActivity {
     }
 
     public void call_newfeed(){
-        myRef.child(tela_de_carregamento.tturma).child("FEED").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef.child(tela_de_carregamento.tturma).child("new_feed").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot:dataSnapshot.getChildren())

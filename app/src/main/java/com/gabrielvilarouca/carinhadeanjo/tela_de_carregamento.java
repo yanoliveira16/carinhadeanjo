@@ -155,26 +155,12 @@ public class tela_de_carregamento extends AppCompatActivity {
                         qual = "1";
                         tturma = dataSnapshot.getValue(String.class);
 
-                        myRef5.child(tturma).child("aviso_turma").child("avi_title").addListenerForSingleValueEvent(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(DataSnapshot dataSnapshot) {
-                                avi_texto = dataSnapshot.getValue(String.class);
-                                if (avi_texto == null || avi_texto == ""){
-                                    avi_texto = "SEM AVISO IMPORTANTE";
-                                }
+                        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+                        String currentDateandTime = sdf.format(new Date()) + " - ANDROID";
+                        myRef3.child(login_or_register.id).child("ultimo_login").setValue(currentDateandTime);
 
-                                SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
-                                String currentDateandTime = sdf.format(new Date());
-                                myRef3.child(login_or_register.id).child("ultimo_login").setValue(currentDateandTime);
-
-                                Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
-                                startActivity(intent);
-                            }
-                            @Override
-                            public void onCancelled(DatabaseError databaseError) {
-
-                            }
-                        });
+                        Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
+                        startActivity(intent);
 
                     }
 
@@ -231,8 +217,8 @@ public class tela_de_carregamento extends AppCompatActivity {
                         }
 
                         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
-                        String currentDateandTime = sdf.format(new Date());
-                        myRef2.child(login_or_register.id).child("ultimo_login").setValue(currentDateandTime);
+                        String currentDateandTime = sdf.format(new Date()) + " - ANDROID";
+                        myRef2.child("ultimo_login").setValue(currentDateandTime);
 
                         Intent intent = new Intent(getBaseContext(), tela_do_aluno.class);
                         startActivity(intent);

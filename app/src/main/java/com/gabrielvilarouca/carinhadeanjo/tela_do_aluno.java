@@ -66,6 +66,7 @@ public class tela_do_aluno extends AppCompatActivity {
 
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     DatabaseReference myRef = database.child("P2");
+    DatabaseReference myRef2 = database.child("P3").child(login_or_register.id).child("feed");
 
 
     ListView listView;
@@ -234,7 +235,8 @@ public class tela_do_aluno extends AppCompatActivity {
 
     Integer id_do_button = 5000;
     public void new_feed(){
-        myRef.child(tela_de_carregamento.tturma).child("FEED").addListenerForSingleValueEvent(new ValueEventListener() {
+        //MUDANÇA DE FEED PARA P3 - FEED
+        myRef2.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot:dataSnapshot.getChildren())

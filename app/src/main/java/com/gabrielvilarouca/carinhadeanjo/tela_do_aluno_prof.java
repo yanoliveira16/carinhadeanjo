@@ -97,22 +97,6 @@ public class tela_do_aluno_prof extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 email_alunoprofe = dataSnapshot.getValue(String.class);
-                if (email_alunoprofe != null){
-                    final TextView a1 = (TextView) findViewById(R.id.info_apto);
-                    a1.setText("Aluno(a) apto(a) para login com código:");
-
-                    TextView a111 = (EditText) findViewById(R.id.codigo_do_id);
-                    a111.setText(id_aluno);
-                }else{
-                    final TextView a1 = (TextView) findViewById(R.id.info_apto);
-                    a1.setText("Aluno(a) NÃO apto(a) para login com código!");
-
-                    TextView a222 = (EditText) findViewById(R.id.codigo_do_id);
-                    a222.setText("");
-
-                    View abc1=findViewById(R.id.codigo_do_id);
-                    abc1.setVisibility(View.INVISIBLE);
-                }
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -127,6 +111,8 @@ public class tela_do_aluno_prof extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
+        final TextView a1 = (TextView) findViewById(R.id.info_apto);
+        a1.setText("INFORMAÇÕES DO ALUNO\n\nID:\n"+id_aluno +"\n\nEMAIL:\n" +email_alunoprofe + "\n\nSENHA:\n" +senha_alunoprofe);
     }
 
     public static Bitmap my_image;

@@ -29,6 +29,7 @@ public class lista_tres extends AppCompatActivity {
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     DatabaseReference myRef2 = database.child("P3");
     DatabaseReference myRef_feed = database.child("P2").child(tela_de_carregamento.tturma);
+    DatabaseReference banco_feed_professor = database.child("P2").child(tela_de_carregamento.tturma);
     String uid;
     String v;
     String kgh;
@@ -42,6 +43,8 @@ public class lista_tres extends AppCompatActivity {
 
         setContentView(R.layout.activity_lista_tres);
         final TextView aaaaa = (TextView) findViewById(R.id.aluno_agenda3);
+
+        Log.d("LISTA 3","ENTROU AQUI");
 
         if (tela_de_carregamento.qual == "1"){
             uid = tela_do_aluno_prof.id_aluno;
@@ -66,8 +69,7 @@ public class lista_tres extends AppCompatActivity {
         }
 
 
-
-            myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("visto_data").addListenerForSingleValueEvent(new ValueEventListener() {
+            myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("visto_data").addListenerForSingleValueEvent(new ValueEventListener() {
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     String nn = dataSnapshot.getValue(String.class);
                     if (nn != null && tela_de_carregamento.qual != "1"){
@@ -86,6 +88,7 @@ public class lista_tres extends AppCompatActivity {
                     }else{
                         aaaaa.setText(v + " \n " + "Responsável não Ciente! ");
                     }
+                    chamar_parte2();
                 }
 
                 @Override
@@ -93,6 +96,9 @@ public class lista_tres extends AppCompatActivity {
                 }
             });
 
+    }
+
+    public void chamar_parte2(){
         myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("msg").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -103,23 +109,28 @@ public class lista_tres extends AppCompatActivity {
                     kgh = "-";
                 }else{
                     kgh = nn;
-                    final TextView a18 = (TextView) findViewById(R.id.ciente);
-                    final TextView a19 = (TextView) findViewById(R.id.recado);
-                    final TextView a20 = (TextView) findViewById(R.id.recadinho);
-                    ViewGroup parent = (ViewGroup) a18.getParent();
-                    parent.removeView(a18);
-                    ViewGroup parent2 = (ViewGroup) a19.getParent();
-                    parent2.removeView(a19);
-                    ViewGroup parent3 = (ViewGroup) a20.getParent();
-                    parent3.removeView(a20);
+                    if (tela_de_carregamento.qual != "1"){
+                        final TextView a1118 = (TextView) findViewById(R.id.ciente);
+                        final TextView a1119 = (TextView) findViewById(R.id.recado);
+                        final TextView a2220 = (TextView) findViewById(R.id.recadinho);
+                        ViewGroup parent = (ViewGroup) a1118.getParent();
+                        parent.removeView(a1118);
+                        ViewGroup parent2 = (ViewGroup) a1119.getParent();
+                        parent2.removeView(a1119);
+                        ViewGroup parent3 = (ViewGroup) a2220.getParent();
+                        parent3.removeView(a2220);
+                    }
                 }
+                chamar_parte3();
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
         });
+    }
 
+    public void chamar_parte3(){
         myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("qnt_visu").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -128,40 +139,41 @@ public class lista_tres extends AppCompatActivity {
                     if (npt == null){
                         npt = 1;
                         myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("qnt_visu").setValue(npt);
-                        kgh += "\n" +npt +" visualizações";
+                        kgh += "\n" +npt +" VISUALIZAÇÕES DO RESPONSÁVEL";
                         final TextView a1 = (TextView) findViewById(R.id.msg);
                         a1.setText(kgh);
                     }else{
                         npt += 1;
                         myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("qnt_visu").setValue(npt);
-                        kgh += "\n" +npt +" visualizações";
+                        kgh += "\n" +npt +" VISUALIZAÇÕES DO RESPONSÁVEL";
                         final TextView a1 = (TextView) findViewById(R.id.msg);
                         a1.setText(kgh);
                     }
                 }else{
                     if (npt == null){
-                        kgh += "\nSem visualizações";
+                        kgh += "\nO RESPONSÁVEL NÃO VISUALIZOU ESTA AGENDA";
                         final TextView a1 = (TextView) findViewById(R.id.msg);
                         a1.setText(kgh);
                     }else{
-                        kgh += "\n" +npt +" visualizações";
+                        kgh += "\n" +npt +" VISUALIZAÇÕES DO RESPONSÁVEL";
                         final TextView a1 = (TextView) findViewById(R.id.msg);
                         a1.setText(kgh);
                     }
                 }
+                chamar_parte4();
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
         });
+    }
 
-
-
+    public void chamar_parte4(){
         GradientDrawable gd = new GradientDrawable();
-            gd.setShape(GradientDrawable.RECTANGLE);
-            gd.setStroke(5, Color.argb(100, 0, 0, 0)); // border width and color
-            gd.setCornerRadius(60.40f);
+        gd.setShape(GradientDrawable.RECTANGLE);
+        gd.setStroke(5, Color.argb(100, 0, 0, 0)); // border width and color
+        gd.setCornerRadius(60.40f);
 
         myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("falta").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -456,7 +468,7 @@ public class lista_tres extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-       myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("isono").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("isono").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String nn = dataSnapshot.getValue(String.class);
@@ -473,7 +485,7 @@ public class lista_tres extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
-       });
+        });
         myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("iprovidenciar").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -530,17 +542,15 @@ public class lista_tres extends AppCompatActivity {
         });
 
         chamarfoto();
+    }
+
+    public void verificar_saude(){
+        if (s1 == false && s2 == false){
+            View aa=findViewById(R.id.saude);
+            ViewGroup parent = (ViewGroup) aa.getParent();
+            parent.removeView(aa);
         }
-
-        public void verificar_saude(){
-            if (s1 == false && s2 == false){
-                View aa=findViewById(R.id.saude);
-                ViewGroup parent = (ViewGroup) aa.getParent();
-                parent.removeView(aa);
-            }
-        }
-
-
+    }
 
     String msg = "";
 
@@ -558,12 +568,48 @@ public class lista_tres extends AppCompatActivity {
 
         myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("visto_data").setValue(currentDateandTime);
         myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("visto").setValue("ok");
-        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("msg").setValue(msg);
+        myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("msg").setValue("RESPONSÁVEL CIENTE COM A MENSAGEM: "+msg);
 
         final TextView  var = (TextView) findViewById(R.id.aluno_agenda3);
         var.setText(v + " \n " + "Ciente: "+currentDateandTime);
 
-        enviar_feed();
+        enviar_novo_feed();
+    }
+
+    public void enviar_novo_feed(){
+        banco_feed_professor.child("total_new_feed").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Integer nn = dataSnapshot.getValue(Integer.class);
+                if (nn == null){
+                    nn = 1;
+                    banco_feed_professor.child("total_new_feed").setValue(nn);
+                }else{
+                    if(nn >= 70){
+                        nn = 1;
+                        banco_feed_professor.child("new_feed").removeValue();
+                        banco_feed_professor.child("total_new_feed").setValue(nn);
+                    }else{
+                        nn += 1;
+                        banco_feed_professor.child("total_new_feed").setValue(nn);
+                    }
+                }
+
+                SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+                String currentDateandTime = sdf.format(new Date());
+                if (msg == null || msg == "" || msg == " "){
+                    banco_feed_professor.child("new_feed").child(nn + " - "+currentDateandTime).setValue(currentDateandTime + "- " + tela_de_carregamento.nnomeAluno + ": RESPONSÁVEL CIENTE NA AGENDA " +lista_dois.onClick2);
+                }else{
+                    banco_feed_professor.child("new_feed").child(nn + " - "+currentDateandTime).setValue(currentDateandTime + "- " + tela_de_carregamento.nnomeAluno + ": RESPONSÁVEL CIENTE NA AGENDA " +lista_dois.onClick2 + " || RECADO DO PAI: " +msg);
+                }
+
+                pronto_ciente();
+
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
     }
 
     public void enviar_feed(){
