@@ -8,7 +8,7 @@
 
     <ImageView
         android:id="@+id/imageView14"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:alpha="0.4"
         android:scaleType="centerCrop"
@@ -418,6 +418,19 @@
                 android:fontFamily="@font/quicksand_medium"
                 android:onClick="hg6_2"
                 android:text="Agitado"
+                android:textSize="24sp"
+                tools:layout_conversion_absoluteHeight="27dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1193dp" />
+
+            <Switch
+                android:id="@+id/sindisposto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_medium"
+                android:onClick="hg6_2"
+                android:text="Indisposto"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
                 tools:layout_conversion_absoluteWidth="407dp"
@@ -911,46 +924,6 @@
                 tools:layout_editor_absoluteY="1297dp" />
 
             <Switch
-                android:id="@+id/sint_evacuou"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:onClick="hg_evacuou2"
-                android:text="Evacuou"
-                android:textSize="24sp"
-                tools:layout_conversion_absoluteHeight="27dp"
-                tools:layout_conversion_absoluteWidth="407dp"
-                tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="1325dp" />
-
-            <TextView
-                android:id="@+id/sint_textevacuou"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:alpha="1"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="center"
-                android:text="Quantas vezes?"
-                android:textColor="#000000"
-                android:textSize="14sp"
-                tools:layout_conversion_absoluteHeight="34dp"
-                tools:layout_conversion_absoluteWidth="407dp"
-                tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="1653dp"
-                tools:visibility="visible" />
-
-            <EditText
-                android:id="@+id/sint_qntsevacuou"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:alpha="1"
-                android:background="#FFFFFF"
-                android:ems="10"
-                android:gravity="center"
-                android:inputType="number"
-                tools:visibility="visible" />
-
-            <Switch
                 android:id="@+id/sevacuou_normal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -1014,6 +987,33 @@
                 tools:layout_conversion_absoluteWidth="407dp"
                 tools:layout_editor_absoluteX="2dp"
                 tools:layout_editor_absoluteY="1325dp" />
+
+            <TextView
+                android:id="@+id/sint_textevacuou"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alpha="1"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="center"
+                android:text="Quantas vezes evacuou?"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1653dp"
+                tools:visibility="visible" />
+
+            <EditText
+                android:id="@+id/sint_qntsevacuou"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="1"
+                android:background="#FFFFFF"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="number"
+                tools:visibility="visible" />
 
             <Switch
                 android:id="@+id/s50"
@@ -1368,6 +1368,20 @@
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
                 android:text="Verifique tudo antes de enviar!"
+                android:textColor="#515151"
+                android:textSize="16sp"
+                tools:layout_conversion_absoluteHeight="34dp"
+                tools:layout_conversion_absoluteWidth="407dp"
+                tools:layout_editor_absoluteX="2dp"
+                tools:layout_editor_absoluteY="1619dp" />
+
+            <TextView
+                android:id="@+id/espacofinal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:text="-"
                 android:textColor="#515151"
                 android:textSize="16sp"
                 tools:layout_conversion_absoluteHeight="34dp"

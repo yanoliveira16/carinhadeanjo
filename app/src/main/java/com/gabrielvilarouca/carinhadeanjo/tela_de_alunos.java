@@ -60,14 +60,14 @@ public class tela_de_alunos extends AppCompatActivity {
                             valor_nisso = dataSnapshot.getValue(String.class);
                             if (valor_nisso != null){
                                 if (valor_nisso.contains("fixa - "+ currentDateandTime2)== true){
-                                    feed.add("✔ "+key);
+                                    feed.add("\uD83D\uDFE2 "+key);
                                 }else if(valor_nisso.contains("provi - "+ currentDateandTime2)== true){
-                                    feed.add("⚠ "+key);
+                                    feed.add("\uD83D\uDFE1 "+key);
                                 }else{
-                                    feed.add("❌ "+key);
+                                    feed.add("\uD83D\uDD34 "+key);
                                 }
                             }else{
-                                feed.add("❌ "+key);
+                                feed.add("\uD83D\uDD34 "+key);
                             }
                             feed2.add(key);
                             listView_alunos = findViewById(R.id.listView_alunos);

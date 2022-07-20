@@ -97,6 +97,15 @@ public class tela_do_aluno_prof extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 email_alunoprofe = dataSnapshot.getValue(String.class);
+                if (email_alunoprofe != null){
+                    final TextView a1 = (TextView) findViewById(R.id.email_text);
+                    a1.setText(email_alunoprofe);
+                }else{
+                    View emailvii1 =findViewById(R.id.email_view);
+                    emailvii1.setVisibility(View.INVISIBLE);
+                    View emailvii2 =findViewById(R.id.email_text);
+                    emailvii2.setVisibility(View.INVISIBLE);
+                }
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -106,13 +115,22 @@ public class tela_do_aluno_prof extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 senha_alunoprofe = dataSnapshot.getValue(String.class);
+                if(senha_alunoprofe != null){
+                    final TextView a1 = (TextView) findViewById(R.id.senha_text);
+                    a1.setText(senha_alunoprofe);
+                }else{
+                    View senhavii1 =findViewById(R.id.senha_view);
+                    senhavii1.setVisibility(View.INVISIBLE);
+                    View senhavii2 =findViewById(R.id.senha_text);
+                    senhavii2.setVisibility(View.INVISIBLE);
+                }
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-        final TextView a1 = (TextView) findViewById(R.id.info_apto);
-        a1.setText("INFORMAÇÕES DO ALUNO\n\nID:\n"+id_aluno +"\n\nEMAIL:\n" +email_alunoprofe + "\n\nSENHA:\n" +senha_alunoprofe);
+        final TextView a1111 = (TextView) findViewById(R.id.id_text);
+        a1111.setText(id_aluno);
     }
 
     public static Bitmap my_image;

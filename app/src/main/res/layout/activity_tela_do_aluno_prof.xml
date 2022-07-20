@@ -128,6 +128,72 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView31" />
 
     <TextView
+        android:id="@+id/id_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID DO ALUNO:"
+        android:textColor="#0A4F77"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/id_text"
+        app:layout_constraintStart_toStartOf="@+id/id_text" />
+
+    <EditText
+        android:id="@+id/id_text"
+        android:layout_width="280sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+    <TextView
+        android:id="@+id/email_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="E-MAIL DO ALUNO:"
+        android:textColor="#0A4F77"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/email_text"
+        app:layout_constraintStart_toStartOf="@+id/email_text" />
+
+    <EditText
+        android:id="@+id/email_text"
+        android:layout_width="280sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_text" />
+
+    <TextView
+        android:id="@+id/senha_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SENHA DO ALUNO:"
+        android:textColor="#0A4F77"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/senha_text"
+        app:layout_constraintStart_toStartOf="@+id/senha_text" />
+
+    <EditText
+        android:id="@+id/senha_text"
+        android:layout_width="280sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_text" />
+
+    <TextView
         android:id="@+id/ultimologin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -137,19 +203,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/info_apto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:text="-"
-        android:textColor="#171717"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <ImageView
         android:id="@+id/imageView31"
@@ -164,7 +217,7 @@
 
     <ImageView
         android:id="@+id/hgf1"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:alpha="1"
         android:scaleType="centerCrop"
@@ -173,7 +226,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/fundodois"
-        tools:visibility="invisible" />
+        tools:visibility="visible" />
 
     <ProgressBar
         android:id="@+id/hgf2"

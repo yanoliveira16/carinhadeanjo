@@ -600,7 +600,7 @@ public class lista_tres extends AppCompatActivity {
                 if (msg == null || msg == "" || msg == " "){
                     banco_feed_professor.child("new_feed").child(nn + " - "+currentDateandTime).setValue(currentDateandTime + "- " + tela_de_carregamento.nnomeAluno + ": RESPONSÁVEL CIENTE NA AGENDA " +lista_dois.onClick2);
                 }else{
-                    banco_feed_professor.child("new_feed").child(nn + " - "+currentDateandTime).setValue(currentDateandTime + "- " + tela_de_carregamento.nnomeAluno + ": RESPONSÁVEL CIENTE NA AGENDA " +lista_dois.onClick2 + " || RECADO DO PAI: " +msg);
+                    banco_feed_professor.child("new_feed").child(nn + " - "+currentDateandTime).setValue(currentDateandTime + "- " + tela_de_carregamento.nnomeAluno + ": RESPONSÁVEL CIENTE NA AGENDA " +lista_dois.onClick2 + " || RECADO: " +msg);
                 }
 
                 pronto_ciente();
