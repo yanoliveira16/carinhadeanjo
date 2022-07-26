@@ -33,6 +33,8 @@ import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class colocar_aviso extends AppCompatActivity {
 
@@ -62,11 +64,12 @@ public class colocar_aviso extends AppCompatActivity {
         aa3.setVisibility(View.VISIBLE);
         View aa4=findViewById(R.id.put_avi_img);
         aa4.setVisibility(View.INVISIBLE);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+        String currentDateandTime = sdf.format(new Date());
         final EditText et = (EditText) findViewById(R.id.put_avi_title);
-        titulo = et.getText().toString();
+        titulo = "AVISO: " +et.getText().toString();
         final EditText et2 = (EditText) findViewById(R.id.put_avi_texto);
-        textoo = et2.getText().toString();
-        Log.d("AQUI AVISO","-"+titulo+"-");
+        textoo = et2.getText().toString() + " \n\n " +currentDateandTime;
         if (titulo.isEmpty() == false){
             enviar2();
         }else{

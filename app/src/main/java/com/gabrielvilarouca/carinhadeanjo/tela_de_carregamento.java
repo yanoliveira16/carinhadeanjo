@@ -23,7 +23,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class tela_de_carregamento extends AppCompatActivity {
-    public static String avi_texto, nnomeAluno, tturma, nnomeProfe, qual, onClick19, key_feed, tem_coordena, pdf_qualfile, versao;
+    public static String avi_texto, nnomeAluno, tturma, nnomeProfe, qual, onClick19, key_feed, tem_coordena, pdf_qualfile, versao, aviso_serv;
     public static Integer faltar_no_total;
 
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
@@ -46,7 +46,17 @@ public class tela_de_carregamento extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 versao = dataSnapshot.getValue(String.class);
-                primeira_chamada();
+                myRef4.child("aviso_servidor").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        aviso_serv = dataSnapshot.getValue(String.class);
+                        primeira_chamada();
+                    }
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
             }
 
 

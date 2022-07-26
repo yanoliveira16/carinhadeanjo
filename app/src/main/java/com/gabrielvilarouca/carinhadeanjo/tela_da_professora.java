@@ -78,6 +78,14 @@ public class tela_da_professora extends AppCompatActivity {
             new AlertDialog.Builder(tela_da_professora.this).setMessage("NOVA ATUALIZAÇÃO DISPONÍVEL\n\nRecomendamos que atualize seu aplicativo antes do uso!\n\nVersão atual: " + versionName + "\nNova versão: " + tela_de_carregamento.versao).show();
         }
 
+        if (tela_de_carregamento.aviso_serv == null){
+            View emailvii2as =findViewById(R.id.servidor_msg2);
+            emailvii2as.setVisibility(View.INVISIBLE);
+        }else{
+            final TextView ax2 = (TextView) findViewById(R.id.servidor_msg2);
+            ax2.setText(tela_de_carregamento.aviso_serv);
+        }
+
         myRef5.child(tela_de_carregamento.tturma).child("aviso_turma").child("avi_title").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -256,8 +264,8 @@ public class tela_da_professora extends AppCompatActivity {
                     dr = getResources().getDrawable(R.drawable.calendar);
                     btnTag.setTextColor(Color.parseColor("#000000"));
                     bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
-                }else if(data.contains("IMAGEM")){
-                    dr = getResources().getDrawable(R.drawable.auto);
+                }else if(data.contains("exam")){
+                    dr = getResources().getDrawable(R.drawable.exam);
                     btnTag.setTextColor(Color.parseColor("#000000"));
                     bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
                 }else if(data.contains("SERVIDOR")){
@@ -380,7 +388,7 @@ public class tela_da_professora extends AppCompatActivity {
     }
 
     public void gerenciar_click(View view){
-        Intent intent = new Intent(getBaseContext(), gerenciar.class);
+        Intent intent = new Intent(getBaseContext(), colocar_aviso.class);
         startActivity(intent);
     }
 
@@ -391,7 +399,9 @@ public class tela_da_professora extends AppCompatActivity {
     }
 
     public void pdf_open(View view){
-        AlertDialog.Builder builderSingle = new AlertDialog.Builder(tela_da_professora.this);
+        Intent intent = new Intent(getBaseContext(), lista_aviso.class);
+        startActivity(intent);
+        /*AlertDialog.Builder builderSingle = new AlertDialog.Builder(tela_da_professora.this);
         builderSingle.setIcon(R.drawable.exam );
         builderSingle.setTitle("PDF's - Escolha qual deseja visualizar:");
 
@@ -435,7 +445,7 @@ public class tela_da_professora extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        builderSingle.show();
+        builderSingle.show();*/
     }
 
     public void click_avi_profe(View view){

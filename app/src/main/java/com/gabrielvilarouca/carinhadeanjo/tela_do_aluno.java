@@ -93,6 +93,14 @@ public class tela_do_aluno extends AppCompatActivity {
             new AlertDialog.Builder(tela_do_aluno.this).setMessage("NOVA ATUALIZAÇÃO DISPONÍVEL\n\nRecomendamos que atualize seu aplicativo antes do uso!\n\nVersão atual: " + versionName + "\nNova versão: " + tela_de_carregamento.versao).show();
         }
 
+        if (tela_de_carregamento.aviso_serv == null){
+            View emailvii2as =findViewById(R.id.servidor_msg1);
+            emailvii2as.setVisibility(View.INVISIBLE);
+        }else{
+            final TextView ax2 = (TextView) findViewById(R.id.servidor_msg1);
+            ax2.setText(tela_de_carregamento.aviso_serv);
+        }
+
         new_feed();
 
        // new AlertDialog.Builder(tela_do_aluno.this).setMessage("BETA\nO aplicativo ainda se encontra em desenvolvimento.\nConfira novidades e tutorais em http://escolacarinhadeanjodf.com/aplicativo").show();
@@ -334,8 +342,8 @@ public class tela_do_aluno extends AppCompatActivity {
                 dr = getResources().getDrawable(R.drawable.calendar);
                 btnTag.setTextColor(Color.parseColor("#000000"));
                 bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
-            }else if(data.contains("IMAGEM") == true){
-                dr = getResources().getDrawable(R.drawable.auto);
+            }else if(data.contains("PDF") == true){
+                dr = getResources().getDrawable(R.drawable.exam);
                 btnTag.setTextColor(Color.parseColor("#000000"));
                 bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }else if(data.contains("SERVIDOR") == true){
@@ -433,7 +441,9 @@ public class tela_do_aluno extends AppCompatActivity {
     }
 
     public void pdf_open(View view){
-        AlertDialog.Builder builderSingle = new AlertDialog.Builder(tela_do_aluno.this);
+        Intent intent = new Intent(getBaseContext(), lista_aviso.class);
+        startActivity(intent);
+        /*AlertDialog.Builder builderSingle = new AlertDialog.Builder(tela_do_aluno.this);
         builderSingle.setIcon(R.drawable.exam);
         builderSingle.setTitle("PDF's - Escolha qual deseja visualizar:");
 
@@ -480,7 +490,7 @@ public class tela_do_aluno extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        builderSingle.show();
+        builderSingle.show();*/
     }
 
     public void click_avi(View view){

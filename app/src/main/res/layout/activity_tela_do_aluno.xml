@@ -20,6 +20,18 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/fundodois" />
 
+    <TextView
+        android:id="@+id/servidor_msg1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="-"
+        android:textColor="#FFC107"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
     <ImageView
         android:id="@+id/imageView13"
         android:layout_width="100dp"
@@ -288,14 +300,14 @@
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:onClick="click_avi"
         android:text="SEM AVISO"
         android:textColor="#910000"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/servidor_msg1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

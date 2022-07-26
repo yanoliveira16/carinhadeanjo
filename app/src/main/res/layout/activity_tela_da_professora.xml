@@ -55,6 +55,19 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/servidor_msg2" />
+
+    <TextView
+        android:id="@+id/servidor_msg2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="-"
+        android:textColor="#FFC107"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nome_prof" />
 
     <ScrollView
@@ -197,7 +210,7 @@
                 android:id="@+id/imageView35"
                 android:layout_width="75dp"
                 android:layout_height="45dp"
-                app:srcCompat="@drawable/modeling" />
+                app:srcCompat="@drawable/warning" />
 
             <TextView
                 android:id="@+id/textView27"
@@ -205,7 +218,7 @@
                 android:layout_height="70dp"
                 android:fontFamily="@font/quicksand_medium"
                 android:gravity="bottom|center_horizontal"
-                android:text="GERENCIAR"
+                android:text="AVISO"
                 android:textSize="12sp" />
 
             <Button

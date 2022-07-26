@@ -84,34 +84,6 @@
 
         </FrameLayout>
 
-        <FrameLayout
-            android:layout_width="75dp"
-            android:layout_height="70dp">
-
-            <ImageView
-                android:id="@+id/imageView29"
-                android:layout_width="75dp"
-                android:layout_height="45dp"
-                app:srcCompat="@drawable/modeling" />
-
-            <TextView
-                android:id="@+id/textView26"
-                android:layout_width="75dp"
-                android:layout_height="70dp"
-                android:fontFamily="@font/quicksand_medium"
-                android:gravity="bottom|center_horizontal"
-                android:text="MUDAR"
-                android:textSize="14sp" />
-
-            <Button
-                android:id="@+id/button6"
-                style="@android:style/Widget.DeviceDefault.Button.Borderless"
-                android:layout_width="75dp"
-                android:layout_height="70dp"
-                android:onClick="mudar" />
-
-        </FrameLayout>
-
     </LinearLayout>
 
     <TextView
