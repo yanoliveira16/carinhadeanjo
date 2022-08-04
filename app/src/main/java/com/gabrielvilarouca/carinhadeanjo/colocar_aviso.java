@@ -70,11 +70,25 @@ public class colocar_aviso extends AppCompatActivity {
         titulo = "AVISO: " +et.getText().toString();
         final EditText et2 = (EditText) findViewById(R.id.put_avi_texto);
         textoo = et2.getText().toString() + " \n\n " +currentDateandTime;
-        if (titulo.isEmpty() == false){
+        if (et.getText().toString().isEmpty() == false && et.getText().toString() != ""){
             enviar2();
         }else{
-            erro_msg = "VOCÊ NÃO PODE ENVIAR UM AVISO SEM TÍTULO!";
-            erro();
+            myRef5.removeValue();
+            AlertDialog.Builder builder1 = new AlertDialog.Builder(colocar_aviso.this);
+            builder1.setMessage("RETIRADO\nO AVISO FOI RETIRADO COM SUCESSO");
+            builder1.setCancelable(true);
+
+            builder1.setNegativeButton(
+                    "OK",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                            finish();
+                        }
+                    });
+
+            AlertDialog alert11 = builder1.create();
+            alert11.show();
         }
     }
 

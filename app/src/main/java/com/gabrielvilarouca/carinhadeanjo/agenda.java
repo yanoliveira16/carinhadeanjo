@@ -1060,31 +1060,17 @@ public class agenda extends AppCompatActivity {
 
         if (s50.isChecked() == true) {
             isono += "Não evacuou | ";
-            enviar12();
-        }else{
-            enviar11_1();
         }
+        enviar11_1();
     }
 
     public void enviar11_1(){
         final EditText et2x = (EditText) findViewById(R.id.sint_qntsevacuou);
         isono_vezes = et2x.getText().toString();
-        if (isono_vezes != null){
-            if(isono_vezes.contains("1") == true || isono_vezes.contains("2") == true || isono_vezes.contains("3") == true || isono_vezes.contains("4") == true || isono_vezes.contains("5") == true || isono_vezes.contains("6") == true || isono_vezes.contains("7") == true || isono_vezes.contains("8") == true || isono_vezes.contains("9") == true || isono_vezes.contains("10") == true){
-                isono += "Evacuou "+ isono_vezes  +" vezes | ";
-                enviar12();
-            }else{
-                pode_continuar = false;
-                errormsg = "Você precisa escrever quantas vezes o aluno(a) evacuou!";
-                erro();
-                tirar_carregamento();
-            }
-        }else{
-            pode_continuar = false;
-            errormsg = "Você precisa escrever quantas vezes o aluno(a) evacuou!";
-            erro();
-            tirar_carregamento();
+        if(isono_vezes.contains("1") == true || isono_vezes.contains("2") == true || isono_vezes.contains("3") == true || isono_vezes.contains("4") == true || isono_vezes.contains("5") == true || isono_vezes.contains("6") == true || isono_vezes.contains("7") == true || isono_vezes.contains("8") == true || isono_vezes.contains("9") == true || isono_vezes.contains("10") == true){
+            isono += "Evacuou "+ isono_vezes  +" vezes | ";
         }
+        enviar12();
     }
 
     String icomportamento = "";

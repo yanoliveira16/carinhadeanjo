@@ -105,7 +105,7 @@
         android:layout_height="wrap_content"
         android:text="ID DO ALUNO:"
         android:textColor="#0A4F77"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/id_text"
         app:layout_constraintStart_toStartOf="@+id/id_text" />
 
@@ -113,10 +113,11 @@
         android:id="@+id/id_text"
         android:layout_width="280sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="35dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:textColor="#000000"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
@@ -127,7 +128,7 @@
         android:layout_height="wrap_content"
         android:text="E-MAIL DO ALUNO:"
         android:textColor="#0A4F77"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/email_text"
         app:layout_constraintStart_toStartOf="@+id/email_text" />
 
@@ -135,10 +136,11 @@
         android:id="@+id/email_text"
         android:layout_width="280sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:textColor="#000000"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id_text" />
@@ -149,7 +151,7 @@
         android:layout_height="wrap_content"
         android:text="SENHA DO ALUNO:"
         android:textColor="#0A4F77"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/senha_text"
         app:layout_constraintStart_toStartOf="@+id/senha_text" />
 
@@ -157,10 +159,11 @@
         android:id="@+id/senha_text"
         android:layout_width="280sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:textColor="#000000"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_text" />
