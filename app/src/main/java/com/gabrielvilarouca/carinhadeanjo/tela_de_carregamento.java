@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,7 +29,7 @@ public class tela_de_carregamento extends AppCompatActivity {
 
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     DatabaseReference myRef = database.child("USU");
-    DatabaseReference myRef2 = database.child("P3").child(login_or_register.id);
+    DatabaseReference myRef2 = database.child("P3");
     DatabaseReference myRef3 = database.child("P4");
     DatabaseReference myRef4 = database.child("P5");
     DatabaseReference myRef5 = database.child("P2");
@@ -90,8 +91,17 @@ public class tela_de_carregamento extends AppCompatActivity {
         a1.setText("Estamos verificando suas informações...");
 
         if(login_or_register.id == null){
-            String aa = "Cadastro não encontrado!\nEntre em contato com a escola.";
+            String aa = "Tentando novamente...";
             a1.setText(aa);
+
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            if (user != null){
+                login_or_register.id = user.getUid();
+                call();
+            }else{
+                String aaa = "Cadastro não encontrado!\nEntre em contato com a escola.\n" + login_or_register.id;
+                a1.setText(aaa);
+            }
 
             View a3=findViewById(R.id.button4);
             a3.setVisibility(View.VISIBLE);
@@ -191,7 +201,7 @@ public class tela_de_carregamento extends AppCompatActivity {
     }
 
     public void novo_carregamento(){
-        myRef2.child("Nome Aluno").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(login_or_register.id).child("Nome Aluno").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
@@ -202,7 +212,7 @@ public class tela_de_carregamento extends AppCompatActivity {
 
             }
         });
-        myRef2.child("faltas").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(login_or_register.id).child("faltas").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 faltar_no_total = dataSnapshot.getValue(Integer.class);
@@ -212,7 +222,7 @@ public class tela_de_carregamento extends AppCompatActivity {
 
             }
         });
-        myRef2.child("Turma").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef2.child(login_or_register.id).child("Turma").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 qual = "2";
@@ -228,7 +238,7 @@ public class tela_de_carregamento extends AppCompatActivity {
 
                         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
                         String currentDateandTime = sdf.format(new Date()) + " - ANDROID";
-                        myRef2.child("ultimo_login").setValue(currentDateandTime);
+                        myRef2.child(login_or_register.id).child("ultimo_login").setValue(currentDateandTime);
 
                         Intent intent = new Intent(getBaseContext(), tela_do_aluno.class);
                         startActivity(intent);

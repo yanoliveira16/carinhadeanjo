@@ -61,13 +61,13 @@ public class lista_um extends AppCompatActivity {
         if (tela_de_carregamento.qual == "1"){
             a1.setText("AGENDA\n"+tela_de_alunos.onClick3);
             ImageView myImage = (ImageView) findViewById(R.id.imageView18);
-            myImage.setImageBitmap(tela_do_aluno_prof.getRoundedCornerBitmap(tela_do_aluno_prof.my_image,400));
+            myImage.setImageBitmap(getRoundedCornerBitmap2(tela_do_aluno_prof.my_image,400));
             aa.setVisibility(View.VISIBLE);
             onde_pegar = tela_do_aluno_prof.id_aluno;
         }else{
             a1.setText("AGENDA\n"+tela_de_carregamento.nnomeAluno);
             ImageView myImage = (ImageView) findViewById(R.id.imageView18);
-            myImage.setImageBitmap(tela_do_aluno_prof.getRoundedCornerBitmap(tela_do_aluno.my_image3,400));
+            myImage.setImageBitmap(getRoundedCornerBitmap2(tela_do_aluno.my_image3,400));
             aa.setVisibility(View.INVISIBLE);
             onde_pegar = login_or_register.id;
         }
@@ -213,7 +213,7 @@ public class lista_um extends AppCompatActivity {
 
             Drawable dr = getResources().getDrawable(R.drawable.close);
             dr = getResources().getDrawable(R.drawable.calendar);
-            bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
+            bitmap = (getRoundedCornerBitmap2(((BitmapDrawable) dr).getBitmap(),100));
             Drawable d = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 140, 140, true));
             btnTag.setCompoundDrawablesWithIntrinsicBounds( d, null, null, null);
 
@@ -243,7 +243,7 @@ public class lista_um extends AppCompatActivity {
         }
     }
 
-    public static Bitmap getRoundedCornerBitmap(Bitmap bitmap, int pixels) {
+    public static Bitmap getRoundedCornerBitmap2(Bitmap bitmap, int pixels) {
         Bitmap output = Bitmap.createBitmap(bitmap.getWidth(), bitmap
                 .getHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(output);

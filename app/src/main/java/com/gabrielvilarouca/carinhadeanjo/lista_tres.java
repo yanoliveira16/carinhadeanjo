@@ -110,15 +110,22 @@ public class lista_tres extends AppCompatActivity {
                 }else{
                     kgh = nn;
                     if (tela_de_carregamento.qual != "1"){
-                        final TextView a1118 = (TextView) findViewById(R.id.ciente);
+                        //ERROR AQUI
+                      /*final TextView a1118 = (TextView) findViewById(R.id.ciente);
                         final TextView a1119 = (TextView) findViewById(R.id.recado);
                         final TextView a2220 = (TextView) findViewById(R.id.recadinho);
+                        View a119=findViewById(R.id.recado);
+                        a119.setVisibility(View.INVISIBLE);
+                        View a120=findViewById(R.id.recadinho);
+                        a120.setVisibility(View.INVISIBLE);
+                        View a121=findViewById(R.id.ciente);
+                        a121.setVisibility(View.INVISIBLE);
                         ViewGroup parent = (ViewGroup) a1118.getParent();
                         parent.removeView(a1118);
                         ViewGroup parent2 = (ViewGroup) a1119.getParent();
                         parent2.removeView(a1119);
                         ViewGroup parent3 = (ViewGroup) a2220.getParent();
-                        parent3.removeView(a2220);
+                        parent3.removeView(a2220);*/
                     }
                 }
                 chamar_parte3();
