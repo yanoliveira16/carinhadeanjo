@@ -11,6 +11,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -32,7 +33,13 @@ public class login_or_register extends AppCompatActivity {
         setContentView(R.layout.activity_login_or_register);
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null){
+        SharedPreferences sharedPref = getSharedPreferences("id_pessoa", Context.MODE_PRIVATE);
+        String retrievedString = sharedPref.getString("String1", "lk");
+        if (retrievedString != "lk"){
+            id = retrievedString;
+            Intent intent = new Intent(getBaseContext(), tela_de_carregamento.class);
+            startActivity(intent);
+        }else if (user != null){
             id = user.getUid();
             Intent intent = new Intent(getBaseContext(), tela_de_carregamento.class);
             startActivity(intent);

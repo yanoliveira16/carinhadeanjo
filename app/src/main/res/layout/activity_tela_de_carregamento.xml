@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/imageView6"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/vvvimg" />
+        app:srcCompat="@drawable/logogv" />
 
     <TextView
         android:id="@+id/texto_carregamento"

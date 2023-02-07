@@ -78,14 +78,6 @@ public class tela_da_professora extends AppCompatActivity {
             new AlertDialog.Builder(tela_da_professora.this).setMessage("NOVA ATUALIZAÇÃO DISPONÍVEL\n\nRecomendamos que atualize seu aplicativo antes do uso!\n\nVersão atual: " + versionName + "\nNova versão: " + tela_de_carregamento.versao).show();
         }
 
-        if (tela_de_carregamento.aviso_serv == null){
-            View emailvii2as =findViewById(R.id.servidor_msg2);
-            emailvii2as.setVisibility(View.INVISIBLE);
-        }else{
-            final TextView ax2 = (TextView) findViewById(R.id.servidor_msg2);
-            ax2.setText(tela_de_carregamento.aviso_serv);
-        }
-
         myRef5.child(tela_de_carregamento.tturma).child("aviso_turma").child("avi_title").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

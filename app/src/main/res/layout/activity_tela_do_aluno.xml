@@ -10,7 +10,7 @@
         android:id="@+id/imageView16"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:alpha="0"
+        android:alpha="0.3"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,17 +20,17 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/fundodois" />
 
-    <TextView
-        android:id="@+id/servidor_msg1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="-"
-        android:textColor="#FFC107"
-        android:textSize="18sp"
+    <ImageView
+        android:id="@+id/imageView42"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.7"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fundodois" />
 
     <ImageView
         android:id="@+id/imageView13"
@@ -61,7 +61,6 @@
                 android:id="@+id/textView14"
                 android:layout_width="65dp"
                 android:layout_height="65dp"
-                android:fontFamily="@font/quicksand_medium"
                 android:gravity="bottom|center_horizontal"
                 android:text="AGENDA"
                 android:textColor="#000000"
@@ -71,7 +70,7 @@
                 android:id="@+id/imageView22"
                 android:layout_width="65dp"
                 android:layout_height="45dp"
-                app:srcCompat="@drawable/folder" />
+                app:srcCompat="@drawable/notedoisvinte" />
 
             <Button
                 android:id="@+id/button"
@@ -94,7 +93,6 @@
                 android:id="@+id/textView12"
                 android:layout_width="5dp"
                 android:layout_height="35dp"
-                android:fontFamily="@font/quicksand_medium"
                 android:gravity="bottom|center_horizontal"
                 android:text="|"
                 android:textColor="#000000"
@@ -110,13 +108,12 @@
                 android:id="@+id/imageView24"
                 android:layout_width="65dp"
                 android:layout_height="45dp"
-                app:srcCompat="@drawable/exam" />
+                app:srcCompat="@drawable/testvinteetres" />
 
             <TextView
                 android:id="@+id/textView22"
                 android:layout_width="65dp"
                 android:layout_height="65dp"
-                android:fontFamily="@font/quicksand_medium"
                 android:gravity="bottom|center_horizontal"
                 android:text="PDF's"
                 android:textColor="#000000"
@@ -140,7 +137,6 @@
                 android:id="@+id/textView12"
                 android:layout_width="5dp"
                 android:layout_height="35dp"
-                android:fontFamily="@font/quicksand_medium"
                 android:gravity="bottom|center_horizontal"
                 android:text="|"
                 android:textColor="#000000"
@@ -156,13 +152,12 @@
                 android:id="@+id/imageView35"
                 android:layout_width="65dp"
                 android:layout_height="45dp"
-                app:srcCompat="@drawable/chat" />
+                app:srcCompat="@drawable/laptop" />
 
             <TextView
                 android:id="@+id/textView27"
                 android:layout_width="65dp"
                 android:layout_height="65dp"
-                android:fontFamily="@font/quicksand_medium"
                 android:gravity="bottom|center_horizontal"
                 android:text="CHAT"
                 android:textColor="#000000"
@@ -185,7 +180,6 @@
                 android:id="@+id/textView16"
                 android:layout_width="5dp"
                 android:layout_height="35dp"
-                android:fontFamily="@font/quicksand_medium"
                 android:gravity="bottom|center_horizontal"
                 android:text="|"
                 android:textColor="#000000"
@@ -201,13 +195,12 @@
                 android:id="@+id/imageView29"
                 android:layout_width="65dp"
                 android:layout_height="45dp"
-                app:srcCompat="@drawable/creditcard" />
+                app:srcCompat="@drawable/calculator" />
 
             <TextView
                 android:id="@+id/textView26"
                 android:layout_width="65dp"
                 android:layout_height="65dp"
-                android:fontFamily="@font/quicksand_medium"
                 android:gravity="bottom|center_horizontal"
                 android:text="BOLETO"
                 android:textColor="#000000"
@@ -240,9 +233,9 @@
         android:id="@+id/aluno"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/quicksand_medium"
-        android:text="Carregando..."
+        android:layout_marginTop="5dp"
         android:gravity="center"
+        android:text="Carregando..."
         android:textColor="#000000"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -253,7 +246,6 @@
         android:id="@+id/turma"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/quicksand"
         android:text="Carregando..."
         android:textColor="#000000"
         android:textSize="20sp"
@@ -305,7 +297,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/servidor_msg1" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

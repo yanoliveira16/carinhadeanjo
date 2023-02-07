@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".nova_agenda"
+            android:exported="false" />
+        <activity
             android:name=".lista_aviso"
             android:exported="false" />
         <activity

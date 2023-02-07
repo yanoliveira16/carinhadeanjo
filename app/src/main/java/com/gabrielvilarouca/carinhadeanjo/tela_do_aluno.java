@@ -93,14 +93,6 @@ public class tela_do_aluno extends AppCompatActivity {
             new AlertDialog.Builder(tela_do_aluno.this).setMessage("NOVA ATUALIZAÇÃO DISPONÍVEL\n\nRecomendamos que atualize seu aplicativo antes do uso!\n\nVersão atual: " + versionName + "\nNova versão: " + tela_de_carregamento.versao).show();
         }
 
-        if (tela_de_carregamento.aviso_serv == null){
-            View emailvii2as =findViewById(R.id.servidor_msg1);
-            emailvii2as.setVisibility(View.INVISIBLE);
-        }else{
-            final TextView ax2 = (TextView) findViewById(R.id.servidor_msg1);
-            ax2.setText(tela_de_carregamento.aviso_serv);
-        }
-
         new_feed();
 
        // new AlertDialog.Builder(tela_do_aluno.this).setMessage("BETA\nO aplicativo ainda se encontra em desenvolvimento.\nConfira novidades e tutorais em http://escolacarinhadeanjodf.com/aplicativo").show();
@@ -118,6 +110,8 @@ public class tela_do_aluno extends AppCompatActivity {
                     my_image3 = BitmapFactory.decodeFile(localFile.getAbsolutePath());
                     ImageView myImage = (ImageView) findViewById(R.id.imageView13);
                     myImage.setImageBitmap(getRoundedCornerBitmap(my_image3,400));
+                    ImageView myImage2 = (ImageView) findViewById(R.id.imageView16);
+                    myImage2.setImageBitmap(getRoundedCornerBitmap(my_image3,400));
 
                     View a2=findViewById(R.id.kkkl2);
                     a2.setVisibility(View.INVISIBLE);

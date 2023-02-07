@@ -4,19 +4,44 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Point;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.mlkit.vision.barcode.BarcodeScanner;
+import com.google.mlkit.vision.barcode.BarcodeScannerOptions;
+import com.google.mlkit.vision.barcode.BarcodeScanning;
+import com.google.mlkit.vision.barcode.common.Barcode;
+import com.google.mlkit.vision.common.InputImage;
+import com.lyft.android.scissors.CropView;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.util.List;
 
 public class entra extends AppCompatActivity {
 
@@ -151,7 +176,6 @@ public void esqueci_senha(View view) {
 }
 
 
-
     String errormsg="";
 
     public void erro(){
@@ -176,5 +200,123 @@ public void esqueci_senha(View view) {
         alertDialog.show();
     }
 
+    public void acessar_QRCode(View view){
+        View a1=findViewById(R.id.entrar2);
+        View a2=findViewById(R.id.imageView11);
+        View a3=findViewById(R.id.progressBar3);
+
+        a1.setVisibility(View.INVISIBLE);
+        a2.setVisibility(View.VISIBLE);
+        a3.setVisibility(View.VISIBLE);
+
+        final EditText et2 = (EditText) findViewById(R.id.email3);
+        email = et2.getText().toString();
+
+        final EditText et3 = (EditText) findViewById(R.id.senha2);
+        senha = et3.getText().toString();
+
+        Intent i = new Intent(Intent.ACTION_PICK,
+                android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+        startActivityForResult(i, PICK_IMAGE);
+    }
+
+    private static final int PICK_IMAGE = 1;
+    Uri imageUri;
+    String caminho;
+    String msg_Caminho;
+
+    CropView cropView;
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK && requestCode == PICK_IMAGE) {
+            try {
+                imageUri = data.getData();
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                int rotationDegree = 0;
+                InputImage image = InputImage.fromBitmap(bitmap, rotationDegree);
+                scanBarcodes(image);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static Bitmap getRoundedCornerBitmap(Bitmap bitmap, int pixels) {
+        Bitmap output = Bitmap.createBitmap(bitmap.getWidth(), bitmap
+                .getHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(output);
+
+        final int color = 0xff424242;
+        final Paint paint = new Paint();
+        final Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
+        final RectF rectF = new RectF(rect);
+        final float roundPx = pixels;
+
+        paint.setAntiAlias(true);
+        canvas.drawARGB(0, 0, 0, 0);
+        paint.setColor(color);
+        canvas.drawRoundRect(rectF, roundPx, roundPx, paint);
+
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+        canvas.drawBitmap(bitmap, rect, rect, paint);
+
+        return output;
+    }
+
+    private void scanBarcodes(InputImage image) {
+        // [START set_detector_options]
+        BarcodeScannerOptions options =
+                new BarcodeScannerOptions.Builder()
+                        .setBarcodeFormats(
+                                Barcode.FORMAT_QR_CODE,
+                                Barcode.FORMAT_AZTEC)
+                        .build();
+        BarcodeScanner scanner = BarcodeScanning.getClient();
+        Task<List<Barcode>> result = scanner.process(image)
+                .addOnSuccessListener(new OnSuccessListener<List<Barcode>>() {
+                    @Override
+                    public void onSuccess(List<Barcode> barcodes) {
+                        for (Barcode barcode: barcodes) {
+                            Rect bounds = barcode.getBoundingBox();
+                            Point[] corners = barcode.getCornerPoints();
+
+                            String rawValue = barcode.getRawValue();
+
+                            int valueType = barcode.getValueType();
+                            // See API reference for complete list of supported types
+                            switch (valueType) {
+                                case Barcode.TYPE_TEXT:
+                                    String codigo = barcode.getDisplayValue().toString();
+                                    login_or_register.id = codigo;
+
+                                    SharedPreferences sharedPref = getSharedPreferences("id_pessoa", Context.MODE_PRIVATE);
+                                    SharedPreferences.Editor editor = sharedPref.edit();
+                                    editor.putString("String1", codigo);  // value is the string you want to save
+                                    editor.commit();
+
+                                    Intent intent = new Intent(getBaseContext(), tela_de_carregamento.class);
+                                    startActivity(intent);
+                                    break;
+                                default:
+                                    errormsg = "Não foi possível fazer a leitura do QRCode na imagem que você escolheu. Tente novamente.";
+                                    erro();
+                                    break;
+                            }
+                        }
+                        // [END get_barcodes]
+                        // [END_EXCLUDE]
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        // Task failed with an exception
+                        // ...
+                    }
+                });
+    }
 
 }
