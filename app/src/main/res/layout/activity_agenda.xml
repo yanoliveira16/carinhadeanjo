@@ -41,7 +41,7 @@
                 android:id="@+id/textView14"
                 android:layout_width="65dp"
                 android:layout_height="60dp"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:gravity="bottom|center_horizontal"
                 android:text="APAGAR"
                 android:textColor="#000000"
@@ -76,7 +76,7 @@
                 android:id="@+id/textView22"
                 android:layout_width="65dp"
                 android:layout_height="60dp"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:gravity="bottom|center_horizontal"
                 android:text="SALVAR"
                 android:textColor="#000000"
@@ -111,7 +111,7 @@
                 android:id="@+id/textView27"
                 android:layout_width="65dp"
                 android:layout_height="60dp"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:gravity="bottom|center_horizontal"
                 android:text="AGD. TURMA"
                 android:textColor="#000000"
@@ -146,7 +146,7 @@
                 android:id="@+id/textView26"
                 android:layout_width="65dp"
                 android:layout_height="60dp"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:gravity="bottom|center_horizontal"
                 android:text="ENVIAR"
                 android:textSize="12sp"
@@ -168,7 +168,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
-        android:fontFamily="@font/quicksand_medium"
+
         android:gravity="center"
         android:text="Carregando..."
         android:textColor="#000000"
@@ -216,7 +216,7 @@
                 android:id="@+id/new_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:gravity="center"
                 android:text="NOVA AGENDA"
                 android:textColor="#003FC1"
@@ -231,7 +231,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="fill"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:text="FALTOU"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -244,7 +244,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="fill"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:text="Não fez dever de casa"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -256,7 +256,7 @@
                 android:id="@+id/atvs_extra"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:gravity="center"
                 android:text="Atividade extra"
                 android:textColor="#000000"
@@ -270,7 +270,7 @@
                 android:id="@+id/s_ballet"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg1"
                 android:text="Ballet"
                 android:textSize="24sp"
@@ -283,7 +283,7 @@
                 android:id="@+id/s_judo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg1"
                 android:text="Judô"
                 android:textSize="24sp"
@@ -296,7 +296,7 @@
                 android:id="@+id/atvs_sala"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:gravity="center"
                 android:text="As atividades de sala"
                 android:textColor="#000000"
@@ -310,7 +310,7 @@
                 android:id="@+id/s24"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg1"
                 android:text="Realizou com facilidade"
                 android:textSize="24sp"
@@ -323,7 +323,7 @@
                 android:id="@+id/s25"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg2"
                 android:text="Realizou com dificuldade"
                 android:textSize="24sp"
@@ -336,7 +336,7 @@
                 android:id="@+id/s_atvsala"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg2"
                 android:text="Não realizou"
                 android:textSize="24sp"
@@ -349,7 +349,7 @@
                 android:id="@+id/comp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:gravity="center"
                 android:text="Comportamento"
                 android:textColor="#000000"
@@ -363,7 +363,7 @@
                 android:id="@+id/s26"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg3"
                 android:text="Tranquilo"
                 android:textSize="24sp"
@@ -376,7 +376,7 @@
                 android:id="@+id/s27"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg4"
                 android:text="Obediente"
                 android:textSize="24sp"
@@ -389,7 +389,7 @@
                 android:id="@+id/s28"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg5"
                 android:text="Conversou muito"
                 android:textSize="24sp"
@@ -402,7 +402,7 @@
                 android:id="@+id/s29"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg6"
                 android:text="Irritado"
                 android:textSize="24sp"
@@ -415,7 +415,7 @@
                 android:id="@+id/s35"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg6_2"
                 android:text="Agitado"
                 android:textSize="24sp"
@@ -428,7 +428,7 @@
                 android:id="@+id/sindisposto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg6_2"
                 android:text="Indisposto"
                 android:textSize="24sp"
@@ -441,7 +441,7 @@
                 android:id="@+id/saude"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:gravity="center"
                 android:text="Saúde"
                 android:textColor="#003FC1"
@@ -455,7 +455,7 @@
                 android:id="@+id/med"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:gravity="center"
                 android:text="Medicação"
                 android:textColor="#000000"
@@ -469,7 +469,7 @@
                 android:id="@+id/imed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:text="Sim"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -482,7 +482,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:alpha="1"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:gravity="center"
                 android:text="Rémedio:"
                 android:textColor="#000000"
@@ -509,7 +509,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:alpha="1"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:gravity="center"
                 android:text="Dosagem:"
                 android:textColor="#000000"
@@ -537,7 +537,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="50"
                 android:alpha="1"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:gravity="center"
                 android:text="Horário:"
                 android:textColor="#000000"
@@ -559,7 +559,7 @@
                 android:id="@+id/apresen"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:gravity="center"
                 android:text="Apresentou"
                 android:textColor="#000000"
@@ -573,7 +573,7 @@
                 android:id="@+id/s36"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:text="Coriza"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -585,7 +585,7 @@
                 android:id="@+id/s37"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:text="Tosse"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -597,7 +597,7 @@
                 android:id="@+id/s38"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:text="Vômito"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -609,7 +609,7 @@
                 android:id="@+id/s39"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:text="Febre"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -622,7 +622,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:alpha="1"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:gravity="center"
                 android:text="Temperatura:"
                 android:textColor="#000000"
@@ -648,7 +648,7 @@
                 android:id="@+id/traço6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:gravity="center"
                 android:text="------------------"
                 android:textSize="30sp"
@@ -661,7 +661,7 @@
                 android:id="@+id/saude2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:gravity="center"
                 android:text="Período Integral"
                 android:textColor="#003FC1"
@@ -675,7 +675,7 @@
                 android:id="@+id/ilanchematutino"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:gravity="center"
                 android:text="Lanche matutino"
                 android:textColor="#000000"
@@ -689,7 +689,7 @@
                 android:id="@+id/s32"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg7"
                 android:text="Comeu bem"
                 android:textSize="24sp"
@@ -702,7 +702,7 @@
                 android:id="@+id/s34"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg8"
                 android:text="Comeu pouco"
                 android:textSize="24sp"
@@ -715,7 +715,7 @@
                 android:id="@+id/s72"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg9"
                 android:text="Não comeu"
                 android:textSize="24sp"
@@ -728,7 +728,7 @@
                 android:id="@+id/almoço"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:gravity="center"
                 android:text="Almoço"
                 android:textColor="#000000"
@@ -742,7 +742,7 @@
                 android:id="@+id/s40"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg10"
                 android:text="Comeu bem"
                 android:textSize="24sp"
@@ -755,7 +755,7 @@
                 android:id="@+id/s41"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg11"
                 android:text="Comeu pouco"
                 android:textSize="24sp"
@@ -768,7 +768,7 @@
                 android:id="@+id/s42"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg12"
                 android:text="Não comeu"
                 android:textSize="24sp"
@@ -781,7 +781,7 @@
                 android:id="@+id/lanche_vesp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:gravity="center"
                 android:text="Lanche Vespertino"
                 android:textColor="#000000"
@@ -795,7 +795,7 @@
                 android:id="@+id/s43"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg13"
                 android:text="Comeu bem"
                 android:textSize="24sp"
@@ -808,7 +808,7 @@
                 android:id="@+id/s44"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg14"
                 android:text="Comeu pouco"
                 android:textSize="24sp"
@@ -821,7 +821,7 @@
                 android:id="@+id/s45"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg15"
                 android:text="Não comeu"
                 android:textSize="24sp"
@@ -834,7 +834,7 @@
                 android:id="@+id/jantar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:gravity="center"
                 android:text="Jantar"
                 android:textColor="#000000"
@@ -848,7 +848,7 @@
                 android:id="@+id/s46"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg16"
                 android:text="Comeu bem"
                 android:textSize="24sp"
@@ -861,7 +861,7 @@
                 android:id="@+id/s47"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg17"
                 android:text="Comeu pouco"
                 android:textSize="24sp"
@@ -874,7 +874,7 @@
                 android:id="@+id/s48"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg18"
                 android:text="Não comeu"
                 android:textSize="24sp"
@@ -887,7 +887,7 @@
                 android:id="@+id/asp_fis"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:gravity="center"
                 android:text="Aspecto Fisiológico"
                 android:textColor="#000000"
@@ -901,7 +901,7 @@
                 android:id="@+id/sint_dormiu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg_sono2"
                 android:text="Dormiu"
                 android:textSize="24sp"
@@ -914,7 +914,7 @@
                 android:id="@+id/s49"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg_sono1"
                 android:text="Não dormiu"
                 android:textSize="24sp"
@@ -927,7 +927,7 @@
                 android:id="@+id/sevacuou_normal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg_evacuou2"
                 android:text="Evacuação normal"
                 android:textSize="24sp"
@@ -940,7 +940,7 @@
                 android:id="@+id/sevacuou_mole"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg_evacuou2"
                 android:text="Evacuação mole"
                 android:textSize="24sp"
@@ -953,7 +953,7 @@
                 android:id="@+id/sevacuou_pastosa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg_evacuou2"
                 android:text="Evacuação pastosa"
                 android:textSize="24sp"
@@ -966,7 +966,7 @@
                 android:id="@+id/sevacuou_diarreia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg_evacuou2"
                 android:text="Diarréia"
                 android:textSize="24sp"
@@ -979,7 +979,7 @@
                 android:id="@+id/sevacuou_ressecada"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg_evacuou2"
                 android:text="Evacuação ressecada"
                 android:textSize="24sp"
@@ -993,7 +993,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:alpha="1"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:gravity="center"
                 android:text="Quantas vezes evacuou?"
                 android:textColor="#000000"
@@ -1019,7 +1019,7 @@
                 android:id="@+id/s50"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg_evacuou1"
                 android:text="Não evacuou"
                 android:textSize="24sp"
@@ -1032,7 +1032,7 @@
                 android:id="@+id/s51"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:text="Urinou pouco ou nada"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -1044,7 +1044,7 @@
                 android:id="@+id/s52"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:text="Tomou pouca água"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -1056,7 +1056,7 @@
                 android:id="@+id/s53"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:text="Não tomou banho"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -1068,7 +1068,7 @@
                 android:id="@+id/comp_int"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:gravity="center"
                 android:text="Comportamento Int."
                 android:textColor="#000000"
@@ -1082,7 +1082,7 @@
                 android:id="@+id/s54"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg19"
                 android:text="Tranquilo"
                 android:textSize="24sp"
@@ -1095,7 +1095,7 @@
                 android:id="@+id/s55"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg20"
                 android:text="Obediente"
                 android:textSize="24sp"
@@ -1108,7 +1108,7 @@
                 android:id="@+id/s56"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg21"
                 android:text="Irritado"
                 android:textSize="24sp"
@@ -1121,7 +1121,7 @@
                 android:id="@+id/sint_agitado"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:onClick="hg20_1"
                 android:text="Agitado"
                 android:textSize="24sp"
@@ -1134,7 +1134,7 @@
                 android:id="@+id/prov"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:gravity="center"
                 android:text="Favor Providenciar"
                 android:textColor="#000000"
@@ -1148,7 +1148,6 @@
                 android:id="@+id/s57"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
                 android:text="Toalha"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -1160,7 +1159,7 @@
                 android:id="@+id/s58"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:text="Lençol"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -1172,7 +1171,7 @@
                 android:id="@+id/s59"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:text="Fralda"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -1184,7 +1183,7 @@
                 android:id="@+id/s60"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:text="Sabonete Líquido"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -1196,7 +1195,7 @@
                 android:id="@+id/s61"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:text="Shampoo"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -1208,7 +1207,7 @@
                 android:id="@+id/s62"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:text="Condicionador"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -1220,7 +1219,7 @@
                 android:id="@+id/s63"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:text="Colônia"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -1232,7 +1231,7 @@
                 android:id="@+id/s64"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:text="Lenço Umidecido"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -1244,7 +1243,7 @@
                 android:id="@+id/atv_rot"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:gravity="center"
                 android:text="Atividades de rotina"
                 android:textColor="#000000"
@@ -1258,7 +1257,7 @@
                 android:id="@+id/s65"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:text="Psicomotricidade"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -1270,7 +1269,7 @@
                 android:id="@+id/s66"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:text="Recreação"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -1282,7 +1281,7 @@
                 android:id="@+id/s67"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:text="Hora da leitura"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -1294,7 +1293,7 @@
                 android:id="@+id/s68"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:text="Jogos"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -1306,7 +1305,7 @@
                 android:id="@+id/s69"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:text="Arte"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -1318,7 +1317,7 @@
                 android:id="@+id/s70"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:text="Musicalização"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -1330,7 +1329,7 @@
                 android:id="@+id/s71"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:text="Videoteca"
                 android:textSize="24sp"
                 tools:layout_conversion_absoluteHeight="27dp"
@@ -1342,7 +1341,7 @@
                 android:id="@+id/observaçao"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:gravity="center"
                 android:text="Observação"
                 android:textColor="#000000"
@@ -1365,7 +1364,7 @@
                 android:id="@+id/aviso_botao"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:gravity="center"
                 android:text="Verifique tudo antes de enviar!"
                 android:textColor="#515151"
@@ -1379,7 +1378,7 @@
                 android:id="@+id/espacofinal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:gravity="center"
                 android:text="-"
                 android:textColor="#515151"

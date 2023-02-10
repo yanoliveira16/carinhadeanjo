@@ -26,7 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/auto" />
+        app:srcCompat="@drawable/idcard" />
 
     <com.lyft.android.scissors.CropView
         android:id="@+id/crop_view"
@@ -44,10 +44,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
-        android:fontFamily="@font/quicksand_bold"
+
         android:onClick="enviar_foto"
         android:text="ENVIAR"
-        android:textSize="24sp"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -58,10 +58,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:fontFamily="@font/quicksand_bold"
+
         android:onClick="escolher_imagem"
         android:text="ESCOLHER IMAGEM"
-        android:textSize="24sp"
+        android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/button10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
@@ -72,9 +72,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:fontFamily="@font/quicksand_medium"
-        android:text="ESCOLHA SUA IMAGEM"
+
         android:gravity="center"
+        android:text="O aplicativo da escola conta com uma inteligência artificial que vai fazer a análise da foto antes do envio."
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"

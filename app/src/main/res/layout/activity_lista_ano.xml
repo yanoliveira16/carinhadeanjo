@@ -10,7 +10,7 @@
         android:id="@+id/aluno_nomeano"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/quicksand_medium"
+
         android:gravity="center"
         android:text="Carregando..."
         android:textColor="#000000"

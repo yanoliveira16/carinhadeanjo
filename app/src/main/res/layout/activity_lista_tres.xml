@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fontFamily="@font/quicksand_light"
     tools:context="com.gabrielvilarouca.carinhadeanjo.lista_tres">
 
     <ImageView
@@ -38,7 +37,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
-        android:fontFamily="@font/quicksand_medium"
+
         android:text="Carregando..."
         android:textColor="#000000"
         android:textSize="18sp"
@@ -71,7 +70,7 @@
                 android:id="@+id/msg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:gravity="center"
                 android:text="..."
                 android:textColor="#470038"
@@ -81,7 +80,7 @@
                 android:id="@+id/falta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:gravity="center"
                 android:text="Carregando..."
                 android:textColor="#000000"
@@ -92,7 +91,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:gravity="center"
                 android:text="PERÍODO PARCIAL"
                 android:textColor="#421500"
@@ -102,7 +101,7 @@
                 android:id="@+id/atividade_de_sala"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:text="Atividade de sala:"
                 android:textColor="#000000"
                 android:textSize="20sp" />
@@ -111,7 +110,7 @@
                 android:id="@+id/atvs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand"
+
                 android:text="Carregando..."
                 android:textColor="#001368"
                 android:textSize="25sp" />
@@ -120,7 +119,7 @@
                 android:id="@+id/as_atividades_de_sala"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:paddingTop="10sp"
                 android:text="As atividades de sala:"
                 android:textColor="#000000"
@@ -130,7 +129,7 @@
                 android:id="@+id/atvs2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand"
+
                 android:text="Carregando..."
                 android:textColor="#001368"
                 android:textSize="25sp" />
@@ -139,7 +138,7 @@
                 android:id="@+id/comportamentoo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:paddingTop="10sp"
                 android:text="Comportamento:"
                 android:textColor="#000000"
@@ -149,7 +148,7 @@
                 android:id="@+id/comportamento"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand"
+
                 android:text="Carregando..."
                 android:textColor="#001368"
                 android:textSize="25sp" />
@@ -158,7 +157,7 @@
                 android:id="@+id/dever_de_casa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:paddingTop="10sp"
                 android:text="Dever de casa:"
                 android:textColor="#000000"
@@ -168,7 +167,7 @@
                 android:id="@+id/dever"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand"
+
                 android:text="Carregando..."
                 android:textColor="#001368"
                 android:textSize="25sp" />
@@ -177,7 +176,7 @@
                 android:id="@+id/avisos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:paddingTop="10sp"
                 android:text="Aviso:"
                 android:textColor="#000000"
@@ -187,7 +186,7 @@
                 android:id="@+id/aviso"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand"
+
                 android:text="Carregando..."
                 android:textColor="#001368"
                 android:textSize="25sp" />
@@ -196,7 +195,7 @@
                 android:id="@+id/saude"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:gravity="center"
                 android:text="SAÚDE"
                 android:textColor="#421500"
@@ -206,7 +205,7 @@
                 android:id="@+id/medicação"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:text="Medicação"
                 android:textColor="#000000"
                 android:textSize="20sp" />
@@ -215,7 +214,7 @@
                 android:id="@+id/iremedio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand"
+
                 android:text="Carregando..."
                 android:textColor="#001368"
                 android:textSize="25sp" />
@@ -224,7 +223,7 @@
                 android:id="@+id/idosagem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand"
+
                 android:paddingTop="5sp"
                 android:text="Carregando..."
                 android:textColor="#001368"
@@ -234,7 +233,7 @@
                 android:id="@+id/ihorario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand"
+
                 android:paddingTop="5sp"
                 android:text="Carregando..."
                 android:textColor="#001368"
@@ -244,7 +243,7 @@
                 android:id="@+id/apresent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:paddingTop="10sp"
                 android:text="Aprensentou:"
                 android:textColor="#000000"
@@ -254,7 +253,7 @@
                 android:id="@+id/apresentou"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand"
+
                 android:text="Carregando..."
                 android:textColor="#001368"
                 android:textSize="25sp" />
@@ -263,7 +262,7 @@
                 android:id="@+id/integral"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:gravity="center"
                 android:text="PERÍODO INTEGRAL"
                 android:textColor="#421500"
@@ -273,7 +272,7 @@
                 android:id="@+id/lanche_mat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:text="Lanche Matutino:"
                 android:textColor="#000000"
                 android:textSize="20sp" />
@@ -282,7 +281,7 @@
                 android:id="@+id/ilanchematutino"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand"
+
                 android:text="Carregando..."
                 android:textColor="#001368"
                 android:textSize="25sp" />
@@ -291,7 +290,7 @@
                 android:id="@+id/Almoço"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:paddingTop="10sp"
                 android:text="Almoço:"
                 android:textColor="#000000"
@@ -301,7 +300,7 @@
                 android:id="@+id/ialmoço"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand"
+
                 android:text="Carregando..."
                 android:textColor="#001368"
                 android:textSize="25sp" />
@@ -310,7 +309,7 @@
                 android:id="@+id/lanche_vesp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:paddingTop="10sp"
                 android:text="Lanche Vespertino:"
                 android:textColor="#000000"
@@ -320,7 +319,7 @@
                 android:id="@+id/ilanchevespertino"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand"
+
                 android:text="Carregando..."
                 android:textColor="#001368"
                 android:textSize="25sp" />
@@ -329,7 +328,7 @@
                 android:id="@+id/jantar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:paddingTop="10sp"
                 android:text="Jantar:"
                 android:textColor="#000000"
@@ -339,7 +338,7 @@
                 android:id="@+id/ijanta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand"
+
                 android:text="Carregando..."
                 android:textColor="#001368"
                 android:textSize="25sp" />
@@ -348,7 +347,7 @@
                 android:id="@+id/comp_integral"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:paddingTop="10sp"
                 android:text="Comportamento no Integral:"
                 android:textColor="#000000"
@@ -358,7 +357,7 @@
                 android:id="@+id/icomportamento"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand"
+
                 android:text="Carregando..."
                 android:textColor="#001368"
                 android:textSize="25sp" />
@@ -367,7 +366,7 @@
                 android:id="@+id/aspec_fisio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:paddingTop="10sp"
                 android:text="Aspecto Fisiológico:"
                 android:textColor="#000000"
@@ -377,7 +376,7 @@
                 android:id="@+id/isono"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand"
+
                 android:text="Carregando..."
                 android:textColor="#001368"
                 android:textSize="25sp" />
@@ -386,7 +385,7 @@
                 android:id="@+id/f_providenciar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:paddingTop="10sp"
                 android:text="Favor Providenciar:"
                 android:textColor="#000000"
@@ -396,7 +395,7 @@
                 android:id="@+id/iprovidenciar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand"
+
                 android:text="Carregando..."
                 android:textColor="#001368"
                 android:textSize="25sp" />
@@ -405,7 +404,7 @@
                 android:id="@+id/atv_rotina"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:paddingTop="10sp"
                 android:text="Atividades de Rotina:"
                 android:textColor="#000000"
@@ -415,7 +414,7 @@
                 android:id="@+id/iatv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand"
+
                 android:text="Carregando..."
                 android:textColor="#001368"
                 android:textSize="25sp" />
@@ -424,7 +423,7 @@
                 android:id="@+id/obsvervacao"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:paddingTop="10sp"
                 android:text="Observação:"
                 android:textColor="#000000"
@@ -434,7 +433,7 @@
                 android:id="@+id/obs3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand"
+
                 android:text="Carregando..."
                 android:textColor="#001368"
                 android:textSize="25sp" />
@@ -443,7 +442,7 @@
                 android:id="@+id/recado"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:paddingTop="20sp"
                 android:text="Deixe um recado:"
                 android:textColor="#7A012A"
@@ -462,7 +461,7 @@
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:onClick="recadinho_enviar"
                 android:text="ESTOU CIENTE"
                 android:textColor="#9F1342"
@@ -474,7 +473,7 @@
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_bold"
+
                 android:onClick="apagar_click"
                 android:text="- APAGAR A AGENDA -"
                 android:textColor="#FF0057"

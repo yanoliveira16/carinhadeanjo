@@ -79,8 +79,8 @@
         <activity android:name=".MainActivity" />
 
         <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+            android:name="preloaded_ s"
+            android:resource="@array/preloaded_ s" />
         <meta-data
             android:name="com.google.android.gms.vision.DEPENDENCIES"
             android:value="face" />

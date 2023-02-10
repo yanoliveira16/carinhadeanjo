@@ -112,7 +112,7 @@
                 android:id="@+id/textView14"
                 android:layout_width="75dp"
                 android:layout_height="70dp"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:gravity="bottom|center_horizontal"
                 android:text="AGD. TURMA"
                 android:textSize="12sp" />
@@ -145,7 +145,7 @@
                 android:id="@+id/textView22"
                 android:layout_width="75dp"
                 android:layout_height="70dp"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:gravity="bottom|center_horizontal"
                 android:text="ALUNOS"
                 android:textSize="12sp" />
@@ -179,7 +179,7 @@
                 android:id="@+id/textView26"
                 android:layout_width="75dp"
                 android:layout_height="70dp"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:gravity="bottom|center_horizontal"
                 android:text="PDF's"
                 android:textSize="12sp" />
@@ -213,7 +213,7 @@
                 android:id="@+id/textView27"
                 android:layout_width="75dp"
                 android:layout_height="70dp"
-                android:fontFamily="@font/quicksand_medium"
+
                 android:gravity="bottom|center_horizontal"
                 android:text="AVISO"
                 android:textSize="12sp" />
@@ -234,7 +234,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:fontFamily="@font/quicksand_medium"
+
         android:text="Carregando..."
         android:textColor="#000000"
         android:textSize="24sp"
@@ -246,7 +246,7 @@
         android:id="@+id/nome_prof"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/quicksand_medium"
+
         android:text="Carregando..."
         android:textColor="#000000"
         android:textSize="12sp"

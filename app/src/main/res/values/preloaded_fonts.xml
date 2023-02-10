@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <array name="preloaded_fonts" translatable="false">
-        <item>@font/quicksand</item>
-        <item>@font/quicksand_bold</item>
-        <item>@font/quicksand_light</item>
-        <item>@font/quicksand_medium</item>
+    <array name="preloaded_ s" translatable="false">
+        <item>@ /quicksand</item>
+        <item>@ /quicksand_bold</item>
+        <item>@ /quicksand_light</item>
+        <item>@ /quicksand_medium</item>
     </array>
 </resources>

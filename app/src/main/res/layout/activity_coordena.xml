@@ -25,7 +25,6 @@
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="10dp"
-        android:fontFamily="@font/quicksand_medium"
         android:text="Coordenação"
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/button19"
@@ -62,7 +61,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/new_adiciona"
-        android:fontFamily="@font/quicksand_medium"
+
         android:onClick="add_alunos"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"

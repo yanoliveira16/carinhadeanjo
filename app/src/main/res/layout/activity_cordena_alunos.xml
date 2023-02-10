@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:fontFamily="@font/quicksand_medium"
+
         android:text="GERENCIAMENTO DE ALUNOS"
         android:textColor="#000000"
         android:textSize="18sp"
@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:fontFamily="@font/quicksand_medium"
+
         android:text="Adicione novos alunos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -164,7 +164,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:fontFamily="@font/quicksand_bold"
+
         android:text="COLOCAR NOVO ALUNO"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/button23"
@@ -177,7 +177,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:fontFamily="@font/quicksand_bold"
+
         android:text="VISUALIZAR TODOS OS ALUNOS"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
