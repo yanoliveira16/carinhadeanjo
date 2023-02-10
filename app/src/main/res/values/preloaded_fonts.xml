@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <array name="preloaded_ s" translatable="false">
-        <item>@ /quicksand</item>
-        <item>@ /quicksand_bold</item>
-        <item>@ /quicksand_light</item>
-        <item>@ /quicksand_medium</item>
-    </array>
+
 </resources>
