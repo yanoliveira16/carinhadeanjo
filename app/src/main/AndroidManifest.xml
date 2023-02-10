@@ -77,7 +77,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        
+
         <meta-data
             android:name="com.google.android.gms.vision.DEPENDENCIES"
             android:value="face" />
