@@ -47,6 +47,7 @@ public class tela_de_alunos extends AppCompatActivity {
         String currentDateandTime2 = sdf2.format(new Date());
 
 
+
         myRef.child(tela_de_carregamento.tturma).child("P2-1").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

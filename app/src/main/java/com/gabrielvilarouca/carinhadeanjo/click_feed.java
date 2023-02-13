@@ -58,7 +58,7 @@ public class click_feed extends AppCompatActivity {
                 img.setImageBitmap(bitmap);
             }
         }else if (tela_de_carregamento.key_feed.contains("pic")){
-            Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.auto);
+            Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.eye);
             img.setImageBitmap(bitmap);
         }else if (tela_de_carregamento.key_feed.contains("serve")){
             Bitmap bitmap= BitmapFactory.decodeResource(getResources(),R.drawable.database);

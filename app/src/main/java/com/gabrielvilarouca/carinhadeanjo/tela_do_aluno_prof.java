@@ -161,7 +161,7 @@ public class tela_do_aluno_prof extends AppCompatActivity {
                     //Toast.makeText(tela_do_aluno_prof.this, e.getMessage(), Toast.LENGTH_LONG).show();
                     new AlertDialog.Builder(tela_do_aluno_prof.this).setMessage("ALUNO SEM FOTO!").show();
                     ImageView myImage = (ImageView) findViewById(R.id.imageView31);
-                    Drawable dr = getResources().getDrawable(R.drawable.new_profile);
+                    Drawable dr = getResources().getDrawable(R.drawable.mortavintetres);
                     Bitmap bitmap = ((BitmapDrawable) dr).getBitmap();
                     my_image = bitmap;
                     myImage.setImageBitmap(getRoundedCornerBitmap(my_image,400));

@@ -78,6 +78,7 @@ public class tela_da_professora extends AppCompatActivity {
             new AlertDialog.Builder(tela_da_professora.this).setMessage("NOVA ATUALIZAÇÃO DISPONÍVEL\n\nRecomendamos que atualize seu aplicativo antes do uso!\n\nVersão atual: " + versionName + "\nNova versão: " + tela_de_carregamento.versao).show();
         }
 
+        Log.d("AQUI PORRA", "INFO: " + tela_de_carregamento.tturma);
         myRef5.child(tela_de_carregamento.tturma).child("aviso_turma").child("avi_title").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

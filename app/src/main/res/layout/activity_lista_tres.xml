@@ -503,7 +503,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/fundodois"
-        tools:visibility="visible" />
+        tools:visibility="invisible" />
 
     <ProgressBar
         android:id="@+id/carrega_listatres2"

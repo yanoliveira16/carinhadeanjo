@@ -24,7 +24,7 @@
                 android:id="@+id/imageView22"
                 android:layout_width="75dp"
                 android:layout_height="45dp"
-                app:srcCompat="@drawable/folder" />
+                app:srcCompat="@drawable/foldervinteetres" />
 
             <TextView
                 android:id="@+id/textView14"
@@ -58,7 +58,7 @@
                 android:id="@+id/imageView35"
                 android:layout_width="75dp"
                 android:layout_height="45dp"
-                app:srcCompat="@drawable/chat" />
+                app:srcCompat="@drawable/laptop" />
 
             <TextView
                 android:id="@+id/textView27"

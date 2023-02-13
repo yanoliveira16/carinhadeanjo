@@ -291,12 +291,6 @@ public void esqueci_senha(View view) {
                                 case Barcode.TYPE_TEXT:
                                     String codigo = barcode.getDisplayValue().toString();
                                     login_or_register.id = codigo;
-
-                                    SharedPreferences sharedPref = getSharedPreferences("id_pessoa", Context.MODE_PRIVATE);
-                                    SharedPreferences.Editor editor = sharedPref.edit();
-                                    editor.putString("String1", codigo);  // value is the string you want to save
-                                    editor.commit();
-
                                     Intent intent = new Intent(getBaseContext(), tela_de_carregamento.class);
                                     startActivity(intent);
                                     break;

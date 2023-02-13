@@ -24,7 +24,7 @@
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/logout"
+        android:background="@drawable/sairbuttaovinteetres"
         android:onClick="sair_click2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -52,18 +52,6 @@
         android:text="SEM AVISO"
         android:textColor="#770000"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/servidor_msg2" />
-
-    <TextView
-        android:id="@+id/servidor_msg2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="-"
-        android:textColor="#FFC107"
-        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nome_prof" />
@@ -106,13 +94,14 @@
                 android:id="@+id/imageView22"
                 android:layout_width="75dp"
                 android:layout_height="45dp"
-                app:srcCompat="@drawable/calendar" />
+                app:srcCompat="@drawable/notevinteetres" />
 
             <TextView
                 android:id="@+id/textView14"
                 android:layout_width="75dp"
                 android:layout_height="70dp"
 
+                android:fontFamily="@font/quicksand_bold"
                 android:gravity="bottom|center_horizontal"
                 android:text="AGD. TURMA"
                 android:textSize="12sp" />
@@ -139,13 +128,14 @@
                 android:id="@+id/imageView24"
                 android:layout_width="75dp"
                 android:layout_height="45dp"
-                app:srcCompat="@drawable/mortarboard" />
+                app:srcCompat="@drawable/idcard" />
 
             <TextView
                 android:id="@+id/textView22"
                 android:layout_width="75dp"
                 android:layout_height="70dp"
 
+                android:fontFamily="@font/quicksand_bold"
                 android:gravity="bottom|center_horizontal"
                 android:text="ALUNOS"
                 android:textSize="12sp" />
@@ -173,13 +163,14 @@
                 android:id="@+id/imageView29"
                 android:layout_width="75dp"
                 android:layout_height="45dp"
-                app:srcCompat="@drawable/exam" />
+                app:srcCompat="@drawable/testvinteetres" />
 
             <TextView
                 android:id="@+id/textView26"
                 android:layout_width="75dp"
                 android:layout_height="70dp"
 
+                android:fontFamily="@font/quicksand_bold"
                 android:gravity="bottom|center_horizontal"
                 android:text="PDF's"
                 android:textSize="12sp" />
@@ -207,13 +198,14 @@
                 android:id="@+id/imageView35"
                 android:layout_width="75dp"
                 android:layout_height="45dp"
-                app:srcCompat="@drawable/warning" />
+                app:srcCompat="@drawable/highlighter" />
 
             <TextView
                 android:id="@+id/textView27"
                 android:layout_width="75dp"
                 android:layout_height="70dp"
 
+                android:fontFamily="@font/quicksand_bold"
                 android:gravity="bottom|center_horizontal"
                 android:text="AVISO"
                 android:textSize="12sp" />

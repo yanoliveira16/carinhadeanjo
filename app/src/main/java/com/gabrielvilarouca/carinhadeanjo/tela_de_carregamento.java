@@ -89,7 +89,7 @@ public class tela_de_carregamento extends AppCompatActivity {
                 login_or_register.id = user.getUid();
                 call();
             }else{
-                String aaa = "Cadastro não encontrado!\nEntre em contato com a escola.\n" + login_or_register.id;
+                String aaa = "Cadastro não encontrado!" + login_or_register.id;
                 a1.setText(aaa);
             }
 
@@ -108,7 +108,7 @@ public class tela_de_carregamento extends AppCompatActivity {
                 String nn = dataSnapshot.getValue(String.class);
                 if(nn == null){
                     tem_coordena = "nao";
-                    String aa = "Cadastro não encontrado!\nTente novamente ou entre em contato com a escola.";
+                    String aa = "Cadastro não encontrado!";
                     final TextView a1 = (TextView) findViewById(R.id.texto_carregamento);
                     a1.setText(aa);
 
@@ -132,6 +132,12 @@ public class tela_de_carregamento extends AppCompatActivity {
                 }else if (nn.contains("TODOS") == true) {
                     tem_coordena = "tem";
                     qual = "1";
+
+                    SharedPreferences sharedPref = getSharedPreferences("id_pessoa", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPref.edit();
+                    editor.putString("String1", login_or_register.id);  // value is the string you want to save
+                    editor.commit();
+
                     Intent intent = new Intent(getBaseContext(), coordena.class);
                     startActivity(intent);
                 }else{
@@ -165,9 +171,15 @@ public class tela_de_carregamento extends AppCompatActivity {
                         qual = "1";
                         tturma = dataSnapshot.getValue(String.class);
 
+                        Log.d("CARREGAMENTO ", "valor: " + tturma);
                         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
                         String currentDateandTime = sdf.format(new Date()) + " - ANDROID";
                         myRef3.child(login_or_register.id).child("ultimo_login").setValue(currentDateandTime);
+
+                        SharedPreferences sharedPref = getSharedPreferences("id_pessoa", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPref.edit();
+                        editor.putString("String1", login_or_register.id);  // value is the string you want to save
+                        editor.commit();
 
                         Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
                         startActivity(intent);
@@ -230,6 +242,11 @@ public class tela_de_carregamento extends AppCompatActivity {
                         String currentDateandTime = sdf.format(new Date()) + " - ANDROID";
                         myRef2.child(login_or_register.id).child("ultimo_login").setValue(currentDateandTime);
 
+                        SharedPreferences sharedPref = getSharedPreferences("id_pessoa", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPref.edit();
+                        editor.putString("String1", login_or_register.id);  // value is the string you want to save
+                        editor.commit();
+
                         Intent intent = new Intent(getBaseContext(), tela_do_aluno.class);
                         startActivity(intent);
                     }
@@ -262,7 +279,13 @@ public class tela_de_carregamento extends AppCompatActivity {
 
     public void sair_click(View view) {
         FirebaseAuth.getInstance().signOut();
-        Intent intent = new Intent(getBaseContext(), login_or_register.class);
+
+        SharedPreferences sharedPref = getSharedPreferences("id_pessoa", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("String1", "lk");  // value is the string you want to save
+        editor.commit();
+
+        Intent intent = new Intent(getBaseContext(), entra.class);
         startActivity(intent);
 
     }

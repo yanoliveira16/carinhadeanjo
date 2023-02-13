@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -157,7 +159,7 @@ public class tela_do_aluno extends AppCompatActivity {
     public void coloque_foto(){
 
         ImageView myImage = (ImageView) findViewById(R.id.imageView13);
-        Drawable dr = getResources().getDrawable(R.drawable.new_profile);
+        Drawable dr = getResources().getDrawable(R.drawable.mortavintetres);
         Bitmap bitmap = ((BitmapDrawable) dr).getBitmap();
         my_image3 = bitmap;
         myImage.setImageBitmap(getRoundedCornerBitmap(my_image3,400));
@@ -213,6 +215,12 @@ public class tela_do_aluno extends AppCompatActivity {
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         FirebaseAuth.getInstance().signOut();
+
+                        SharedPreferences sharedPref = getSharedPreferences("id_pessoa", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPref.edit();
+                        editor.putString("String1", "lk");  // value is the string you want to save
+                        editor.commit();
+
                         Intent intent = new Intent(getBaseContext(), login_or_register.class);
                         startActivity(intent);
                     }
@@ -485,6 +493,12 @@ public class tela_do_aluno extends AppCompatActivity {
             }
         });
         builderSingle.show();*/
+    }
+
+    public void enviarFotoPerfil(View view){
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(getBaseContext(), enviar_foto.class);
+        startActivity(intent);
     }
 
     public void click_avi(View view){
