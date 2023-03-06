@@ -479,7 +479,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:paddingTop="10dp"
-                android:text="Em folha"
+                android:text="Em Folha"
                 android:textColor="#FFFFFF"
                 android:textColorLink="#FFFFFF"
                 android:textSize="30sp"
@@ -495,7 +495,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_bold"
                 android:paddingTop="10dp"
-                android:text="No caderno"
+                android:text="No Caderno"
                 android:textColor="#FFFFFF"
                 android:textColorLink="#FFFFFF"
                 android:textSize="30sp"
@@ -504,31 +504,6 @@
                 tools:layout_conversion_absoluteWidth="407dp"
                 tools:layout_editor_absoluteX="2dp"
                 tools:layout_editor_absoluteY="1325dp" />
-
-            <TextView
-                android:id="@+id/De"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:paddingTop="10dp"
-                android:text="De:"
-                android:textColor="#D8D8D8"
-                android:textSize="30sp" />
-
-            <EditText
-                android:id="@+id/outro_texto5"
-                style="@style/Base.Widget.MaterialComponents.TextInputEditText"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/ic_launcher_background"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:paddingTop="10dp"
-                android:textSize="17sp"
-                tools:layout_conversion_absoluteHeight="38dp"
-                tools:layout_conversion_absoluteWidth="407dp"
-                tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="376dp" />
 
             <Switch
                 android:id="@+id/s33"
@@ -552,7 +527,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand_medium"
                 android:paddingTop="10dp"
-                android:text="De:"
+                android:text="Mais informações "
                 android:textColor="#D8D8D8"
                 android:textSize="30sp" />
 
@@ -563,31 +538,7 @@
                 android:layout_height="match_parent"
                 android:background="@color/ic_launcher_background"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:paddingTop="10dp"
-                android:textSize="17sp"
-                tools:layout_conversion_absoluteHeight="38dp"
-                tools:layout_conversion_absoluteWidth="407dp"
-                tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="376dp" />
-
-            <TextView
-                android:id="@+id/pag"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/quicksand_medium"
-                android:paddingTop="10dp"
-                android:text="Página:"
-                android:textColor="#D8D8D8"
-                android:textSize="30sp" />
-
-            <EditText
-                android:id="@+id/outro_texto2"
-                style="@style/Base.Widget.MaterialComponents.TextInputEditText"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/ic_launcher_background"
-                android:ems="10"
+                android:hint="EX: Português, página 20"
                 android:inputType="textPersonName"
                 android:paddingTop="10dp"
                 android:textSize="17sp"

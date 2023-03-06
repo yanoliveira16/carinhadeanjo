@@ -24,7 +24,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class tela_de_carregamento extends AppCompatActivity {
-    public static String avi_texto, nnomeAluno, tturma, nnomeProfe, qual, onClick19, key_feed, tem_coordena, pdf_qualfile, versao;
+    public static String avi_texto, nnomeAluno, tturma, nnomeProfe, qual, onClick19, key_feed, tem_coordena, pdf_qualfile, versao, atv_dever;
     public static Integer faltar_no_total;
 
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
@@ -229,6 +229,17 @@ public class tela_de_carregamento extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 qual = "2";
                 tturma = dataSnapshot.getValue(String.class);
+
+                myRef5.child(tturma).child("atividade").child("info").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        atv_dever = dataSnapshot.getValue(String.class);
+                    }
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
 
                 myRef5.child(tturma).child("aviso_turma").child("avi_title").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override

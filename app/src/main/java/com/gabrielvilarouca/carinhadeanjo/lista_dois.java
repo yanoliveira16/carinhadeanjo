@@ -2,6 +2,7 @@ package com.gabrielvilarouca.carinhadeanjo;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 
 import android.content.ClipData;
 import android.content.Intent;
@@ -13,6 +14,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
@@ -226,7 +228,7 @@ public class lista_dois extends AppCompatActivity {
             });
 
             Drawable dr = getResources().getDrawable(R.drawable.close);
-            dr = getResources().getDrawable(R.drawable.calendar);
+            dr = getResources().getDrawable(R.drawable.vintecalendar);
             bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             Drawable d = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 140, 140, true));
             btnTag.setCompoundDrawablesWithIntrinsicBounds( d, null, null, null);
@@ -237,6 +239,10 @@ public class lista_dois extends AppCompatActivity {
             Display display=getWindowManager().getDefaultDisplay();
             int width=display.getWidth();
             btnTag.setWidth(width);
+
+            Typeface typeface = ResourcesCompat.getFont(this, R.font.quicksand_bold);
+            btnTag.setTypeface(typeface);
+            btnTag.setTextSize(20);
 
             bSearch2.addView(btnTag);
 
@@ -250,10 +256,21 @@ public class lista_dois extends AppCompatActivity {
             ScrollView scroll = (ScrollView) findViewById(R.id.scroll_listadois);
             GradientDrawable gd = new GradientDrawable();
             gd.setShape(GradientDrawable.RECTANGLE);
-            gd.setStroke(12, Color.argb(100, 0,0,0)); // border width and color
+            gd.setStroke(15, Color.argb(100, 0,0,0)); // border width and color
             //gd.setCornerRadius(80.50f);
-            gd.setCornerRadius(50);
+            gd.setCornerRadius(60);
             scroll.setBackground(gd);
+        }
+    }
+
+    public void home_click (View view){
+        //professor
+        if (tela_de_carregamento.qual == "1"){
+            Intent intent = new Intent(getBaseContext(), tela_da_professora.class);
+            startActivity(intent);
+        }else{ //não professor
+            Intent intent = new Intent(getBaseContext(), tela_do_aluno.class);
+            startActivity(intent);
         }
     }
 

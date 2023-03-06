@@ -24,7 +24,7 @@
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/sairbuttaovinteetres"
+        android:background="@drawable/vinterunning"
         android:onClick="sair_click2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -48,6 +48,7 @@
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/quicksand_bold"
         android:onClick="click_avi_profe"
         android:text="SEM AVISO"
         android:textColor="#770000"
@@ -94,7 +95,7 @@
                 android:id="@+id/imageView22"
                 android:layout_width="75dp"
                 android:layout_height="45dp"
-                app:srcCompat="@drawable/notevinteetres" />
+                app:srcCompat="@drawable/vintebookopencover" />
 
             <TextView
                 android:id="@+id/textView14"
@@ -104,6 +105,7 @@
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="bottom|center_horizontal"
                 android:text="AGD. TURMA"
+                android:textColor="#000000"
                 android:textSize="12sp" />
 
             <Button
@@ -128,7 +130,7 @@
                 android:id="@+id/imageView24"
                 android:layout_width="75dp"
                 android:layout_height="45dp"
-                app:srcCompat="@drawable/idcard" />
+                app:srcCompat="@drawable/vinteclipboardlist" />
 
             <TextView
                 android:id="@+id/textView22"
@@ -138,6 +140,7 @@
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="bottom|center_horizontal"
                 android:text="ALUNOS"
+                android:textColor="#000000"
                 android:textSize="12sp" />
 
             <Button
@@ -163,7 +166,7 @@
                 android:id="@+id/imageView29"
                 android:layout_width="75dp"
                 android:layout_height="45dp"
-                app:srcCompat="@drawable/testvinteetres" />
+                app:srcCompat="@drawable/vinteballot" />
 
             <TextView
                 android:id="@+id/textView26"
@@ -173,6 +176,7 @@
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="bottom|center_horizontal"
                 android:text="PDF's"
+                android:textColor="#000000"
                 android:textSize="12sp" />
 
             <Button
@@ -198,7 +202,7 @@
                 android:id="@+id/imageView35"
                 android:layout_width="75dp"
                 android:layout_height="45dp"
-                app:srcCompat="@drawable/highlighter" />
+                app:srcCompat="@drawable/vinteedit" />
 
             <TextView
                 android:id="@+id/textView27"
@@ -208,6 +212,7 @@
                 android:fontFamily="@font/quicksand_bold"
                 android:gravity="bottom|center_horizontal"
                 android:text="AVISO"
+                android:textColor="#000000"
                 android:textSize="12sp" />
 
             <Button
@@ -227,6 +232,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
 
+        android:fontFamily="@font/quicksand_bold"
         android:text="Carregando..."
         android:textColor="#000000"
         android:textSize="24sp"
@@ -239,6 +245,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:fontFamily="@font/quicksand_bold"
         android:text="Carregando..."
         android:textColor="#000000"
         android:textSize="12sp"

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -19,6 +20,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
@@ -94,6 +96,17 @@ public class tela_do_aluno extends AppCompatActivity {
         if (!versionName.contains(tela_de_carregamento.versao)) {
             new AlertDialog.Builder(tela_do_aluno.this).setMessage("NOVA ATUALIZAÇÃO DISPONÍVEL\n\nRecomendamos que atualize seu aplicativo antes do uso!\n\nVersão atual: " + versionName + "\nNova versão: " + tela_de_carregamento.versao).show();
         }
+
+        SimpleDateFormat sdf2 = new SimpleDateFormat("dd-MM-yyyy");
+        String currentDateandTime2 = sdf2.format(new Date());
+
+        SimpleDateFormat sdf3 = new SimpleDateFormat("HH:mm:ss");
+        String currentDateandTime3 = sdf3.format(new Date());
+    if (currentDateandTime2 + currentDateandTime3 != tela_de_carregamento.atv_dever){
+        ImageView myImage = findViewById(R.id.imagedever);
+        Drawable drawable = ContextCompat.getDrawable(this, R.drawable.vintedeverdecasacopiar);
+        myImage.setImageDrawable(drawable);
+    }
 
         new_feed();
 
@@ -314,7 +327,7 @@ public class tela_do_aluno extends AppCompatActivity {
             btnTag.setLayoutParams(new LinearLayout.LayoutParams
                     (LinearLayout.LayoutParams.WRAP_CONTENT,
                             LinearLayout.LayoutParams.MATCH_PARENT));
-            btnTag.setText("    "+data);
+            btnTag.setText(" "+data);
             btnTag.setId(id_do_button);
             btnTag.setTextColor(Color.parseColor("#E91E63"));
             btnTag.setOnClickListener(new View.OnClickListener() {
@@ -329,44 +342,47 @@ public class tela_do_aluno extends AppCompatActivity {
 
             Drawable dr = getResources().getDrawable(R.drawable.close);
             if (data.contains("ATIVIDADE") == true){
-                dr = getResources().getDrawable(R.drawable.exam);
+                dr = getResources().getDrawable(R.drawable.vinteedit);
                 btnTag.setTextColor(Color.parseColor("#000000"));
                 bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }else if(data.contains("AGENDA") == true){
-                dr = getResources().getDrawable(R.drawable.folder);
+                dr = getResources().getDrawable(R.drawable.vintefolder);
                 btnTag.setTextColor(Color.parseColor("#000000"));
                 bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }else if(data.contains("AVISO") == true){
-                dr = getResources().getDrawable(R.drawable.brake);
+                dr = getResources().getDrawable(R.drawable.vintemegaphone);
                 btnTag.setTextColor(Color.parseColor("#000000"));
                 bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }else if(data.contains("REUNIÃO") == true || data.contains("EVENTO") == true){
-                dr = getResources().getDrawable(R.drawable.calendar);
+                dr = getResources().getDrawable(R.drawable.vintecalendar);
                 btnTag.setTextColor(Color.parseColor("#000000"));
                 bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }else if(data.contains("PDF") == true){
-                dr = getResources().getDrawable(R.drawable.exam);
+                dr = getResources().getDrawable(R.drawable.vinteballot);
                 btnTag.setTextColor(Color.parseColor("#000000"));
                 bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }else if(data.contains("SERVIDOR") == true){
-                dr = getResources().getDrawable(R.drawable.server);
+                dr = getResources().getDrawable(R.drawable.vintebrowser);
                 btnTag.setTextColor(Color.parseColor("#E91E63"));
                 bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }else if(data.contains("ALUNO") == true){
-                dr = getResources().getDrawable(R.drawable.mortarboard);
+                dr = getResources().getDrawable(R.drawable.vintegraduationcap);
                 btnTag.setTextColor(Color.parseColor("#000000"));
                 bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }else{
-                dr = getResources().getDrawable(R.drawable.chat);
+                dr = getResources().getDrawable(R.drawable.vintecomments);
                 btnTag.setTextColor(Color.parseColor("#000000"));
                 bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
             }
 
-            Drawable d = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 100, 100, true));
+            Drawable d = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 120, 120, true));
             btnTag.setCompoundDrawablesWithIntrinsicBounds( d, null, null, null);
 
             btnTag.setBackgroundResource(0);
             btnTag.setGravity(Gravity.LEFT | Gravity.CENTER);
+            Typeface typeface = ResourcesCompat.getFont(this, R.font.quicksand_bold);
+            btnTag.setTypeface(typeface);
+            btnTag.setTextSize(18);
 
             bSearch2.addView(btnTag);
 
@@ -439,6 +455,11 @@ public class tela_do_aluno extends AppCompatActivity {
 
     public void chat_click(View view){
         Intent intent = new Intent(getBaseContext(), chat.class);
+        startActivity(intent);
+    }
+
+    public void dever_click(View view){
+        Intent intent = new Intent(getBaseContext(), nova_agenda.class);
         startActivity(intent);
     }
 

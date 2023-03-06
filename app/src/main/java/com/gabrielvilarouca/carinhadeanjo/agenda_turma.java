@@ -27,6 +27,7 @@ public class agenda_turma extends AppCompatActivity {
     public static String onClick4;
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     DatabaseReference myRef = database.child("P5").child(tela_de_carregamento.tturma).child("AGENDATurma");
+    DatabaseReference myRef2 = database.child("P2").child(tela_de_carregamento.tturma).child("atividade");
     String nkxz = "";
 
     @Override
@@ -180,42 +181,38 @@ public class agenda_turma extends AppCompatActivity {
         s31 = findViewById(R.id.s31);
         s33 = findViewById(R.id.s33);
 
+        SimpleDateFormat sdf2 = new SimpleDateFormat("dd-MM-yyyy");
+        String currentDateandTime2 = sdf2.format(new Date());
+
+        SimpleDateFormat sdf3 = new SimpleDateFormat("HH:mm:ss");
+        String currentDateandTime3 = sdf3.format(new Date());
+
+        dever += currentDateandTime2 + " as " + currentDateandTime3 +"\n";
 
         if (s30.isChecked() == true) {
-            dever = "Em folha | ";
+            dever += "Em folha | ";
         }
+
         if (s31.isChecked() == true) {
-            final EditText et2 = (EditText) findViewById(R.id.outro_texto5);
-            String nn = et2.getText().toString();
-            if (nn == null || nn == "" || nn == " ") {
-                errormsg = "Você precisa escrever ao menos um caderno";
-                erro();
-            } else {
-                dever += "No caderno de " + nn + " | ";
-            }
+            dever += "No caderno | ";
         }
 
-            if (s33.isChecked() == true) {
-                final EditText et3 = (EditText) findViewById(R.id.outro_texto4);
-                String nn2 = et3.getText().toString();
-                if (nn2 == null || nn2 == "" || nn2 == " ") {
-                    errormsg = "Você precisa escrever ao menos um livro";
-                    erro();
-                } else {
-                    dever += "No livro de " +nn2;
+        if (s33.isChecked() == true) {
+            dever += "No livro";
+        }
 
-                    if (s33.isChecked() == true) {
-                        final EditText et4 = (EditText) findViewById(R.id.outro_texto2);
-                        String nn3 = et4.getText().toString();
-                        if (nn3 == null || nn3 == "" || nn3 == " ") {
-                            errormsg = "Você precisa escrever ao menos uma Página";
-                            erro();
-                        } else {
-                            dever += ", página "+nn3;
-                        }
-                    }
-                }
-            }
+        final EditText et3 = (EditText) findViewById(R.id.outro_texto4);
+        String nn2 = et3.getText().toString();
+        if (nn2 != null || nn2 != "" || nn2 != " "){
+            dever += "\n\n- " + nn2;
+        }
+
+        myRef2.child("info").setValue(dever);
+
+        if (dever != ""){
+            myRef2.child("data").setValue(currentDateandTime2 + currentDateandTime3);
+        }
+
         ultima_antes();
     }
 

@@ -2,11 +2,15 @@ package com.gabrielvilarouca.carinhadeanjo;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
@@ -95,11 +99,14 @@ public class coordena extends AppCompatActivity {
 
             btnTag.setBackgroundResource(0);
             btnTag.setGravity(Gravity.LEFT | Gravity.CENTER);
+            Typeface typeface = ResourcesCompat.getFont(this, R.font.quicksand_bold);
+            btnTag.setTypeface(typeface);
+            btnTag.setTextSize(25);
             bSearch2.addView(btnTag);
             ScrollView scroll = (ScrollView) findViewById(R.id.sc_coordena);
             GradientDrawable gd = new GradientDrawable();
             gd.setShape(GradientDrawable.RECTANGLE);
-            gd.setStroke(5, Color.argb(100, 0,0,0)); // border width and color
+            gd.setStroke(10, Color.argb(100, 0,0,0)); // border width and color
             //gd.setCornerRadius(80.50f);
             gd.setCornerRadius(40);
             scroll.setBackground(gd);
@@ -125,6 +132,12 @@ public class coordena extends AppCompatActivity {
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         FirebaseAuth.getInstance().signOut();
+
+                        SharedPreferences sharedPref = getSharedPreferences("id_pessoa", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPref.edit();
+                        editor.putString("String1", "lk");  // value is the string you want to save
+                        editor.commit();
+
                         Intent intent = new Intent(getBaseContext(), login_or_register.class);
                         startActivity(intent);
                     }

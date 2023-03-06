@@ -11,10 +11,20 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/environment"
+        android:background="@drawable/vinteedit"
         android:onClick="add_click"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="362dp" />
+
+    <Button
+        android:id="@+id/add4"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/vintehomezinha"
+        android:onClick="home_click"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -22,6 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:fontFamily="@font/quicksand_bold"
         android:gravity="center"
         android:text="Carregando..."
         android:textColor="#000000"
@@ -64,8 +75,9 @@
         android:id="@+id/textView30"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="selecione o mês"
         android:layout_marginTop="10dp"
+        android:fontFamily="@font/quicksand_bold"
+        android:text="selecione o mês"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

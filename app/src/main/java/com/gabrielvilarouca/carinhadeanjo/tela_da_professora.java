@@ -2,10 +2,13 @@ package com.gabrielvilarouca.carinhadeanjo;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 
 import android.app.ActivityManager;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -16,6 +19,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
@@ -123,6 +127,12 @@ public class tela_da_professora extends AppCompatActivity {
                     new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
                             FirebaseAuth.getInstance().signOut();
+
+                            SharedPreferences sharedPref = getSharedPreferences("id_pessoa", Context.MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPref.edit();
+                            editor.putString("String1", "lk");  // value is the string you want to save
+                            editor.commit();
+
                             Intent intent = new Intent(getBaseContext(), login_or_register.class);
                             startActivity(intent);
                         }
@@ -242,35 +252,39 @@ public class tela_da_professora extends AppCompatActivity {
 
                 Drawable dr = getResources().getDrawable(R.drawable.close);
                 if (data.contains("ATIVIDADE")){
-                    dr = getResources().getDrawable(R.drawable.exam);
+                    dr = getResources().getDrawable(R.drawable.vinteedit);
                     btnTag.setTextColor(Color.parseColor("#000000"));
                     bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
                 }else if(data.contains("AGENDA")){
-                    dr = getResources().getDrawable(R.drawable.folder);
+                    dr = getResources().getDrawable(R.drawable.vintefolder);
                     btnTag.setTextColor(Color.parseColor("#000000"));
                     bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
                 }else if(data.contains("AVISO")){
-                    dr = getResources().getDrawable(R.drawable.brake);
+                    dr = getResources().getDrawable(R.drawable.vintemegaphone);
                     btnTag.setTextColor(Color.parseColor("#000000"));
                     bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
                 }else if(data.contains("REUNIÃO") || data.contains("EVENTO")){
-                    dr = getResources().getDrawable(R.drawable.calendar);
+                    dr = getResources().getDrawable(R.drawable.vintecalendar);
                     btnTag.setTextColor(Color.parseColor("#000000"));
                     bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
                 }else if(data.contains("exam")){
-                    dr = getResources().getDrawable(R.drawable.exam);
+                    dr = getResources().getDrawable(R.drawable.vintedocumentsigned);
+                    btnTag.setTextColor(Color.parseColor("#000000"));
+                    bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
+                }else if(data.contains("PDF")){
+                    dr = getResources().getDrawable(R.drawable.vinteballot);
                     btnTag.setTextColor(Color.parseColor("#000000"));
                     bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
                 }else if(data.contains("SERVIDOR")){
-                    dr = getResources().getDrawable(R.drawable.server);
+                    dr = getResources().getDrawable(R.drawable.vintebrowser);
                     btnTag.setTextColor(Color.parseColor("#E91E63"));
                     bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
                 }else if(data.contains("ALUNO")){
-                    dr = getResources().getDrawable(R.drawable.mortarboard);
+                    dr = getResources().getDrawable(R.drawable.vintegraduationcap);
                     btnTag.setTextColor(Color.parseColor("#000000"));
                     bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
                 }else{
-                    dr = getResources().getDrawable(R.drawable.chat);
+                    dr = getResources().getDrawable(R.drawable.vintecomments);
                     btnTag.setTextColor(Color.parseColor("#000000"));
                     bitmap = (getRoundedCornerBitmap(((BitmapDrawable) dr).getBitmap(),100));
                 }
@@ -282,6 +296,9 @@ public class tela_da_professora extends AppCompatActivity {
 
             btnTag.setBackgroundResource(0);
             btnTag.setGravity(Gravity.LEFT | Gravity.CENTER);
+
+            Typeface typeface = ResourcesCompat.getFont(this, R.font.quicksand_bold);
+            btnTag.setTypeface(typeface);
 
             bSearch2.addView(btnTag);
 

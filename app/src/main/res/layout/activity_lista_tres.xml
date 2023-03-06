@@ -36,11 +36,11 @@
         android:layout_height="0dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
 
+        android:fontFamily="@font/quicksand_bold"
         android:text="Carregando..."
         android:textColor="#000000"
-        android:textSize="18sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/profile_foto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/profile_foto"
@@ -71,6 +71,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
+                android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
                 android:text="..."
                 android:textColor="#470038"
@@ -81,6 +82,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
+                android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
                 android:text="Carregando..."
                 android:textColor="#000000"
@@ -92,114 +94,126 @@
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
 
+                android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
                 android:text="PERÍODO PARCIAL"
-                android:textColor="#421500"
-                android:textSize="38sp" />
+                android:textColor="#0083CC"
+                android:textSize="40sp" />
 
             <TextView
                 android:id="@+id/atividade_de_sala"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
+                android:fontFamily="@font/quicksand_bold"
                 android:text="Atividade de sala:"
                 android:textColor="#000000"
-                android:textSize="20sp" />
+                android:textSize="25sp" />
 
             <TextView
                 android:id="@+id/atvs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
+                android:fontFamily="@font/quicksand_bold"
                 android:text="Carregando..."
-                android:textColor="#001368"
-                android:textSize="25sp" />
+                android:textColor="#001FA8"
+                android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/as_atividades_de_sala"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
+                android:fontFamily="@font/quicksand_bold"
                 android:paddingTop="10sp"
                 android:text="As atividades de sala:"
                 android:textColor="#000000"
-                android:textSize="20sp" />
+                android:textSize="25sp" />
 
             <TextView
                 android:id="@+id/atvs2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
+                android:fontFamily="@font/quicksand_bold"
                 android:text="Carregando..."
-                android:textColor="#001368"
-                android:textSize="25sp" />
+                android:textColor="#001FA8"
+                android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/comportamentoo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
+                android:fontFamily="@font/quicksand_bold"
                 android:paddingTop="10sp"
                 android:text="Comportamento:"
                 android:textColor="#000000"
-                android:textSize="20sp" />
+                android:textSize="25sp" />
 
             <TextView
                 android:id="@+id/comportamento"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
+                android:fontFamily="@font/quicksand_bold"
                 android:text="Carregando..."
-                android:textColor="#001368"
-                android:textSize="25sp" />
+                android:textColor="#001FA8"
+                android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/dever_de_casa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
+                android:fontFamily="@font/quicksand_bold"
                 android:paddingTop="10sp"
                 android:text="Dever de casa:"
                 android:textColor="#000000"
-                android:textSize="20sp" />
+                android:textSize="25sp" />
 
             <TextView
                 android:id="@+id/dever"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
+                android:fontFamily="@font/quicksand_bold"
                 android:text="Carregando..."
-                android:textColor="#001368"
-                android:textSize="25sp" />
+                android:textColor="#001FA8"
+                android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/avisos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
+                android:fontFamily="@font/quicksand_bold"
                 android:paddingTop="10sp"
                 android:text="Aviso:"
                 android:textColor="#000000"
-                android:textSize="20sp" />
+                android:textSize="25sp" />
 
             <TextView
                 android:id="@+id/aviso"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
+                android:fontFamily="@font/quicksand_bold"
                 android:text="Carregando..."
-                android:textColor="#001368"
-                android:textSize="25sp" />
+                android:textColor="#001FA8"
+                android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/saude"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
+                android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
                 android:text="SAÚDE"
-                android:textColor="#421500"
-                android:textSize="38sp" />
+                android:textColor="#0083CC"
+                android:textSize="40sp" />
 
             <TextView
                 android:id="@+id/medicação"
@@ -263,10 +277,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
+                android:fontFamily="@font/quicksand_bold"
                 android:gravity="center"
                 android:text="PERÍODO INTEGRAL"
-                android:textColor="#421500"
-                android:textSize="38sp" />
+                android:textColor="#0083CC"
+                android:textSize="40sp" />
 
             <TextView
                 android:id="@+id/lanche_mat"

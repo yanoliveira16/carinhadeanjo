@@ -24,13 +24,14 @@
                 android:id="@+id/imageView22"
                 android:layout_width="75dp"
                 android:layout_height="45dp"
-                app:srcCompat="@drawable/foldervinteetres" />
+                app:srcCompat="@drawable/vinteaddressbook" />
 
             <TextView
                 android:id="@+id/textView14"
                 android:layout_width="75dp"
                 android:layout_height="70dp"
 
+                android:fontFamily="@font/quicksand_bold"
                 android:gravity="bottom|center_horizontal"
                 android:text="AGENDA"
                 android:textSize="14sp" />
@@ -58,13 +59,14 @@
                 android:id="@+id/imageView35"
                 android:layout_width="75dp"
                 android:layout_height="45dp"
-                app:srcCompat="@drawable/laptop" />
+                app:srcCompat="@drawable/vintecomments" />
 
             <TextView
                 android:id="@+id/textView27"
                 android:layout_width="75dp"
                 android:layout_height="70dp"
 
+                android:fontFamily="@font/quicksand_bold"
                 android:gravity="bottom|center_horizontal"
                 android:text="CHAT"
                 android:textSize="14sp" />
@@ -91,6 +93,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:fontFamily="@font/quicksand_bold"
         android:gravity="center"
         android:text="Carregando..."
         android:textColor="#000000"

@@ -72,17 +72,17 @@
                 android:id="@+id/textView14"
                 android:layout_width="65dp"
                 android:layout_height="65dp"
-                android:fontFamily="@font/quicksand_medium"
+                android:fontFamily="@font/quicksand_bold"
                 android:gravity="bottom|center_horizontal"
                 android:text="AGENDA"
                 android:textColor="#000000"
-                android:textSize="12sp" />
+                android:textSize="13sp" />
 
             <ImageView
                 android:id="@+id/imageView22"
                 android:layout_width="65dp"
                 android:layout_height="45dp"
-                app:srcCompat="@drawable/notedoisvinte" />
+                app:srcCompat="@drawable/vintefolder" />
 
             <Button
                 android:id="@+id/button"
@@ -109,7 +109,56 @@
                 android:gravity="bottom|center_horizontal"
                 android:text="|"
                 android:textColor="#000000"
-                android:textSize="20sp" />
+                android:textSize="24sp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="65dp"
+            android:layout_height="65dp">
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="bottom|center_horizontal"
+                android:text="DEVER"
+                android:textColor="#000000"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:id="@+id/imagedever"
+                android:layout_width="65dp"
+                android:layout_height="45dp"
+                app:srcCompat="@drawable/vintedeverdecasa" />
+
+            <Button
+                android:id="@+id/button"
+                style="@android:style/Widget.DeviceDefault.Button.Borderless"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:onClick="dever_click"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageView22"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView22" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="5dp"
+            android:layout_height="55dp">
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="5dp"
+                android:layout_height="35dp"
+                android:fontFamily="@font/quicksand_medium"
+                android:gravity="bottom|center_horizontal"
+                android:text="|"
+                android:textColor="#000000"
+                android:textSize="24sp" />
 
         </FrameLayout>
 
@@ -121,17 +170,17 @@
                 android:id="@+id/imageView24"
                 android:layout_width="65dp"
                 android:layout_height="45dp"
-                app:srcCompat="@drawable/testvinteetres" />
+                app:srcCompat="@drawable/vinteballot" />
 
             <TextView
                 android:id="@+id/textView22"
                 android:layout_width="65dp"
                 android:layout_height="65dp"
-                android:fontFamily="@font/quicksand_medium"
+                android:fontFamily="@font/quicksand_bold"
                 android:gravity="bottom|center_horizontal"
                 android:text="PDF's"
                 android:textColor="#000000"
-                android:textSize="12sp" />
+                android:textSize="13sp" />
 
             <Button
                 android:id="@+id/button18"
@@ -155,7 +204,7 @@
                 android:gravity="bottom|center_horizontal"
                 android:text="|"
                 android:textColor="#000000"
-                android:textSize="20sp" />
+                android:textSize="24sp" />
 
         </FrameLayout>
 
@@ -167,17 +216,17 @@
                 android:id="@+id/imageView35"
                 android:layout_width="65dp"
                 android:layout_height="45dp"
-                app:srcCompat="@drawable/laptop" />
+                app:srcCompat="@drawable/vintecomments" />
 
             <TextView
                 android:id="@+id/textView27"
                 android:layout_width="65dp"
                 android:layout_height="65dp"
-                android:fontFamily="@font/quicksand_medium"
+                android:fontFamily="@font/quicksand_bold"
                 android:gravity="bottom|center_horizontal"
                 android:text="CHAT"
                 android:textColor="#000000"
-                android:textSize="12sp" />
+                android:textSize="13sp" />
 
             <Button
                 android:id="@+id/button16"
@@ -200,7 +249,7 @@
                 android:gravity="bottom|center_horizontal"
                 android:text="|"
                 android:textColor="#000000"
-                android:textSize="20sp" />
+                android:textSize="24sp" />
 
         </FrameLayout>
 
@@ -212,17 +261,17 @@
                 android:id="@+id/imageView29"
                 android:layout_width="65dp"
                 android:layout_height="45dp"
-                app:srcCompat="@drawable/calculator" />
+                app:srcCompat="@drawable/vintecreditcard" />
 
             <TextView
                 android:id="@+id/textView26"
                 android:layout_width="65dp"
                 android:layout_height="65dp"
-                android:fontFamily="@font/quicksand_medium"
+                android:fontFamily="@font/quicksand_bold"
                 android:gravity="bottom|center_horizontal"
                 android:text="BOLETO"
                 android:textColor="#000000"
-                android:textSize="12sp" />
+                android:textSize="13sp" />
 
             <Button
                 android:id="@+id/button2"
@@ -241,7 +290,7 @@
         android:layout_height="30dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
-        android:background="@drawable/sairbuttaovinteetres"
+        android:background="@drawable/vinterunning"
         android:onClick="sair_click3"
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
@@ -252,7 +301,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:fontFamily="@font/quicksand_medium"
+        android:fontFamily="@font/quicksand_bold"
         android:gravity="center"
         android:text="Carregando..."
         android:textColor="#000000"
@@ -265,7 +314,7 @@
         android:id="@+id/turma"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/quicksand_medium"
+        android:fontFamily="@font/quicksand_bold"
         android:text="Carregando..."
         android:textColor="#000000"
         android:textSize="20sp"
@@ -311,9 +360,10 @@
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/quicksand_bold"
         android:onClick="click_avi"
         android:text="SEM AVISO"
-        android:textColor="#910000"
+        android:textColor="#CA0101"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

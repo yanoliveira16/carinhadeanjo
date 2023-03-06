@@ -86,7 +86,7 @@ public class lista_tres extends AppCompatActivity {
                     }else if (nn!= null && tela_de_carregamento.qual == "1"){
                         aaaaa.setText(v + " \n " + "Ciente: " + nn);
                     }else{
-                        aaaaa.setText(v + " \n " + "Responsável não Ciente! ");
+                        aaaaa.setText(v + " \n " + "Responsável não ciente! ");
                     }
                     chamar_parte2();
                 }
@@ -146,23 +146,23 @@ public class lista_tres extends AppCompatActivity {
                     if (npt == null){
                         npt = 1;
                         myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("qnt_visu").setValue(npt);
-                        kgh += "\n" +npt +" VISUALIZAÇÕES DO RESPONSÁVEL";
+                        kgh += "\n" +npt +" VISUALIZAÇÕES";
                         final TextView a1 = (TextView) findViewById(R.id.msg);
                         a1.setText(kgh);
                     }else{
                         npt += 1;
                         myRef2.child(uid).child("AGENDA").child(lista_ano.onClick).child(lista_um.onClick).child(lista_dois.onClick2).child("qnt_visu").setValue(npt);
-                        kgh += "\n" +npt +" VISUALIZAÇÕES DO RESPONSÁVEL";
+                        kgh += "\n" +npt +" VISUALIZAÇÕES";
                         final TextView a1 = (TextView) findViewById(R.id.msg);
                         a1.setText(kgh);
                     }
                 }else{
                     if (npt == null){
-                        kgh += "\nO RESPONSÁVEL NÃO VISUALIZOU ESTA AGENDA";
+                        kgh += "\nSEM VISUALIZAÇÕES";
                         final TextView a1 = (TextView) findViewById(R.id.msg);
                         a1.setText(kgh);
                     }else{
-                        kgh += "\n" +npt +" VISUALIZAÇÕES DO RESPONSÁVEL";
+                        kgh += "\n" +npt +" VISUALIZAÇÕES";
                         final TextView a1 = (TextView) findViewById(R.id.msg);
                         a1.setText(kgh);
                     }
